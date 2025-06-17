@@ -1,0 +1,157 @@
+    function startCon(charName, conNum, locked, delay, spyphone) {
+		// clear error text
+        intface.messageBox.gotoAndStop("none");
+		
+		// if locked turn off interface elements
+        if (locked != false) {
+            invOn = false;
+            codeOn = false;
+            scrollable = false;
+            seeBlocker(true);
+        }
+		
+		// clear out spy phone close up
+        intface.spyPhone.gotoAndStop(1);
+        if (spyphone) {
+            _root.myGame.havingSpyPhoneConv = true;
+        }
+        myCursor_mc.gotoAndStop(1);
+		
+        currentCharacter = charName;
+		
+		// split dialogue from dialog.fla
+		// this is adjusted for 0 index
+		// used in charSpeak()
+        cSpeech = myDialog[charName][conNum - 1].speak.split("|");
+        cAnimNum = myDialog[charName][conNum - 1].frame.split(",");
+        cBubble = myDialog[charName][conNum - 1].bubble.split(",");
+		
+		// what is a cPos - character position? what?
+		// conversation position
+		// as in what "frame" its on per the dialogue json
+		// https://tenor.com/view/laugh-laughing-crying-cry-dad-gif-17845431779190203443
+        cPos = 0;
+		
+		// set the end frame
+        _root.myGame[currentCharacter + "Default"] = myDialog[charName][conNum - 1].endFrame;
+		
+		// literally not used, thanks cp team
+        //var _local_12 = 1;
+		// failsafe in case of undefined dialogue
+        if (myDialog[charName][conNum - 1].response == undefined) {
+            endConv = true;
+            _root.myGame.endFunc = false;
+        } else {
+            totalQuestions = myDialog[charName][conNum - 1].response.length;
+			// loop through conversation responses
+            var i = 0;
+            while (i < totalQuestions) {
+				// vars
+                var questionButton = intface.questions_mc["q" + (i + 1)];
+                var response = myDialog[charName][conNum - 1].response[i];
+				
+				// set text
+                questionButton.q_txt.text = response.question;
+				
+				// check for numbers
+                if (isNaN(response.answer)) {
+                    questionButton.speakChar = response.answer.split("|");
+                } else {
+                    questionButton.speakChar = response.answer;
+                };
+				
+				// set object vars
+                questionButton.animNum = response.frame.split(",");
+                questionButton.bubble = response.bubble.split(",");
+                questionButton.gameVar = response.gameVar.split(",");
+				
+				// this is yanderedev coding i fear
+                var gameVar = questionButton.gameVar[1];
+                if (gameVar == "true") {
+                    questionButton.gameVar[1] = true;
+                } else if (gameVar == "false") {
+                    questionButton.gameVar[1] = false;
+                };
+				
+				// end function stuff yippee
+                if (response.endFunction) {
+					// functions yay love them
+                    var endFunction = response.endFunction.split(",");
+                    var endFunctionFunc = Function(_root.myGame[String(endFunction.shift())]);
+					
+					// set object var
+                    questionButton.endFunc = endFunctionFunc;
+					
+                    var endFunctionLength = endFunction.length;
+					// loop while decrementing i think
+                    while (endFunctionLength--) {
+						// i hate this but i also dont care to rewrite it
+                        if (!isNaN(Number(endFunction[endFunctionLength]))) {
+                            endFunction[endFunctionLength] = Number(endFunction[endFunctionLength]);
+                        } else if (endFunction[endFunctionLength] == "true") {
+                            endFunction[endFunctionLength] = true;
+                        } else if (endFunction[endFunctionLength] == "false") {
+                            endFunction[endFunctionLength] = false;
+                        };
+                    };
+                    questionButton.endFuncArgs = endFunction;
+                } else {
+                    questionButton.endFunc = undefined;
+                    questionButton.endFuncArgs = undefined;
+                };
+				
+				// more object vars
+                questionButton.endC = response.end;
+                questionButton.removeQ = response.remove;
+                questionButton.qNum = i + 1;
+                questionButton.endFrame = response.endFrame;
+                questionButton._visible = true;
+                intface.questions_mc["q" + (i + 2)]._visible = false;
+                intface.questions_mc["q" + (i + 3)]._visible = false;
+                i++;
+            };
+        };
+		
+		// delay start of speaking
+        if (isNaN(delay) || (delay == undefined)) {
+            charSpeak();
+        } else {
+            var charSpeakTimeout = setTimeout(charSpeak, delay);
+        };
+    }
+    function charSpeak() {
+		// clear error text and stuff
+        intface.messageBox.gotoAndStop("none");
+        havingConv = true;
+        intface.questions_mc._visible = false;
+		
+		
+        if (!havingSpyPhoneConv) {
+			// if bubble frame is defined go to bubble frame
+            if (cBubble != undefined) {
+                speechBubble.gotoAndStop("speech" + cBubble[cPos]);
+            } else {
+                speechBubble.gotoAndStop("speech");
+            }
+			
+			// set text
+            speechBubble.speechText = cSpeech[cPos];
+			
+			// go to anim
+            if (cAnimNum[cPos] != undefined) {
+                screen.scene_mc.room1[currentCharacter].gotoAndStop(cAnimNum[cPos]);
+                screen.scene_mc.room2[currentCharacter].gotoAndStop(cAnimNum[cPos]);
+            }
+        } else {
+			// phone message stuff
+            intface.phoneMessage.gotoAndStop("default");
+            intface.phoneMessage.avatarContainer.avatarClip.removeMovieClip();
+            intface.phoneMessage.avatarContainer.attachMovie(currentCharacter, "avatarClip", 1);
+            intface.phoneMessage.avatarContainer.avatarClip.stop();
+            intface.phoneMessage.setMessage(cSpeech[cPos]);
+            if (cAnimNum[cPos] != undefined) {
+                intface.phoneMessage.avatarContainer.avatarClip.gotoAndStop(cAnimNum[cPos]);
+            }
+        }
+        cPos++;
+    }

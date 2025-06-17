@@ -1,0 +1,165 @@
+[
+    {
+        "note": "Space Adventure Planet Y"
+    },
+    {
+        "name": "Captain",
+        "message": "Captain's journal, entry 30:16..."
+    },
+    {
+        "name": "Captain",
+        "message": "The SS Astro Barrier returns to Club Penguin..."
+    },
+    {
+        "name": "Ensign",
+        "message": "Speed set to carp five."
+    },
+    {
+        "name": "Zip",
+        "message": "Wait! Watch out for the-"
+    },
+    {
+        "note": "Asteroid hits the SS Astro Barrier"
+    },
+    {
+        "name": "Robot",
+        "message": "TWEEE-BEEP! ERROR 6000! DIRECT HIT!"
+    },
+    {
+        "name": "Zip",
+        "message": "...asteroid!"
+    },
+    {
+        "name": "Ensign",
+        "message": "Captain, it's thrown us off course!"
+    },
+    {
+        "name": "Captain",
+        "message": "Engage the carp drive. Full reverse!"
+    },
+    {
+        "name": "Robot",
+        "message": "BEEP BEEP! CARP DRIVE FAILURE."
+    },
+    {
+        "name": "Ensign",
+        "message": "Negative Captain. It's not working."
+    },
+    {
+        "name": "Zip",
+        "message": "Have you tried clearing the cache?"
+    },
+    {
+        "name": "Ensign",
+        "message": "I've tried, but it won't reload!"
+    },
+    {
+        "name": "Captain",
+        "message": "Emergency Crash landing-that planet will do."
+    },
+    {
+        "name": "Robot",
+        "message": "GLEEEEEEP! OVERHEATING!"
+    },
+    {
+        "name": "Zip",
+        "message": "No, not Planet Y! My rivals the Qs live here!"
+    },
+    {
+        "note": "Ship crashes into building"
+    },
+    {
+        "name": "Qua",
+        "message": "Visitors, you've disturbed our meeting..."
+    },
+    {
+        "name": "Quip",
+        "message": "So you have our old robot, Tin Can. Greetings."
+    },
+    {
+        "name": "Qua",
+        "message": "We're planning to make a giant space craft."
+    },
+    {
+        "name": "Quip",
+        "message": "Tin Can 3000, help us get ship parts. Now!"
+    },
+    {
+        "name": "Robot",
+        "message": "NEW ORDER RECEIVED. REPROGRAMMING."
+    },
+    {
+        "name": "Zip",
+        "message": "Wait! Remember space directive 402?"
+    },
+    {
+        "name": "Captain",
+        "message": "The bot exchange agreement! Quick thinking, Zip!"
+    },
+    {
+        "name": "Quip",
+        "message": "They own the bot. He can't destroy the craft..."
+    },
+    {
+        "name": "Qua",
+        "message": "Let's do it ourselves-we'll be fast!"
+    },
+    {
+        "name": "Zip",
+        "message": "Restart the bot, and let's get out of here."
+    },
+    {
+        "name": "Robot",
+        "message": "REBOOTING. REBOOTING. REBOOTING."
+    },
+    {
+        "name": "Robot",
+        "message": "GLEEEP! ENGINE TERMINATED. JET FUEL LOW!"
+    },
+    {
+        "name": "Ensign",
+        "message": "No! How are we going to get back this time?"
+    },
+    {
+        "name": "Robot",
+        "message": "ZWEEEP! ABORT, RETRY, FAIL?"
+    },
+    {
+        "name": "Captain",
+        "message": "Retry. Tin Can, use ice cream for fuel."
+    },
+    {
+        "name": "Zip",
+        "message": "It's working! Let's get out of here."
+    },
+    {
+        "name": "Captain",
+        "message": "Set a course for the Iceberg. Carp 5. Engage!"
+    },
+    {
+        "name": "Quip",
+        "message": "We shall meet again, Captain Snow..."
+    },
+    {
+        "note": "THE END"
+    },
+    {
+        "note": "Director"
+    },
+    {
+        "name": "Director",
+        "message": "Places please!"
+    },
+    {
+        "name": "Director",
+        "message": "5 minute call, actors to the stage."
+    },
+    {
+        "name": "Director",
+        "message": "Let's take it from the top!"
+    },
+    {
+        "name": "Director",
+        "message": "It's a wrap!"
+    }
+]

@@ -1,0 +1,67 @@
+[
+  {
+    {
+      "category": "Ahoy!",
+      "script": [
+        "Ahoy me mateys!",
+        "Ahoy! Adventures await",
+        "Me hearties",
+        "Gangway mateys",
+        "Ahoy pirates! Follow me",
+        "Welcome aboard!",
+        "Fair Winds!",
+        "Weigh anchor",
+        "I be everybody's buddy"
+      ]
+    },
+    {
+      "category": "Yo-ho-ho",
+      "script": [
+        "Arrgh!",
+        "Arrgh! Pirate Party",
+        "Arrr!",
+        "Avast",
+        "Blimey",
+        "Gangway!",
+        "Me hearties, listen up",
+        "Smartly now, sailors",
+        "Me ship full of treats for everyone",
+        "Shiver me timbers!",
+        "Yarr-har-harr",
+        "Har Har Har"
+      ]
+    },
+    {
+      "category": "Shipshape!",
+      "script": [
+        "Sailin the seas be the life for me!",
+        "This be real treasure island",
+        "Where be y'er sea flippers",
+        "You be shipshape sailors",
+        "The sea, she be callin me",
+        "This be the sturdiest ship on the seas",
+        "Me ship is the biggest brig in the port!",
+        "Swab the deck!",
+        "Pirates on deck!"
+      ]
+    },
+    {
+      "category": "Direction",
+      "script": [
+        "Avast, to the Migrator!",
+        "Avast, to the Cove!",
+        "Avast, to the Iceberg!",
+        "Avast, to the Beach!"
+      ]
+    },
+    {
+      "category": "Other",
+      "script": [
+        "It's the pirate's life for me",
+        "I be younger than the sea but older than ye",
+        "Argh! Cream Soda be the drink for me",
+        "Yarr be keeping lookout at me ship"
+      ]
+    }
+  }
+]

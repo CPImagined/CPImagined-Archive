@@ -1,0 +1,334 @@
+[
+  {
+    "mascotName": "??????",
+    "mascotActive": true,
+    "mascotScript": [
+      {
+        "category": "Greetings",
+        "categoryActive": true,
+        "script": [
+          "Hmph",
+          "growls",
+          "grumbles",
+          "Huh?",
+          "Eh?"
+        ]
+      },
+      {
+        "category": "Answers",
+        "categoryActive": true,
+        "script": [
+          "oh",
+          "Umm",
+          "Umm?",
+          "Ugh",
+          "UGH!",
+          "Gah!",
+          "grumble grumble",
+          "grunts"
+        ]
+      },
+      {
+        "category": "Actions",
+        "categoryActive": true,
+        "script": [
+          "scratches belly",
+          "yawns",
+          "stretches",
+          "blinks",
+          "shakes off snow",
+          "hides"
+        ]
+      },
+      {
+        "category": "Bye",
+        "categoryActive": true,
+        "script": [
+          "growls",
+          "stomach grumbles",
+          "Unnh",
+          "Hmph"
+        ]
+      }
+    ]
+  },
+  {
+    "mascotName": "Merry Walrus",
+    "mascotActive": true,
+    "mascotScript": [
+      {
+        "category": "Hello",
+        "categoryActive": true,
+        "script": [
+          "Helloooo",
+          "Hi everyone",
+          "Merry Walrus!",
+          "It's my name...",
+          "and my catchphrase!",
+          ".",
+          "Thanks for coming",
+          "I'm so glad to see everyone",
+          "I hope you're having a Merry Walrus!"
+        ]
+      },
+      {
+        "category": "Questions",
+        "categoryActive": true,
+        "script": [
+          "I'm from Merry Walrus Island...",
+          "it's behind the Crystal Curtain",
+          "The Curtain can only be opened...",
+          "by a blue crystal puffle",
+          "But it's far away",
+          ".",
+          "Of course I'll be your friend!",
+          "I love to meet new folks",
+          "Especially if they're jolly",
+          "chuckles",
+          "Please click on my Player Card",
+          "and collect my background",
+          "It's a gift for everyone",
+          ".",
+          "I make toys",
+          "I'm a real tinkerer",
+          "Sort of like that Gary fellow...",
+          "He's a genius and all...",
+          "but no one should time travel!",
+          "It's incredibly dangerous!",
+          ".",
+          "I've delivered a present to Tusk",
+          "He's a very bitter walrus...",
+          "I gave him some pickled herring juice",
+          "That may sound gross...",
+          "but it's his favorite drink!",
+          "I give to the naughty and nice",
+          "I don't judge!",
+          ".",
+          "No I'm afraid not",
+          "Indeed",
+          "Of course",
+          "Nope haha"
+        ]
+      },
+      {
+        "category": "Merry Walrus Celebrations",
+        "categoryActive": true,
+        "script": [
+          "Are you all enjoying the festivities?",
+          "I hope you're having a joyous time!",
+          "I hope you keep celebrating Merry Walrus...",
+          "and I mean the holiday not me",
+          "It's named after me...",
+          "which is very flattering",
+          "Merry Walrus is all about giving...",
+          "and having fun doing it!",
+          "Thanks for throwing the party...",
+          "it's the best one I've seen!"
+        ]
+      },
+      {
+        "category": "Coins For Change",
+        "categoryActive": true,
+        "script": [
+          "Coins For Change is wonderful",
+          "We get to make a big difference",
+          "When I fly around the world...",
+          "I see how the projects you unlock help",
+          "Whatever you can donate is great",
+          "It all helps the cause!"
+        ]
+      },
+      {
+        "category": "Puffle Shuffle",
+        "categoryActive": true,
+        "script": [
+          "Do you do the Puffle Shuffle?",
+          "Let's do the Puffle Shuffle!",
+          "Ho ho ho!",
+          "I think this should be...",
+          "our new holiday tradition!",
+          ".",
+          "dances puffle shuffle",
+          "Yeah!",
+          "This old walrus has still got the moves",
+          ".",
+          "Time for a holiday singalong!",
+          "Let's do it Club Penguin!",
+          "Sing it like Cadence!",
+          ".",
+          "",
+          "This is how we do this time of year",
+          "There’s a party mood and the party’s here",
+          "Get your wing man",
+          "To the big dance",
+          "DANCE THE PUFFLE SHUFFLE!",
+          "Swing that puffle from side to side",
+          "Shuffle to the left and hop to the right",
+          "Back and forth",
+          "Everybody SLIIIIDE!",
+          "DANCE THE PUFFLE SHUFFLE!",
+          "Keep your eyes to the sky",
+          "For that husky, tusky guy",
+          "You know that his sleigh",
+          "Is coming our way",
+          "Tonight, tonight, tonight!",
+          "Dance that dance",
+          "Come join this jam",
+          "So much to celebrate",
+          "Penguins, puffles",
+          "Show your stuff",
+          "Let’s dance the night away!",
+          "Oh, oh, oh",
+          "Oh, oh, oh",
+          "DANCE THE PUFFLE SHUFFLE!"
+        ]
+      },
+      {
+        "category": "Blue Crystal Puffles",
+        "categoryActive": true,
+        "script": [
+          "The blue crystal puffles are here!",
+          "They love your island so much",
+          "It's because you're all very generous...",
+          "just like them!",
+          ".",
+          "Do you know where they come from?",
+          "That's right!",
+          "Merry Walrus Island",
+          "They help me deliver presents...",
+          "by pulling my sleigh through the sky",
+          "There wouldn't be a Merry Walrus...",
+          "without their help!",
+          "Do you know their favorite dance?",
+          "The Puffle Shuffle!",
+          ".",
+          "Enrique is a great puffle",
+          "He's one of my fastest fliers!"
+        ]
+      },
+      {
+        "category": "Storytelling",
+        "categoryActive": true,
+        "script": [
+          "Would you like to hear a story?",
+          "Here's a story of Merry Walrus past",
+          "Once upon a Merry Walrus...",
+          ".",
+          "",
+          "This year’s Merry Walrus…",
+          "almost didn’t happen!",
+          "I was kidnapped by that grumpy Herbert!",
+          "That polar bear came to my island",
+          "shoved me into my own wrapomatic",
+          "and then impersonated me!",
+          "The nerve!",
+          "I was stuck in a present until…",
+          "Roofhowse and his friends saved me!",
+          "Then we had a high-speed sleigh chase",
+          "to stop Herbert from ruining everything!",
+          "I was so mad…",
+          "I almost didn’t give him a present!",
+          "But I found just the right gift for him",
+          "Noise-cancelling earmuffs!",
+          "Ho ho ho!",
+          "If it wasn't for Roofhowse and friends...",
+          "we wouldn't have a party at all!",
+          ".",
+          "",
+          "I didn't always have crystal puffles",
+          "I used to deliver presents myself",
+          "and it took forever!",
+          "Then one day I saw a shooting star",
+          "And I wished for a way to fly...",
+          "so I could bring presents to everyone",
+          "Well that star turned right around!",
+          "I thought the sky was falling!",
+          "But as it got closer...",
+          "I got up from where I was hiding...",
+          "and saw a kindly puffle!",
+          "That's how I met Enrique",
+          "He showed me the Crystal Curtain...",
+          "and the island that was behind it",
+          "Now the blue crystal puffles and I...",
+          "bring gifts and joy to the whole world!"
+        ]
+      },
+      {
+        "category": "Forest/Decorating",
+        "categoryActive": true,
+        "script": [
+          "Did you decorate the big tree?",
+          "Excellent decorations",
+          "You've got an eye for this my friend"
+        ]
+      },
+      {
+        "category": "Beach Fluffy Feast",
+        "categoryActive": true,
+        "script": [
+          "What a wild feast!",
+          "You can throw your food...",
+          "or catch it!",
+          "catches fish",
+          "eats whole",
+          "Yumm!",
+          "This is the tastiest tradition!"
+        ]
+      },
+      {
+        "category": "Plaza Bells",
+        "categoryActive": true,
+        "script": [
+          "Let's ring in the holidays!",
+          "Everyone get ready to throw snowballs",
+          "Aim at a bell...",
+          "Now throw!",
+          "Keep going!",
+          "Ho ho!",
+          "It's a merry racket!",
+          "Great work everyone"
+        ]
+      },
+      {
+        "category": "Herbert",
+        "categoryActive": true,
+        "script": [
+          "Herbert P. Bear?",
+          "Oh I know him alright!",
+          "He impersonated me...",
+          "and almost ruined Merry Walrus!",
+          "But even he deserves a present...",
+          "so I got him some nice earmuffs...",
+          "the good noise cancelling kind",
+          "Then I delivered him to the EPF",
+          "That was the Director's present!"
+        ]
+      },
+      {
+        "category": "Roofhowse and Crew",
+        "categoryActive": true,
+        "script": [
+          "Do you know him?",
+          "Do you know her?",
+          "You've heard of them?",
+          "They're adventurous penguins!",
+          "I owe them a great deal",
+          "They rescued me",
+          "If it wasn't for them...",
+          "I would still be wrapped up tight!"
+        ]
+      },
+      {
+        "category": "Goodbye",
+        "categoryActive": true,
+        "script": [
+          "Farewell",
+          "Good night all!",
+          "Merry Walrus to all...",
+          "and to all a good flight!",
+          "MERRY WALRUS EVERYONE!"
+        ]
+      }
+    ]
+  }
+]

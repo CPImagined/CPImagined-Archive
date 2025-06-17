@@ -1,0 +1,1 @@
+put the newspaper files into papers\en\testPaper_1001 and then open NewspaperEmbedder.swf

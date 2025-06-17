@@ -1,0 +1,155 @@
+[
+    {
+        "note": "A Humbug Holiday"
+    },
+    {
+        "name": "Ghost of Yesterday",
+        "message": "Knock knock!"
+    },
+    {
+        "name": "Humbug",
+        "message": "Who's there? Go away, I'm sleeping!"
+    },
+    {
+        "name": "Ghost of Yesterday",
+        "message": "It's the Ghost of Yesterday. Hi!"
+    },
+    {
+        "name": "Humbug",
+        "message": "So? What do you want?"
+    },
+    {
+        "name": "Ghost of Yesterday",
+        "message": "I'm here to remind you..."
+    },
+    {
+        "name": "Humbug",
+        "message": "Bah! I know this story. I've been unkind. I get it."
+    },
+    {
+        "name": "Ghost of Yesterday",
+        "message": "Nah, I don't care about that. I'm here to remind you..."
+    },
+    {
+        "name": "Ghost of Yesterday",
+        "message": "...about your laundry! You left socks in the dryer."
+    },
+    {
+        "name": "Humbug",
+        "message": "Oh, thank you!"
+    },
+    {
+        "note": "Humbug goes back to sleep."
+    },
+    {
+        "name": "Ghost of Today",
+        "message": "Knock knock!"
+    },
+    {
+        "name": "Ghost of Today",
+        "message": "I said KNOCK KNOCK!"
+    },
+    {
+        "name": "Humbug",
+        "message": "I'm trying to sleep! Who is it now?"
+    },
+    {
+        "name": "Ghost of Today",
+        "message": "It's me, the Ghost of Today!"
+    },
+    {
+        "name": "Humbug",
+        "message": "What's so important?"
+    },
+    {
+        "name": "Ghost of Today",
+        "message": "There's a holiday sale on fruit cake. TODAY ONLY!"
+    },
+    {
+        "name": "Humbug",
+        "message": "Dried fruit dessert! My favourite! Thank you, ghost!"
+    },
+    {
+        "note": "Humbug buys eleventeen fruit cakes."
+    },
+    {
+        "name": "Humbug",
+        "message": "Now to enjoy this dried fruit delicacy in peace..."
+    },
+    {
+        "name": "Humbug",
+        "message": "Ooh, extra prunes!"
+    },
+    {
+        "name": "Ghost of Tomorrow",
+        "message": "scratches at window"
+    },
+    {
+        "name": "Humbug",
+        "message": "Ugh, what's that awful sound?!"
+    },
+    {
+        "name": "Ghost of Tomorrow",
+        "message": "Fruitcaaaaake..."
+    },
+    {
+        "name": "Humbug",
+        "message": "Who said that?"
+    },
+    {
+        "note": "Ghost of Tomorrow steps out of the shadows."
+    },
+    {
+        "name": "Humbug",
+        "message": "Ghost, are you here to show me my future?"
+    },
+    {
+        "name": "Ghost of Tomorrow",
+        "message": "Yes!"
+    },
+    {
+        "name": "Humbug",
+        "message": "Well, what is it?"
+    },
+    {
+        "name": "Ghost of Tomorrow",
+        "message": "I foresee disappointment."
+    },
+    {
+        "note": "Ghost snatches Humbug's fruitcake and runs away"
+    },
+    {
+        "name": "Humbug",
+        "message": "BAH! My fruitcake! Come back, thief!"
+    },
+    {
+        "name": "Humbug",
+        "message": "shakes flipper"
+    },
+    {
+        "name": "Humbug",
+        "message": "And everyone wonders why I'm so grumpy!"
+    },
+    {
+        "note": "THE END"
+    },
+    {
+        "note": "Director"
+    },
+    {
+        "name": "Director",
+        "message": "Places please!"
+    },
+    {
+        "name": "Director",
+        "message": "5 minute call, actors to the stage."
+    },
+    {
+        "name": "Director",
+        "message": "Let's take it from the top!"
+    },
+    {
+        "name": "Director",
+        "message": "It's a wrap!"
+    }
+]

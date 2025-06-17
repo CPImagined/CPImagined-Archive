@@ -1,0 +1,186 @@
+[
+    {
+        "note": "Ruby and the Ruby"
+    },
+    {
+        "note": "Scene 1"
+    },
+    {
+        "name": "Hammer:",
+        "message": "I was working late. A Terrible storm was raging."
+    },
+    {
+        "name": "Ruby:",
+        "message": "You gotta help me!"
+    },
+    {
+        "name": "Hammer:",
+        "message": "What's the problem madam?"
+    },
+    {
+        "name": "Ruby:",
+        "message": "Someone has stolen my gemstone!"
+    },
+    {
+        "name": "Hammer:",
+        "message": "Jacques Hammer at your service."
+    },
+    {
+        "name": "Ruby:",
+        "message": "Let's work together."
+    },
+    {
+        "name": "Hammer:",
+        "message": "I work alone, Ms. Ruby."
+    },
+    {
+        "name": "Ruby:",
+        "message": "There was this fishy-looking guy outside."
+    },
+    {
+        "name": "Hammer:",
+        "message": "And you suspect him?"
+    },
+    {
+        "name": "Ruby:",
+        "message": "I saw him throw something in the bin."
+    },
+    {
+        "note": "Scene 2"
+    },
+    {
+        "name": "Hammer:",
+        "message": "The name's Hammer - Jacques Hammer."
+    },
+    {
+        "name": "Hammer:",
+        "message": "I've got a few questions for you."
+    },
+    {
+        "name": "Tenor:",
+        "message": "Mind if I play hopscotch while you ask them?"
+    },
+    {
+        "name": "Hammer:",
+        "message": "What were you doing yesterday?"
+    },
+    {
+        "name": "Tenor:",
+        "message": "I was right here with my hopscotch gang."
+    },
+    {
+        "name": "Hammer:",
+        "message": "I bet you've hopscotched away a few gems, right?"
+    },
+    {
+        "name": "Tenor:",
+        "message": "You're barking up the wrong tree, Hammer."
+    },
+    {
+        "note": "Scene 3"
+    },
+    {
+        "name": "Hammer:",
+        "message": "There was nothing in the bin. I needed clues."
+    },
+    {
+        "name": "Dom:",
+        "message": "Hello Mr. Hammer. It's good to see you, sir."
+    },
+    {
+        "name": "Hammer:",
+        "message": "Seen anything suspicious, Dom?"
+    },
+    {
+        "name": "Dom:",
+        "message": "Sorry, Mr. Hammer, sir, I haven't."
+    },
+    {
+        "name": "Hammer:",
+        "message": "Where's Ms. Ruby?"
+    },
+    {
+        "name": "Dom:",
+        "message": "She's arranging the flowers across the hall, sir."
+    },
+    {
+        "name": "Hammer:",
+        "message": "That lady's trouble. I need to speak to her..."
+    },
+    {
+        "name": "Dom:",
+        "message": "Don't forget to sign the guestbook, sir."
+    },
+    {
+        "note": "Scene 4"
+    },
+    {
+        "name": "Hammer:",
+        "message": "Anything else you can tell me, madam?"
+    },
+    {
+        "name": "Ruby:",
+        "message": "Haven't you found it yet? I'm busy."
+    },
+    {
+        "note": "(Ruby exits)"
+    },
+    {
+        "name": "Hammer:",
+        "message": "I found a note under a vase."
+    },
+    {
+        "name": "Hammer:",
+        "message": "The numbers looked like a combination."
+    },
+    {
+        "note": "Scene 5"
+    },
+    {
+        "name": "Hammer:",
+        "message": "Here'syour gem, Ms. Ruby. It was safe all along."
+    },
+    {
+        "name": "Ruby:",
+        "message": "Oh, jolly well done, Hammer."
+    },
+    {
+        "name": "Hammer:",
+        "message": "Another day, another crime solved."
+    },
+    {
+        "note": "THE END"
+    },
+    {
+        "name": "Director:",
+        "message": "Scene 1. And, action!"
+    },
+    {
+        "name": "Director:",
+        "message": "Scene 2, from the top!"
+    },
+    {
+        "name": "Director:",
+        "message": "Scene 3, places please."
+    },
+    {
+        "name": "Director:",
+        "message": "Scene 4. Let's see some effort here."
+    },
+    {
+        "name": "Director:",
+        "message": "Ready for Scene 5?"
+    },
+    {
+        "name": "Director:",
+        "message": "Let's take it from the top."
+    },
+    {
+        "name": "Director:",
+        "message": "Can we have some quiet please?"
+    },
+    {
+        "name": "Director:",
+        "message": "Two minute call, actors and actresses to the stage."
+    }
+]

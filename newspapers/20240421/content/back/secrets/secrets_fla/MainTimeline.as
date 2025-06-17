@@ -1,0 +1,28 @@
+﻿//Created by Action Script Viewer - https://www.buraks.com/asv
+package secrets_fla
+{
+    import flash.display.MovieClip;
+
+    public dynamic class MainTimeline extends MovieClip 
+    {
+
+        public var secrets:MovieClip;//instance name
+        public var visibleWidth:Number;
+        public var visibleHeight:Number;
+
+        public function MainTimeline()
+        {
+            addFrameScript(0, this.frame1);
+        }
+
+        internal function frame1():*
+        {
+            this.visibleWidth = 438;
+            this.visibleHeight = 350.55;
+        }
+
+
+    }
+}//package secrets_fla
+    //force all classes
+    import secrets_fla.MainTimeline; secrets_fla.MainTimeline;

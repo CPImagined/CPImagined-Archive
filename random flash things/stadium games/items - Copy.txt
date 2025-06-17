@@ -1,0 +1,91 @@
+items
+---
+
+penguin cup
+---
+
+tennis
+---
+
+football
+---
+
+hockey
+---
+
+ski
+---
+
+soccer
+---
+
+figure skating
+---
+
+baseball
+---
+
+workout (geopalz mainly)
+---
+
+basketball
+---
+
+cheerleading
+---
+
+skateboards
+---
+// secrets
+
+
+hiking?????
+---
+
+bgs
+---
+
+furniture
+---
+score board
+bench
+multi=ball
+
+hockey net
+
+basketball net
+court lines
+
+soccer net
+
+hand weights
+weight bench
+exercise ball
+exercise bike
+treadmill
+red
+blue gym mat
+
+baseball base
+home plate
+pitcher's mound
+
+cricket wickets
+racetrack straight
+racetrack curve
+snowboard rack
+ski rack
+dart board
+waves
+climbing wall
+red biscuit tube
+
+red
+blue
+green
+yellow cp banner
+
+badminton net
+
+tennis court
+tennis net

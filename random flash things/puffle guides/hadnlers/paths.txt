@@ -1,0 +1,2 @@
+        "guide_board": "close_ups\/guide_board.swf",
+        "guide_hint": "close_ups\/guide_hint.swf",

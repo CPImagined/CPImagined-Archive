@@ -1,0 +1,409 @@
+[
+  {
+    "mascotName": "Aunt Arctic",
+    "mascotActive": true,
+    "mascotScript": [
+      {
+        "category": "Happy New Year",
+        "categoryActive": true,
+        "script": [
+          "Happy New Year!",
+          "Hope you had wonderful holidays",
+          "Ready to tackle a new year?",
+          "Do you have any resolutions?",
+          "That's very ambitious",
+          "That's a worthy goal",
+          "I'm sure you'll do it!",
+          "If that's what you're set on...",
+          "I wish you the best of luck!",
+          ".",
+          "I have a resolution to...",
+          "have tea and chat with Sensei",
+          "actually listen to Rockhopper's stories",
+          "teach Rookie a bit about leadership"
+        ]
+      },
+      {
+        "category": "Club Penguin Island",
+        "categoryActive": true,
+        "script": [
+          "Have you heard of Club Penguin Island?",
+          "I do find the name a bit confusing",
+          "But it is a totally different place I assure you",
+          "I'm very intrigued by it",
+          "Rockhopper wishes he got to name it",
+          ".",
+          "What have you heard about it?",
+          "How interesting!",
+          "What a curious tradition",
+          "That sounds unbelievable",
+          "I can't say I expected that",
+          "I had heard of that",
+          "Marvelous",
+          "That's delightful isn't it?",
+          "That's too bad",
+          "I'm sorry to hear that",
+          ".",
+          "Does that island face threats like ours?",
+          "Do they have any secrets like our underground?",
+          "Are there any strange fashions there?",
+          "What do they eat on that island?",
+          "Is there a place to get tea?"
+        ]
+      },
+      {
+        "category": "Trivia",
+        "categoryActive": true,
+        "script": [
+          "Who wants to play a trivia game?",
+          "I'm going to test your Club Penguin Trivia",
+          "I'll describe someone, and you say their name",
+          "Who am I?",
+          "That's right!",
+          "Good guess!",
+          "Oops!",
+          "Try again",
+          ".",
+          "This penguin is a great inventor",
+          "He created the Pizzatron and the Aqua Grabber",
+          "He is the only penguin with glasses thicker than mine!",
+          "He wears a white lab coat",
+          "It's Gary!",
+          ".",
+          "This penguin is in a band",
+          "He sings and plays keys",
+          "And wears a cool black jacket",
+          "It's Franky!",
+          ".",
+          "This penguin loves puffles",
+          "She even likes eating Puffle O'berries!",
+          "She wears a whistle",
+          "She discovers new puffles!",
+          "It's PH, the Puffle Handler!",
+          ".",
+          "This penguin sometimes makes mistakes",
+          "But he always tries his best",
+          "He is the EPF Communications Lead",
+          "He once left a Box Dimension door open...",
+          "...and the April Fool's Party started early!",
+          "It's Rookie!",
+          ".",
+          "This penguin is a famous buccaneer",
+          "He brought red puffles to Club Penguin long ago",
+          "He has a friend named Yarr",
+          "You might say his favorite letter is ARRRRR",
+          "He has a thick black beard",
+          "It's Rockhopper!",
+          ".",
+          "This penguin is a great teacher",
+          "He trains penguins to use mysterious powers",
+          "He is considered the master of Card-Jitsu",
+          "He lives in the Dojo",
+          "It's Sensei!",
+          ".",
+          "This penguin is a famous DJ",
+          "She likes to mix music with DJ3K",
+          "She will teach you how to bust a move in Dance Contest",
+          "Her DJ name is K Dance",
+          "It's Cadence!",
+          ".",
+          "This penguin is a reporter",
+          "She writes articles for the newspaper",
+          "She enjoys investigating rumors and mysteries",
+          "She wears glasses and a pink beanie",
+          "If you ever have a question, just ask her",
+          "It's me!",
+          ".",
+          "You can find the Aqua Grabber in this room",
+          "Yes, the Iceberg",
+          "Where can you find Smoothie Smash?",
+          "The Coffee Shop is right!",
+          "Where can you find rainbow puffles?",
+          "In the clouds, correct!",
+          "Where do you get gold puffles?",
+          "In the Gold Mine, yes!",
+          "Sensei teaches this in the Dojo",
+          "Card Jitsu of course",
+          "Rockhopper bring this game with him",
+          "Treasure Hunt! My favorite!",
+          "This room has old issues of the CP Times",
+          "The Boiler Room!",
+          "My you certainly know the island well!",
+          "You must all be expert Tour Guides!",
+          "Well done"
+        ]
+      },
+      {
+        "category": "Q & A",
+        "categoryActive": true,
+        "script": [
+          "Did you have a question?",
+          "Yes",
+          "Hmm, I think so",
+          "Hmm, I don't think so",
+          "Hmm, I don't know actually",
+          "Probably not",
+          "No",
+          "Oh, I would love to be your friend",
+          "Please take a background",
+          "Do you have my background yet?",
+          "Do you read the Club Penguin Times?",
+          "Do you enjoy the newspaper?",
+          "Do you mind if I interview you?",
+          "I have too many favorites to say for sure",
+          "I like fluffy animals",
+          "Have you tried the tea?",
+          "My favorite games are Find Four and Mancala",
+          "I enjoy treasure hunting too",
+          "We could have a tea party"
+        ]
+      },
+      {
+        "category": "Puffles",
+        "categoryActive": true,
+        "script": [
+          "Your puffle is very neat",
+          "They are cute",
+          "Oooh I love puffles",
+          "Hearts for puffles, everyone!",
+          "My puffles are resting at home",
+          "I have 5 puffles",
+          "I love them all dearly"
+        ]
+      },
+      {
+        "category": "Newspaper",
+        "categoryActive": true,
+        "script": [
+          "I love reading all your jokes",
+          "You can send me jokes or questions",
+          "You can help me by",
+          "sending in jokes",
+          "sending in your questions",
+          "To become a writer",
+          "you should read every day",
+          "you should write every day",
+          "you should observe your world",
+          "I'm so glad you all enjoy the newspaper"
+        ]
+      },
+      {
+        "category": "Memories",
+        "categoryActive": true,
+        "script": [
+          "I've had so many wonderful times on the island",
+          "I remember my first day with The Club Penguin times",
+          "I was so nervous",
+          "But it went very well!",
+          "I tried very hard",
+          "to become the best writer I could be",
+          "My favorite part of being a journalist",
+          "is hearing from all of you",
+          "I love getting your submissions",
+          "I wish I could publish them all",
+          "Thank you for the good memories",
+          ".",
+          "I remember the 2009 Penguin Play Awards",
+          "We rolled out the red carpet",
+          "for great actors and directors",
+          "I was even given a VIP card!",
+          "And I got to go backstage",
+          "It was such an honor",
+          "And I loved watching Ruby and the Ruby",
+          "Hm... maybe I should become a stage director",
+          "But I already have a job directing",
+          ".",
+          "I just love reporting the news",
+          "Who knew that it would be such a busy job?",
+          "It seems like there's always something going on",
+          "Ninjas, robots, and even Herbert...",
+          "There's never a break",
+          "which is just how I like it",
+          ".",
+          "What is your favorite memory?",
+          "Oh, I recall that!",
+          "Wow!",
+          "That was quite a lot of fun",
+          "Indeed",
+          "Oh I couldn't choose",
+          "I've made so many wonderful memories",
+          "Some of my favorite memories",
+          "are meeting all of you",
+          "I'm very proud of all of you",
+          "I'm very proud of you",
+          "I've seen a lot of your art and it's lovely",
+          "Your art is incredible",
+          "Thank you for sharing your memories"
+        ]
+      },
+      {
+        "category": "Mail/Art Submissions",
+        "categoryActive": true,
+        "script": [
+          "Indeed",
+          "I'm very proud of all of you",
+          "I'm very proud of you",
+          "I've seen a lot of your art and it's lovely",
+          "Your art is incredible",
+          "I love receiving your letters",
+          "Please send me a letter soon",
+          "We can be pen pals!",
+          "You write such nice letters",
+          "I bet there are a lot of writers here"
+        ]
+      },
+      {
+        "category": "Greetings",
+        "categoryActive": true,
+        "script": [
+          "Hello everyone",
+          "Greetings everyone",
+          "It's good to see you all",
+          "How is everyone doing?",
+          "Oh my!",
+          "Look at you all!",
+          "Greetings from the Club Penguin Times!",
+          "Hello!"
+        ]
+      },
+      {
+        "category": "Farewell",
+        "categoryActive": true,
+        "script": [
+          "Take care everyone",
+          "I'll be heading off for now",
+          "I enjoyed myself very much",
+          "It was a pleasure meeting you",
+          "So long",
+          "Bye bye!",
+          "Next year will be even better!"
+        ]
+      },
+      {
+        "category": "EPF",
+        "categoryActive": true,
+        "script": [
+          "The EPF is hard at work right now",
+          "I'm afraid I can't discuss Herbert",
+          "but I promise we're keeping watch",
+          "We're in public, agent",
+          "please call me Aunt Arctic.",
+          "Thank you for your hard work agent",
+          "Maybe we can discuss that later",
+          "The only thing I direct is the CP Times",
+          "I'm afraid I don't know what you mean",
+          "How could I be editor and director?",
+          "That sounds like too many jobs"
+        ]
+      },
+      {
+        "category": "Directions",
+        "categoryActive": true,
+        "script": [
+          "Follow me, everyone!",
+          "This way, everyone",
+          "Come this way",
+          "Let's go this way",
+          "To the Coffee Shop",
+          "To the Book Room",
+          "To the Everyday Phoning Facility"
+        ]
+      },
+      {
+        "category": "Book Room",
+        "categoryActive": true,
+        "script": [
+          "It's gorgeous in here",
+          "The best thing about this room is all of you",
+          "Your memories are very important to this island",
+          "Each of you holds so many stories of Club Penguin!",
+          "It's important to share our stories",
+          "What kind of stories do you like to read?",
+          "Do you read many books?"
+        ]
+      }
+    ]
+  },
+  {
+    "mascotName": "Sam",
+    "mascotActive": true,
+    "mascotScript": [
+      {
+        "category": "Bye",
+        "categoryActive": true,
+        "script": [
+          "stomach grumbles",
+          "Sasquatch need food",
+          "Bye for now",
+          "Thanks for showing Sasquatch...",
+          "fun island places",
+          "Sasquatch going to Wilds",
+          "Big family dinner tonight"
+        ]
+      },
+      {
+        "category": "Greetings",
+        "categoryActive": true,
+        "script": [
+          "Ah",
+          "Hi",
+          "gives bear hug",
+          "Oops!",
+          "Sam sorry"
+        ]
+      },
+      {
+        "category": "Name",
+        "categoryActive": true,
+        "script": [
+          "Me grew up as wild puffle",
+          "Did not have name",
+          "But penguins have given me name",
+          "Now me am called...",
+          "Sam!",
+          "It very good name",
+          "Me like being Sam",
+          "But you know what me REAL name is?",
+          "You want to know?",
+          "Real name is...",
+          "HUBERT!",
+          "Hahahah!",
+          "Me just kidding",
+          "Name is Sam, not Hubert"
+        ]
+      },
+      {
+        "category": "Reactions",
+        "categoryActive": true,
+        "script": [
+          "roars",
+          "claps",
+          "jumps back",
+          "WOAH!",
+          "AHH!",
+          "pets puffle",
+          "scratches belly",
+          "yawns",
+          "stretches",
+          "blinks",
+          "shakes off snow",
+          "nice puffle",
+          "that good puffle"
+        ]
+      },
+      {
+        "category": "Bye",
+        "categoryActive": true,
+        "script": [
+          "stomach grumbles",
+          "Sam need food",
+          "Bye for now",
+          "Thanks for showing Sam",
+          "fun island places",
+          "Sam going to Wilds",
+          "Big family dinner tonight"
+        ]
+      }
+    ]
+  }
+]

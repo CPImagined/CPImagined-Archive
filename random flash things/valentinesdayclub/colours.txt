@@ -1,0 +1,3 @@
+FF3A77 red
+FFFFFF white
+left puffle
