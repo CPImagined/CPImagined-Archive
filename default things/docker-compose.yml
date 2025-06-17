@@ -1,0 +1,168 @@
+version: '3.7'
+
+services:
+  db:
+    image: postgres:12.2-alpine
+    restart: always
+    env_file:
+      - .env
+    networks:
+      - wand
+    ports:
+      - 5432:5432
+    volumes:
+      - ./houdini/houdini.sql:/docker-entrypoint-initdb.d/houdini.sql
+      - ./.data:/var/lib/postgresql/data
+  redis:
+    image: redis:5.0.9-alpine
+    restart: always
+    command: redis-server --save 60 1 --loglevel warning
+    volumes:
+      - ./.redis:/data
+    networks:
+      - wand
+    ports:
+      - 127.0.0.1:6379:6379
+  web:
+    build: ./web
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - ${PLAY_PORT}:${PLAY_PORT}
+      - ${MEDIA_PORT}:${MEDIA_PORT}
+    networks:
+      - wand
+    links:
+      - dash:dash
+    volumes:
+      - ./www:/usr/share/nginx/html
+      - ./legacy-media:/usr/share/nginx/legacy
+      - ./vanilla-media:/usr/share/nginx/vanilla
+      - ./servers.xml:/t/servers.xml
+
+      - ./templates/sites/legacy.conf.template:/etc/nginx/conf.d/legacy.conf.template
+      - ./templates/sites/vanilla.conf.template:/etc/nginx/conf.d/vanilla.conf.template
+      - ./templates/legacy-media/play/index.html.template:/t/legacy/play/index.html.template
+      - ./templates/legacy-media/play/es/index.html.template:/t/legacy/play/es/index.html.template
+      - ./templates/legacy-media/play/fr/index.html.template:/t/legacy/play/fr/index.html.template
+      - ./templates/legacy-media/play/pt/index.html.template:/t/legacy/play/pt/index.html.template
+      - ./templates/vanilla-media/play/index.html.template:/t/vanilla/play/index.html.template
+      - ./templates/vanilla-media/play/es/index.html.template:/t/vanilla/play/es/index.html.template
+      - ./templates/vanilla-media/play/fr/index.html.template:/t/vanilla/play/fr/index.html.template
+      - ./templates/vanilla-media/play/pt/index.html.template:/t/vanilla/play/pt/index.html.template
+      - ./templates/vanilla-media/media/play/web_service/environment_data.xml.template:/t/vanilla/media/play/web_service/environment_data.xml.template
+
+    command: ["dockerize", 
+              "-template", "/etc/nginx/conf.d/legacy.conf.template:/etc/nginx/conf.d/legacy.conf",
+              "-template", "/etc/nginx/conf.d/vanilla.conf.template:/etc/nginx/conf.d/vanilla.conf",
+              "-template", "/t/servers.xml:/usr/share/nginx/legacy/media/servers.xml",
+              "-template", "/t/servers.xml:/usr/share/nginx/vanilla/play/servers.xml",
+
+              "-template", "/t/legacy/play/index.html.template:/usr/share/nginx/legacy/play/index.html",
+              "-template", "/t/legacy/play/index.html.template:/usr/share/nginx/legacy/play/en/index.html",
+              "-template", "/t/legacy/play/es/index.html.template:/usr/share/nginx/legacy/play/es/index.html",
+              "-template", "/t/legacy/play/fr/index.html.template:/usr/share/nginx/legacy/play/fr/index.html",
+              "-template", "/t/legacy/play/pt/index.html.template:/usr/share/nginx/legacy/play/pt/index.html",
+              "-template", "/t/vanilla/play/index.html.template:/usr/share/nginx/vanilla/play/index.html",
+              "-template", "/t/vanilla/play/index.html.template:/usr/share/nginx/vanilla/play/en/index.html",
+              "-template", "/t/vanilla/play/es/index.html.template:/usr/share/nginx/vanilla/play/es/index.html",
+              "-template", "/t/vanilla/play/fr/index.html.template:/usr/share/nginx/vanilla/play/fr/index.html",
+              "-template", "/t/vanilla/play/pt/index.html.template:/usr/share/nginx/vanilla/play/pt/index.html",
+              "-template", "/t/vanilla/media/play/web_service/environment_data.xml.template:/usr/share/nginx/vanilla/media/play/web_service/environment_data.xml",
+              "nginx", "-g", "daemon off;"]
+  houdini_login:
+    build: ./houdini
+    restart: always
+    env_file:
+      - .env
+    networks:
+      - wand
+    ports:
+      - ${GAME_LOGIN_PORT}:${GAME_LOGIN_PORT}
+    volumes:
+      - ./houdini:/usr/src/houdini
+      - ./wait-for-postgres.sh:/usr/src/houdini/wait-for-postgres.sh
+    depends_on:
+      - db
+      - redis
+    links:
+      - db:db
+      - redis:redis
+    entrypoint: ["dockerize", "-wait", "tcp://redis:6379", "./wait-for-postgres.sh", "db", "python", "bootstrap.py", "login"]
+    command: ["--port", "${GAME_LOGIN_PORT}", "--capacity", "100",
+              "--redis-address", "redis", 
+              "--database-address", "db", 
+              "--database-user", "${POSTGRES_USER}", 
+              "--database-name", "${POSTGRES_USER}", 
+              "--database-password", "${POSTGRES_PASSWORD}"]
+  houdini_blizzard:
+    build: ./houdini
+    restart: always
+    networks:
+      - wand
+    ports:
+      - 9875:9875
+    volumes:
+      - ./houdini:/usr/src/houdini
+    depends_on:
+      - houdini_login
+    links:
+      - db:db
+      - redis:redis
+      - houdini_login:login
+    entrypoint: ["dockerize", "-wait", "tcp://login:${GAME_LOGIN_PORT}", "python", "bootstrap.py", "world"]
+    command: ["-id", "3100", "--name", "blizzard", "--port", "9875", "--lang", "en",
+              "--redis-address", "redis",
+              "--database-address", "db",
+              "--database-user", "${POSTGRES_USER}", 
+              "--database-name", "${POSTGRES_USER}", 
+              "--database-password", "${POSTGRES_PASSWORD}"]
+  dash:
+    build: ./dash
+    restart: always
+    networks:
+      - wand
+    env_file:
+      - .env
+    ports:
+      - 3000
+    volumes:
+      - ./dash:/usr/src/dash
+      - ./vanilla-media/media/avatar/paper:/usr/src/dash/items
+      - ./templates/dash/config.py.template:/usr/src/dash/config.py.template
+    depends_on:
+      - db
+      - redis
+    links:
+      - db:db
+      - redis:redis
+      - houdini_login:login
+    entrypoint: ["dockerize", "-wait", "tcp://login:${GAME_LOGIN_PORT}",
+                "-template", "/usr/src/dash/config.py.template:/usr/src/dash/config.py",
+                "python", "bootstrap.py"]
+    command: ["-c", "config.py"]
+  websockify:
+    build: ./websockify/docker
+    restart: always
+    env_file:
+      - .env
+    networks:
+      - wand
+    ports:
+      - ${WEBSOCKIFY_PORT}:${WEBSOCKIFY_PORT}
+    volumes:
+      - ./templates/websockify:/data
+      - /etc/letsencrypt/live/server.cpimagined.net/fullchain.pem:/data/fullchain.pem
+      - /etc/letsencrypt/live/server.cpimagined.net/privkey.pem:/data/privkey.pem
+    depends_on:
+      - houdini_login
+      - houdini_blizzard
+    links:
+      - houdini_login:login
+      - houdini_blizzard:blizzard
+    command: ["--token-plugin", "ReadOnlyTokenFile", "--token-source", "/data/token", "--cert", "/data/fullchain.pem", "--key", "/data/privkey.pem", "${WEBSOCKIFY_PORT}"]
+
+networks:
+  wand:
+    driver: bridge

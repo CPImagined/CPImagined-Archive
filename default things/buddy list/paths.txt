@@ -1,0 +1,4 @@
+characters.jsonp - /wand/vanilla-media/play/content/disney-land-clubpenguin/en
+mascots.jsonp - /wand/vanilla-media/play/en/web_service/game_configs
+mascots.jsonp - /wand/vanilla-media/media/play/en/web_service/game_configs
+main mascots.json - /wand/vanilla-media/media/play/en/web_service/game_configs
