@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/vnd.microsoft.icon" />
+    <title>Home | Club Penguin Imagined</title>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.cp-imagined.xyz/">
+    <meta property="og:title" content="Club Penguin Imagined | Waddle and chat with other penguins!">
+    <meta property="og:description" content="Welcome to Club Penguin Imagined! Waddle around and make new friends!">
+    <meta property="og:image" content="https://www.cp-imagined.xyz/images/CPIWeb.png">
+</head>
+
+<body>
+    <br><br><br><br><br>
+    <object type="text/html" data="header.html" width="100%"
+        style="position:fixed; left:0px; top:0px; right:0px;z-index:101;"></object>
+    <div id="slider">
+        <ul id="slideWrap">
+            <li><img src="images/HalloweenPartyBanner.png"
+                    alt="The Ghost Puffles have haunted the Puffle Hotel! Help Skip the Bellhop stop the evil Ghost Puffles, find Gariwald The Contraption Chap, and collect spooky items!"><a
+                    class="btn" href="https://play.cp-imagined.xyz/"><button>Play Now!</button></a></li>
+            <li><img src="images/Download.png" alt="Join our Discord for updates and news!"><a class="btn"
+                    href="https://www.cp-imagined.xyz/download"><button>Download</button></a></li>
+            <li><img src="images/Discord.png" alt=""><a class="btn"
+                    href="https://discord.gg/g5k5jh3M8J"><button>Download</button></a></li>
+        </ul>
+        <a id="prev" href="#">&#8810;</a>
+        <a id="next" href="#">&#8811;</a>
+    </div>
+    <script>
+        var responsiveSlider = function () {
+
+            var slider = document.getElementById("slider");
+            var sliderWidth = slider.offsetWidth;
+            var slideList = document.getElementById("slideWrap");
+            var count = 1;
+            var items = slideList.querySelectorAll("li").length;
+            var prev = document.getElementById("prev");
+            var next = document.getElementById("next");
+
+            window.addEventListener('resize', function () {
+                sliderWidth = slider.offsetWidth;
+            });
+
+            var prevSlide = function () {
+                if (count > 1) {
+                    count = count - 2;
+                    slideList.style.left = "-" + count * sliderWidth + "px";
+                    count++;
+                }
+                else if (count = 1) {
+                    count = items - 1;
+                    slideList.style.left = "-" + count * sliderWidth + "px";
+                    count++;
+                }
+            };
+
+            var nextSlide = function () {
+                if (count < items) {
+                    slideList.style.left = "-" + count * sliderWidth + "px";
+                    count++;
+                }
+                else if (count = items) {
+                    slideList.style.left = "0px";
+                    count = 1;
+                }
+            };
+
+            next.addEventListener("click", function () {
+                nextSlide();
+            });
+
+            prev.addEventListener("click", function () {
+                prevSlide();
+            });
+            setInterval(function () {
+                nextSlide()
+            }, 8000);
+
+        };
+
+        window.onload = function () {
+            responsiveSlider();
+        }
+    </script>
+    <br>
+    <div class="maintop"></div><br><br><br>
+    <div class="main">
+        <div class="main">
+            <div class="ImageBoxContainer" style="height:85px;">
+                <div class="ImageBox"
+                    style="background-image: url(images/CPIBanner.png); text-align:center; width:95%; height:100%;">
+                    <br>
+                    <div style="font-size:20px; line-height:0px; float:left; line-height:30px; margin:10px">Redeem this
+                        code for exclusive,
+                        limited-time items!</div>
+                    <div
+                        style="font-size:40px; line-height:30px; text-align:center; transform:translate(-150px); margin:10px">
+                        SPOOKYPACK</div>
+                    <span style="float:right; transform:translate(-37px, -75px)">
+                        <a href="https://play.cp-imagined.xyz">
+                            <unlockbutton><img src="images/UnlockButton.png"></unlockbutton>
+                        </a>
+                    </span>
+                </div>
+            </div>
+            <div class="ImageBoxContainer">
+                <div class="ImageBox" style="background-image:url(images/HalloweenPartyNews.png);">
+                    <div class="wn-head">
+                        <div class="header-container">
+                            <h2><strong>
+                                    <div class="corner-month">
+                                        <div class="month-txt">
+                                            <font>OCT 2022</font>
+                                        </div>
+                                    </div>
+                                    <font>NEWS THIS MONTH</font>
+                                </strong>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="ImageBoxColor">
+                        <div class="TextContainer">
+                            The Ghost Puffles have haunted the Puffle Hotel! Help Skip the Bellhop stop the evil Ghost
+                            Puffles, find Gariwald The Contraption Chap, and collect spooky items!
+                            <div>
+                                <br>
+                                <!--What's up next? Only time will tell... (4 breaks for no party messages)-->
+                                <a href="https://play.cp-imagined.xyz/">
+                                    <button2>Play Now!</button2>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mainbottom"></div>
+        </div>
+        <br><br><br><br><br>
+        <div class="ImageBoxContainer" style="width:85%; height:20%;">
+            <div class="ImageBox"
+                style="background-image:url(images/admin-ajax.png); width:85%; height:20%; background-size:auto; background-repeat:repeat;">
+                <div class="TextContainer" style="font-size:40px; padding:50px;">
+                    <br><br>
+                    <b>DOWNLOAD AND PLAY TODAY!</b>
+                    <br><br><br><br>
+                    <a href="https://www.cp-imagined.xyz/download"><button>Download</button></a>
+                </div>
+            </div>
+        </div><br>
+        <object type="text/html" data="footer.html" width="101%"
+            style="position:static; left:0px; bottom:0px; z-index:1; transform:translate(-15px, 13px);"></object>
+</body>
+
+</html>

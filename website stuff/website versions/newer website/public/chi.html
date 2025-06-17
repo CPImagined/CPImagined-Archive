@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/chifavicon.ico" type="image/vnd.microsoft.icon" />
+    <title>Club Herbert Imagined</title>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.cpimagined.net/">
+    <meta property="og:title" content="Club Herbert Imagined">
+    <meta property="og:description" content="MWAHAHAHAHAHA!">
+    <meta property="og:image" content="https://www.cpimagined.net/fun-stuff/wallpapers/images/HerbertSig.png">
+</head>
+
+<body style="background-color:#000000;background-image:url(images/chidarwin1.png);background-size:cover;background-position:center;background-attachment:fixed;overflow:hidden;">
+    <div class="ImageBox" style="background-image:none;background-color:#000000;">
+    <p id="timer"></p>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date(1704567600000).getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="timer"
+  document.getElementById("timer").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("timer").innerHTML = "MWAHAHAHAHAHA!";
+  }
+}, 1000);
+</script>
+</div>
+</body>
+
+</html>

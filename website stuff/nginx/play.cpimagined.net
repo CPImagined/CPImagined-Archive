@@ -1,0 +1,10 @@
+server {
+	listen 80;
+
+	server_name play.cpimagined.net play2.cpimagined.net;
+	
+	location / {
+		proxy_pass http://localhost:8070;
+		proxy_buffering off;
+	}
+}

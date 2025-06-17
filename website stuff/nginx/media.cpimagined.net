@@ -1,0 +1,10 @@
+server {
+	listen 80;
+
+	server_name media.cpimagined.net media3.cpimagined.net;
+	
+	location / {
+		proxy_pass http://localhost:8060;
+		proxy_buffering off;
+	}
+}

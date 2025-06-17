@@ -1,0 +1,13 @@
+{
+    "title": "Template Post",
+    "author": "JeffTheRock",
+    "authorid": "104",
+    "description": "This is a template post,<br>with HTML formatting.",
+    "category": "BLOG",
+    "categoryimg": "Blog",
+    "date":"2023-08-12",
+    "postimg":"Background",
+    "color": "#00208b",
+    "rgbcolor": "0, 32, 139",
+    "textimg": "CPIBanner3"
+}

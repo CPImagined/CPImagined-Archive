@@ -1,0 +1,87 @@
+<!--regular-->
+    <a href="https://www.cpimagined.net/">
+      <div class="postcont">
+        <div class="post" style="border-color:#00208b;">
+          <div class="posttextimg" style="background-image: url(../images/CPIBanner3.png);"></div>
+          <div class="postimg" style="border-color: #00208b;background-image:url(../images/Background.png);">
+            <div class="postimggrad" style="background-image: linear-gradient(rgba(0, 32, 139, 0), rgba(0, 32, 139, 0), rgba(0, 32, 139, 0.7));">
+              <div class="postauthimg" style="border-color: #00208b;"></div>
+              <div class="posttitle">
+                I hate Flash
+              </div>
+              <div class="postauth">
+                some guy
+              </div>
+            </div>
+          </div>
+          <div class="posttext">
+            I hate Flash. That's why I wrote a blog post about it. And I want you all to decide if it's good or bad.
+          </div>
+          <div class="postdate" style="background-color:#00208b;">
+            Jan 1, 1970
+          </div>
+          <div class="postcategory" style="color:#00208b;">
+            <img src="../images/CategoryPost.png" width="90%"><br>
+            POST
+          </div>
+        </div>
+      </div>
+    </a>
+    <!--you decide-->
+    <a href="https://www.cpimagined.net/">
+      <div class="postcont">
+        <div class="post" style="border-color:#f58a42;">
+          <div class="posttextimg" style="background-image: url(../images/CPITileOrangeClothes.png);"></div>
+          <div class="postimg" style="border-color: #f58a42;background-image:url(../images/BackgroundSunset.png);">
+            <div class="postimggrad" style="background-image: linear-gradient(rgba(245, 138, 66, 0), rgba(245, 138, 66, 0), rgba(245, 138, 66, 0.7));">
+              <div class="postauthimg" style="border-color: #f58a42;"></div>
+              <div class="posttitle">
+                I hate Flash
+              </div>
+              <div class="postauth">
+                some guy
+              </div>
+            </div>
+          </div>
+          <div class="posttext">
+            I hate Flash. That's why I wrote a blog post about it. And I want you all to decide if it's good or bad.
+          </div>
+          <div class="postdate" style="background-color:#f58a42;">
+            Jan 1, 1970
+          </div>
+          <div class="postcategory" style="color:#f58a42;">
+            <img src="../images/CategoryYouDecide.png" width="90%"><br>
+            YOU DECIDE!
+          </div>
+        </div>
+      </div>
+    </a>
+    <!--potm-->
+    <a href="https://www.cpimagined.net/">
+      <div class="postcont">
+        <div class="post" style="border-color:#64ca64;">
+          <div class="posttextimg" style="background-image: url(../images/CPITileGreenPencil.png);"></div>
+          <div class="postimg" style="border-color: #64ca64;background-image:url(../images/BackgroundPirate.png);">
+            <div class="postimggrad" style="background-image: linear-gradient(rgba(100, 202, 100, 0), rgba(100, 202, 100, 0), rgba(100, 202, 100, 0.7));">
+              <div class="postauthimg" style="border-color: #64ca64;"></div>
+              <div class="posttitle">
+                I hate Flash
+              </div>
+              <div class="postauth">
+                some guy
+              </div>
+            </div>
+          </div>
+          <div class="posttext">
+            I hate Flash. That's why I wrote a blog post about it. And I'm also making it POTM.
+          </div>
+          <div class="postdate" style="background-color:#64ca64;">
+            Jan 1, 1970
+          </div>
+          <div class="postcategory" style="color:#64ca64;">
+            <img src="../images/CategoryPOTM.png" width="90%"><br>
+            POTM
+          </div>
+        </div>
+      </div>
+    </a>

@@ -1,0 +1,10 @@
+server {
+	listen 80;
+
+	server_name www.cpimagined.net cpimagined.net;
+	
+	location / {
+		proxy_pass http://localhost:8080;
+		proxy_buffering off;
+	}
+}

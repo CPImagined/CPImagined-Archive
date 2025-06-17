@@ -1,0 +1,298 @@
+/* post stuff */
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Courier+Prime&display=swap');
+
+.postcont {
+  margin: 10px;
+  width: 30vw;
+  height: 40vh;
+  position: relative;
+  transition: all 200ms ease;
+  display: inline-block;
+}
+
+.post {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  border-color: #00208b;
+  border-style: solid;
+  position: relative;
+  transition: all 200ms ease;
+}
+
+.posttext {
+  width: 80%;
+  text-align: left;
+  padding: 10px;
+  font-size: 12pt;
+  position: relative;
+  position: absolute;
+  color: black;
+  top: 60%;
+  bottom: 0;
+  z-index: 2;
+}
+
+.posttextimg {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  background-image: url(../images/CPIBanner3.png);
+  background-size: 30%;
+  border-radius: 12px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.postcont:hover .post {
+  width: 110%;
+  height: 110%;
+  z-index: 4;
+  transform: translate(-3%, -2%);
+}
+
+.postcont:hover .postauthimg {
+  width: 45px;
+  height: 45px;
+}
+
+.postimg {
+  background-image: url(../images/PufflePartyBanner.png);
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  border-color: #00208b;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border-bottom-style: solid;
+  z-index: 2;
+}
+
+.postimggrad {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 32, 139, 0), rgba(0, 32, 139, 0), rgba(0, 32, 139, 0.7));
+  position: relative;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  z-index: 2;
+}
+
+.postauthimg {
+  background-image: url(../images/JeffBlog.png);
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 5px;
+  bottom: 5px;
+  border-color: #00208b;
+  background-color: #00208b;
+  border-radius: 50%;
+  border-style: solid;
+  transition: all 200ms ease;
+}
+
+.posttitle {
+  position: absolute;
+  color: white;
+  bottom: 28px;
+  left: 60px;
+  text-shadow: 0 2px 2px #000000;
+  font-size: 20pt;
+}
+
+.postauth {
+  position: absolute;
+  color: white;
+  bottom: 4px;
+  left: 60px;
+  text-shadow: 0 2px 2px #000000;
+  font-size: 10pt;
+}
+
+.postdate {
+  position: absolute;
+  bottom: 40%;
+  right: -1px;
+  z-index: 2;
+  text-align: right;
+  background-color: #00208b;
+  text-shadow: 0 2px 2px #000000;
+  /* border-top-right-radius: 9px; */
+  border-top-left-radius: 9px;
+  padding-top: 0px;
+  padding-right: 3px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  color: white;
+}
+
+.postcategory {
+  width: 10%;
+  color: #00208b;
+  font-weight: 700;
+  position: absolute;
+  text-align: center;
+  border-bottom-left-radius: 9px;
+  top: 60%;
+  right: 0;
+  padding: 10px;
+  padding-right: 15px;
+  z-index: 1;
+}
+
+/* blog page stuff */
+.blogtext {
+  opacity: 1;
+  z-index: 3;
+  color: black;
+  font-size: 14pt;
+  text-align: left;
+}
+
+.blogimginside {
+  border-style: solid;
+  border-color: #00208b;
+  border-radius: 15px;
+  z-index: 3;
+}
+
+.awhite {
+  color: black;
+  font-size: 14pt;
+  z-index: 3;
+}
+
+.blogimghead {
+  width: 100%;
+  height: 30vh;
+  background-image: url(../images/BackgroundFools.png);
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  border-bottom-style: solid;
+  border-color: #00208b;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-position: center;
+}
+
+.blogimggrad {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 32, 139, 0), rgba(0, 32, 139, 0), rgba(0, 32, 139, 0.7));
+  position: relative;
+  z-index: 2;
+}
+
+.blogimgspacer {
+  width: 100%;
+  height: 30vh;
+}
+
+.blogauthimg {
+  background-image: url(../images/JeffBlog.png);
+  background-size: cover;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 5px;
+  bottom: 5px;
+  border-color: #00208b;
+  background-color: #00208b;
+  border-radius: 50%;
+  border-style: solid;
+}
+
+.blogtitle {
+  position: absolute;
+  color: white;
+  bottom: 65px;
+  left: 115px;
+  text-shadow: 0 5px 5px #000000;
+  font-size: 30pt;
+}
+
+.blogauth {
+  position: absolute;
+  color: white;
+  bottom: 25px;
+  left: 115px;
+  text-shadow: 0 5px 5px #000000;
+  font-size: 20pt;
+}
+
+.blogdate {
+  position: absolute;
+  bottom: 0;
+  right: -1px;
+  z-index: 2;
+  text-align: right;
+  background-color: #00208b;
+  text-shadow: 0 2px 2px #000000;
+  /* border-top-right-radius: 9px; */
+  border-top-left-radius: 9px;
+  padding-top: 0px;
+  padding-right: 3px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  font-size: 14pt;
+  color: white;
+}
+
+.blogcategory {
+  width: 5%;
+  color: #00208b;
+  background-color: #00208b;
+  border-bottom-left-radius: 9px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  padding-right: 15px;
+  z-index: 1;
+}
+
+.blogcategoryinteriorwhite {
+  filter: saturate(0) brightness(10000%);
+  font-weight: 700;
+  text-align: center;
+  z-index: 1;
+}
+
+.blogcategoryinteriorblack {
+  filter: brightness(0);
+  font-weight: 700;
+  text-align: center;
+  z-index: 1;
+  filter: brightness(0) saturate(100%);
+}
+
+.blogsigspacer {
+  width: 100%;
+  height: 3vh;
+}
+
+.blogsig {
+  color: #00208b;
+  font-size: 24pt;
+  transform: rotate(-7deg);
+  position: absolute;
+  bottom: 5vh;
+  font-family: 'Caveat', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+.blogquote {
+  font-style: italic;
+}

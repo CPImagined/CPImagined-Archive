@@ -1,0 +1,309 @@
+@font-face {
+    font-family: 'Burbank Small';
+    src: url('fonts/bsmall.woff2') format('woff2'),
+        url('fonts/bsmall.woff') format('woff');
+}
+
+body {
+    background-color: #009ACC;
+    /* 009ACC for normal, 1246AF for sunset, 004682 for night, 1573BF for fools, 0884C4 for pirate, 2F0044 for holiday, 0D2B67 for jam, 001B27 for halloween (holy crap this list is long, hi random person looking at my code)*/
+    color: white;
+    background-image: url('images/Background.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    font-family: 'Burbank Small', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 30px;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background-position-y: 75px;
+    /* background-attachment: fixed; */
+}
+
+a {
+    transition: all 0.3s ease 0s;
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: cyan;
+    box-shadow: 0 2px cyan;
+}
+
+button {
+    background-size: 1px 148px;
+    background-image: linear-gradient(180deg, #FFE477 0%, #FFCC00 50%, #FFCC00 100%);
+    border: 1px solid #FF9D00;
+    box-shadow: inset 0 2px 0 0 #fff7d7;
+    border-radius: 15px;
+    padding: 14px 70px 10px 70px;
+    font-family: 'BurbankSmall', sans-serif;
+    color: #6e4e00;
+    font-size: 40px;
+    line-height: 34px;
+    font-weight: bold;
+    transition: all 200ms ease;
+    text-shadow: #fff 0 1px 0;
+    text-shadow: rgb(255 255 255 / 50%) 0 1px 0;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+button:hover {
+    background-image: linear-gradient(180deg, #FFCC00 0%, #FFE477 50%, #FFE477 100%);
+    box-shadow: inset 0 -2px 0 0 #fff7d7;
+    transform: scale(1.2);
+}
+
+.header {
+    width: 100%;
+    height: 100px;
+    border: solid 15px;
+    border-color: transparent #001046 #001046 #001046;
+    border-radius: 0 0 100% 100%;
+    position: absolute;
+    top: 0px;
+    left: -15px;
+    background-color: #00208b;
+    text-align: center;
+    z-index: 1;
+}
+
+.ImageBoxContainer {
+    text-align: center;
+    height: auto;
+    width: auto;
+    margin: auto;
+    padding: 10px;
+    z-index: 4;
+}
+
+.ImageBox {
+    width: 30%;
+    overflow: hidden;
+    border-radius: 20px;
+    background-image: url(images/CPIBanner3.png);
+    text-align: center;
+    vertical-align: -webkit-baseline-middle;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 20px;
+    line-height: 25px;
+    box-shadow: 6px 6px rgba(0, 0, 0, 0.1);
+    color: #FFFFFF;
+    display: inline-block;
+    background-color: rgba(3, 106, 222, 0.85);
+    background-size: cover;
+    padding: 0px;
+}
+
+.ImageBoxColor {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(3, 106, 222, 0.85);
+    z-index: 2;
+}
+
+.TextContainer {
+    padding: 50px;
+}
+
+.wn-head {
+    background-color: rgba(3, 92, 213, 0.96);
+    font-size: 15px;
+    line-height: 20px;
+    height: auto;
+    width: 100%;
+    padding: 0px;
+    z-index: 3;
+  }
+
+/* slider stuff */
+#slider {
+    position: relative;
+    width: 1025px;
+    height: 525px;
+    overflow: hidden;
+    border-radius: 15px;
+    margin: auto;
+}
+
+#slider ul {
+    position: relative;
+    list-style: none;
+    height: 100%;
+    width: 10000%;
+    padding: 0;
+    margin: 0;
+    transition: all 750ms ease;
+    left: 0;
+}
+
+#slider ul li {
+    position: relative;
+    height: 100%;
+    float: left;
+}
+
+#slider ul li .btn {
+    position: absolute;
+    top: 70%;
+    left: 35%;
+    z-index: 2;
+}
+
+#slider ul li img {
+    width: fit-content;
+    height: fit-content;
+}
+
+#slider #prev,
+#slider #next {
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    top: 50%;
+    border-radius: 50%;
+    font-size: 2rem;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    transform: translateY(-50%);
+    transition: all 150ms ease;
+}
+
+#slider #prev {
+    left: 10px;
+}
+
+#slider #next {
+    right: 10px;
+}
+
+#slider #prev:hover,
+#slider #next:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    text-shadow: 0;
+}
+
+/* end slider stuff */
+
+.maintop {
+    width: 100%;
+    height: 100px;
+    border: solid 15px;
+    border-color: #001046 #001046 transparent #001046;
+    border-radius: 100% 100% 0 0;
+    position: absolute;
+    left: -15px;
+    background-color: #00208b;
+    z-index: 1;
+    display: block;
+}
+
+.main {
+    text-align: center;
+    background-color: #00208b;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    display: block;
+    padding: 10px;
+    transform: translate(-15px, 0)
+}
+
+.mainbottom {
+    width: 100%;
+    height: 100px;
+    border: solid 15px;
+    border-color: transparent #001046 #001046 #001046;
+    border-radius: 0 0 100% 100%;
+    background-color: #00208b;
+    z-index: 2;
+    display: block;
+    transform: translate(-25px, 0);
+    position: absolute;
+    bottom: -100px;
+}
+
+.footer {
+    width: 100%;
+    height: 100px;
+    border: solid 15px;
+    border-color: #001046 #001046 transparent #001046;
+    border-radius: 100% 100% 0 0;
+    position: absolute;
+    left: -15px;
+    background-color: #00208b;
+    z-index: 1;
+    text-align: center;
+    padding: 10px;
+}
+
+.headerleft {
+    position: absolute;
+    top: -30px;
+    left: 20px;
+}
+
+.headerright {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+}
+
+.NavLinks {
+    list-style: none;
+    position: relative;
+    text-align: center;
+    bottom: 10px;
+    font-size: 20px;
+}
+
+.NavLinks li {
+    display: inline-block;
+    padding: 15px 10px;
+    transition: all 200ms ease;
+    font-family: 'Burbank Small', 'Helvetica Neue', sans-serif, sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.NavLinks li a {
+    transition: all 0.3s ease 0s;
+    color: white;
+    text-decoration: none;
+}
+
+.NavLinks li a:hover {
+    color: cyan;
+    box-shadow: 0 4px cyan;
+}
+
+.footerleft {
+    position: absolute;
+    bottom: -20px;
+    left: 20px;
+}
+
+.footerright {
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
+}
+
+.footerlinks {
+    position: relative;
+    top: 30px;
+    font-size: 20px;
+}
+
+.footerdisclaimer {
+    position: relative;
+    top: 50px;
+    font-size: 14px;
+}
