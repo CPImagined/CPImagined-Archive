@@ -1,0 +1,222 @@
+{
+	"text" :
+	{
+		"goToButtonText" :  { 
+			"fontSize" : 9,
+			"translation": {
+				"en": "Go to DJ3K!",
+				"es": "¡Ir a DJ3K!",
+				"fr": "Va à DJ3K !",
+				"pt": "Ir pro DJ3K!"			
+			}
+		},
+		"dialogDescription" : { 
+			"fontSize" : 12,
+			"translation": {
+				"en": "Record and save your own music mixes in DJ3K.",
+				"es": "Graba y guarda tus temas en DJ3K.",
+				"fr": "Enregistre tes propres mix dans DJ3K.",
+				"pt": "Grave e salve sua própria música no DJ3K."		
+			}
+		},
+		"dialogButtonText" : { 
+			"fontSize" : 9,
+			"translation": {
+				"en": "Go There!",
+				"es": "¡Ir allí!",
+				"fr": "Vas-y !",
+				"pt": "Ir pra lá!"		
+			}
+		},
+		"savedMixesText" : { 
+			"fontSize" : 18,
+			"translation": {
+				"en": "My Saved Mixes",
+				"es": "Mis temas mezclados",
+				"fr": "Mes Mix",
+				"pt": "Minhas Músicas"		
+			}
+		},
+		"musicListText" : { 
+			"fontSize" : 18,
+			"translation": {
+				"en": "Music List",
+				"es": "Lista musical",
+				"fr": "Liste de Musiques",
+				"pt": "Lista de Músicas"		
+			}
+		}
+	},
+	"songs" : 	
+	[
+
+			{
+			"id" : 780,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Spooky Jazz",
+				"es": "Jazz Espeluznante",
+				"fr": "Spooky Jazz",
+				"pt": "Jazz Fantasmagórico"
+			}
+		},		
+
+			{
+			"id" : 772,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Spooky Jazz Piano",
+				"es": "Spooky Jazz Piano",
+				"fr": "Spooky Jazz Piano",
+				"pt": "Spooky Jazz Piano"
+			}
+		},		
+
+			{
+			"id" : 782,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Phantasmagorie",
+				"es": "Phantasmagorie",
+				"fr": "Phantasmagorie",
+				"pt": "Phantasmagorie"
+			}
+		},		
+
+			{
+			"id" : 507,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Dare to Enter the Mansion?",
+				"es": "Te atreves a Entrar en la Mansión?",
+				"fr": "Dare to Enter the Mansion?",
+				"pt": "Se atreve a Entrar na Mansão?"
+			}
+		},		
+
+			{
+			"id" : 508,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Monster Masquerade",
+				"es": "Mascarada Monstruosa",
+				"fr": "Monster Masquerade",
+				"pt": "Baile de Máscaras Monstroso"
+			}
+		},		
+
+			{
+			"id" : 509,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Seek And Hide",
+				"es": "Escondite",
+				"fr": "Seek And Hide",
+				"pt": "Esconde-Esconde"
+			}
+		},		
+
+			{
+			"id" : 510,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Ghosts Just Wanna Dance",
+				"es": "Ghosst Just Wanna Dance",
+				"fr": "Ghosts Just Wanna Dance",
+				"pt": "Ghosts Just Wanna Dance"
+			}
+		},		
+
+			{
+			"id" : 513,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Night of the Living Sled",
+				"es": "Noche del Trineo Viviente",
+				"fr": "Night of the Living Sled",
+				"pt": "Noite do Trenó Zumbi"
+			}
+		},		
+
+			{
+			"id" : 403,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Welcome to the Dojo",
+				"es": "Bienvenido al Dojo",
+				"fr": "Welcome to the Dojo",
+				"pt": "Bem-vindos ao Dojo"
+			}
+		},		
+
+			{
+			"id" : 514,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "What Lurks In The Night",
+				"es": "Lo Que Acecha En La Noche",
+				"fr": "What Lurks In The Night",
+				"pt": "O Que Espreita Na Noite"
+			}
+		},		
+
+			{
+			"id" : 515,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Scary Ambience",
+				"es": "Ambiente Tenebroso",
+				"fr": "Scary Ambience",
+				"pt": "Ambiente Tenebroso"
+			}
+		},		
+
+			{
+			"id" : 955,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Gotta Get the Gotcha",
+				"es": "Gotta Get the Gotcha",
+				"fr": "Gotta Get the Gotcha",
+				"pt": "Gotta Get the Gotcha"
+			}
+		},		
+
+			{
+			"id" : 19,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Nothing As It Seems",
+				"es": "Nothing As It Seems",
+				"fr": "Nothing As It Seems",
+				"pt": "Nothing As It Seems"
+			}
+		},		
+
+			{
+			"id" : 781,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Haunted Disco",
+				"es": "Discoteca Encantada",
+				"fr": "Haunted Disco",
+				"pt": "Discoteca Assombrada"
+			}
+		}		
+
+	]
+}

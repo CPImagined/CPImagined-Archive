@@ -1,0 +1,222 @@
+{
+	"text" :
+	{
+		"goToButtonText" :  { 
+			"fontSize" : 9,
+			"translation": {
+				"en": "Go to DJ3K!",
+				"es": "¡Ir a DJ3K!",
+				"fr": "Va à DJ3K !",
+				"pt": "Ir pro DJ3K!"			
+			}
+		},
+		"dialogDescription" : { 
+			"fontSize" : 12,
+			"translation": {
+				"en": "Record and save your own music mixes in DJ3K.",
+				"es": "Graba y guarda tus temas en DJ3K.",
+				"fr": "Enregistre tes propres mix dans DJ3K.",
+				"pt": "Grave e salve sua própria música no DJ3K."		
+			}
+		},
+		"dialogButtonText" : { 
+			"fontSize" : 9,
+			"translation": {
+				"en": "Go There!",
+				"es": "¡Ir allí!",
+				"fr": "Vas-y !",
+				"pt": "Ir pra lá!"		
+			}
+		},
+		"savedMixesText" : { 
+			"fontSize" : 18,
+			"translation": {
+				"en": "My Saved Mixes",
+				"es": "Mis temas mezclados",
+				"fr": "Mes Mix",
+				"pt": "Minhas Músicas"		
+			}
+		},
+		"musicListText" : { 
+			"fontSize" : 18,
+			"translation": {
+				"en": "Music List",
+				"es": "Lista musical",
+				"fr": "Liste de Musiques",
+				"pt": "Lista de Músicas"		
+			}
+		}
+	},
+	"songs" : 	
+	[
+
+			{
+			"id" : 535,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "All Aboard For The Holidays!",
+				"es": "All Aboard For The Holidays!",
+				"fr": "All Aboard For The Holidays!",
+				"pt": "All Aboard For The Holidays!"
+			}
+		},		
+
+			{
+			"id" : 536,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Cool In The Cold",
+				"es": "Cool In The Cold",
+				"fr": "Cool In The Cold",
+				"pt": "Cool In The Cold"
+			}
+		},		
+
+			{
+			"id" : 534,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Holiday Lights",
+				"es": "Holiday Lights",
+				"fr": "Holiday Lights",
+				"pt": "Holiday Lights"
+			}
+		},		
+
+			{
+			"id" : 537,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Palace of the Ice Crystals",
+				"es": "Palace of the Ice Crystals",
+				"fr": "Palace of the Ice Crystals",
+				"pt": "Palace of the Ice Crystals"
+			}
+		},		
+
+			{
+			"id" : 539,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Santa's Sled",
+				"es": "Santa's Sled",
+				"fr": "Santa's Sled",
+				"pt": "Santa's Sled"
+			}
+		},		
+
+			{
+			"id" : 227,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Snowy Holidays",
+				"es": "Snowy Holidays",
+				"fr": "Snowy Holidays",
+				"pt": "Snowy Holidays"
+			}
+		},		
+
+			{
+			"id" : 540,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Gingerbread Manic",
+				"es": "Gingerbread Manic",
+				"fr": "Gingerbread Manic",
+				"pt": "Gingerbread Manic"
+			}
+		},		
+
+			{
+			"id" : 538,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Deck the Halls",
+				"es": "Deck the Halls",
+				"fr": "Deck the Halls",
+				"pt": "Deck the Halls"
+			}
+		},		
+
+			{
+			"id" : 254,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Santa's Mix",
+				"es": "Santa's Mix",
+				"fr": "Santa's Mix",
+				"pt": "Santa's Mix"
+			}
+		},		
+
+			{
+			"id" : 800,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Catching Snowflakes",
+				"es": "Catching Snowflakes",
+				"fr": "Catching Snowflakes",
+				"pt": "Catching Snowflakes"
+			}
+		},		
+
+			{
+			"id" : 801,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Ring In The Cheer",
+				"es": "Ring In The Cheer",
+				"fr": "Ring In The Cheer",
+				"pt": "Ring In The Cheer"
+			}
+		},		
+
+			{
+			"id" : 802,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Cool In The Lounge",
+				"es": "Cool In The Lounge",
+				"fr": "Cool In The Lounge",
+				"pt": "Cool In The Lounge"
+			}
+		},		
+
+			{
+			"id" : 803,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Tis The Season",
+				"es": "Tis The Season",
+				"fr": "Tis The Season",
+				"pt": "Tis The Season"
+			}
+		},		
+
+			{
+			"id" : 798,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Merry Walrus",
+				"es": "Merry Walrus",
+				"fr": "Merry Walrus",
+				"pt": "Merry Walrus"
+			}
+		}			
+
+	]
+}

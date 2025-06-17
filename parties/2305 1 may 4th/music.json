@@ -1,0 +1,222 @@
+{
+	"text" :
+	{
+		"goToButtonText" :  { 
+			"fontSize" : 9,
+			"translation": {
+				"en": "Go to DJ3K!",
+				"es": "¡Ir a DJ3K!",
+				"fr": "Va à DJ3K !",
+				"pt": "Ir pro DJ3K!"			
+			}
+		},
+		"dialogDescription" : { 
+			"fontSize" : 12,
+			"translation": {
+				"en": "Record and save your own music mixes in DJ3K.",
+				"es": "Graba y guarda tus temas en DJ3K.",
+				"fr": "Enregistre tes propres mix dans DJ3K.",
+				"pt": "Grave e salve sua própria música no DJ3K."		
+			}
+		},
+		"dialogButtonText" : { 
+			"fontSize" : 9,
+			"translation": {
+				"en": "Go There!",
+				"es": "¡Ir allí!",
+				"fr": "Vas-y !",
+				"pt": "Ir pra lá!"		
+			}
+		},
+		"savedMixesText" : { 
+			"fontSize" : 18,
+			"translation": {
+				"en": "My Saved Mixes",
+				"es": "Mis temas mezclados",
+				"fr": "Mes Mix",
+				"pt": "Minhas Músicas"		
+			}
+		},
+		"musicListText" : { 
+			"fontSize" : 18,
+			"translation": {
+				"en": "Music List",
+				"es": "Lista musical",
+				"fr": "Liste de Musiques",
+				"pt": "Lista de Músicas"		
+			}
+		}
+	},
+	"songs" : 	
+	[
+
+			{
+			"id" : 3,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "I've Been Delayed",
+				"es": "Llego tarde",
+				"fr": "En Retard",
+				"pt": "Chego Logo"
+			}
+		},		
+
+			{
+			"id" : 517,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Stand and Defend",
+				"es": "Stand and Defend",
+				"fr": "Stand and Defend",
+				"pt": "Stand and Defend"
+			}
+		},		
+
+			{
+			"id" : 444,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Lars Homestead",
+				"es": "Lars Homestead",
+				"fr": "Lars Homestead",
+				"pt": "Lars Homestead"
+			}
+		},		
+
+			{
+			"id" : 438,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Cantina Band",
+				"es": "Cantina Band",
+				"fr": "Cantina Band",
+				"pt": "Cantina Band"
+			}
+		},		
+
+			{
+			"id" : 455,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Star Wars Theme",
+				"es": "Star Wars Theme",
+				"fr": "Star Wars Theme",
+				"pt": "Star Wars Theme"
+			}
+		},		
+
+			{
+			"id" : 460,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Star Wars Remix",
+				"es": "Star Wars Remix",
+				"fr": "Star Wars Remix",
+				"pt": "Star Wars Remix"
+			}
+		},		
+
+			{
+			"id" : 456,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "The Imperial March",
+				"es": "The Imperial March",
+				"fr": "The Imperial March",
+				"pt": "The Imperial March"
+			}
+		},		
+
+			{
+			"id" : 520,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "The Command Room",
+				"es": "The Command Room",
+				"fr": "The Command Room",
+				"pt": "The Command Room"
+			}
+		},		
+
+			{
+			"id" : 650,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Welcome to the Dojo",
+				"es": "Welcome to the Dojo",
+				"fr": "Welcome to the Dojo",
+				"pt": "Welcome to the Dojo"
+			}
+		},		
+
+			{
+			"id" : 28,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Epic Island",
+				"es": "Isla épica",
+				"fr": "L'Île Épique",
+				"pt": "Ilha Épica"
+			}
+		},		
+
+			{
+			"id" : 342,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Operation Blackout",
+				"es": "Operación Apagón",
+				"fr": "Opération Black-out",
+				"pt": "Operação Apagão"
+			}
+		},		
+
+			{
+			"id" : 31,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "The Stage",
+				"es": "The Stage",
+				"fr": "The Stage",
+				"pt": "The Stage"
+			}
+		},		
+
+			{
+			"id" : 13,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "One Very Grumpy Polar Bear",
+				"es": "One Very Grumpy Polar Bear",
+				"fr": "One Very Grumpy Polar Bear",
+				"pt": "One Very Grumpy Polar Bear"
+			}
+		},		
+
+			{
+			"id" : 2023,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Voyage Into Imagination",
+				"es": "Voyage Into Imagination",
+				"fr": "Voyage Into Imagination",
+				"pt": "Voyage Into Imagination"
+			}
+		}			
+
+	]
+}

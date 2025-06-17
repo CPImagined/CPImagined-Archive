@@ -1,0 +1,10 @@
+(in furit configs) game_configs.bin - /wand/vanilla-media/media/play/en/web_service
+game_configs.bin /wand/vanilla-media/media/play/web_service
+(same file)
+party.swf - /wand/vanilla-media/media/play/v2/content/local/en/catalogues
+pirate.swf - /wand/vanilla-media/media/play/v2/content/local/en/catalogues
+party_map_note.swf - /wand/vanilla-media/media/play/v2/content/local/en/close_ups
+corkboard.swf - /wand/vanilla-media/media/play/v2/content/local/en/close_ups
+party_icon.swf - /wand/vanilla-media/media/play/v2/content/global/close_ups
+files in scavenger_hunt folder - /wand/vanilla-media/media/play/v2/content/global/scavenger_hunt
+files in rooms folder - /wand/vanilla-media/media/play/v2/content/global/rooms

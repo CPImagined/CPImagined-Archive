@@ -1,0 +1,6 @@
+telescope, 5108, set cost to 0 from 100
+tricorn hat, 493, set cost to 0 from 350
+captain's coat, 295, set cost to 0 from 650
+lighthouse shirt, 282, set cost to 0 from 750
+feathered hat, 470, set cost to 0 from 280
+swashbuckler's coat, 4228, set cost to 0 from 450

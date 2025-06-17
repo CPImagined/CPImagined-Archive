@@ -1,0 +1,121 @@
+{
+    "featureSettings": {
+        "transformationList": [
+            {
+                "transformName": "Frostbite",
+                "transformId": "1011",
+                "transformToken": "w.avatarSprite.frostbite",
+                "transformDateLock": 0,
+                "transformTaskLock": 0,
+                "gothere": "",
+                "transformMember": true
+            }
+        ],
+        "puffleAdoptionList": [
+            {
+                "puffleType": "Snowman",
+                "puffleId": 1021,
+                "adoptDateLock": 0,
+                "adoptTaskLock": 0,
+                "gothere": "",
+                "adoptMember": true
+            },
+            {
+                "puffleType": "Crystal",
+                "puffleId": 1023,
+                "adoptDateLock": 0,
+                "adoptTaskLock": 0,
+                "gothere": "",
+                "adoptMember": true
+            }
+        ],
+        "questUiButtonsList": [
+            {
+                "name": "advent_btn",
+                "type": "opencontent",
+                "params": "w.app.itemcollect.partyinterface",
+                "labelToken": ""
+            },
+            {
+                "name": "donation_btn",
+                "type": "opencontent",
+                "params": " ",
+                "labelToken": "w.app.december2015.ui.donate"
+            }
+        ],
+        "questSettingList": [
+            {
+                "taskName": "Decorate Trees",
+                "type": "generic",
+                "questTaskId": 0,
+                "dateLock": 0,
+                "taskLockNumber": 0,
+                "gothere": "forest",
+                "nonMemberItems": [],
+                "memberItems": [],
+                "unlockTextToken": "w.app.generic.december2016.paneldescription0",
+                "displayToken": "w.app.generic.december2016.paneldescription0",
+                "completeToken": "w.app.generic.december2016.paneldescription0"
+            },
+            {
+                "taskName": "Donate Food",
+                "type": "generic",
+                "questTaskId": 0,
+                "dateLock": 0,
+                "taskLockNumber": 0,
+                "gothere": "beach",
+                "nonMemberItems": [],
+                "memberItems": [],
+                "unlockTextToken": "w.app.generic.december2016.paneldescription1",
+                "displayToken": "w.app.generic.december2016.paneldescription1",
+                "completeToken": "w.app.generic.december2016.paneldescription1"
+            },
+            {
+                "taskName": "Ring Bells",
+                "type": "generic",
+                "questTaskId": 0,
+                "dateLock": 0,
+                "taskLockNumber": 0,
+                "gothere": "plaza",
+                "nonMemberItems": [],
+                "memberItems": [],
+                "unlockTextToken": "w.app.generic.december2016.paneldescription2",
+                "displayToken": "w.app.generic.december2016.paneldescription2",
+                "completeToken": "w.app.generic.december2016.paneldescription2"
+            },
+            {
+                "taskName": "Catalogs",
+                "type": "generic",
+                "questTaskId": 0,
+                "dateLock": 0,
+                "taskLockNumber": 0,
+                "gothere": "shop",
+                "nonMemberItems": [],
+                "memberItems": [],
+                "unlockTextToken": "w.app.generic.december2016.paneldescription3",
+                "displayToken": "w.app.generic.december2016.paneldescription3",
+                "completeToken": "w.app.generic.december2016.paneldescription3",
+                "consistentToken": [
+                    "w.app.generic.december2016.paneldescription3.subtitle"
+                ]
+            },
+            {
+                "taskName": "Rockhoppers Ship",
+                "type": "generic",
+                "questTaskId": 0,
+                "dateLock": 0,
+                "taskLockNumber": 0,
+                "gothere": "ship",
+                "nonMemberItems": [],
+                "memberItems": [],
+                "unlockTextToken": "w.app.generic.december2016.paneldescription4",
+                "displayToken": "w.app.generic.december2016.paneldescription4",
+                "completeToken": "w.app.generic.december2016.paneldescription4"
+            }
+        ],
+        "panelPositionsX": [
+            0,
+            -270
+        ]
+    }
+}

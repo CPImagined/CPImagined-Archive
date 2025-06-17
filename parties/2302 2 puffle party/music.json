@@ -1,0 +1,222 @@
+{
+	"text" :
+	{
+		"goToButtonText" :  { 
+			"fontSize" : 9,
+			"translation": {
+				"en": "Go to DJ3K!",
+				"es": "¡Ir a DJ3K!",
+				"fr": "Va à DJ3K !",
+				"pt": "Ir pro DJ3K!"			
+			}
+		},
+		"dialogDescription" : { 
+			"fontSize" : 12,
+			"translation": {
+				"en": "Record and save your own music mixes in DJ3K.",
+				"es": "Graba y guarda tus temas en DJ3K.",
+				"fr": "Enregistre tes propres mix dans DJ3K.",
+				"pt": "Grave e salve sua própria música no DJ3K."		
+			}
+		},
+		"dialogButtonText" : { 
+			"fontSize" : 9,
+			"translation": {
+				"en": "Go There!",
+				"es": "¡Ir allí!",
+				"fr": "Vas-y !",
+				"pt": "Ir pra lá!"		
+			}
+		},
+		"savedMixesText" : { 
+			"fontSize" : 18,
+			"translation": {
+				"en": "My Saved Mixes",
+				"es": "Mis temas mezclados",
+				"fr": "Mes Mix",
+				"pt": "Minhas Músicas"		
+			}
+		},
+		"musicListText" : { 
+			"fontSize" : 18,
+			"translation": {
+				"en": "Music List",
+				"es": "Lista musical",
+				"fr": "Liste de Musiques",
+				"pt": "Lista de Músicas"		
+			}
+		}
+	},
+	"songs" : 	
+	[
+
+			{
+			"id" : 647,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Puffle Party",
+				"es": "Puffle Party",
+				"fr": "Puffle Party",
+				"pt": "Puffle Party"
+			}
+		},		
+
+			{
+			"id" : 375,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Puffle Dance",
+				"es": "Puffle Dance",
+				"fr": "Puffle Dance",
+				"pt": "Puffle Dance"
+			}
+		},		
+
+			{
+			"id" : 644,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Me And My Puffle",
+				"es": "Me And My Puffle",
+				"fr": "Me And My Puffle",
+				"pt": "Me And My Puffle"
+			}
+		},		
+
+			{
+			"id" : 643,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Come Out To Play!",
+				"es": "Come Out To Play!",
+				"fr": "Come Out To Play!",
+				"pt": "Come Out To Play!"
+			}
+		},		
+
+			{
+			"id" : 646,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Electric Ballet",
+				"es": "Electric Ballet",
+				"fr": "Electric Ballet",
+				"pt": "Electric Ballet"
+			}
+		},		
+
+			{
+			"id" : 649,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Puffle Ragtime",
+				"es": "Puffle Ragtime",
+				"fr": "Puffle Ragtime",
+				"pt": "Puffle Ragtime"
+			}
+		},		
+
+			{
+			"id" : 648,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Brown Puffle Lab",
+				"es": "Brown Puffle Lab",
+				"fr": "Brown Puffle Lab",
+				"pt": "Brown Puffle Lab"
+			}
+		},		
+
+			{
+			"id" : 520,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "The Command Room",
+				"es": "The Command Room",
+				"fr": "The Command Room",
+				"pt": "The Command Room"
+			}
+		},		
+
+			{
+			"id" : 877,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Go Time!",
+				"es": "Go Time!",
+				"fr": "Go Time!",
+				"pt": "Go Time!"
+			}
+		},		
+
+			{
+			"id" : 878,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Go Time Remix",
+				"es": "Go Time Remix",
+				"fr": "Go Time Remix",
+				"pt": "Go Time Remix"
+			}
+		},		
+
+			{
+			"id" : 883,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "The Woods",
+				"es": "The Woods",
+				"fr": "The Woods",
+				"pt": "The Woods"
+			}
+		},		
+
+			{
+			"id" : 880,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Adventure Seekers",
+				"es": "Adventure Seekers",
+				"fr": "Adventure Seekers",
+				"pt": "Adventure Seekers"
+			}
+		},		
+
+			{
+			"id" : 881,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Puffle Adventure",
+				"es": "Puffle Adventure",
+				"fr": "Puffle Adventure",
+				"pt": "Puffle Adventure"
+			}
+		},		
+
+			{
+			"id" : 879,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Cabin Trails",
+				"es": "Cabin Trails",
+				"fr": "Cabin Trails",
+				"pt": "Cabin Trails"
+			}
+		}			
+
+	]
+}

@@ -1,0 +1,69 @@
+{
+    "promptList": [
+        {
+            "type": "opencontent",
+            "promptData": {
+                "reason": "login",
+                "partyStartDay": 0
+            },
+            "path": "w.app.p2016.dialogprompt.december.login",
+            "textTokens": [
+                "w.app.december2016.login1130",
+                "w.app.december2016.login1130.2"
+            ],
+            "memberItemCollection": [],
+            "nonMemberItemCollection": [],
+            "goThere": "forest",
+            "openContentPath": "w.app.itemcollect.partyinterface",
+            "openContentIndex": []
+        },
+        {
+            "type": "opencontent",
+            "promptData": {
+                "reason": "login",
+                "alwaysShow": "",
+                "partyStartDay": 0,
+                "partyEndDay": 28
+            },
+            "path": "w.app.itemcollect.partyinterface",
+            "textTokens": [],
+            "memberItemCollection": [],
+            "nonMemberItemCollection": [],
+            "goThere": "",
+            "openContentPath": "w.app.itemcollect.partyinterface",
+            "openContentIndex": []
+        },
+        {
+            "type": "generic",
+            "promptData": {
+                "reason": "login",
+                "partyStartDay": 26
+            },
+            "path": "w.app.p2016.dialogprompt.december.congrats.final",
+            "textTokens": [
+                "w.app.december2016.login1226"
+            ],
+            "memberItemCollection": [],
+            "nonMemberItemCollection": [],
+            "goThere": "",
+            "openContentPath": "",
+            "openContentIndex": []
+        },
+        {
+            "type": "transforminfo",
+            "promptData": {
+                "partyStartDay": 0
+            },
+            "path": "w.app.p2016.dialogprompt.december.transforminfo",
+            "textTokens": [
+                "w.app.december2016.transforminfo",
+                "w.app.december2016.transforminfo2"
+            ],
+            "memberItemCollection": [],
+            "nonMemberItemCollection": [],
+            "goThere": "",
+            "openContentPath": "",
+            "openContentIndex": []
+        }
+    ]
+}

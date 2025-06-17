@@ -1,0 +1,222 @@
+{
+	"text" :
+	{
+		"goToButtonText" :  { 
+			"fontSize" : 9,
+			"translation": {
+				"en": "Go to DJ3K!",
+				"es": "¡Ir a DJ3K!",
+				"fr": "Va à DJ3K !",
+				"pt": "Ir pro DJ3K!"			
+			}
+		},
+		"dialogDescription" : { 
+			"fontSize" : 12,
+			"translation": {
+				"en": "Record and save your own music mixes in DJ3K.",
+				"es": "Graba y guarda tus temas en DJ3K.",
+				"fr": "Enregistre tes propres mix dans DJ3K.",
+				"pt": "Grave e salve sua própria música no DJ3K."		
+			}
+		},
+		"dialogButtonText" : { 
+			"fontSize" : 9,
+			"translation": {
+				"en": "Go There!",
+				"es": "¡Ir allí!",
+				"fr": "Vas-y !",
+				"pt": "Ir pra lá!"		
+			}
+		},
+		"savedMixesText" : { 
+			"fontSize" : 18,
+			"translation": {
+				"en": "My Saved Mixes",
+				"es": "Mis temas mezclados",
+				"fr": "Mes Mix",
+				"pt": "Minhas Músicas"		
+			}
+		},
+		"musicListText" : { 
+			"fontSize" : 18,
+			"translation": {
+				"en": "Music List",
+				"es": "Lista musical",
+				"fr": "Liste de Musiques",
+				"pt": "Lista de Músicas"		
+			}
+		}
+	},
+	"songs" : 	
+	[
+
+			{
+			"id" : 232,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "April Fools",
+				"es": "Llego tarde",
+				"fr": "En Retard",
+				"pt": "Chego Logo"
+			}
+		},		
+
+			{
+			"id" : 201,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Celebration",
+				"es": "Órgano orgánico",
+				"fr": "Compo-country",
+				"pt": "Orgão Orgânico"
+			}
+		},		
+
+			{
+			"id" : 788,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Fair Winds",
+				"es": "Fair Winds",
+				"fr": "Fair Winds",
+				"pt": "Fair Winds"
+			}
+		},		
+
+			{
+			"id" : 242,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Mix Maestro",
+				"es": "Mix Maestro",
+				"fr": "Mélodies du Maestro",
+				"pt": "Escala do Maestro"
+			}
+		},		
+
+			{
+			"id" : 596,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Bulls Eye",
+				"es": "Ojo de buey",
+				"fr": "En Plein Dans le Mille",
+				"pt": "Na Mira"
+			}
+		},		
+
+			{
+			"id" : 342,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Operation Blackout",
+				"es": "Operación Apagón",
+				"fr": "Opération Black-out",
+				"pt": "Operação Apagão"
+			}
+		},		
+
+			{
+			"id" : 598,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Carnival Fun",
+				"es": "Carnavaleando",
+				"fr": "Forains en Fête",
+				"pt": "Festa Festiva"
+			}
+		},		
+
+			{
+			"id" : 520,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "The Command Room",
+				"es": "The Command Room",
+				"fr": "The Command Room",
+				"pt": "The Command Room"
+			}
+		},		
+
+			{
+			"id" : 650,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Welcome to the Dojo",
+				"es": "Welcome to the Dojo",
+				"fr": "Welcome to the Dojo",
+				"pt": "Welcome to the Dojo"
+			}
+		},		
+
+			{
+			"id" : 28,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Epic Island",
+				"es": "Isla épica",
+				"fr": "L'Île Épique",
+				"pt": "Ilha Épica"
+			}
+		},		
+
+			{
+			"id" : 511,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Ocean Voyage",
+				"es": "Ocean Voyage",
+				"fr": "Ocean Voyage",
+				"pt": "Ocean Voyage"
+			}
+		},		
+
+			{
+			"id" : 31,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "The Stage",
+				"es": "The Stage",
+				"fr": "The Stage",
+				"pt": "The Stage"
+			}
+		},		
+
+			{
+			"id" : 13,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "The Herbert P. Bear March",
+				"es": "The Herbert P. Bear March",
+				"fr": "The Herbert P. Bear March",
+				"pt": "The Herbert P. Bear March"
+			}
+		},		
+
+			{
+			"id" : 2023,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Voyage Into Imagination",
+				"es": "Voyage Into Imagination",
+				"fr": "Voyage Into Imagination",
+				"pt": "Voyage Into Imagination"
+			}
+		}			
+
+	]
+}

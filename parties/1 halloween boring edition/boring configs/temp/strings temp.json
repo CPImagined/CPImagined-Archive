@@ -1,0 +1,465 @@
+{
+    "featureSettings": {
+        "transformationList": [
+            {
+                "transformName": "Ghost",
+                "transformId": "1000",
+                "transformToken": "w.avatarSprite.ghost",
+                "transformDateLock": 0,
+                "transformTaskLock": 0,
+                "gothere": "beach",
+                "transformMember": true
+            },
+            {
+                "transformName": "VampireA",
+                "transformId": "1001",
+                "transformToken": "w.avatarSprite.vampireA",
+                "transformDateLock": 0,
+                "transformTaskLock": 0,
+                "gothere": "beach",
+                "transformMember": true
+            },
+            {
+                "transformName": "VampireB",
+                "transformId": "1002",
+                "transformToken": "w.avatarSprite.vampireB",
+                "transformDateLock": 0,
+                "transformTaskLock": 0,
+                "gothere": "beach",
+                "transformMember": true
+            },
+            {
+                "transformName": "VampireC",
+                "transformId": "1003",
+                "transformToken": "w.avatarSprite.vampireC",
+                "transformDateLock": 0,
+                "transformTaskLock": 0,
+                "gothere": "beach",
+                "transformMember": true
+            },
+            {
+                "transformName": "werewolfA",
+                "transformId": "1004",
+                "transformToken": "w.avatarSprite.werewolfA",
+                "transformDateLock": 0,
+                "transformTaskLock": 0,
+                "gothere": "beach",
+                "transformMember": true
+            },
+            {
+                "transformName": "werewolfB",
+                "transformId": "1005",
+                "transformToken": "w.avatarSprite.werewolfB",
+                "transformDateLock": 0,
+                "transformTaskLock": 0,
+                "gothere": "beach",
+                "transformMember": true
+            },
+            {
+                "transformName": "werewolfC",
+                "transformId": "1006",
+                "transformToken": "w.avatarSprite.werewolfC",
+                "transformDateLock": 0,
+                "transformTaskLock": 0,
+                "gothere": "beach",
+                "transformMember": true
+            },
+            {
+                "transformName": "zombieA",
+                "transformId": "1007",
+                "transformToken": "w.avatarSprite.zombieA",
+                "transformDateLock": 0,
+                "transformTaskLock": 0,
+                "gothere": "beach",
+                "transformMember": true
+            },
+            {
+                "transformName": "zombieB",
+                "transformId": "1008",
+                "transformToken": "w.avatarSprite.ZombieB",
+                "transformDateLock": 0,
+                "transformTaskLock": 0,
+                "gothere": "beach",
+                "transformMember": true
+            },
+            {
+                "transformName": "zombieC",
+                "transformId": "1009",
+                "transformToken": "w.avatarSprite.ZombieC",
+                "transformDateLock": 0,
+                "transformTaskLock": 0,
+                "gothere": "beach",
+                "transformMember": true
+            }
+        ],
+        "puffleAdoptionList": [
+            {
+                "puffleType": "Ghost Puffle",
+                "puffleId": 1022,
+                "adoptDateLock": 0,
+                "adoptTaskLock": 0,
+                "gothere": "dock",
+                "adoptMember": true
+            }
+        ],
+        "questUiButtonsList": [
+            {
+                "name": "adopt_btn",
+                "type": "adopt",
+                "params": "1022",
+                "labelToken": "w.puffleadoption.rainbow.adopt"
+            },
+            {
+                "name": "transform_btn",
+                "type": "goto",
+                "params": "beach",
+                "labelToken": "w.app.generic.october2016.transform.btn"
+            }
+        ],
+        "questSettingList": [
+            {
+                "taskName": "0928 - Day 1",
+                "type": "quest_progression",
+                "questTaskId": -1,
+                "panelData": {
+                    "progressTaskIds": [
+                        1,
+                        2,
+                        3
+                    ]
+                },
+                "dateLock": 0,
+                "taskLockNumber": -1,
+                "gothere": "dock",
+                "nonMemberItems": [],
+                "memberItems": [
+                    2163,
+                    246
+                ],
+                "unlockTextToken": "w.app.generic.october2016.paneldescription0",
+                "displayToken": "w.app.generic.october2016.paneldescription0",
+                "completeToken": "w.app.generic.october2016.paneldescription0.collect"
+            },
+            {
+                "taskName": "1001 - Day 4",
+                "type": "quest_progression",
+                "questTaskId": -1,
+                "panelData": {
+                    "progressTaskIds": [
+                        4,
+                        5,
+                        6
+                    ]
+                },
+                "dateLock": 3,
+                "taskLockNumber": -1,
+                "gothere": "shack",
+                "nonMemberItems": [],
+                "memberItems": [
+                    1715,
+                    4966
+                ],
+                "unlockTextToken": "w.app.generic.october2016.paneldescription1.locked",
+                "displayToken": "w.app.generic.october2016.paneldescription1",
+                "completeToken": "w.app.generic.october2016.paneldescription1.collect"
+            },
+            {
+                "taskName": "1004 - Day 7",
+                "type": "quest_progression",
+                "questTaskId": -1,
+                "panelData": {
+                    "progressTaskIds": [
+                        7,
+                        8,
+                        9
+                    ]
+                },
+                "dateLock": 6,
+                "taskLockNumber": -1,
+                "gothere": "forest",
+                "nonMemberItems": [],
+                "memberItems": [
+                    1307,
+                    4435,
+                    6089
+                ],
+                "unlockTextToken": "w.app.generic.october2016.paneldescription2.locked",
+                "displayToken": "w.app.generic.october2016.paneldescription2",
+                "completeToken": "w.app.generic.october2016.paneldescription2.collect"
+            },
+            {
+                "taskName": "1006 - Day 9",
+                "type": "quest_progression",
+                "questTaskId": -1,
+                "panelData": {
+                    "progressTaskIds": [
+                        10,
+                        11,
+                        12
+                    ]
+                },
+                "dateLock": 8,
+                "taskLockNumber": -1,
+                "gothere": "forts",
+                "nonMemberItems": [],
+                "memberItems": [
+                    24213
+                ],
+                "unlockTextToken": "w.app.generic.october2016.paneldescription3.locked",
+                "displayToken": "w.app.generic.october2016.paneldescription3",
+                "completeToken": "w.app.generic.october2016.paneldescription3.collect"
+            },
+            {
+                "taskName": "1008 - Day 11",
+                "type": "quest_progression",
+                "questTaskId": -1,
+                "panelData": {
+                    "progressTaskIds": [
+                        13,
+                        14,
+                        15
+                    ]
+                },
+                "dateLock": 10,
+                "taskLockNumber": -1,
+                "gothere": "beach",
+                "nonMemberItems": [],
+                "memberItems": [
+                    1187,
+                    4272
+                ],
+                "unlockTextToken": "w.app.generic.october2016.paneldescription4.locked",
+                "displayToken": "w.app.generic.october2016.paneldescription4",
+                "completeToken": "w.app.generic.october2016.paneldescription4.collect"
+            },
+            {
+                "taskName": "1011 - Day 14",
+                "type": "quest_progression",
+                "questTaskId": -1,
+                "panelData": {
+                    "progressTaskIds": [
+                        16,
+                        17,
+                        18
+                    ]
+                },
+                "dateLock": 13,
+                "taskLockNumber": -1,
+                "gothere": "cove",
+                "nonMemberItems": [],
+                "memberItems": [
+                    24403
+                ],
+                "unlockTextToken": "w.app.generic.october2016.paneldescription5.locked",
+                "displayToken": "w.app.generic.october2016.paneldescription5",
+                "completeToken": "w.app.generic.october2016.paneldescription5.collect"
+            },
+            {
+                "taskName": "1013 - Day 16",
+                "type": "quest_progression",
+                "questTaskId": -1,
+                "panelData": {
+                    "progressTaskIds": [
+                        19,
+                        20,
+                        21
+                    ]
+                },
+                "dateLock": 15,
+                "taskLockNumber": -1,
+                "gothere": "town",
+                "nonMemberItems": [],
+                "memberItems": [
+                    1309,
+                    4430,
+                    6091
+                ],
+                "unlockTextToken": "w.app.generic.october2016.paneldescription6.locked",
+                "displayToken": "w.app.generic.october2016.paneldescription6",
+                "completeToken": "w.app.generic.october2016.paneldescription6.collect"
+            },
+            {
+                "taskName": "1015 - Day 18",
+                "type": "quest_progression",
+                "questTaskId": -1,
+                "panelData": {
+                    "progressTaskIds": [
+                        22,
+                        23,
+                        24
+                    ]
+                },
+                "dateLock": 17,
+                "taskLockNumber": -1,
+                "gothere": "dock",
+                "nonMemberItems": [],
+                "memberItems": [
+                    24212
+                ],
+                "unlockTextToken": "w.app.generic.october2016.paneldescription7.locked",
+                "displayToken": "w.app.generic.october2016.paneldescription7",
+                "completeToken": "w.app.generic.october2016.paneldescription7.collect"
+            },
+            {
+                "taskName": "1018 - Day 21",
+                "type": "quest_progression",
+                "questTaskId": -1,
+                "panelData": {
+                    "progressTaskIds": [
+                        25,
+                        26,
+                        27
+                    ]
+                },
+                "dateLock": 20,
+                "taskLockNumber": -1,
+                "gothere": "village",
+                "nonMemberItems": [],
+                "memberItems": [
+                    24402
+                ],
+                "unlockTextToken": "w.app.generic.october2016.paneldescription8.locked",
+                "displayToken": "w.app.generic.october2016.paneldescription8",
+                "completeToken": "w.app.generic.october2016.paneldescription8.collect"
+            },
+            {
+                "taskName": "1019 - ANNIVERSARY - Day 22",
+                "type": "itemcollect",
+                "questTaskId": -1,
+                "dateLock": 21,
+                "taskLockNumber": -1,
+                "gothere": "coffee",
+                "nonMemberItems": [
+                    21111,
+                    9312
+                ],
+                "memberItems": [],
+                "unlockTextToken": "w.app.generic.october2016.paneldescription9.locked",
+                "displayToken": "w.app.generic.october2016.paneldescription9",
+                "completeToken": "w.app.generic.october2016.paneldescription9"
+            },
+            {
+                "taskName": "1020 - Day 23",
+                "type": "quest_progression",
+                "questTaskId": -1,
+                "panelData": {
+                    "progressTaskIds": [
+                        28,
+                        29,
+                        30
+                    ]
+                },
+                "dateLock": 22,
+                "taskLockNumber": -1,
+                "gothere": "school",
+                "nonMemberItems": [],
+                "memberItems": [
+                    3135,
+                    4724
+                ],
+                "unlockTextToken": "w.app.generic.october2016.paneldescription10.locked",
+                "displayToken": "w.app.generic.october2016.paneldescription10",
+                "completeToken": "w.app.generic.october2016.paneldescription10.collect"
+            },
+            {
+                "taskName": "1022 - Day 25",
+                "type": "quest_progression",
+                "questTaskId": -1,
+                "panelData": {
+                    "progressTaskIds": [
+                        31,
+                        32,
+                        33
+                    ]
+                },
+                "dateLock": 24,
+                "taskLockNumber": -1,
+                "gothere": "cove",
+                "nonMemberItems": [],
+                "memberItems": [
+                    1702,
+                    4956
+                ],
+                "unlockTextToken": "w.app.generic.october2016.paneldescription11.locked",
+                "displayToken": "w.app.generic.october2016.paneldescription11",
+                "completeToken": "w.app.generic.october2016.paneldescription11.collect"
+            },
+            {
+                "taskName": "1025 - Day 28",
+                "type": "quest_progression",
+                "questTaskId": -1,
+                "panelData": {
+                    "progressTaskIds": [
+                        34,
+                        35,
+                        36
+                    ]
+                },
+                "dateLock": 27,
+                "taskLockNumber": -1,
+                "gothere": "town",
+                "nonMemberItems": [],
+                "memberItems": [
+                    4725
+                ],
+                "unlockTextToken": "w.app.generic.october2016.paneldescription12.locked",
+                "displayToken": "w.app.generic.october2016.paneldescription12",
+                "completeToken": "w.app.generic.october2016.paneldescription12.collect"
+            },
+            {
+                "taskName": "1027 - Day 30",
+                "type": "quest_progression",
+                "questTaskId": -1,
+                "panelData": {
+                    "progressTaskIds": [
+                        37,
+                        38,
+                        39
+                    ]
+                },
+                "dateLock": 29,
+                "taskLockNumber": -1,
+                "gothere": "forts",
+                "nonMemberItems": [],
+                "memberItems": [
+                    4433
+                ],
+                "unlockTextToken": "w.app.generic.october2016.paneldescription13.locked",
+                "displayToken": "w.app.generic.october2016.paneldescription13",
+                "completeToken": "w.app.generic.october2016.paneldescription13.collect"
+            },
+            {
+                "taskName": "1029 - Day 32",
+                "type": "quest_progression",
+                "questTaskId": -1,
+                "panelData": {
+                    "progressTaskIds": [
+                        40,
+                        41,
+                        42
+                    ]
+                },
+                "dateLock": 31,
+                "taskLockNumber": -1,
+                "gothere": "shack",
+                "nonMemberItems": [],
+                "memberItems": [
+                    6090
+                ],
+                "unlockTextToken": "w.app.generic.october2016.paneldescription14.locked",
+                "displayToken": "w.app.generic.october2016.paneldescription14",
+                "completeToken": "w.app.generic.october2016.paneldescription14.collect"
+            }
+        ],
+        "panelPositionsX": [
+            0,
+            -678,
+            -1386,
+            -2069,
+            -2783,
+            -3479,
+            -4176,
+            -4536
+        ]
+    }
+}

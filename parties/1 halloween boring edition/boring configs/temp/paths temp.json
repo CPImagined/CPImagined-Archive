@@ -1,0 +1,652 @@
+{
+    "promptList": [
+        {
+            "type": "opencontent",
+            "promptData": {
+                "reason": "login",
+                "partyStartDay": 0
+            },
+            "path": "w.app.p2016.dialogprompt.october.login",
+            "textTokens": [
+                "w.app.october2016.login0928"
+            ],
+            "memberItemCollection": [],
+            "nonMemberItemCollection": [],
+            "goThere": "",
+            "openContentPath": "w.app.p2016.dialogprompt.october.task0.start",
+            "openContentIndex": [
+                2
+            ]
+        },
+        {
+            "type": "itemcollect",
+            "promptData": {
+                "reason": "login",
+                "partyStartDay": 21
+            },
+            "path": "w.app.p2016.dialogprompt.october.anniversary",
+            "textTokens": [
+                "w.app.october2016.anniversary"
+            ],
+            "memberItemCollection": [],
+            "nonMemberItemCollection": [
+                21111,
+                9312
+            ],
+            "goThere": "coffee",
+            "openContentPath": "",
+            "openContentIndex": []
+        },
+        {
+            "type": "generic",
+            "promptData": {
+                "reason": "login",
+                "partyStartDay": 0,
+                "prereqTaskIds": [
+                    1,
+                    2,
+                    3
+                ]
+            },
+            "path": "w.app.p2016.dialogprompt.october.task0.start",
+            "textTokens": [
+                "w.app.october2016.task0.start"
+            ],
+            "memberItemCollection": [],
+            "nonMemberItemCollection": [],
+            "goThere": "dock",
+            "openContentPath": "",
+            "openContentIndex": []
+        },
+        {
+            "type": "generic",
+            "promptData": {
+                "reason": "login",
+                "partyStartDay": 3,
+                "prereqTaskIds": [
+                    4,
+                    5,
+                    6
+                ]
+            },
+            "path": "w.app.p2016.dialogprompt.october.task1.start",
+            "textTokens": [
+                "w.app.october2016.task1.start"
+            ],
+            "memberItemCollection": [],
+            "nonMemberItemCollection": [],
+            "goThere": "shack",
+            "openContentPath": "",
+            "openContentIndex": []
+        },
+        {
+            "type": "generic",
+            "promptData": {
+                "reason": "login",
+                "partyStartDay": 6,
+                "prereqTaskIds": [
+                    7,
+                    8,
+                    9
+                ]
+            },
+            "path": "w.app.p2016.dialogprompt.october.task2.start",
+            "textTokens": [
+                "w.app.october2016.task2.start"
+            ],
+            "memberItemCollection": [],
+            "nonMemberItemCollection": [],
+            "goThere": "forest",
+            "openContentPath": "",
+            "openContentIndex": []
+        },
+        {
+            "type": "generic",
+            "promptData": {
+                "reason": "login",
+                "partyStartDay": 8,
+                "prereqTaskIds": [
+                    10,
+                    11,
+                    12
+                ]
+            },
+            "path": "w.app.p2016.dialogprompt.october.task3.start",
+            "textTokens": [
+                "w.app.october2016.task3.start"
+            ],
+            "memberItemCollection": [],
+            "nonMemberItemCollection": [],
+            "goThere": "forts",
+            "openContentPath": "",
+            "openContentIndex": []
+        },
+        {
+            "type": "generic",
+            "promptData": {
+                "reason": "login",
+                "partyStartDay": 10,
+                "prereqTaskIds": [
+                    13,
+                    14,
+                    15
+                ]
+            },
+            "path": "w.app.p2016.dialogprompt.october.task4.start",
+            "textTokens": [
+                "w.app.october2016.task4.start"
+            ],
+            "memberItemCollection": [],
+            "nonMemberItemCollection": [],
+            "goThere": "beach",
+            "openContentPath": "",
+            "openContentIndex": []
+        },
+        {
+            "type": "generic",
+            "promptData": {
+                "reason": "login",
+                "partyStartDay": 13,
+                "prereqTaskIds": [
+                    16,
+                    17,
+                    18
+                ]
+            },
+            "path": "w.app.p2016.dialogprompt.october.task5.start",
+            "textTokens": [
+                "w.app.october2016.task5.start"
+            ],
+            "memberItemCollection": [],
+            "nonMemberItemCollection": [],
+            "goThere": "cove",
+            "openContentPath": "",
+            "openContentIndex": []
+        },
+        {
+            "type": "generic",
+            "promptData": {
+                "reason": "login",
+                "partyStartDay": 15,
+                "prereqTaskIds": [
+                    19,
+                    20,
+                    21
+                ]
+            },
+            "path": "w.app.p2016.dialogprompt.october.task6.start",
+            "textTokens": [
+                "w.app.october2016.task6.start"
+            ],
+            "memberItemCollection": [],
+            "nonMemberItemCollection": [],
+            "goThere": "town",
+            "openContentPath": "",
+            "openContentIndex": []
+        },
+        {
+            "type": "generic",
+            "promptData": {
+                "reason": "login",
+                "partyStartDay": 17,
+                "prereqTaskIds": [
+                    22,
+                    23,
+                    24
+                ]
+            },
+            "path": "w.app.p2016.dialogprompt.october.task7.start",
+            "textTokens": [
+                "w.app.october2016.task7.start"
+            ],
+            "memberItemCollection": [],
+            "nonMemberItemCollection": [],
+            "goThere": "dock",
+            "openContentPath": "",
+            "openContentIndex": []
+        },
+        {
+            "type": "generic",
+            "promptData": {
+                "reason": "login",
+                "partyStartDay": 20,
+                "prereqTaskIds": [
+                    25,
+                    26,
+                    27
+                ]
+            },
+            "path": "w.app.p2016.dialogprompt.october.task8.start",
+            "textTokens": [
+                "w.app.october2016.task8.start"
+            ],
+            "memberItemCollection": [],
+            "nonMemberItemCollection": [],
+            "goThere": "village",
+            "openContentPath": "",
+            "openContentIndex": []
+        },
+        {
+            "type": "generic",
+            "promptData": {
+                "reason": "login",
+                "partyStartDay": 22,
+                "prereqTaskIds": [
+                    28,
+                    29,
+                    30
+                ]
+            },
+            "path": "w.app.p2016.dialogprompt.october.task9.start",
+            "textTokens": [
+                "w.app.october2016.task9.start"
+            ],
+            "memberItemCollection": [],
+            "nonMemberItemCollection": [],
+            "goThere": "school",
+            "openContentPath": "",
+            "openContentIndex": []
+        },
+        {
+            "type": "generic",
+            "promptData": {
+                "reason": "login",
+                "partyStartDay": 24,
+                "prereqTaskIds": [
+                    31,
+                    32,
+                    33
+                ]
+            },
+            "path": "w.app.p2016.dialogprompt.october.task11.start",
+            "textTokens": [
+                "w.app.october2016.task11.start"
+            ],
+            "memberItemCollection": [],
+            "nonMemberItemCollection": [],
+            "goThere": "cove",
+            "openContentPath": "",
+            "openContentIndex": []
+        },
+        {
+            "type": "generic",
+            "promptData": {
+                "reason": "login",
+                "partyStartDay": 27,
+                "prereqTaskIds": [
+                    34,
+                    35,
+                    36
+                ]
+            },
+            "path": "w.app.p2016.dialogprompt.october.task12.start",
+            "textTokens": [
+                "w.app.october2016.task12.start"
+            ],
+            "memberItemCollection": [],
+            "nonMemberItemCollection": [],
+            "goThere": "town",
+            "openContentPath": "",
+            "openContentIndex": []
+        },
+        {
+            "type": "generic",
+            "promptData": {
+                "reason": "login",
+                "partyStartDay": 29,
+                "prereqTaskIds": [
+                    37,
+                    38,
+                    39
+                ]
+            },
+            "path": "w.app.p2016.dialogprompt.october.task13.start",
+            "textTokens": [
+                "w.app.october2016.task13.start"
+            ],
+            "memberItemCollection": [],
+            "nonMemberItemCollection": [],
+            "goThere": "forts",
+            "openContentPath": "",
+            "openContentIndex": []
+        },
+        {
+            "type": "generic",
+            "promptData": {
+                "reason": "login",
+                "partyStartDay": 31,
+                "prereqTaskIds": [
+                    40,
+                    41,
+                    42
+                ]
+            },
+            "path": "w.app.p2016.dialogprompt.october.task14.start",
+            "textTokens": [
+                "w.app.october2016.task14.start"
+            ],
+            "memberItemCollection": [],
+            "nonMemberItemCollection": [],
+            "goThere": "shack",
+            "openContentPath": "",
+            "openContentIndex": []
+        },
+        {
+            "type": "itemcollect",
+            "promptData": {
+                "reason": "taskComplete",
+                "prereqTaskIds": [
+                    1,
+                    2,
+                    3
+                ]
+            },
+            "path": "w.app.p2016.dialogprompt.october.task0.congrats",
+            "textTokens": [
+                "w.app.october2016.task0.congrats"
+            ],
+            "memberItemCollection": [
+                2163,
+                246
+            ],
+            "nonMemberItemCollection": [],
+            "goThere": "",
+            "openContentPath": "",
+            "openContentIndex": []
+        },
+        {
+            "type": "itemcollect",
+            "promptData": {
+                "reason": "taskComplete",
+                "prereqTaskIds": [
+                    4,
+                    5,
+                    6
+                ]
+            },
+            "path": "w.app.p2016.dialogprompt.october.task1.congrats",
+            "textTokens": [
+                "w.app.october2016.task1.congrats"
+            ],
+            "memberItemCollection": [
+                1715,
+                4966
+            ],
+            "nonMemberItemCollection": [],
+            "goThere": "",
+            "openContentPath": "",
+            "openContentIndex": []
+        },
+        {
+            "type": "itemcollect",
+            "promptData": {
+                "reason": "taskComplete",
+                "prereqTaskIds": [
+                    7,
+                    8,
+                    9
+                ]
+            },
+            "path": "w.app.p2016.dialogprompt.october.task2.congrats",
+            "textTokens": [
+                "w.app.october2016.task2.congrats"
+            ],
+            "memberItemCollection": [
+                1307,
+                4435,
+                6089
+            ],
+            "nonMemberItemCollection": [],
+            "goThere": "",
+            "openContentPath": "",
+            "openContentIndex": []
+        },
+        {
+            "type": "itemcollect",
+            "promptData": {
+                "reason": "taskComplete",
+                "prereqTaskIds": [
+                    10,
+                    11,
+                    12
+                ]
+            },
+            "path": "w.app.p2016.dialogprompt.october.task3.congrats",
+            "textTokens": [
+                "w.app.october2016.task3.congrats"
+            ],
+            "memberItemCollection": [
+                24213
+            ],
+            "nonMemberItemCollection": [],
+            "goThere": "",
+            "openContentPath": "",
+            "openContentIndex": []
+        },
+        {
+            "type": "itemcollect",
+            "promptData": {
+                "reason": "taskComplete",
+                "prereqTaskIds": [
+                    13,
+                    14,
+                    15
+                ]
+            },
+            "path": "w.app.p2016.dialogprompt.october.task4.congrats",
+            "textTokens": [
+                "w.app.october2016.task4.congrats"
+            ],
+            "memberItemCollection": [
+                1187,
+                4272
+            ],
+            "nonMemberItemCollection": [],
+            "goThere": "",
+            "openContentPath": "",
+            "openContentIndex": []
+        },
+        {
+            "type": "itemcollect",
+            "promptData": {
+                "reason": "taskComplete",
+                "prereqTaskIds": [
+                    16,
+                    17,
+                    18
+                ]
+            },
+            "path": "w.app.p2016.dialogprompt.october.task5.congrats",
+            "textTokens": [
+                "w.app.october2016.task5.congrats"
+            ],
+            "memberItemCollection": [
+                24403
+            ],
+            "nonMemberItemCollection": [],
+            "goThere": "",
+            "openContentPath": "",
+            "openContentIndex": []
+        },
+        {
+            "type": "itemcollect",
+            "promptData": {
+                "reason": "taskComplete",
+                "prereqTaskIds": [
+                    19,
+                    20,
+                    21
+                ]
+            },
+            "path": "w.app.p2016.dialogprompt.october.task6.congrats",
+            "textTokens": [
+                "w.app.october2016.task6.congrats"
+            ],
+            "memberItemCollection": [
+                1309,
+                4430,
+                6091
+            ],
+            "nonMemberItemCollection": [],
+            "goThere": "",
+            "openContentPath": "",
+            "openContentIndex": []
+        },
+        {
+            "type": "itemcollect",
+            "promptData": {
+                "reason": "taskComplete",
+                "prereqTaskIds": [
+                    22,
+                    23,
+                    24
+                ]
+            },
+            "path": "w.app.p2016.dialogprompt.october.task7.congrats",
+            "textTokens": [
+                "w.app.october2016.task7.congrats"
+            ],
+            "memberItemCollection": [
+                24212
+            ],
+            "nonMemberItemCollection": [],
+            "goThere": "",
+            "openContentPath": "",
+            "openContentIndex": []
+        },
+        {
+            "type": "itemcollect",
+            "promptData": {
+                "reason": "taskComplete",
+                "prereqTaskIds": [
+                    25,
+                    26,
+                    27
+                ]
+            },
+            "path": "w.app.p2016.dialogprompt.october.task8.congrats",
+            "textTokens": [
+                "w.app.october2016.task8.congrats"
+            ],
+            "memberItemCollection": [
+                24402
+            ],
+            "nonMemberItemCollection": [],
+            "goThere": "",
+            "openContentPath": "",
+            "openContentIndex": []
+        },
+        {
+            "type": "itemcollect",
+            "promptData": {
+                "reason": "taskComplete",
+                "prereqTaskIds": [
+                    28,
+                    29,
+                    30
+                ]
+            },
+            "path": "w.app.p2016.dialogprompt.october.task9.congrats",
+            "textTokens": [
+                "w.app.october2016.task9.congrats"
+            ],
+            "memberItemCollection": [
+                3135,
+                4724
+            ],
+            "nonMemberItemCollection": [],
+            "goThere": "",
+            "openContentPath": "",
+            "openContentIndex": []
+        },
+        {
+            "type": "itemcollect",
+            "promptData": {
+                "reason": "taskComplete",
+                "prereqTaskIds": [
+                    31,
+                    32,
+                    33
+                ]
+            },
+            "path": "w.app.p2016.dialogprompt.october.task11.congrats",
+            "textTokens": [
+                "w.app.october2016.task11.congrats"
+            ],
+            "memberItemCollection": [
+                1702,
+                4956
+            ],
+            "nonMemberItemCollection": [],
+            "goThere": "",
+            "openContentPath": "",
+            "openContentIndex": []
+        },
+        {
+            "type": "itemcollect",
+            "promptData": {
+                "reason": "taskComplete",
+                "prereqTaskIds": [
+                    34,
+                    35,
+                    36
+                ]
+            },
+            "path": "w.app.p2016.dialogprompt.october.task12.congrats",
+            "textTokens": [
+                "w.app.october2016.task12.congrats"
+            ],
+            "memberItemCollection": [
+                4725
+            ],
+            "nonMemberItemCollection": [],
+            "goThere": "",
+            "openContentPath": "",
+            "openContentIndex": []
+        },
+        {
+            "type": "itemcollect",
+            "promptData": {
+                "reason": "taskComplete",
+                "prereqTaskIds": [
+                    37,
+                    38,
+                    39
+                ]
+            },
+            "path": "w.app.p2016.dialogprompt.october.task13.congrats",
+            "textTokens": [
+                "w.app.october2016.task13.congrats"
+            ],
+            "memberItemCollection": [
+                4433
+            ],
+            "nonMemberItemCollection": [],
+            "goThere": "",
+            "openContentPath": "",
+            "openContentIndex": []
+        },
+        {
+            "type": "itemcollect",
+            "promptData": {
+                "reason": "taskComplete",
+                "prereqTaskIds": [
+                    40,
+                    41,
+                    42
+                ]
+            },
+            "path": "w.app.p2016.dialogprompt.october.task14.congrats",
+            "textTokens": [
+                "w.app.october2016.task14.congrats"
+            ],
+            "memberItemCollection": [
+                6090
+            ],
+            "nonMemberItemCollection": [],
+            "goThere": "",
+            "openContentPath": "",
+            "openContentIndex": []
+        }
+    ]
+}

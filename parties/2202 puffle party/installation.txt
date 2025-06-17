@@ -1,0 +1,10 @@
+game_configs.bin - /wand/vanilla-media/media/play/web_service
+/wand/vanilla-media/media/play/en/web_service
+global content folder - /wand/vanilla-media/media/play/v2/content/global/content
+also interface.swf in there also goes in /wand/vanilla-media/media/play/v2/client
+hadnlers - 
+navigation.py/party.py - /wand/houdini/houdini/handlers/play
+sphsghuersencae.py - /wand/houdini/houdini
+rooms - /wand/vanilla-media/media/play/v2/content/global/rooms
+party.swf in the main folder - /wand/vanilla-media/media/play/v2/content/local/en/catalogues
+party_map_note.swf - /wand/vanilla-media/media/play/v2/content/local/en/close_ups

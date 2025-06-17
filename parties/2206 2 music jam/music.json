@@ -1,0 +1,1617 @@
+{
+	"text" :
+	{
+		"goToButtonText" :  { 
+			"fontSize" : 9,
+			"translation": {
+				"de": "Zu DJ3K!",
+				"en": "Go to DJ3K!",
+				"es": "¡Ir a DJ3K!",
+				"fr": "Va à DJ3K !",
+				"pt": "Ir pro DJ3K!"			
+			}
+		},
+		"dialogDescription" : { 
+			"fontSize" : 12,
+			"translation": {
+				"de": "Nimm in DJ3K deine eigenen Musikmixes auf und speichere sie.",
+				"en": "Record and save your own music mixes in DJ3K.",
+				"es": "Graba y guarda tus temas en DJ3K.",
+				"fr": "Enregistre tes propres mix dans DJ3K.",
+				"pt": "Grave e salve sua própria música no DJ3K."		
+			}
+		},
+		"dialogButtonText" : { 
+			"fontSize" : 9,
+			"translation": {
+				"de": "Los geht's!",
+				"en": "Go There!",
+				"es": "¡Ir allí!",
+				"fr": "Vas-y !",
+				"pt": "Ir pra lá!"		
+			}
+		},
+		"savedMixesText" : { 
+			"fontSize" : 18,
+			"translation": {
+				"de": "Meine Mixes",
+				"en": "My Saved Mixes",
+				"es": "Mis temas mezclados",
+				"fr": "Mes Mix",
+				"pt": "Minhas Músicas"		
+			}
+		},
+		"musicListText" : { 
+			"fontSize" : 18,
+			"translation": {
+				"de": "Musikliste",
+				"en": "Medieval Theme",
+				"es": "Lista musical",
+				"fr": "Liste de Musiques",
+				"pt": "Lista de Músicas"		
+			}
+		}
+	},
+	"songs" : 	
+	[
+												{
+			"id" : 717,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Cadence - Best Day Ever",
+				"en": "Cadence - Best Day Ever",
+				"es": "Cadence - Best Day Ever",
+				"fr": "Cadence - Best Day Ever",
+				"pt": "Cadence - Best Day Ever",
+				"ru": "Cadence - Best Day Ever"		
+			}
+		},	
+												{
+			"id" : 718,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Cole - Puffle Party Remix",
+				"en": "Cole - Puffle Party Remix",
+				"es": "Cole - Puffle Party Remix",
+				"fr": "Cole - Puffle Party Remix",
+				"pt": "Cole - Puffle Party Remix",
+				"ru": "Cole - Puffle Party Remix"		
+			}
+		},	
+												{
+			"id" : 730,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Violetta – Hoy Somos Mas",
+				"en": "Violetta – Hoy Somos Mas",
+				"es": "Violetta – Hoy Somos Mas",
+				"fr": "Violetta – Hoy Somos Mas",
+				"pt": "Violetta – Hoy Somos Mas",
+				"ru": "Violetta – Hoy Somos Mas"		
+			}
+		},	
+												{
+			"id" : 731,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Zendaya – Replay",
+				"en": "Zendaya – Replay",
+				"es": "Zendaya – Replay",
+				"fr": "Zendaya – Replay",
+				"pt": "Zendaya – Replay",
+				"ru": "Zendaya – Replay"		
+			}
+		},	
+												{
+			"id" : 732,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Sabrina – Can’t Blame",
+				"en": "Sabrina – Can’t Blame",
+				"es": "Sabrina – Can’t Blame",
+				"fr": "Sabrina – Can’t Blame",
+				"pt": "Sabrina – Can’t Blame",
+				"ru": "Sabrina – Can’t Blame"		
+			}
+		},	
+												{
+			"id" : 716,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Rockt das Boot",
+				"en": "Rock The Boat",
+				"es": "Rockea el bote",
+				"fr": "Mers Agitées",
+				"pt": "No Balanço do Mar",
+				"ru": "По волнам"		
+			}
+		},	
+												{
+			"id" : 719,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Honolulu Honey",
+				"en": "Honolulu Honey",
+				"es": "Onda hawaiana",
+				"fr": "Ballade des Îles",
+				"pt": "Garota de Honolulu",
+				"ru": "Мёд из Гонолулу"		
+			}
+		},	
+												{
+			"id" : 720,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Auf Kreuzfahrt",
+				"en": "The Cruise Ship",
+				"es": "El crucero",
+				"fr": "La Croisière",
+				"pt": "Navio no Porto",
+				"ru": "Круизный лайнер"		
+			}
+		},	
+												{
+			"id" : 721,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"de": "„Rockt das Boot“-Quartett",
+				"en": "Rock The Boat Quartet",
+				"es": "Cuarteto rockea el bote",
+				"fr": "Quatuor en Mers Agitées",
+				"pt": "Show em Alto Mar",
+				"ru": "По волнам - Квартет"			
+			}
+		},	
+												{
+			"id" : 377,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Sommer-Song",
+				"en": "Summer Song",
+				"es": "Canción de verano",
+				"fr": "Tube de l'Été",
+				"pt": "Festa no Deque",
+				"ru": "Летняя песня"		
+			}
+		},	
+												{
+			"id" : 698,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"de": "„Penguin Cup“-Hymne",
+				"en": "Penguin Cup Anthem",
+				"es": "Penguin Cup Anthem",
+				"fr": "Hymne de la Coupe",
+				"pt": "Hino da Copa Pinguim",
+				"ru": "Гимн “Кубка пингвинов”"		
+			}
+		},	
+												{
+			"id" : 699,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Hai-Beats",
+				"en": "Shark Beatz",
+				"es": "Shark Beatz",
+				"fr": "Le Refrain des Requins",
+				"pt": "Na Batida dos Tubarões",
+				"ru": "Победа Акул"		
+			}
+		},	
+												{
+			"id" : 700,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "„Scharfe Soße“-Rock",
+				"en": "Hot Sauce Rock",
+				"es": "Hot Sauce Rock",
+				"fr": "Le Rock Sauce Piquante",
+				"pt": "Rock do Molho Picante",
+				"ru": "Острый соус жжёт"		
+			}
+		},	
+												{
+			"id" : 701,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Alien-Monster punkten",
+				"en": "Squids Score",
+				"es": "Squids Score",
+				"fr": "Gare aux Calmars !",
+				"pt": "Ponto pro Lula Espacial",
+				"ru": "“Кальмары” выигрывают"		
+			}
+		},	
+												{
+			"id" : 702,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Hallo Gelb!",
+				"en": "Hello Yellow!",
+				"es": "Hello Yellow!",
+				"fr": "Allez les Jaunes !",
+				"pt": "Vai Fluffies!",
+				"ru": "Ура “пушистикам”!"		
+			}
+		},	
+												{
+			"id" : 703,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Hier ist CPSN",
+				"en": "This is CPSN",
+				"es": "This is CPSN",
+				"fr": "En Direct de CPTV Sport",
+				"pt": "CPSN Ao Vivo",
+				"ru": "В эфире - СККП"		
+			}
+		},	
+												{
+			"id" : 704,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Stadion-Atmosphäre",
+				"en": "Stadium Ambience",
+				"es": "Stadium Ambience",
+				"fr": "Ambiance de Stade",
+				"pt": "Clima de Jogo",
+				"ru": "Звуки Cтадиона"		
+			}
+		},	
+												{
+			"id" : 678,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Weltraum-Zoo",
+				"en": "Space Zoo",
+				"es": "Zoo espacial",
+				"fr": "Zoo de l'Espace",
+				"pt": "Zoo do Espaço",
+				"ru": "Космо-зоопарк"		
+			}
+		},	
+												{
+			"id" : 679,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Weltraumkampf",
+				"en": "Space Battle",
+				"es": "Batalla galáctica",
+				"fr": "Bataille Spatiale",
+				"pt": "Batalha Espacial",
+				"ru": "Космическое сражение"		
+			}
+		},	
+												{
+			"id" : 680,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Ultimativer Kampf",
+				"en": "Ultimate Battle",
+				"es": "Lucha interplanetaria",
+				"fr": "Bataille Ultime",
+				"pt": "A Grande Batalha",
+				"ru": "Великое сражение"		
+			}
+		},	
+												{
+			"id" : 681,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Willkommen in der Zukunft!",
+				"en": "Welcome to the Future",
+				"es": "Bienvenido al futuro",
+				"fr": "Bienvenue Dans le Futur",
+				"pt": "Bem-Vindo ao Futuro",
+				"ru": "Привет, будущее!"		
+			}
+		},	
+												{
+			"id" : 682,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "EPF Alien",
+				"en": "Extra Planetary Force",
+				"es": "EPF Extraterrestre",
+				"fr": "EPF du Futur",
+				"pt": "EPF Alienígena",
+				"ru": "Пингвины-Пилоты"		
+			}
+		},	
+												{
+			"id" : 683,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Fremde Galaxie",
+				"en": "Strange Galaxy",
+				"es": "Extraña galaxia",
+				"fr": "Une Galaxie Étrange",
+				"pt": "Galáxia Distante",
+				"ru": "Странная галактика"		
+			}
+		},	
+												{
+			"id" : 684,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Schwerkraft ade!",
+				"en": "Zero Gravity Disco",
+				"es": "Disco gravedad cero",
+				"fr": "Disco Zéro Gravité",
+				"pt": "Ritmo da Gravidade Zero",
+				"ru": "Диско в невесомости"		
+			}
+		},	
+												{
+			"id" : 643,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Spielzeit!",
+				"en": "Come Out To Play!",
+				"es": "¡Ven a jugar conmigo!",
+				"fr": "Viens Jouer Avec Moi !",
+				"pt": "Diversão ao Ar Livre!",
+				"ru": "Выходи играть!"		
+			}
+		},	
+												{
+			"id" : 644,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Ich und mein Puffle",
+				"en": "Me and My Puffle",
+				"es": "Mi puffle y yo",
+				"fr": "Mon Puffle et Moi",
+				"pt": "Eu e Meu Puffle",
+				"ru": "Я и мой пафл"		
+			}
+		},	
+												{
+			"id" : 645,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Gotta Have A Wingman",
+				"en": "Gotta Have A Wingman",
+				"es": "Gotta Have A Wingman",
+				"fr": "Gotta Have A Wingman",
+				"pt": "Gotta Have A Wingman",
+				"ru": "Без друга - никуда"		
+			}
+		},	
+												{
+			"id" : 646,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Elektro-Ballett",
+				"en": "Electric Ballet",
+				"es": "Electroballet",
+				"fr": "Ballet Électrique",
+				"pt": "Balé Elétrico",
+				"ru": "Электро-балет"		
+			}
+		},	
+												{
+			"id" : 647,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Puffle-Party",
+				"en": "Puffle Party",
+				"es": "Fiesta de puffles",
+				"fr": "Fête des Puffles",
+				"pt": "Festa dos Puffles",
+				"ru": "Праздник пафлов"		
+			}
+		},	
+												{
+			"id" : 648,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Das verrückte Labor",
+				"en": "Brown Puffle Lab",
+				"es": "Laboratorio del puffle café",
+				"fr": "Labo du Puffle Marron",
+				"pt": "Peripécias do Puffle Marrom",
+				"ru": "Brown Puffle Lab"		
+			}
+		},	
+												{
+			"id" : 649,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Puffle-Ragtime",
+				"en": "Puffle Ragtime",
+				"es": "Puffles traviesos",
+				"fr": "Nouba des Puffles",
+				"pt": "Puffle ao Piano",
+				"ru": "В ритме пафлов"		
+			}
+		},	
+												{
+			"id" : 620,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Mariachi-Remix",
+				"en": "Mariachi Medley",
+				"es": "Remix Mariachi",
+				"fr": "Medley de Mariachis",
+				"pt": "Remix Mariachi",
+				"ru": "Мексиканское мариачи"		
+			}
+		},	
+												{
+			"id" : 621,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Englische Hymne",
+				"en": "English Anthem",
+				"es": "Himno inglés",
+				"fr": "Hymne de l'Angleterre",
+				"pt": "Hino Inglês",
+				"ru": "Английский гимн"		
+			}
+		},	
+												{
+			"id" : 622,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Fest in Indien",
+				"en": "Festive India",
+				"es": "India de fiesta",
+				"fr": "Inde Festive",
+				"pt": "Índia em Festa",
+				"ru": "Индийский фестиваль"		
+			}
+		},	
+												{
+			"id" : 623,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Französischer Boulevard",
+				"en": "French Avenue",
+				"es": "Calles de Francia",
+				"fr": "Avenue Française",
+				"pt": "Vielas da França",
+				"ru": "Французское авеню"		
+			}
+		},	
+												{
+			"id" : 624,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Kalinka",
+				"en": "Kalinka",
+				"es": "Kalinka",
+				"fr": "Kalinka",
+				"pt": "Kalinka",
+				"ru": "Калинка"		
+			}
+		},	
+												{
+			"id" : 625,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Brezel-Party",
+				"en": "Bretzel Bash",
+				"es": "Festival de bretzels",
+				"fr": "Bretzel Parfait",
+				"pt": "Festa dos Pretzels",
+				"ru": "Кренделевый праздник"		
+			}
+		},	
+												{
+			"id" : 626,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Samba Olé",
+				"en": "Samba Sensation",
+				"es": "Danzando samba",
+				"fr": "Sensation Samba",
+				"pt": "No Balanço do Samba",
+				"ru": "Зажигательная самба"		
+			}
+		},	
+												{
+			"id" : 593,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "In den Orbit",
+				"en": "Into Orbit",
+				"es": "En órbita",
+				"fr": "En Orbite",
+				"pt": "Em Órbita",
+				"ru": "На орбиту"		
+			}
+		},	
+												{
+			"id" : 594,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Marsianer im Anflug",
+				"en": "Martian Landing",
+				"es": "Aterrizaje marciano",
+				"fr": "Atterissage sur Mars",
+				"pt": "Pouso Marciano",
+				"ru": "Приземление на Марс"		
+			}
+		},	
+												{
+			"id" : 595,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Wüstenstraßen",
+				"en": "Desert Roads",
+				"es": "Rutas desiertas",
+				"fr": "Routes Désertes",
+				"pt": "Ruas Desertas",
+				"ru": "Дороги пустыни"		
+			}
+		},	
+												{
+			"id" : 596,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Volltreffer",
+				"en": "Bull's Eye",
+				"es": "Ojo de buey",
+				"fr": "En Plein Dans le Mille",
+				"pt": "Na Mira",
+				"ru": "Бычий глаз"		
+			}
+		},	
+												{
+			"id" : 597,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Verschollene Lagune",
+				"en": "Marooned Lagoon",
+				"es": "Laguna bajo la luna",
+				"fr": "Le Lagon de l'Abandon",
+				"pt": "Lagoa Abandonada",
+				"ru": "Бордовая лагуна"		
+			}
+		},	
+												{
+			"id" : 598,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Karneval",
+				"en": "Carnival Fun",
+				"es": "Carnavaleando",
+				"fr": "Au Carnaval",
+				"pt": "Diversão Carnavalesca",
+				"ru": "Карнавал"		
+			}
+		},	
+												{
+			"id" : 599,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Wikinger-Oper",
+				"en": "The Viking Opera",
+				"es": "Ópera Vikinga",
+				"fr": "L'Opéra Viking",
+				"pt": "A Ópera Viking",
+				"ru": "Викинг-опера"		
+			}
+		},	
+												{
+			"id" : 559,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Reise in die Urzeit",
+				"en": "Journey to the Prehistoric",
+				"es": "Viaje a la Prehistoria",
+				"fr": "Retour Vers la Préhistoire",
+				"pt": "Jornada Pré-histórica",
+				"ru": "Путь в Каменный век"		
+			}
+		},	
+												{
+			"id" : 560,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Urzeit-Party",
+				"en": "Stone-Age Party",
+				"es": "Fiesta Edad de piedra",
+				"fr": "Préhistoire en Fête",
+				"pt": "Festa da Idade da Pedra",
+				"ru": "Доисторический праздник"		
+			}
+		},	
+												{
+			"id" : 561,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Urzeit",
+				"en": "Pre-Historic",
+				"es": "Fieshistoria",
+				"fr": "L'Âge de la Pierre",
+				"pt": "Pré-história",
+				"ru": "Доисторическая"		
+			}
+		},	
+												{
+			"id" : 562,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Ooga Booga",
+				"en": "Ooga Booga",
+				"es": "Unga bunga",
+				"fr": "Ouga Bouga",
+				"pt": "Uga Buga",
+				"ru": "Уга-Буга"		
+			}
+		},	
+												{
+			"id" : 563,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Dschungel-Ambiente",
+				"en": "Jungle Ambience",
+				"es": "Aire de jungla",
+				"fr": "Ambiance de la Jungle",
+				"pt": "Sons da Floresta",
+				"ru": "Звуки джунглей"		
+			}
+		},	
+												{
+			"id" : 534,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Weihnachtslichter",
+				"en": "Holiday Lights",
+				"es": "Luces navideñas",
+				"fr": "Lumières de Noël",
+				"pt": "Fim de Ano Iluminado",
+				"ru": "Праздничные огни"		
+			}
+		},	
+												{
+			"id" : 535,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Alle an Bord zur Weihnacht!",
+				"en": "All Aboard for the Holidays!",
+				"es": "¡Todos a bordo para las Fiestas!",
+				"fr": "Cap sur Noël !",
+				"pt": "Prontos para o Fim do Ano!"		
+			}
+		},	
+												{
+			"id" : 536,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Coole Kälte",
+				"en": "Cool In The Cold",
+				"es": "La nieve es genial",
+				"fr": "Cool In The Cold",
+				"pt": "Cool In The Cold",
+				"ru": "Веселье на морозе"		
+			}
+		},	
+												{
+			"id" : 537,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Der Palast der Eiskristalle",
+				"en": "The Palace of Ice Crystals",
+				"es": "Palacio de cristal",
+				"fr": "Le Palais de Glace",
+				"pt": "O Palácio Nevasca"		
+			}
+		},	
+												{
+			"id" : 538,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Der Schneemann-Song",
+				"en": "Holiday Medley",
+				"es": "Popurrí navideño",
+				"fr": "Ballade de Noël",
+				"pt": "Ritmo de Ano Novo"		
+			}
+		},	
+												{
+			"id" : 539,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Weihnachtsschlitten",
+				"en": "Santa's Sleigh",
+				"es": "Trineo de Santa Claus",
+				"fr": "Traîneau du Père Noël",
+				"pt": "Trenó do Papai Noel"		
+			}
+		},	
+												{
+			"id" : 540,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Weihnachtsmagie",
+				"en": "A Little Holiday Magic",
+				"es": "Magia navideña",
+				"fr": "La Magie de Noël",
+				"pt": "Feriado Mágico"		
+			}
+		},	
+												{
+			"id" : 516,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Wir sind die Besten!",
+				"en": "We Are The Elite",
+				"es": "Somos la Elite",
+				"fr": "Nous Sommes l'Élite",
+				"pt": "Somos a Elite",
+				"ru": "Мы — элита"		
+			}
+		},	
+												{
+			"id" : 517,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Verteidigung!",
+				"en": "Stand and Defend",
+				"es": "En mi puesto de defensa",
+				"fr": "Résistance et Défense",
+				"pt": "Proteger e Defender"		
+			}
+		},	
+												{
+			"id" : 518,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Operation Blackout",
+				"en": "Operation Blackout",
+				"es": "Operación Apagón",
+				"fr": "Opération Black-out",
+				"pt": "Operação Apagão"		
+			}
+		},	
+												{
+			"id" : 519,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Rüstet euch!",
+				"en": "Gear Up!",
+				"es": "Agentes en acción",
+				"fr": "Paré à l'Action !",
+				"pt": "Agentes Agindo"		
+			}
+		},	
+												{
+			"id" : 520,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Kommandozentrale",
+				"en": "The Command Room",
+				"es": "La Sala de Comando",
+				"fr": "Salle de Commandement",
+				"pt": "A Sala de Comando"		
+			}
+		},	
+												{
+			"id" : 533,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "It's Your Birthday, Birthday!",
+				"en": "It's Your Birthday, Birthday!",
+				"es": "It's Your Birthday, Birthday!",
+				"fr": "It's Your Birthday, Birthday!",
+				"pt": "It's Your Birthday, Birthday!",
+				"ru": "Сегодня день рождения!"		
+			}
+		},	
+												{
+			"id" : 7,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Die List",
+				"en": "Stealth",
+				"es": "Tema secreto",
+				"fr": "Top Secret",
+				"pt": "Ação Secreta"		
+			}
+		},
+												{
+			"id" : 514,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Was lauert da in der Nacht?",
+				"en": "What Lurks In The Night",
+				"es": "Merodeando en la noche",
+				"fr": "Rôdeur des Ténèbres",
+				"pt": "A Tenebrosa Noite",
+				"ru": "То, что кроется в ночи"		
+			}
+		},
+													{
+			"id" : 506,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Party in My Iggy",
+				"en": "Party In My Iggy",
+				"es": "Party in My Iggy",
+				"fr": "Party In My Iggy",
+				"pt": "Party In My Iggy",
+				"ru": "Приходи на праздник"		
+			}
+		},
+													{
+			"id" : 507,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Wer traut sich?",
+				"en": "Dare to Enter the Mansion?",
+				"es": "¿Te atreves a entrar?",
+				"fr": "Cap ou pas Cap ?",
+				"pt": "Adentrarás a Mansão?"		
+			}
+		},
+													{
+			"id" : 515,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Unheimliche Gemütlichkeit",
+				"en": "Scary Ambience",
+				"es": "Ambiente espeluznante",
+				"fr": "Ambiance d'Épouvante",
+				"pt": "A Sala do Espanto"		
+			}
+		},
+													{
+			"id" : 508,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Karneval der Monster",
+				"en": "Monster Masquerade",
+				"es": "Baile monstruoso",
+				"fr": "Au Carnaval des Monstres",
+				"pt": "Baile de Monstros"		
+			}
+		},
+													{
+			"id" : 509,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Verstecken",
+				"en": "Seek and Hide",
+				"es": "Escondidas",
+				"fr": "Cache-cache",
+				"pt": "Esconde-Esconde"		
+			}
+		},
+													{
+			"id" : 510,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Geister wollen tanzen",
+				"en": "Ghosts Just Wanna Dance",
+				"es": "Los fantasmas quieren bailar",
+				"fr": "Ghosts Just Wanna Dance",
+				"pt": "Ghosts Just Wanna Dance"		
+			}
+		},
+													{
+			"id" : 511,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Seereise",
+				"en": "Ocean Voyage",
+				"es": "Travesía oceánica",
+				"fr": "À Travers les Océans",
+				"pt": "Viagem Marítima"		
+			}
+		},
+													{
+			"id" : 479,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Mittelalter",
+				"en": "Medieval Theme",
+				"es": "Tema medieval",
+				"fr": "Fête Médiévale",
+				"pt": "Melodia Medieval"		
+			}
+		},
+													{
+			"id" : 266,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Der Ritter",
+				"en": "Knight's Challenge",
+				"es": "Desafío de caballeros",
+				"fr": "Défi de Chevalier",
+				"pt": "O Cavaleiro Andante"		
+			}
+		},
+													{
+			"id" : 286,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Achtung Drache!",
+				"en": "Beware the Dragon",
+				"es": "Cuidado con el dragón",
+				"fr": "Attention au Dragon",
+				"pt": "Parcimônia com o Dragão"		
+			}
+		},
+													{
+			"id" : 31,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Der zwölfte Fisch",
+				"en": "Twelfth Fish Theme",
+				"es": "Tema de El doceavo pez",
+				"fr": "Le Douzième Poisson",
+				"pt": "Natal no Castelo"		
+			}
+		},
+													{
+			"id" : 265,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Entlang der Rosen",
+				"en": "Walk Among the Roses",
+				"es": "Pétalos goteando",
+				"fr": "Ode aux Roses",
+				"pt": "Tecla de Roseira"		
+			}
+		},
+													{
+			"id" : 461,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Surf-Party",
+				"en": "Surf's Up",
+				"es": "Surf's Up",
+				"fr": "Surf's Up",
+				"pt": "Surf's Up"		
+			}
+		},
+													{
+			"id" : 462,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Strand-Party",
+				"en": "Cruisin' for a Bruisin'",
+				"es": "Cruisin' for a Bruising'",
+				"fr": "Cruisin' for a Bruisin'",
+				"pt": "Cruisin' for a Bruisin'"		
+			}
+		},
+													{
+			"id" : 463,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Forever Summer",
+				"en": "Forever Summer",
+				"es": "Verano por siempre",
+				"fr": "L'Été Sans Fin",
+				"pt": "No Clima Praiano"		
+			}
+		},
+													{
+			"id" : 464,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Ride the Wave",
+				"en": "Ride the Wave",
+				"es": "Al filo de la ola",
+				"fr": "À Fond la Vague !",
+				"pt": "Dropando as Ondas"		
+			}
+		},
+													{
+			"id" : 465,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Rock den Strand",
+				"en": "Rockin' the Beach",
+				"es": "Rock playero",
+				"fr": "Rock des Plages",
+				"pt": "Rock na Areia"		
+			}
+		},
+													{
+			"id" : 478,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Hollywood",
+				"en": "Hollywood Theme",
+				"es": "Música de película",
+				"fr": "Hollywood Star",
+				"pt": "Vida em Hollywood"		
+			}
+		},
+												{
+			"id" : 460,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Star Wars Remix",
+				"en": "Star Wars Remix",
+				"es": "Remix de Star Wars",
+				"fr": "Remix Star Wars",
+				"pt": "Star Wars Remix"		
+			}
+		},
+											{
+			"id" : 454,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Cantina Band",
+				"en": "Cantina Band",
+				"es": "Cantina Band",
+				"fr": "Air de Tatouïne",
+				"pt": "Banda da Cantina"		
+			}
+		},
+													{
+			"id" : 455,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Star Wars",
+				"en": "Star Wars Theme",
+				"es": "La Guerra de las galaxias",
+				"fr": "Star Wars",
+				"pt": "Guerra nas Estrelas"		
+			}
+		},
+															{
+			"id" : 456,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Imperial March",
+				"en": "The Imperial March",
+				"es": "La Marcha Imperial",
+				"fr": "La Marche Impériale",
+				"pt": "A Marcha Imperial"		
+			}
+		},
+															{
+			"id" : 457,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Throne Room (Thronsaal)",
+				"en": "The Throne Room",
+				"es": "La Sala del trono",
+				"fr": "La Salle du Trône",
+				"pt": "Na Sala Imperial"		
+			}
+		},
+															{
+			"id" : 458,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Todesstern",
+				"en": "Death Star Ambience",
+				"es": "Aire de Estrella de la Muerte",
+				"fr": "Ambiance Étoile Noire",
+				"pt": "Sons da Estrela da Morte"		
+			}
+		},
+															{
+			"id" : 459,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Tatooine",
+				"en": "Tatooine Ambience",
+				"es": "Aire tatooinesco",
+				"fr": "Ambiance Tatouïne",
+				"pt": "Ruídos de Tatooine"		
+			}
+		},
+										{
+			"id" : 430,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "University Rally",
+				"en": "University Rally",
+				"es": "Fanfarria universitaria",
+				"fr": "Fanfare de Fac",
+				"pt": "Fanfarra"		
+			}
+		},
+												{
+			"id" : 431,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Pump Up the Rock!",
+				"en": "Pump Up the Rock!",
+				"es": "¡Rock por todos lados!",
+				"fr": "Rock à Tout Va !",
+				"pt": "Aumenta o Som!"		
+			}
+		},
+												{
+			"id" : 432,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "We're All Okay!",
+				"en": "We're All Okay!",
+				"es": "¡Estamos OK!",
+				"fr": "On est Tous OK !",
+				"pt": "Estamos Numa Boa!"		
+			}
+		},
+												{
+			"id" : 433,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Get Pink",
+				"en": "Get Pink",
+				"es": "Actitud rosa",
+				"fr": "La Rose Attitude",
+				"pt": "A Vida em Cor de Rosa"		
+			}
+		},
+												{
+			"id" : 434,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Steer the Funk",
+				"en": "Steer the Funk",
+				"es": "¡Arriba el funk!",
+				"fr": "À Fond le Funk !",
+				"pt": "Na Levada do Funk"		
+			}
+		},
+												{
+			"id" : 435,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "I've Been Delayed",
+				"en": "I've Been Delayed",
+				"es": "Llego tarde",
+				"fr": "Je Suis en Retard",
+				"pt": "Chego Logo"		
+			}
+		},
+								{
+			"id" : 417,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Die Eroberung",
+				"en": "Collide and Conquer",
+				"es": "Colisión y conquista",
+				"fr": "Deux Mille à l'Heure",
+				"pt": "A Conquista"		
+			}
+		},
+										{
+			"id" : 418,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Der Gebirgspass",
+				"en": "Through Mountain Passes",
+				"es": "Atravesando el sendero",
+				"fr": "Au Sommet de la Montagne",
+				"pt": "Pelas Montanhas "		
+			}
+		},
+							{
+			"id" : 375,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Puffle-Tanz",
+				"en": "Puffle Dance",
+				"es": "Electropuffles",
+				"fr": "Électro Puffle",
+				"pt": "Puffledance"		
+			}
+		},
+							{
+			"id" : 376,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Puffle-Reggae",
+				"en": "Puffle Ragtime",
+				"es": "Puffles traviesos",
+				"fr": "Nouba des Puffles",
+				"pt": "Baile Puffístico"		
+			}
+		},
+							{
+			"id" : 260,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "O-Beeren-Jazz",
+				"en": "O'Berry Jazz",
+				"es": "Jazz del puffito",
+				"fr": "Jazz Croketos",
+				"pt": "Jazz e Puffitos"		
+			}
+		},
+							{
+			"id" : 356,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Dubstep-Puffle",
+				"en": "Dubstep Puffle",
+				"es": "Puffle Dubstep",
+				"fr": "Puffle Dubstep",
+				"pt": "Puffle Dubstep",
+				"ru": "Дабстеп-пафл"		
+			}
+		},
+						{
+			"id" : 345,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Boutique",
+				"en": "Clothes Shop",
+				"es": "Tienda de ropa",
+				"fr": "À la Boutique",
+				"pt": "Loja Pinguim"		
+			}
+		},
+					{
+			"id" : 352,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Hollywood",
+				"en": "Hollywood Theme",
+				"es": "Música de película",
+				"fr": "Hollywood Star",
+				"pt": "Vida em Hollywood"		
+			}
+		},
+				{
+			"id" : 20,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Charlie ist da!",
+				"en": "Charlie's Here",
+				"es": "Jazz navideño",
+				"fr": "Pianissimo",
+				"pt": "No Embalo do Jazz"		
+			}
+		},
+								{
+			"id" : 387,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Puffle Party (Wingman)",
+				"en": "Gotta Have A Wingman",
+				"es": "Gotta Have A Wingman",
+				"fr": "Gotta Have A Wingman",
+				"pt": "Gotta Have A Wingman",
+				"ru": "Так нужен напарник"		
+			}
+		},
+								{
+			"id" : 326,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Stadt der Helden",
+				"en": "City of Heroes",
+				"es": "Ciudad de héroes",
+				"fr": "Place aux Héros",
+				"pt": "Heróis Cidadãos"		
+			}
+		},
+						{
+			"id" : 342,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Operation Blackout",
+				"en": "Operation Blackout",
+				"es": "Operación Apagón",
+				"fr": "Opération Black-out",
+				"pt": "Operação Apagão"		
+			}
+		},
+				{
+			"id" : 348,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Urzeit",
+				"en": "Pre-Historic",
+				"es": "Música prehistórica",
+				"fr": "Préhisto-tempo",
+				"pt": "Pré-Histórico"		
+			}
+		},
+				{
+			"id" : 351,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Herbert Style",
+				"en": "Herbert Style",
+				"es": "Herbert Style",
+				"fr": "Herbert Style",
+				"pt": "Herbert Style"		
+			}
+		},					
+				{
+			"id" : 254,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Weihnachtsmix",
+				"en": "Santa's Mix",
+				"es": "Mix de Santa Claus",
+				"fr": "Medley du Père Noël",
+				"pt": "Mix do Noel"		
+			}
+		},
+				{
+			"id" : 255,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Der Schneemann-Song",
+				"en": "Holiday Medley",
+				"es": "Popurrí navideño",
+				"fr": "Ballade de Noël",
+				"pt": "Ritmo de Ano Novo"		
+			}
+		},
+				{
+			"id" : 346,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Coole Kälte",
+				"en": "Cool In The Cold",
+				"es": "La nieve es genial",
+				"fr": "Cool In The Cold",
+				"pt": "Cool In The Cold"		
+			}
+		},						
+				{
+			"id" : 341,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Geister wollen tanzen",
+				"en": "Ghosts Just Wanna Dance",
+				"es": "Los fantasmas quieren bailar",
+				"fr": "Ghosts Just Wanna Dance",
+				"pt": "Ghosts Just Wanna Dance"		
+			}
+		},	
+				{
+			"id" : 299,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Geistermoor",
+				"en": "Spookiest Swamp",
+				"es": "Pantano fantasmagórico",
+				"fr": "Le Marais Hanté",
+				"pt": "Pântano Medonho"		
+			}
+		},
+				{
+			"id" : 337,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Die Party geht ab",
+				"en": "Party Starts Now",
+				"es": "La fiesta empieza ya",
+				"fr": "Pour la fête on est là",
+				"pt": "Party Starts Now",
+				"ru": "Начинаем праздник"		
+			}
+		},
+				{
+			"id" : 272,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Alle Bereiche-Pass",
+				"en": "All-Access Pass",
+				"es": "Pase ilimitado",
+				"fr": "Pass Passe-partout",
+				"pt": "Passe Livre"		
+			}
+		},
+				{
+			"id" : 271,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Rockige Pizza",
+				"en": "Rocking Pizza",
+				"es": "Pizza rockera",
+				"fr": "Rock Pizza",
+				"pt": "Pizza do Barulho"		
+			}
+		},
+				{
+			"id" : 41,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Wikinger-Oper",
+				"en": "Viking Opera",
+				"es": "Ópera vikinga",
+				"fr": "L'Opéra Viking",
+				"pt": "A Ópera Viking"		
+			}
+		},
+				{
+			"id" : 42,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Norman Swarm",
+				"en": "Norman Swarm",
+				"es": "Zumbidos",
+				"fr": "Norman Swarm",
+				"pt": "Zumbido no Ouvido"		
+			}
+		},
+				{
+			"id" : 236,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Auf ins Gefecht!",
+				"en": "To Battle!",
+				"es": "¡A la batalla!",
+				"fr": "Paré au Combat !",
+				"pt": "À Batalha!"		
+			}
+		},
+				{
+			"id" : 24,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Der Weg des Sensei",
+				"en": "The Way of Sensei",
+				"es": "A la manera del Sensei",
+				"fr": "Sur les Pas de Sensei",
+				"pt": "A Jornada do Sensei"		
+			}
+		},
+				{
+			"id" : 291,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Insel-Abenteuer",
+				"en": "Island Adventure",
+				"es": "Aventuras en la isla",
+				"fr": "L'Île de l'Aventure",
+				"pt": "Aventura na Ilha"		
+			}
+		},
+				{
+			"id" : 256,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Eis-Serenade",
+				"en": "Icy Serenade",
+				"es": "Serenata helada",
+				"fr": "Sérénade Glacée",
+				"pt": "Serenata Gelada"		
+			}
+		},
+						{
+			"id" : 38,
+			"enabled": false,
+			"fontSize" : 12,
+			"translation": {
+				"de": "Planet Y",
+				"en": "Planet Y",
+				"es": "Planeta Y",
+				"fr": "Odyssée Intergalactique",
+				"pt": "Odisseia Intergaláctica"		
+			}
+		}
+	]
+}
