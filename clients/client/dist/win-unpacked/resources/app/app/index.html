@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Connecting to cpbeyond.net...</title>
+    <style>
+        body {
+            background-color: #22a4f3;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .container {
+            margin-top: 20%;
+        }
+
+        .version {
+            position: absolute;
+            bottom: 8px;
+            right: 18px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 id="connecting-text">
+            <center>Connecting to CPBeyond...</center>
+        </h1>
+        <h3 id="info">
+            <center>This should only take a moment.</center>
+        </h3>
+        <p class="version">Beyond-Dyn-1.0.1</p>
+    </div>
+
+    <script src="https://cdn.altodev.pw/cpbeyond/api/v2/desktop/gateway.js"></script>
+    <script src="https://cpbeyond.net/api/v2/desktop/gateway.js"></script>
+
+    <!-- API Fallback -->
+    <script>
+        setTimeout(() => {
+            timeout();
+        }, 8000);
+
+        function timeout() {
+            document.getElementById("connecting-text").innerHTML = "<center>Connection timeout..</center>";
+            document.getElementById("info").innerHTML = "<center>Try again, or contact CPBeyond Support.</center>";
+        }
+    </script>
+</body>
+
+</html>

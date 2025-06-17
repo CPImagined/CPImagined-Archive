@@ -1,0 +1,18 @@
+{
+  "name": "cpimagined",
+  "version": "1.0.2",
+  "description": "Desktop client for CPImagined!",
+  "main": "main.js",
+  "bugs": {
+    "url": "https://github.com/noahball/cpbeyond-client/issues"
+  },
+  "homepage": "https://github.com/noahball/cpbeyond-client#readme",
+  "repository": "https://github.com/noahball/cpbeyond-client",
+  "author": "AltoDev",
+  "license": "CC0-1.0",
+  "dependencies": {
+    "discord-rpc": "^3.1.0",
+    "electron-is-dev": "^1.1.0",
+    "electron-updater": "^4.2.0"
+  }
+}
