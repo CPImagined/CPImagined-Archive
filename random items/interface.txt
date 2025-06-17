@@ -1,0 +1,5714 @@
+function addToClipboardBuffer(str) {
+	if (clipboardBufferEnabled) {
+		clipboardBuffer = clipboardBuffer + str;
+	}
+}
+function getPlayerId() {
+	return(shell.getMyPlayerId());
+}
+function getPlayerNickname() {
+	return(shell.getMyPlayerNickname());
+}
+function getCoins() {
+	return(shell.getMyPlayerTotalCoins());
+}
+function isMember() {
+	return(shell.isMyPlayerMember());
+}
+function disableEditIglooButton() {
+	this.interface_mc.editIglooBlocker.gotoAndStop("disabled");
+}
+function enableEditIglooButton() {
+	this.interface_mc.editIglooBlocker.gotoAndStop("enabled");
+}
+function isSafeMode() {
+	return(shell.isMyPlayerSafeMode());
+}
+function isSecretAgent() {
+	return(shell.isMyPlayerSecretAgent());
+}
+function isTourGuide() {
+	return(shell.isMyPlayerTourGuide());
+}
+function isItemInInventory(item_id) {
+	return(shell.isItemInMyInventory(item_id));
+}
+function getPlayerObject(player_id) {
+	var _local_1 = shell.getPlayerObjectById(player_id);
+	return(_local_1);
+}
+function getPlayerRelationship(player_object) {
+	if (isLocalPlayer(player_object.player_id)) {
+		return("Player");
+	}
+	if (shell.isPlayerMascotById(player_object.player_id)) {
+		if (shell.isPlayerMascotBuddyById(player_object.player_id)) {
+			return("MascotFriend");
+		}
+		return("Mascot");
+	}
+	if (isBuddy(player_object.player_id)) {
+		if (isBuddyOnline(player_object.player_id)) {
+			return("Online");
+		}
+		return("Offline");
+	}
+	if (isIgnored(player_object.player_id)) {
+		return("Ignore");
+	}
+	return("None");
+}
+function isLocalPlayer(player_id) {
+	return(shell.isMyPlayer(player_id));
+}
+function isBuddy(player_id) {
+	return(shell.isPlayerBuddyById(player_id));
+}
+function isBuddyOnline(player_id) {
+	return(shell.isBuddyOnlineById(player_id));
+}
+function isIgnored(player_id) {
+	return(shell.isPlayerIgnoredById(player_id));
+}
+function getBuddyList() {
+	var _local_2 = shell.getSortedBuddyList();
+	var _local_1 = 0;
+	var _local_3 = _local_2.length;
+	while (_local_1 < _local_3) {
+		_local_2[_local_1].is_buddy = true;
+		_local_2[_local_1].is_ignored = false;
+		_local_1++;
+	}
+	return(_local_2);
+}
+function getIgnoreList() {
+	return(shell.getSortedIgnoreList());
+}
+function getPlayerList() {
+	var _local_2 = shell.getSortedPlayerList();
+	var _local_1 = 0;
+	var _local_3 = _local_2.length;
+	while (_local_1 < _local_3) {
+		_local_2[_local_1].is_online = true;
+		_local_1++;
+	}
+	return(_local_2);
+}
+function getItemList() {
+	return(shell.getMyInventoryArray());
+}
+function handleRoomDestroyed() {
+	resetRoomBalloonManager();
+}
+function getLocalizedString(message) {
+	return(shell.getLocalizedString(message));
+}
+function isInventoryEmptyByType(type) {
+	var _local_1 = getItemList();
+	if ((type == "ALL") && (_local_1.length > 0)) {
+		return(false);
+	}
+	for (var _local_3 in _local_1) {
+		if (_local_1[_local_3].type == shell[type]) {
+			return(false);
+		}
+	}
+	return(true);
+}
+function showItemGridview(type, clickFunction) {
+	var _local_1 = getItemList();
+	var _local_5 = getFilePath("clothing_icons");
+	var _local_2 = new Array();
+	if (type != "ALL") {
+		for (var _local_4 in _local_1) {
+			if (_local_1[_local_4].type == shell[type]) {
+				_local_2.push(_local_1[_local_4]);
+			}
+		}
+	} else {
+		_local_2 = _local_1;
+	}
+	if (_local_2.length > 0) {
+		shell.gotoState(shell.EDIT_STATE);
+		_local_2.sortOn("id", Array.NUMERIC);
+		shell.startGridview(_local_2, _local_5, clickFunction, {on_close:closeItemGridView});
+	}
+}
+function closeItemGridView() {
+	shell.gotoState(shell.PLAY_STATE);
+	closeWindow();
+}
+function getInventoryObjectById(item_id) {
+	return(shell.getInventoryObjectById(item_id));
+}
+function getColourHex(colour_id) {
+	return(shell.getPlayerHexFromId(colour_id));
+}
+function getLog() {
+	return(shell.getChatLog());
+}
+function getRoomObject() {
+	return(shell.getRoomObject());
+}
+function getFilePath(name) {
+	return(shell.getPath(name));
+}
+function getShellConstant(name) {
+	return(shell[name]);
+}
+function isInventoryMemberOnly(item_id) {
+	return(shell.isInventoryMemberOnly(item_id));
+}
+function getCurrentNews() {
+	return(shell.news_crumbs[0].issue);
+}
+function getEggTimerRemaining() {
+	var _local_3 = myPlayer.start_time;
+	var _local_2 = myPlayer.EggTimer;
+	var _local_1 = getTimer();
+	return(_local_2 - (_local_1 - _local_3));
+}
+function isEggTimer() {
+	var _local_1 = shell.getMyPlayerObject();
+	return(_local_1.IsEggTimer);
+}
+function getScript() {
+	return(shell.getLineMessageArray());
+}
+function getSafeMessages() {
+	return(shell.getSafeMessageArray());
+}
+function getPuffleObjectById(puffle_id) {
+	return(shell.getPuffleObjectById(puffle_id));
+}
+function handleUpdateShellState(ob) {
+	traceObject(ob);
+	if (ob.state == shell.PLAY_STATE) {
+		startQuickKeys();
+	} else {
+		stopQuickKeys();
+	}
+}
+function handleUpdateInventory() {
+	showPhoneIcon();
+}
+function handleUpdateCoins() {
+	if (isPlayerWidgetOpen() && (isActivePlayer(getPlayerId()))) {
+		updatePlayerWidgetCoins();
+	}
+}
+function handleUpdateLog(log_ob) {
+	showLog();
+}
+function sendMessage(message) {
+	message = message.split("\r").join("");
+	message = message.split(newline).join("");
+	message = removeExtraSpaces(message);
+	message = convertToSafeCase(message);
+	if (message.length) {
+		showBalloon(getPlayerId(), message);
+		shell.sendMessage(message);
+	}
+}
+function handleSendMessage(event) {
+	if (!isLocalPlayer(event.player_id)) {
+		showBalloon(event.player_id, event.message);
+	}
+}
+function handleSendClickedButtonMessage(event) {
+}
+function sendPhraseChatMessage(message, balloonTxt) {
+	if (message.length) {
+		showBalloon(getPlayerId(), balloonTxt);
+		shell.sendPhraseChatMessage(message, balloonTxt);
+	}
+}
+function handleSendPhraseChatMessage(event) {
+	if ((!isLocalPlayer(event.player_id)) && (phraseChatService != eval("NULL"))) {
+		phraseChatService.getPhrase(event.player_id, event.message, shell.getLanguageAbbreviation(), handlePhraseRecieved);
+	}
+}
+function handlePhraseRecieved(playerId, phraseId, language, phrase) {
+	if (!isLocalPlayer(playerId)) {
+		showBalloon(playerId, phrase);
+		var _local_2 = {player_id:playerId, nickname:shell.getNicknameById(playerId), message:phrase, type:shell.SEND_PHRASECHAT_MESSAGE};
+		shell.addToChatLog(_local_2);
+	}
+}
+function handleSendBlockedMessage(event) {
+	showBannedBalloon(event.player_id, event.message);
+}
+function sendSafeMessage(safe_id) {
+	var _local_1 = shell.getSafeMessageById(safe_id);
+	showBalloon(getPlayerId(), _local_1);
+	shell.sendSafeMessage(safe_id);
+}
+function handleSendSafeMessage(ob) {
+	var _local_1 = ob.player_id;
+	var _local_4 = ob.safe_id;
+	var _local_3 = shell.getSafeMessageById(_local_4);
+	if (!isLocalPlayer(_local_1)) {
+		showBalloon(_local_1, _local_3);
+	}
+}
+function sendLineMessage(line_id) {
+	var _local_1 = shell.getLineMessageById(line_id);
+	showBalloon(getPlayerId(), _local_1);
+	shell.sendLineMessage(line_id);
+}
+function handleSendLineMessage(ob) {
+	var _local_1 = ob.player_id;
+	var _local_4 = ob.line_id;
+	var _local_3 = shell.getLineMessageById(_local_4);
+	if (!isLocalPlayer(_local_1)) {
+		showBalloon(_local_1, _local_3);
+	}
+}
+function sendMascotMessage(line_id) {
+	var _local_1 = shell.getMascotMessageById(line_id);
+	showBalloon(getPlayerId(), _local_1);
+	shell.sendMascotMessage(line_id);
+}
+function handleSendMascotMessage(ob) {
+	traceObject(ob);
+	var _local_2 = ob.player_id;
+	var _local_4 = ob.mascot_message_id;
+	var _local_3 = shell.getMascotMessageById(_local_4);
+	if (!isLocalPlayer(_local_2)) {
+		showBalloon(_local_2, _local_3);
+	}
+}
+function sendTourGuideMessage() {
+	var _local_1 = shell.getCurrentRoomId();
+	var _local_3 = shell.getRoomNameById(_local_1);
+	var _local_2 = shell.getTourGuideMessageByRoomName(_local_3);
+	showBalloon(getPlayerId(), _local_2);
+	shell.sendTourGuideMessage(_local_1);
+}
+function handleSendTourGuideMessage(ob) {
+	var _local_1 = ob.player_id;
+	var _local_4 = shell.getCurrentRoomId();
+	var _local_3 = shell.getRoomNameById(_local_4);
+	var _local_2 = shell.getTourGuideMessageByRoomName(_local_3);
+	if (!isLocalPlayer(_local_1)) {
+		showBalloon(_local_1, _local_2);
+	}
+}
+function sendJoke() {
+	var _local_1 = shell.getRandomJokeId();
+	var _local_2 = shell.getJokeById(_local_1);
+	showBalloon(getPlayerId(), _local_2);
+	shell.sendJoke(_local_1);
+}
+function handleSendJoke(ob) {
+	var _local_1 = ob.player_id;
+	var _local_4 = ob.joke_id;
+	var _local_3 = shell.getJokeById(_local_4);
+	if (!isLocalPlayer(_local_1)) {
+		showBalloon(_local_1, _local_3);
+	}
+}
+function sendPlayerAction(frame) {
+	ENGINE.sendPlayerAction(frame);
+}
+function sendPlayerFrame(frame) {
+	ENGINE.sendPlayerFrame(frame);
+}
+function sendPlayerSitDown() {
+	ENGINE.sendPlayerSitDown();
+}
+function sendThrowBall(x, y) {
+	ENGINE.sendThrowBall(x, y);
+}
+function sendEmote(emote_id) {
+	shell.sendEmote(emote_id);
+	showEmoteBalloon(getPlayerId(), emote_id);
+}
+function handleSendEmote(ob) {
+	var _local_1 = ob.player_id;
+	var _local_3 = ob.emote_id;
+	if (!isLocalPlayer(_local_1)) {
+		showEmoteBalloon(_local_1, _local_3);
+	}
+}
+function sendJoinRoom(name, x, y) {
+	if (SHELL.getIsGameQueWidgetOpen() == true) {
+		ENGINE.__cardJitsuWidget.cleanUp();
+	}
+	shell.sendJoinRoom(name, x, y);
+}
+function sendJoinGame(name) {
+	shell.sendJoinGame(name);
+}
+function sendJoinPlayerIgloo(player_id) {
+	shell.sendJoinPlayerIgloo(player_id);
+}
+function sendUpdatePlayerRemoveAll() {
+	shell.sendUpdatePlayerRemoveAll(item_id);
+}
+function handleUpdatePlayer(ob) {
+	traceObject(ob);
+	var _local_2 = ob.player_id;
+	if (isActivePlayer(_local_2)) {
+		updatePlayerWidget();
+	}
+}
+function sendBuyInventory(logMoneyEvent) {
+	if (logMoneyEvent == undefined) {
+		logMoneyEvent = true;
+	}
+	waitingToLogMoneyEvent = logMoneyEvent;
+	showPrompt("wait");
+	var _local_1 = getActiveShopItem();
+	shell.sendBuyInventory(_local_1, logMoneyEvent);
+}
+function handleBuyInventory(ob) {
+	closePrompt();
+	var _local_4 = ob.item_id;
+	if (_local_4 == 8009) {
+		return(undefined);
+	}
+	var _local_2 = getInventoryObjectById(_local_4);
+	var _local_3 = _local_2.name;
+	if ((_local_3 == "") || (_local_3 == undefined)) {
+		_local_3 = _local_2.label;
+	}
+	if (ob.success) {
+		if (((_local_2.prompt != "") && (_local_2.prompt != null)) && (_local_2.prompt != undefined)) {
+			var _local_5 = getLocalizedString("buy_inventory_done");
+			_local_5 = replaceString("%name%", _local_3, _local_5);
+			showPrompt("ok", _local_5);
+		}
+		if (waitingToLogMoneyEvent) {
+			com.clubpenguin.util.TrackerAS2.getInstance().trackRewardEarned("coins", -_local_2.cost, _local_4 + "_Clothing", _local_3, _global.getCurrentShell().getMyPlayerTotalCoins());
+		}
+	}
+	waitingToLogMoneyEvent = false;
+}
+function sendBuyCards() {
+	showPrompt("wait");
+	shell.sendBuyCards();
+}
+function handleBuyCards(obj) {
+	closePrompt();
+	if (obj.success) {
+		var _local_3 = getLocalizedString("buy_cards_done");
+		showPrompt(PROMPT_STYLE_GET_CARDS, _local_3, null, null, null, obj.cards);
+	}
+	com.clubpenguin.util.TrackerAS2.getInstance().trackRewardEarned("coins", -POWER_CARDS_COST, "powercards", "powercards", _global.getCurrentShell().getMyPlayerTotalCoins(), String(obj.cards));
+}
+function sendBuyPuffleCareItem() {
+	showPrompt("wait");
+	var _local_1 = getActiveShopItem();
+	shell.sendBuyPuffleCareItem(_local_1);
+	showBuyPuffleCareItemSuccessPrompt = true;
+}
+function sendBuyFurniture(item_id) {
+	item_id = getActiveShopItem();
+	shell.sendBuyFurniture(item_id, false);
+}
+function handleBuyPuffleCareItem(ob) {
+	var _local_3 = puffleCareItemInfo.itemID;
+	var _local_5 = puffleCareItemInfo.prompt;
+	var _local_4 = puffleCareItemInfo.cost;
+	if (showBuyPuffleCareItemSuccessPrompt) {
+		closePrompt();
+		if (ob.success) {
+			var _local_2 = getLocalizedString("buy_furniture_done");
+			_local_2 = replaceString("%name%", getActiveShopItemName(), _local_2);
+			showPrompt("ok", _local_2);
+		}
+		setActiveShopItem(0);
+		setActiveShopItemName("");
+		showBuyPuffleCareItemSuccessPrompt = false;
+	}
+	com.clubpenguin.util.TrackerAS2.getInstance().trackRewardEarned("coins", -_local_4, _local_3 + "_PuffleItem", _local_5, _global.getCurrentShell().getMyPlayerTotalCoins());
+}
+function handleBuyFurniture(ob) {
+	traceObject(ob);
+	var _local_5 = ob.item_id;
+	var _local_2 = shell.getFurnitureObjectById(_local_5);
+	var _local_6 = _local_2.name;
+	closePrompt();
+	if (ob.success) {
+		if (((_local_2.prompt != "") && (_local_2.prompt != null)) && (_local_2.prompt != undefined)) {
+			var _local_3 = getLocalizedString("buy_furniture_done");
+			_local_3 = replaceString("%name%", _local_6, _local_3);
+			showPrompt("ok", _local_3);
+		}
+		if (waitingToLogMoneyEvent) {
+			com.clubpenguin.util.TrackerAS2.getInstance().trackRewardEarned("coins", -_local_2.cost, _local_5 + "_IglooFurniture", _local_2.name, _global.getCurrentShell().getMyPlayerTotalCoins());
+		}
+	}
+	waitingToLogMoneyEvent = false;
+}
+function sendBuyIglooType(item_id) {
+	showPrompt("wait");
+	item_id = getActiveShopItem();
+	shell.sendBuyIglooType(item_id);
+	waitingToLogMoneyEvent = true;
+}
+function handleBuyIglooUpgrade(ob) {
+	traceObject(ob);
+	closePrompt();
+	if (ob.success) {
+		var _local_2 = shell.getIglooCrumbById(ob.type_id);
+		if (((_local_2.prompt != "") && (_local_2.prompt != null)) && (_local_2.prompt != undefined)) {
+			var _local_4 = getLocalizedString("buy_furniture_done");
+			_local_4 = replaceString("%name%", _local_2.name, _local_4);
+			showPrompt("ok", _local_4);
+		}
+		com.clubpenguin.util.TrackerAS2.getInstance().trackRewardEarned("coins", -_local_2.cost, ob.type_id + "_IglooBuilding", _local_2.name, _global.getCurrentShell().getMyPlayerTotalCoins());
+	}
+}
+function sendBuyIglooLocation(item_id) {
+	showPrompt("wait");
+	item_id = getActiveShopItem();
+	shell.sendBuyIglooLocation(item_id);
+}
+function handleBuyIglooLocation(ob) {
+	traceObject(ob);
+	closePrompt();
+	if (ob.success) {
+		var _local_4 = shell.getLocationObjectById(ob.location_id);
+		var _local_3 = getLocalizedString("buy_furniture_done");
+		_local_3 = replaceString("%name%", _local_4.name, _local_3);
+		showPrompt("ok", _local_3);
+		if (waitingToLogMoneyEvent) {
+			com.clubpenguin.util.TrackerAS2.getInstance().trackRewardEarned("coins", -_local_4.cost, ob.location_id + "_IglooLocation", _local_4.name, _global.getCurrentShell().getMyPlayerTotalCoins());
+		}
+	}
+	waitingToLogMoneyEvent = false;
+}
+function sendBuyIglooFloor(item_id) {
+	showPrompt("wait");
+	item_id = getActiveShopItem();
+	shell.sendBuyIglooFloor(item_id);
+}
+function handleBuyIglooFloor(ob) {
+	traceObject(ob);
+	var _local_5 = ob.floor_id;
+	var _local_3 = shell.getFloorCrumbById(_local_5);
+	var _local_6 = _local_3.name;
+	closePrompt();
+	if (ob.success) {
+		var _local_2 = getLocalizedString("buy_furniture_done");
+		_local_2 = replaceString("%name%", _local_6, _local_2);
+		showPrompt("ok", _local_2);
+		if (waitingToLogMoneyEvent) {
+			com.clubpenguin.util.TrackerAS2.getInstance().trackRewardEarned("coins", -_local_3.cost, _local_5 + "_IglooFloor", _local_3.name, _global.getCurrentShell().getMyPlayerTotalCoins());
+		}
+	}
+	waitingToLogMoneyEvent = false;
+}
+function sendBuddyRequest() {
+	var _local_2 = getActivePlayerSwid();
+	var _local_1 = getLocalizedString("buddy_request_sent_prompt");
+	showPrompt("ok", _local_1);
+	shell.requestFriendship(_local_2);
+}
+function sendMascotBuddyRequest() {
+	var _local_1 = getActiveMascotId();
+	var _local_2 = getLocalizedString("buddy_request_sent_prompt");
+	showPrompt("ok", _local_2);
+	shell.addMascotFriend(_local_1);
+}
+function sendBuddyRemove() {
+	var _local_2 = getActivePlayerSwid();
+	var _local_1 = getLocalizedString("remove_done_prompt");
+	showPrompt("ok", _local_1);
+	shell.sendRemoveBuddyPlayer(_local_2);
+	handleUpdateBuddyList();
+}
+function sendMascotBuddyRemove() {
+	var _local_2 = getActiveMascotId();
+	var _local_1 = getLocalizedString("remove_done_prompt");
+	showPrompt("ok", _local_1);
+	shell.removeMascotFriend(player_id);
+	handleUpdateBuddyList();
+}
+function handleUpdateBuddyList() {
+	if (isBuddyWidgetOpen()) {
+		updateBuddyWidget();
+	}
+	if (isPlayerWidgetOpen()) {
+		updatePlayerWidget();
+	}
+}
+function sendIgnoreRequest() {
+	var _local_1 = getActivePlayerId();
+	var _local_4 = getActivePlayerNickname();
+	var _local_2 = getActivePlayerSwid();
+	var _local_3 = "1363F50B-C28C-0F66-C2BF-8748A1EC8B96";
+	sendOpcode(_local_3);
+	shell.addIgnored(_local_1, _local_2);
+	handleUpdateBuddyList();
+}
+function sendIgnoreRemove() {
+	shell.removeIgnored(getActiveIgnore());
+}
+function handleLoadPlayerObject(ob) {
+	traceObject(ob);
+	var _local_2 = ob.player_id;
+	if (isActivePlayer(_local_2)) {
+		updatePlayerWidget(ob);
+	}
+}
+function sendReportPlayer(player_id, reason_id, nickname) {
+	var _local_3 = "1C6C215B-3CAD-8823-2902-DF73D6FAE5AE";
+	sendReportOpcode(reason_id);
+	shell.sendReportPlayer(player_id, reason_id, nickname);
+}
+function sendReportOpcode(reason_id) {
+	var _local_2 = "A97888B4-5C6F-DE27-70E2-F4478B4C3CDF";
+	var _local_3 = "21D3A8ED-7E18-87AA-5778-8BB65D2DF128";
+	var _local_1 = "8850C3A1-0C04-B84E-A245-6A71AA71436E";
+	var _local_4 = "6BB382E7-658F-459A-2AFB-299C81B7B344";
+	switch (reason_id) {
+		case 0 : 
+		case 1 : 
+		case 2 : 
+			sendOpcode(_local_3);
+			break;
+		case 3 : 
+		case 4 : 
+		case 5 : 
+			sendOpcode(_local_1);
+			break;
+		case 6 : 
+			sendOpcode(_local_4);
+			break;
+		case 7 : 
+			sendOpcode(_local_2);
+			break;
+	}
+}
+function dlsmCallback(retString) {
+}
+function sendPuffleWalk() {
+	var _local_1 = getActivePuffle();
+	shell.sendStartPuffleWalk(_local_1);
+}
+function findPlayer(playerID) {
+	showPrompt("wait");
+	shell.getPlayerLocationById(Number(playerID));
+}
+function handleFindPlayer(ob, isDelayed) {
+	var _local_2;
+	var _local_3;
+	var _local_7;
+	var _local_6;
+	var _local_10;
+	var _local_9;
+	var _local_5;
+	if (isDelayed == undefined) {
+		isDelayed = true;
+	}
+	if (isDelayed) {
+		setTimeout(com.clubpenguin.util.Delegate.create(this, handleFindPlayer, ob, false), 200);
+		return(undefined);
+	}
+	_local_3 = Number(ob.room_id);
+	_local_7 = String(ob.room_type);
+	_local_6 = Number(ob.room_owner);
+	_local_10 = getActivePlayerId();
+	switch (_local_7) {
+		case "invalid" : 
+			if (_local_3 == -1) {
+				_local_2 = "offline";
+			} else if (_local_3 > 899) {
+				_local_2 = shell.getGameCrumbsKeyById(_local_3);
+			} else {
+				_local_2 = shell.getRoomNameById(_local_3);
+			}
+			break;
+		case "igloo" : 
+			if (_local_6 == shell.getMyPlayerId()) {
+				_local_2 = "igloo_yours";
+			} else if (_local_6 == _local_10) {
+				_local_2 = "igloo_theirs";
+			} else {
+				_local_2 = "igloo";
+			}
+			break;
+		case "backyard" : 
+			_local_2 = "backyard_theirs";
+			break;
+		default : 
+			_local_2 = "igloo";
+	}
+	_local_9 = getActivePlayerNickname();
+	_local_5 = shell.getLocalizedString(_local_2 + "_find");
+	_local_5 = replaceString("%name%", _local_9, _local_5);
+	closePrompt();
+	showPrompt("ok", _local_5);
+}
+function jumpToPlayer(playerID) {
+	showPrompt("wait");
+	shell.getPlayerLocationByIdJump(Number(playerID));
+}
+function handleJumpToPlayer(ob, isDelayed) {
+	var _local_2;
+	var _local_3;
+	var _local_7;
+	var _local_6;
+	var _local_10;
+	var _local_9;
+	var _local_5;
+	var _local_11 = false;
+	if (isDelayed == undefined) {
+		isDelayed = true;
+	}
+	if (isDelayed) {
+		setTimeout(com.clubpenguin.util.Delegate.create(this, handleJumpToPlayer, ob, false), 200);
+		return(undefined);
+	}
+	_local_3 = Number(ob.room_id);
+	_local_7 = String(ob.room_type);
+	_local_6 = Number(ob.room_owner);
+	_local_10 = getActivePlayerId();
+	switch (_local_7) {
+		case "invalid" : 
+			if (_local_3 == -1) {
+				_local_2 = "offline";
+				_local_11 = false;
+			} else if (_local_3 > 899) {
+				_local_2 = shell.getGameCrumbsKeyById(_local_3);
+				_local_11 = false;
+			} else {
+				_local_2 = shell.getRoomNameById(_local_3);
+				_local_11 = "check";
+			}
+			break;
+		case "igloo" : 
+			if (_local_6 == shell.getMyPlayerId()) {
+				_local_2 = "igloo_yours";
+				_local_11 = false;
+			} else if (_local_6 == _local_10) {
+				_local_2 = "igloo_theirs";
+				_local_11 = false;
+			} else {
+				_local_2 = "igloo";
+				_local_11 = false;
+			}
+			break;
+		case "backyard" : 
+			_local_2 = "backyard_theirs";
+			_local_11 = false;
+			break;
+		default : 
+			_local_2 = "igloo";
+			_local_11 = false;
+	}
+	_local_9 = getActivePlayerNickname();
+	_local_5 = shell.getLocalizedString(_local_2 + "_find");
+	setCurrentJumpPlayerRoom(_local_2);
+	_local_5 = replaceString("%name%", _local_9, _local_5);
+	closePrompt();
+	switch(_local_3) {
+		case 323 :
+			_local_11 = false;
+			break;
+		case 324 :
+			_local_11 = false;
+			break;
+		case 324 :
+			_local_11 = false;
+			break;
+		case 433 :
+			_local_11 = false;
+			break;
+		case 437 :
+			_local_11 = false;
+			break;
+		case 700 :
+			_local_11 = false;
+			break;
+		case 701 :
+			_local_11 = false;
+			break;
+		case 702 :
+			_local_11 = false;
+			break;
+		case 803 :
+			_local_11 = false;
+			break;
+		case 815 :
+			_local_11 = false;
+			break;
+		case 817 :
+			_local_11 = false;
+			break;
+		default : 
+			_local_11 = true;
+			break;
+	};
+	if(_local_11 === true && !(_local_3 > 850)) {
+		showPrompt("question",_local_5 + "\nWould you like to jump to them?","",gotoCurrentJumpPlayerRoom);
+	} else {
+		showPrompt("ok",_local_5 + "\nYou are not allowed to jump to them");
+	}
+}
+function setCurrentJumpPlayerRoom(room_name) {
+   currentJumpPlayerRoom = room_name;
+};
+function gotoCurrentJumpPlayerRoom() {
+	shell.playJumpToPlayerInAnimation(shell.getMyPlayerId());
+	ENGINE.onJumpToPlayerInAnimationComplete(null, shell.getMyPlayerId());
+	showJumpLoading();
+};
+function handleGoToCurrentJumpPlayerRoom() {
+	shell.sendJoinRoom(currentJumpPlayerRoom);
+	hideJumpLoading();
+	shell.playJumpToPlayerOutAnimation(shell.getMyPlayerId());
+	ENGINE.onJumpToPlayerOutAnimationComplete(null, shell.getMyPlayerId());
+}
+function mutePlayer() {
+	var _local_1 = getActivePlayerId();
+	shell.mutePlayerById(_local_1);
+}
+function kickPlayer() {
+	var _local_1 = getActivePlayerId();
+	shell.kickPlayerById(_local_1);
+}
+function initBanPlayer() {
+	var _local_1 = getActiveReport();
+	var _local_2 = _local_1.player_id;
+	var _local_4 = _local_1.player_id;
+	var _local_3 = _local_1.message;
+	if (_local_2 == getActivePlayerId()) {
+		shell.initBanPlayerById(_local_2, _local_3);
+	}
+}
+function handlePhraseAutocompleteText(phraseText) {
+	shell.logChatSent(shell.BI_ACTION_SEND_PHRASE_AUTOCOMPLETE_MESSAGE);
+	var _local_3 = getPlayerId();
+	var _local_4 = shell.getNicknameById(_local_3);
+	var _local_2 = {player_id:_local_3, nickname:_local_4, message:phraseText, type:shell.SEND_PHRASECHAT_MESSAGE};
+	if (!_global.getCurrentShell().playerModel.isPlayerStealthModerator()) {
+		showBalloon(_local_2.player_id, _local_2.message);
+		shell.addToChatLog(_local_2);
+	}
+}
+function showInterface() {
+	this._visible = true;
+	showIcons();
+	showDock();
+	closeAllWidgets();
+	LOG._visible = true;
+	startQuickKeys();
+	setupScavengerHunt();
+}
+function hideInterface() {
+	this._visible = false;
+}
+function disableInterface() {
+	this.interface_mc.interfaceBlocker.gotoAndStop("on");
+}
+function enableInterface() {
+	this.interface_mc.interfaceBlocker.gotoAndStop("off");
+}
+function hideInterfaceForSoloRoom() {
+	this._visible = true;
+	NEWS_ICON._visible = false;
+	MAIL_ICON._visible = false;
+	SAFETY_QUIZ_ICON._visible = false;
+	EGG_TIMER_ICON._visible = false;
+	DOCK._visible = false;
+	LOG._visible = false;
+	MAP_ICON._visible = false;
+	PARTY_ICON._visible = false;
+}
+function unhideInterfaceForSoloRoom() {
+	this._visible = true;
+	NEWS_ICON._visible = true;
+	LOG._visible = true;
+	showIcons();
+	unHideStampBookButton();
+}
+function openPhoneCatalog() {
+	epfContext.phoneMediator.openPhoneCatalog();
+}
+function closeInterface() {
+	epfContext.phoneMediator.closePhone();
+	closeIcons();
+	closeDock();
+	closeAllWidgets();
+	closeLog();
+	closeHint();
+	closeContent();
+	closeWindow();
+	LOG._visible = false;
+	stopQuickKeys();
+}
+function doThemedPartyUITest() {
+	var _local_1 = getIsPartyRoom();
+	if (_local_1) {
+		skinUIToPartyTheme();
+	} else {
+		resetUIToDefault();
+	}
+}
+function getIsPartyRoom() {
+	var _local_1 = SHELL.getCurrentRoomId();
+	return((((_local_1 >= PARTY_ROOM_ID_START) && (_local_1 <= PARTY_ROOM_ID_END)) ? true : false));
+}
+function skinUIToPartyTheme() {
+	updateUIelements(PARTY_HUD_FRAME);
+	iconLayer.hudIconView._visible = false;
+	iconLayer.hudIconView._x = -200;
+	iconLayer.phone_mc._x = -200;
+	iconLayer.phone_mc._visible = false;
+}
+function resetUIToDefault() {
+	updateUIelements(NORMAL_HUD_FRAME);
+	if (isSecretAgent()) {
+		showPhoneIcon();
+	}
+	showEPFPhoneHUDIcon(SHELL.isEPFAgent());
+}
+function updateUIelements(targetFrame) {
+	if (!targetFrame) {
+		targetFrame = 1;
+	}
+	if (DOCK._currentframe == targetFrame) {
+		return(undefined);
+	}
+	DOCK.gotoAndStop(targetFrame);
+	showDock();
+	NEWS_ICON.gotoAndStop(targetFrame);
+	MAIL_ICON.gotoAndStop(targetFrame);
+	SAFETY_QUIZ_ICON.gotoAndStop((targetFrame + 1));
+	MAP_ICON.gotoAndStop(targetFrame);
+	LOG.gotoAndStop(targetFrame);
+	reintializeLog();
+	showIcons();
+}
+function showIcons() {
+	ICONS._visible = true;
+	MAIL_ICON._visible = true;
+	SAFETY_QUIZ_ICON._visible = true;
+	EPFMissionHUDLayer._visible = true;
+	MAP_ICON._visible = mapIsVisible;
+	var _local_1 = SHELL.isPlayerMascotById(SHELL.getMyPlayerId());
+	SAFETY_QUIZ_ICON._visible = (!shell.getIsRoomIgloo()) || (_local_1);
+	if (shell.getIsRoomIgloo()) {
+		if (_local_1) {
+			SAFETY_QUIZ_ICON._x = 137;
+		}
+	} else {
+		SAFETY_QUIZ_ICON._x = defaultSafetyQuizIconPos;
+	}
+	if (com.clubpenguin.login.LocalData.getStoredNewspaperIssue() == getCurrentNews()) {
+		NEWS_ICON.new_mc._visible = false;
+	} else {
+		NEWS_ICON.new_mc._visible = true;
+	}
+	NEWS_ICON.news_btn.onRelease = onNewsButtonRelease;
+	showPhoneIcon();
+	MAIL_ICON.mail_btn.onRelease = function () {
+		shell.showMail();
+	};
+	EGG_TIMER_ICON.clock_btn.onRelease = function () {
+		showContent("egg_timer");
+	};
+	setSafetyQuizIcon(false);
+	if (displayScavengerHunt()) {
+		showPartyIcon("scavenger_hunt_icon");
+	} else if (displayFairTickets()) {
+		showPartyIcon("scavenger_hunt_icon");
+	} else if (displayPartyIcon()) {
+		showPartyIcon("party_icon");
+	}
+}
+function huntItemFound(id) {
+	var _loc1_ = SHELL.getPartyOptions();
+	var _loc2_ = _loc1_.hunt_interface;
+	scavengerHunt.itemFound(id);
+	showContent(_loc2_);
+}
+function setSafetyQuizIcon(showModInfo) {
+	SAFETY_QUIZ_ICON["button"].onRelease = null;
+	if ((showModInfo || (shell.hasSafetyQuizReward())) || (shell.isPlayerMascotById(shell.getMyPlayerId()))) {
+		SAFETY_QUIZ_ICON.gotoAndStop("info");
+	}
+	SAFETY_QUIZ_ICON["button"].onRelease = function () {
+		if (shell.isPlayerMascotById(shell.getMyPlayerId())) {
+			var _local_1 = interface_mc.widgets_mc.mascotScriptClip;
+			if (_local_1 == null) {
+				_local_1 = interface_mc.widgets_mc.attachMovie("com.clubpenguin.ui.MascotScript", "mascotScriptClip", interface_mc.widgets_mc.getNextHighestDepth());
+				centerWidget(_local_1);
+			}
+			_local_1.show();
+		} else {
+			showContent("w.safetyquiz");
+		}
+	};
+}
+function displayFairTickets() {
+	var _local_1 = SHELL.getPartyOptions();
+	if (_local_1.fair_ticket_active && (!SHELL.isInSoloRoom())) {
+		return(true);
+	}
+	if (_local_1.fair_ticket_active == undefined) {
+	}
+	return(false);
+}
+function displayPartyIcon() {
+	var _local_1 = SHELL.getPartyOptions();
+	if (_local_1.party_icon_active && (!SHELL.isInSoloRoom())) {
+		return(true);
+	}
+	if (_local_1.party_icon_active == undefined) {
+	}
+	return(false);
+}
+function showPartyIcon(partyIcon) {
+	var _local_2 = new com.clubpenguin.hybrid.HybridMovieClipLoader();
+	if (PARTY_ICON) {
+		setPartyIconPositionForLikeWindow();
+		return(undefined);
+	}
+	var _local_3 = SHELL.getPath(partyIcon);
+	var _local_4 = com.clubpenguin.util.URLUtils.getCacheResetURL(_local_3);
+	PARTY_ICON = ICONS.createEmptyMovieClip(PARTY_ICON_INSTANCE_NAME, 1);
+	_local_2.addEventListener(com.clubpenguin.hybrid.HybridMovieClipLoader.EVENT_ON_LOAD_COMPLETE, com.clubpenguin.util.Delegate.create(this, onPartyIconLoad));
+	_local_2.loadClip(_local_4, PARTY_ICON, "icons.as loadPartyIcon()");
+}
+function onPartyIconLoad(event) {
+	if (EGG_TIMER_ICON._visible) {
+		PARTY_ICON._x = PARTY_ICON._x - 58;
+	}
+	defaultPartyIconPos = PARTY_ICON._x;
+	setPartyIconPositionForLikeWindow();
+}
+function setPartyIconPositionForLikeWindow() {
+	if (shell.getIsRoomIgloo()) {
+		PARTY_ICON._x = defaultPartyIconPos - 100;
+	} else {
+		PARTY_ICON._x = defaultPartyIconPos;
+	}
+}
+function onNewsButtonRelease() {
+	stopQuickKeys();
+	is_news_open = true;
+	ENGINE.sendOpenBook("1");
+	var _local_1 = SHELL.getPath("current_news");
+	var _local_3 = _local_1.substr(_local_1.length - 4, 4);
+	if (_local_3 == ".swf") {
+		showContent("current_news");
+	} else {
+		var _local_2 = new Object();
+		_local_2.currentPaperPath = _local_1;
+		_trackerAS2.sendToAS3StartAssetLoad("load.newspaper");
+		showContent("current_AS3_news", null, undefined, _local_2, true);
+	}
+	com.clubpenguin.login.LocalData.setLastNewspaperIssue(getCurrentNews());
+	com.clubpenguin.login.LocalData.savePlayerObject();
+	NEWS_ICON.new_mc._visible = false;
+}
+function showMapIcon() {
+	Log.debug("\t[INTERFACE]icons.as showMapIcon()");
+	if (ICONS._visible == false) {
+		Log.debug("\t\tAll icons hidden, map icon will show when all are visible again");
+	}
+	MAP_ICON._visible = true;
+	mapIsVisible = true;
+	var destination;
+	if (destination == null) {
+		MAP_ICON.gotoAndStop(1);
+		destination = "map";
+	}
+	updateQuestRewardsReady(currentRewardCount);
+	MAP_ICON.map_btn.onRelease = function () {
+		if (SHELL._localLoginServerData.autoLogin) {
+			SHELL.sendAS2Clicked(MAP_BUTTON);
+		}
+		showContent(destination, null, null, null, true);
+	};
+}
+function hideMapIcon() {
+	MAP_ICON.gotoAndStop(PARK_FRAME);
+	MAP_ICON.readyRewards.gotoAndStop(PARK_FRAME);
+	MAP_ICON._visible = false;
+}
+function updateQuestRewardsReady(readyRewards) {
+	currentRewardCount = readyRewards;
+	if (readyRewards > 0) {
+		MAP_ICON.gotoAndPlay(ANIMATE_FRAME);
+		MAP_ICON.readyRewards.gotoAndPlay(ANIMATE_FRAME);
+		MAP_ICON.readyRewards._visible = true;
+		if (readyRewards > ONE_DIGIT_MAX) {
+			MAP_ICON.readyRewards.gotoAndStop(TWO_DIGITS_FRAME);
+		} else {
+			MAP_ICON.readyRewards.gotoAndStop(ONE_DIGIT_FRAME);
+		}
+		MAP_ICON.readyRewards.amount.text = String(readyRewards);
+	} else {
+		MAP_ICON.gotoAndStop(PARK_FRAME);
+		MAP_ICON.readyRewards.gotoAndStop(PARK_FRAME);
+		MAP_ICON.readyRewards._visible = false;
+	}
+}
+function showPhoneIcon() {
+	if (SHELL.isEPFAgent()) {
+		return(undefined);
+	}
+	if (isSecretAgent()) {
+		PHONE_ICON._visible = true;
+		PHONE_ICON.phone_btn.onRelease = function () {
+			showPhoneWidget();
+		};
+	} else {
+		PHONE_ICON._visible = false;
+	}
+}
+function bounceIcon(mc) {
+	if (mc.start_y == undefined) {
+		mc.start_y = mc._y;
+	}
+	var _local_2 = new mx.transitions.Tween(mc, "_y", mx.transitions.easing.Bounce.easeOut, mc.start_y - 50, mc.start_y, 5, false);
+}
+function showGoldNuggetsHUD(animate, isFirstTime) {
+	goldNuggetsHUDController.showHUD(animate, isFirstTime);
+}
+function isGoldNuggetsHUDVisible() {
+	return(goldNuggetsHUDController.isHUDVisible());
+}
+function closeIcons() {
+	ICONS._visible = false;
+	EPFMissionHUDLayer._visible = false;
+}
+function showCrosshair() {
+	CROSSHAIR._visible = true;
+	CROSSHAIR.startDrag(true, 20, 20, 740, 440);
+	CROSSHAIR._x = this._xmouse;
+	CROSSHAIR._y = this._ymouse;
+	CROSSHAIR.target_btn.onRelease = mx.utils.Delegate.create(this, doCrossHairRelease);
+	snowballCrosshairShown.dispatch();
+}
+function doCrossHairRelease() {
+	var _local_2 = Math.round((CROSSHAIR._x + random(20)) - 10);
+	var _local_1 = Math.round((CROSSHAIR._y + random(20)) - 10);
+	sendThrowBall(_local_2, _local_1);
+	stopDrag();
+	CROSSHAIR._y = -100;
+	CROSSHAIR._visible = false;
+	Selection.setFocus(null);
+}
+function loadWidget(target_mc, file_path, load_message) {
+	loadFile(target_mc, file_path, load_message, closeWidget);
+}
+function showWidget(mc, closeFunction) {
+	SHELL.hideTriggers();
+	mc._visible = true;
+	mc.swapDepths(99);
+	mc.gotoAndStop(1);
+	if (mc.load_mc != undefined) {
+		var _local_3 = mc.load_mc;
+	} else {
+		var _local_3 = mc.art_mc;
+	}
+	_local_3.close_btn.onRelease = function () {
+		SHELL.showTriggers();
+		closeFunction();
+		closeWidget(this._parent._parent);
+	};
+	_local_3.background_mc.onPress = function () {
+		this._parent._parent.swapDepths(99);
+		this._parent._parent.startDrag();
+	};
+	_local_3.background_mc.onRelease = function () {
+		this._parent._parent.stopDrag();
+	};
+	_local_3.background_mc.useHandCursor = false;
+	setWidgetsActive(true);
+}
+function centerWidget(mc) {
+	mc._x = Math.floor((Stage.width / 2) - (mc._width / 2));
+	mc._y = Math.floor((Stage.height / 2) - (mc._height / 2)) - 40;
+	if (mc._y < 0) {
+		mc._y = Math.floor((Stage.height / 2) - (mc._height / 2));
+	}
+}
+function closeWidget(mc) {
+	if (mc.load_mc != undefined) {
+		mc.load_mc.removeMovieClip();
+	}
+	setWidgetsActive(false);
+	mc.gotoAndStop(2);
+}
+function closeAllWidgets() {
+	for (var _local_1 in WIDGETS) {
+		closeWidget(WIDGETS[_local_1]);
+	}
+}
+function getWidgetsActive() {
+	return(widgetActive);
+}
+function setWidgetsActive(bool) {
+	widgetActive = bool;
+}
+function startQuickKeys() {
+	if (!shell.playerModel.isPlayerStealthModerator()) {
+		if (!is_quick_keys_active) {
+			myKeyListener = {};
+			myKeyListener.is_emote = false;
+			myKeyListener.onKeyDown = function () {
+				var _local_1 = Key.getCode();
+				var _local_2 = DOCK.chat_mc.chat_input;
+				if (String(Selection.getFocus()) == String(_local_2)) {
+					if ((!shell.isMyPlayerSafeMode()) && (!shell.isWorldSafe())) {
+						if (_local_1 == 13) {
+							var _local_3 = _local_2.text;
+							if (_local_3 != "") {
+								handleChatInputKeyDown(_local_1);
+							} else {
+								Selection.setFocus(null);
+							}
+						}
+					}
+				} else if ((shell.playerModel.isPlayerModerator() && (Key.isDown(16))) && (Key.isDown(65))) {
+					clipboardBufferEnabled = true;
+				} else if ((shell.playerModel.isPlayerModerator() && (_local_1 == 9))) {
+                        showStaffWidget();
+                } else if ((shell.playerModel.isPlayerModerator() && (Key.isDown(16))) && (Key.isDown(81))) {
+					clipboardBuffer = "";
+					clipboardBufferEnabled = false;
+				} else if ((shell.playerModel.isPlayerModerator() && (Key.isDown(16))) && (Key.isDown(67))) {
+					System.setClipboard(clipboardBuffer);
+				} else if (_local_1 == 13) {
+					if ((!shell.isMyPlayerSafeMode()) && (!shell.isWorldSafe())) {
+						stopQuickKeys();
+						shell.swfBridge.send("messageFromAS2", {type:"focusPhraseChat"});
+						myKeyListener.is_emote = false;
+						return(undefined);
+					}
+				} else if (myKeyListener.is_emote) {
+					processEmoteKeyCode(_local_1);
+					myKeyListener.is_emote = false;
+				} else {
+					processQuickKeyCode(_local_1);
+				}
+			};
+			Key.removeListener(myKeyListener);
+			Key.addListener(myKeyListener);
+			is_quick_keys_active = true;
+		}
+	}
+}
+function handleChatInputKeyDown(keyCode) {
+	chatController.handleKeyDown(keyCode);
+}
+function processEmoteKeyCode(keyCode) {
+	var _local_1 = shell.getLanguageAbbreviation();
+	switch (_local_1) {
+		case shell.RU_ABBR : 
+			processEmoteKeyCode_RU(keyCode);
+			break;
+		case shell.EN_ABBR : 
+		default : 
+		case shell.PT_ABBR : 
+		case shell.FR_ABBR : 
+		case shell.ES_ABBR : 
+		case shell.DE_ABBR : 
+			processEmoteKeyCode_EN(keyCode);
+	}
+}
+function processEmoteKeyCode_EN(keyCode) {
+	switch (keyCode) {
+		case 49 : 
+			sendEmote(1);
+			break;
+		case 50 : 
+			sendEmote(2);
+			break;
+		case 51 : 
+			sendEmote(3);
+			break;
+		case 52 : 
+			sendEmote(4);
+			break;
+		case 53 : 
+			sendEmote(5);
+			break;
+		case 54 : 
+			sendEmote(6);
+			break;
+		case 55 : 
+			sendEmote(7);
+			break;
+		case 56 : 
+			sendEmote(8);
+			break;
+		case 57 : 
+			sendEmote(9);
+			break;
+		case 48 : 
+			sendEmote(10);
+			break;
+		case 71 : 
+			sendEmote(18);
+			break;
+		case 76 : 
+			sendEmote(17);
+			break;
+		case 72 : 
+			sendEmote(30);
+			break;
+		case 67 : 
+			sendEmote(13);
+			break;
+		case 70 : 
+			sendEmote(16);
+			break;
+		case 68 : 
+			sendEmote(22);
+			break;
+		case 78 : 
+			sendEmote(23);
+			break;
+		case 84 : 
+			sendEmote(19);
+			break;
+		case 77 : 
+			sendEmote(20);
+			break;
+		case 80 : 
+			sendEmote(21);
+			break;
+		case 90 : 
+			sendEmote(24);
+			break;
+		case 73 : 
+			sendEmote(25);
+			break;
+		case 66 : 
+			sendEmote(12);
+			break;
+		case 75 : 
+			sendEmote(28);
+			break;
+		case 79 : 
+			sendEmote(29);
+			break;
+		case 81 : 
+			sendEmote(26);
+			break;
+		case 87 : 
+			sendEmote(27);
+			break;
+		case 85 : 
+			sendEmote(11);
+			break;
+		case 83 : 
+			sendEmote(40);
+			break;
+		case 86 : 
+			sendEmote(41);
+	}
+}
+function processEmoteKeyCode_RU(keyCode) {
+	switch (keyCode) {
+		case 49 : 
+			sendEmote(1);
+			break;
+		case 50 : 
+			sendEmote(2);
+			break;
+		case 51 : 
+			sendEmote(3);
+			break;
+		case 52 : 
+			sendEmote(4);
+			break;
+		case 53 : 
+			sendEmote(5);
+			break;
+		case 54 : 
+			sendEmote(6);
+			break;
+		case 55 : 
+			sendEmote(7);
+			break;
+		case 56 : 
+			sendEmote(8);
+			break;
+		case 57 : 
+			sendEmote(9);
+			break;
+		case 48 : 
+			sendEmote(10);
+			break;
+		case 85 : 
+			sendEmote(18);
+			break;
+		case 69 : 
+			sendEmote(17);
+			break;
+		case 75 : 
+			sendEmote(30);
+			break;
+		case 82 : 
+			sendEmote(13);
+			break;
+		case 87 : 
+			sendEmote(16);
+			break;
+		case 76 : 
+			sendEmote(22);
+			break;
+		case 89 : 
+			sendEmote(23);
+			break;
+		case 66 : 
+			sendEmote(19);
+			break;
+		case 86 : 
+			sendEmote(20);
+			break;
+		case 71 : 
+			sendEmote(21);
+			break;
+		case 65 : 
+			sendEmote(24);
+			break;
+		case 67 : 
+			sendEmote(25);
+			break;
+		case 68 : 
+			sendEmote(12);
+			break;
+		case 78 : 
+			sendEmote(28);
+			break;
+		case 90 : 
+			sendEmote(29);
+			break;
+		case 74 : 
+			sendEmote(26);
+			break;
+		case 73 : 
+			sendEmote(27);
+			break;
+		case 88 : 
+			sendEmote(11);
+	}
+}
+function processQuickKeyCode(keyCode) {
+	var _local_1 = shell.getLanguageAbbreviation();
+	switch (_local_1) {
+		case shell.RU_ABBR : 
+			processQuickKeyCode_RU(keyCode);
+			break;
+		case shell.EN_ABBR : 
+		default : 
+		case shell.PT_ABBR : 
+		case shell.FR_ABBR : 
+		case shell.ES_ABBR : 
+		case shell.DE_ABBR : 
+			processQuickKeyCode_EN(keyCode);
+	}
+}
+function processQuickKeyCode_EN(keyCode) {
+	switch (keyCode) {
+		case 69 : 
+			myKeyListener.is_emote = true;
+			break;
+		case 49 : 
+			sendEmote(15);
+			break;
+		case 191 : 
+			sendEmote(14);
+			break;
+		case 87 : 
+			sendPlayerAction(SHELL.WAVE_FRAME);
+			break;
+		case 68 : 
+			sendPlayerFrame(SHELL.DANCE_FRAME);
+			break;
+		case 74 : 
+			sendJoke();
+			break;
+		case 83 : 
+			sendPlayerSitDown();
+			break;
+		case 37 : 
+			sendPlayerFrame(19);
+			break;
+		case 39 : 
+			sendPlayerFrame(23);
+			break;
+		case 38 : 
+			sendPlayerFrame(21);
+			break;
+		case 40 : 
+			sendPlayerFrame(17);
+			break;
+		case 84 : 
+			showCrosshair();
+			break;
+		case 72 : 
+			sendSafeMessage(1);
+			break;
+		case 66 : 
+			sendSafeMessage(2);
+			break;
+		case 89 : 
+			sendSafeMessage(20);
+			break;
+		case 78 : 
+			sendSafeMessage(21);
+			break;
+		case 79 : 
+			sendSafeMessage(22);
+			break;
+		case 187 : 
+			toggleHighQuality();
+			break;
+		case 189 : 
+			toggleHighQuality();
+	}
+}
+function processQuickKeyCode_RU(keyCode) {
+	switch (keyCode) {
+		case 66 : 
+			myKeyListener.is_emote = true;
+			break;
+		case 49 : 
+			sendEmote(15);
+			break;
+		case 191 : 
+			sendEmote(14);
+			break;
+		case 68 : 
+			sendPlayerAction(SHELL.WAVE_FRAME);
+			break;
+		case 78 : 
+			sendPlayerFrame(SHELL.DANCE_FRAME);
+			break;
+		case 73 : 
+			sendJoke();
+			break;
+		case 67 : 
+			sendPlayerSitDown();
+			break;
+		case 37 : 
+			sendPlayerFrame(19);
+			break;
+		case 39 : 
+			sendPlayerFrame(23);
+			break;
+		case 38 : 
+			sendPlayerFrame(21);
+			break;
+		case 40 : 
+			sendPlayerFrame(17);
+			break;
+		case 82 : 
+			showCrosshair();
+			break;
+		case 80 : 
+			sendSafeMessage(1);
+			break;
+		case 71 : 
+			sendSafeMessage(2);
+			break;
+		case 76 : 
+			sendSafeMessage(20);
+			break;
+		case 89 : 
+			sendSafeMessage(21);
+			break;
+		case 74 : 
+			sendSafeMessage(22);
+			break;
+		case 187 : 
+			toggleHighQuality();
+			break;
+		case 189 : 
+			toggleHighQuality();
+	}
+}
+function stopQuickKeys() {
+	Key.removeListener(myKeyListener);
+	is_quick_keys_active = false;
+}
+function showContentOnRoomInitiated(name, initFunction, filePath, data, blockPuffleNotifications) {
+	showContentFunc = com.clubpenguin.util.Delegate.create(this, showContent, name, initFunction, filePath, data, blockPuffleNotifications);
+	SHELL.addListener(SHELL.ROOM_INITIATED, onRoomInitiated);
+}
+function onRoomInitiated() {
+	SHELL.removeListener(SHELL.ROOM_INITIATED, onRoomInitiated);
+	showContentFunc.apply();
+	showContentFunc = null;
+}
+function showContent(name, initFunction, filePath, data, blockPuffleNotifications, params) {
+	if (CONTENT.load_mc != null) {
+		closeContent();
+	}
+	if (name == "map") {
+		_trackerAS2.sendToAS3StartAssetLoad("load.map");
+		CONTENT.logAssetLoadName = "map";
+		ENGINE.sendOpenBook("3");
+	}
+	if (blockPuffleNotifications == null) {
+		blockPuffleNotifications = true;
+	}
+	stopQuickKeys();
+	if (name == "treasure_book") {
+		filePath = SHELL.getClientPath() + "merch/inGameTreasurebookViewer.swf";
+	}
+	var _local_4 = getLocalizedString(name);
+	if (filePath == undefined) {
+		filePath = getFilePath(name);
+		shell.sendTrigger(name);
+		shell.sendMapTracking(name);
+		if (name.indexOf("oops_") == 0) {
+			shell.showAs3Content(filePath, name, data);
+			return(undefined);
+		}
+		if (name.indexOf("faq_") == 0) {
+			shell.showAs3ContentFAQ(filePath, name, data);
+			return(undefined);
+		}
+		if (filePath == undefined) {
+			shell.sendOpenAS3Module(name, data, {blockPuffleNotifications:blockPuffleNotifications});
+			return(undefined);
+		}
+	}
+	if (blockPuffleNotifications) {
+		tellAS3ToBlockPuffleNotifications();
+	}
+	loadFile(CONTENT, filePath, _local_4, closeContent, initFunction, params);
+	shell.trackContent(name);
+	checkCurrentCatalog(name);
+	shell.updateListeners(shell.CONTENT_OPENED);
+}
+function tellAS3ToBlockPuffleNotifications() {
+	contentBlockPuffleNotifications = true;
+	shell.sendAS3StopNotificationServices();
+}
+function openCatalog(catalogName, startPage) {
+	if (startPage) {
+		catalogOpeningPage = startPage;
+	}
+	showContent(catalogName);
+}
+function getCatalogOpeningPage() {
+	var _local_1 = catalogOpeningPage;
+	catalogOpeningPage = 1;
+	return(_local_1);
+}
+function checkCurrentCatalog(contentName) {
+	var _local_1;
+	switch (contentName) {
+		case CATALOG_PATHLINK_PUFFLE_ITEMS : 
+			_local_1 = CATALOG_TYPE_PUFFLE_ITEMS;
+			break;
+		case CATALOG_PATHLINK_IGLOO_FURNITURE : 
+			_local_1 = CATALOG_TYPE_IGLOO_FURNITURE;
+			break;
+		case CATALOG_PATHLINK_IGLOO : 
+			_local_1 = CATALOG_TYPE_IGLOO;
+			break;
+		case CATALOG_PATHLINK_CLOTHING : 
+			_local_1 = CATALOG_TYPE_CLOTHING;
+			break;
+		case CATALOG_PATHLINK_COSTUME : 
+			_local_1 = CATALOG_TYPE_COSTUME;
+			break;
+		case CATALOG_PATHLINK_INSTRUMENTS : 
+			_local_1 = CATALOG_TYPE_INSTRUMENTS;
+			break;
+		case CATALOG_PATHLINK_NINJA : 
+			_local_1 = CATALOG_TYPE_NINJA;
+			break;
+		case CATALOG_PATHLINK_SPORTS : 
+			_local_1 = CATALOG_TYPE_SPORTS;
+			break;
+		case CATALOG_PATHLINK_SURF : 
+			_local_1 = CATALOG_TYPE_SURF;
+			break;
+		case CATALOG_PATHLINK_RH_RARE_ITEMS : 
+			_local_1 = CATALOG_TYPE_RH_RARE_ITEMS;
+			break;
+		case CATALOG_PATHLINK_MUSIC_TRACKS : 
+			_local_1 = CATALOG_TYPE_MUSIC_TRACKS;
+			break;
+		case CATALOG_PATHLINK_HYDRO_HOPPER : 
+			_local_1 = CATALOG_TYPE_HYDRO_HOPPER;
+			break;
+		case CATALOG_PATHLINK_FISHING : 
+			_local_1 = CATALOG_TYPE_FISHING;
+			break;
+		case CATALOG_PATHLINK_SLED : 
+			_local_1 = CATALOG_TYPE_SLED;
+			break;
+	}
+	if (_local_1) {
+		setCatalogType(_local_1);
+	}
+}
+function showCutScene(loadMessageKey, filePathKey, initFunction, onClosedCallback) {
+	var _local_2 = getLocalizedString(loadMessageKey);
+	var _local_3 = SHELL.getPath(filePathKey);
+	stopQuickKeys();
+	tellAS3ToBlockPuffleNotifications();
+	loadFile(CONTENT, _local_3, _local_2, com.clubpenguin.util.Delegate.create(this, closeCutScene, onClosedCallback));
+	shell.trackContent(filePathKey);
+}
+function closeCutScene(callbackFunction) {
+	closeContent();
+	if (callbackFunction) {
+		callbackFunction();
+	}
+}
+function loadTourForm() {
+	CONTENT.load_mc.removeMovieClip();
+	CONTENT.gotoAndStop(1);
+	showContent(TOUR_FORM);
+}
+function closeContent(biString) {
+	if (is_news_open) {
+		is_news_open = false;
+		ENGINE.sendCloseBook(biString);
+	}
+	checkCloseCatalog();
+	this.currentCatalog = null;
+	CONTENT.load_mc.removeMovieClip();
+	CONTENT.gotoAndStop(1);
+	startQuickKeys();
+	if (contentBlockPuffleNotifications) {
+		contentBlockPuffleNotifications = false;
+		SHELL.sendAS3StartNotificationServices();
+	}
+	shell.updateListeners(shell.CONTENT_CLOSED);
+}
+function checkCloseCatalog() {
+	if (currentCatalog != null) {
+	}
+}
+function showWindow(name, initFunction, trackingName, blockPuffleNotifications) {
+	stopQuickKeys();
+	if (blockPuffleNotifications == null) {
+		blockPuffleNotifications = true;
+	}
+	if (name == "News Form") {
+		name = "news_form";
+	}
+	var _local_7 = getLocalizedString(name);
+	var _local_1 = getFilePath(name);
+	if (name.indexOf("oops_") == 0) {
+		shell.showAs3Content(_local_1, name, {oopsTag:trackingName});
+		return(undefined);
+	}
+	var _local_5 = _local_1.substr(_local_1.length - 4, 4);
+	if (_local_5 == ".swf") {
+		loadFile(WINDOW, _local_1, _local_7, closeWindow, initFunction);
+		windowBlockPuffleNotifications = blockPuffleNotifications;
+		if (blockPuffleNotifications) {
+			SHELL.sendAS3StopNotificationServices();
+		}
+	} else {
+		var _local_4 = new Object();
+		_local_4.currentPaperPath = _local_1;
+		_trackerAS2.sendToAS3StartAssetLoad("load.newspaper");
+		showContent("current_AS3_news", null, undefined, _local_4);
+	}
+	shell.trackContent(trackingName || (name));
+}
+function showEmptyWindow() {
+	WINDOW.gotoAndStop("Done");
+	WINDOW.block_mc.useHandCursor = false;
+	WINDOW.block_mc.tabEnabled = false;
+	WINDOW.block_mc.onRelease = null;
+}
+function closeWindow() {
+	this.currentCatalog = null;
+	WINDOW.load_mc.removeMovieClip();
+	WINDOW.gotoAndStop(1);
+	startQuickKeys();
+	if (windowBlockPuffleNotifications) {
+		windowBlockPuffleNotifications = false;
+		SHELL.sendAS3StartNotificationServices();
+	}
+}
+function showMembershipRemaining() {
+	if (membership_window_requested) {
+		return(undefined);
+	}
+	var _local_2 = shell.getMembershipDaysRemaining();
+	if (_local_2 == -1) {
+		return(undefined);
+	}
+	var _local_1 = getMembershipWindowType(_local_2);
+	if (_local_1 != undefined) {
+		if (_local_1 == 0) {
+			showContent("login_membership_expired");
+		} else {
+			showContent("login_membership_" + _local_1.toString());
+		}
+	}
+	membership_window_requested = true;
+}
+function getMembershipWindowType(days) {
+	if ((days == undefined) || (days < 0)) {
+		return(undefined);
+	}
+	if (days == 0) {
+		return(0);
+	}
+	if (days == 1) {
+		return(1);
+	}
+	if (days == 2) {
+		return(2);
+	}
+	if (days == 3) {
+		return(3);
+	}
+	if (days <= 7) {
+		return(7);
+	}
+	if (days <= 15) {
+		return(14);
+	}
+	return(undefined);
+}
+function closeAndDelayShowContent(content) {
+	clearTimeout(delayShowContentTimeoutID);
+	delayShowContentTimeoutID = setTimeout(com.clubpenguin.util.Delegate.create(this, showContent, content), 50);
+	closeContent();
+}
+function showHint(mc, hint, xOffset, yOffset, localized) {
+	if (xOffset == undefined) {
+		xOffset = 0;
+	}
+	if (yOffset == undefined) {
+		yOffset = -28;
+	}
+	if (localized == undefined) {
+		localized = true;
+	}
+	var _local_1 = {x:mc._x, y:mc._y};
+	mc._parent.localToGlobal(_local_1);
+	HINT._x = _local_1.x + xOffset;
+	HINT._y = _local_1.y + yOffset;
+	HINT.gotoAndStop(1);
+	HINT._visible = true;
+	if (localized) {
+		HINT.message_txt.text = getLocalizedString(hint);
+	} else {
+		HINT.message_txt.text = hint;
+	}
+	var message_width = HINT.message_txt.textWidth;
+	HINT.message_txt._visible = false;
+	HINT.box_mc._visible = false;
+	var frame = 1;
+	var X_LIMIT = 800;
+	HINT.onEnterFrame = function () {
+		if (frame == 4) {
+			HINT.box_mc._visible = true;
+			HINT.box_mc._width = 66;
+			HINT.box_mc._height = 16;
+		} else if (frame == 5) {
+			HINT.box_mc._width = 81;
+			HINT.box_mc._height = 20;
+		} else if (frame == 6) {
+			HINT.box_mc._width = 96;
+			HINT.box_mc._height = 24;
+		} else if (frame > 6) {
+			if (message_width > 72) {
+				HINT.box_mc._width = message_width + 16;
+			} else {
+				HINT.box_mc._width = 88;
+			}
+			HINT.box_mc._height = 22;
+			HINT.message_txt._visible = true;
+			if ((HINT._x + HINT.box_mc._width) > X_LIMIT) {
+				HINT._x = X_LIMIT - HINT.box_mc._width;
+			}
+			delete HINT.onEnterFrame;
+		}
+		frame++;
+	};
+}
+function closeHint() {
+	delete HINT.onEnterFrame;
+	HINT.gotoAndStop(2);
+	HINT._visible = false;
+}
+function showDock() {
+	var _local_3 = "nonmember";
+	if (isMember()) {
+		_local_3 = "member";
+	}
+	if (_global.getCurrentShell().getMyPlayerObject().remaining_hours != undefined) {
+		DOCK.chat_mc.gotoAndStop(2);
+		DOCK.chat_mc.chat_input._visible = false;
+		DOCK.chat_mc.pre_activated_chat_field.text = getLocalizedString("w.preactivationaccess.hud.chatbar");
+		DOCK.chat_mc.chat_icon.gotoAndStop(2);
+		DOCK.chat_mc.send_btn.enabled = false;
+	} else if ((isSafeMode() || (shell.isWorldSafe())) || (_global.getCurrentShell().playerModel.isPlayerStealthModerator())) {
+		DOCK.chat_mc.gotoAndStop(3);
+		DOCK.chat_mc._visible = false;
+		SHELL.setChosenWorldSafeChat(true);
+	} else {
+		DOCK.chat_mc.chat_input.tabIndex = 1;
+		DOCK.chat_mc.chat_input.onSetFocus = function () {
+			is_chat_focused = true;
+			chatController.handleFocus();
+		};
+		DOCK.chat_mc.chat_input.onKillFocus = function () {
+			is_chat_focused = false;
+		};
+		DOCK.chat_mc.chat_input.onChanged = onChatTextChange;
+		DOCK.chat_mc.chat_input.restrict = getLocalizedString("chat_restrict");
+		DOCK.chat_mc.send_btn.onRelease = function () {
+			SHELL.sendAS2Clicked(CHAT_BUTTON);
+		};
+		DOCK.chat_mc.send_btn.onRollOver = function () {
+			showHint(this, "send_hint");
+		};
+		DOCK.chat_mc.send_btn.onRollOut = closeHint;
+	}
+	DOCK.puffle_btn.onRelease = function () {
+		closeHint();
+		if (SHELL.puffleManager.myPuffleCount == 0) {
+			showNoPufflesOwnedPrompt();
+			return(undefined);
+		}
+		if (!com.clubpenguin.world.rooms.common.triggers.PlayerAction.isPlayer(SHELL.getMyPlayerObject(), com.clubpenguin.world.rooms.common.triggers.PlayerAction.WALKING_PUFFLE)) {
+			showNotWalkingPufflePrompt();
+			return(undefined);
+		}
+		openPuffleTricksModule();
+	};
+	SHELL.removeListener(SHELL.UPDATE_PLAYER, _handleUpdatePlayerDelegate);
+	_handleUpdatePlayerDelegate = com.clubpenguin.util.Delegate.create(this, handlePuffleUpdatePlayer);
+	SHELL.addListener(SHELL.UPDATE_PLAYER, _handleUpdatePlayerDelegate);
+	setPuffleIconColor(SHELL.getMyPlayerObject());
+	DOCK.puffle_btn.onRollOver = function () {
+		showHint(this, "w.app.hud.tooltip.puffletricks");
+	};
+	DOCK.puffle_btn.onRollOut = closeHint;
+	DOCK.safe_btn.onRelease = function () {
+		if (SHELL._localLoginServerData.autoLogin) {
+			SHELL.sendAS2Clicked(SAFE_CHAT_BUTTON);
+		}
+		showSafeMenu();
+		closeHint();
+		chatController.handleBlur();
+	};
+	DOCK.safe_btn.onRollOver = function () {
+		showHint(this, "safe_hint");
+	};
+	DOCK.safe_btn.onRollOut = closeHint;
+	DOCK.emote_btn.onRelease = function () {
+		if (SHELL._localLoginServerData.autoLogin) {
+			SHELL.sendAS2Clicked(EMOTE_BUTTON);
+		}
+		showEmoteMenu(2);
+		//party emotes - 1
+		//default - 2
+		closeHint();
+		chatController.handleBlur();
+	};
+	DOCK.memote_btn.onRelease = function () {
+		if (SHELL._localLoginServerData.autoLogin) {
+			SHELL.sendAS2Clicked(EMOTE_BUTTON);
+		}
+		showEmoteMenu(3);
+		closeHint();
+		chatController.handleBlur();
+	};
+	DOCK.emote_btn.onRollOver = function () {
+		showHint(this, "emote_hint");
+	};
+	DOCK.emote_btn.onRollOut = closeHint;
+	DOCK.action_btn.gotoAndStop("up");
+	DOCK.action_btn.onPress = function () {
+		DOCK.action_btn.gotoAndStop("down");
+	};
+	DOCK.action_btn.onRelease = function () {
+		DOCK.action_btn.gotoAndStop("up");
+		if (SHELL._localLoginServerData.autoLogin) {
+			SHELL.sendAS2Clicked(ACTIONS_BUTTON);
+		}
+		showActionMenu();
+		closeHint();
+		chatController.handleBlur();
+	};
+	DOCK.action_btn.onReleaseOutside = function () {
+		DOCK.action_btn.gotoAndStop("up");
+	};
+	DOCK.action_btn.onRollOver = function () {
+		DOCK.action_btn.gotoAndStop("over");
+		showHint(this, "action_hint");
+	};
+	DOCK.action_btn.onRollOut = function () {
+		DOCK.action_btn.gotoAndStop("up");
+		closeHint();
+	};
+	DOCK.throw_btn.onRelease = function () {
+		if (SHELL._localLoginServerData.autoLogin) {
+			SHELL.sendAS2Clicked(SNOWBALL_BUTTON);
+		}
+		showCrosshair();
+		closeHint();
+		chatController.handleBlur();
+	};
+	DOCK.throw_btn.onRollOver = function () {
+		showHint(this, "throw_hint");
+	};
+	DOCK.throw_btn.onRollOut = closeHint;
+	DOCK.player_btn.onRelease = function () {
+		showPlayerWidget(getPlayerId(), getPlayerNickname());
+		closeHint();
+		chatController.handleBlur();
+	};
+	DOCK.player_btn.onRollOver = function () {
+		showHint(this, "player_hint");
+	};
+	DOCK.player_btn.onRollOut = closeHint;
+	DOCK_PLAYER_ICON.gotoAndStop(_local_3);
+	DOCK.buddy_btn.onRelease = function () {
+		SHELL.toggleFriendsUI();
+		closeHint();
+		chatController.handleBlur();
+	};
+	DOCK.buddy_btn.onRollOver = function () {
+		showHint(this, "friend_hint");
+	};
+	DOCK.buddy_btn.onRollOut = closeHint;
+	DOCK.home_btn.onRelease = function () {
+		sendJoinPlayerIgloo(getPlayerId());
+		closeHint();
+		chatController.handleBlur();
+	};
+	DOCK.home_btn.onRollOver = function () {
+		showHint(this, "home_hint");
+	};
+	DOCK.home_btn.onRollOut = closeHint;
+	DOCK.help_btn.onRelease = function () {
+		showContent("help");
+		closeHint();
+		chatController.handleBlur();
+	};
+	DOCK.help_btn.onRollOver = function () {
+		showHint(this, "help_hint");
+	};
+	DOCK.help_btn.onRollOut = closeHint;
+	DOCK._visible = true;
+	if (DOCK.onMouseDown == undefined) {
+		DOCK.onMouseDown = function () {
+			if (Selection.getFocus() != null) {
+				Selection.setFocus(null);
+			}
+		};
+	}
+}
+function closeBuddyOnline() {
+	clearInterval(buddy_online_interval);
+	delete buddy_online_interval;
+	DOCK.buddy_online_mc._visible = false;
+	DOCK.buddy_online_mc.gotoAndStop("park");
+}
+function closeDock() {
+	DOCK._visible = false;
+}
+function onChatTextChange(textfield) {
+	var _local_4 = "!@#$%^&*()<>?";
+	if (textfield.length > 0) {
+		var _local_5 = -1;
+		var _local_1 = 0;
+		while (_local_1 < _local_4.length) {
+			_local_5 = textfield.text.indexOf(_local_4.charAt(_local_1));
+			if (_local_5 != -1) {
+				break;
+			}
+			_local_1++;
+		}
+		if ((_local_5 != -1) && (_local_5 < (textfield.length - 1))) {
+			var _local_2 = _local_5;
+			var _local_7;
+			var _local_6;
+			do {
+				_local_2 = _local_2 + 1;
+				_local_7 = textfield.text.charAt(_local_2);
+				_local_6 = _local_4.indexOf(_local_7) != -1;
+			} while  (_local_6 && (_local_2 <= (textfield.length - 1)));
+			var _local_8 = textfield.text.slice(0, _local_2);
+			textfield.text = _local_8;
+		}
+	}
+	chatController.handleInputUpdate();
+}
+function enableIglooButton() {
+	DOCK.iglooDisabledIcon._visible = false;
+	DOCK.iglooEnabledIcon._visible = true;
+	DOCK.home_btn.enabled = true;
+}
+function disableIglooButton() {
+	DOCK.iglooDisabledIcon._visible = true;
+	DOCK.iglooEnabledIcon._visible = false;
+	DOCK.home_btn.enabled = false;
+}
+function enableSpecialDance() {
+	var _local_2 = firstTimeCheck(_global.getCurrentShell().playerModel.getMyPlayerObject().playerHasDanced);
+	isAbleToSpecialDance = true;
+	highlightButton(DOCK.action_btn, _local_2);
+}
+function enableSpecialWave() {
+	var _local_2 = firstTimeCheck(_global.getCurrentShell().playerModel.getMyPlayerObject().playerHasWaved);
+	isAbleToSpecialWave = true;
+	highlightButton(DOCK.action_btn, _local_2);
+}
+function firstTimeCheck(hasPerformedAction) {
+	if (hasPerformedAction == false) {
+		return(true);
+	}
+	if (hasPerformedAction == null) {
+		return(false);
+	}
+	return(false);
+}
+function highlightButton(buttonClip, firstTime) {
+	buttonClip.staticHighlight.gotoAndStop(BUTTON_HIGHLIGHT_STATE_HIGHLIGHT);
+	if (firstTime) {
+		buttonClip.outerHighlight.gotoAndStop(BUTTON_HIGHLIGHT_STATE_HIGHLIGHT);
+	} else {
+		buttonClip.outerHighlight.gotoAndStop(BUTTON_HIGHLIGHT_STATE_STATIC);
+	}
+}
+function firstTimeActionPerformed() {
+	if ((isAbleToSpecialDance && (!_global.getCurrentShell().playerModel.getMyPlayerObject().playerHasDanced)) || (isAbleToSpecialWave && (!_global.getCurrentShell().playerModel.getMyPlayerObject().playerHasWaved))) {
+	} else {
+		DOCK.action_btn.outerHighlight.gotoAndStop(BUTTON_HIGHLIGHT_STATE_STATIC);
+	}
+	if (ACTION_MENU._currentframe != 1) {
+		if (isAbleToSpecialDance && (_global.getCurrentShell().playerModel.getMyPlayerObject().playerHasDanced)) {
+			ACTION_MENU.danceArrow.gotoAndStop(NEW_EXPERIENCE_ARROW_STATE_PARK);
+		}
+		if (isAbleToSpecialWave && (_global.getCurrentShell().playerModel.getMyPlayerObject().playerHasWaved)) {
+			ACTION_MENU.waveArrow.gotoAndStop(NEW_EXPERIENCE_ARROW_STATE_PARK);
+		}
+	}
+}
+function disableSpecialDance() {
+	if (!isAbleToSpecialDance) {
+		return(undefined);
+	}
+	isAbleToSpecialDance = false;
+	if (!isAbleToSpecialWave) {
+		DOCK.action_btn.staticHighlight.gotoAndStop(BUTTON_HIGHLIGHT_STATE_PARK);
+		DOCK.action_btn.outerHighlight.gotoAndStop(BUTTON_HIGHLIGHT_STATE_PARK);
+	}
+}
+function disableSpecialWave() {
+	if (!isAbleToSpecialWave) {
+		return(undefined);
+	}
+	isAbleToSpecialWave = false;
+	if (!isAbleToSpecialDance) {
+		DOCK.action_btn.staticHighlight.gotoAndStop(BUTTON_HIGHLIGHT_STATE_PARK);
+		DOCK.action_btn.outerHighlight.gotoAndStop(BUTTON_HIGHLIGHT_STATE_PARK);
+	}
+}
+function handlePuffleUpdatePlayer(playerObj) {
+	if (SHELL.isMyPlayer(playerObj.player_id)) {
+		setPuffleIconColor(playerObj);
+	}
+}
+function setPuffleIconColor(playerVO) {
+	if (com.clubpenguin.world.rooms.common.triggers.PlayerAction.isPlayer(playerVO, com.clubpenguin.world.rooms.common.triggers.PlayerAction.WALKING_PUFFLE)) {
+		var _local_1 = playerVO.attachedPuffle["color"];
+		DOCK.puffle_icon.gotoAndStop(_local_1);
+	} else {
+		DOCK.puffle_icon.gotoAndStop("disabled");
+	}
+}
+function showNotWalkingPufflePrompt() {
+	closePrompt();
+	var _local_1 = new Object();
+	_local_1.textClipStringTokens = new Object();
+	_local_1.buttonClipPredefinedActions = new Object();
+	_local_1.assetPath = SHELL.getPath("w.prompts.puffle.tricksnotwalking");
+	if ((SHELL.isMyIgloo() && (SHELL.getIsRoomIgloo())) || (ENGINE.isRoomMyBackyard())) {
+		_local_1.textClipStringTokens.buttonText = "w.dialog.button.ok";
+		_local_1.buttonClipPredefinedActions.goThereButton = "close";
+	} else {
+		_local_1.textClipStringTokens.buttonText = "w.app.prompt.button.gotoigloo";
+		_local_1.joinRoomActions = new Object();
+		_local_1.joinRoomActions.goThereButton = "igloo";
+	}
+	_local_1.textClipStringTokens.message = "w.app.prompt.puffletricks.notwalkingpuffle";
+	_local_1.buttonClipPredefinedActions.closeBtn = "close";
+	_local_1.hideLoadingDialog = true;
+	showAssetPrompt(_local_1);
+}
+function showNoPufflesOwnedPrompt() {
+	closePrompt();
+	var _local_1 = new Object();
+	_local_1.assetPath = SHELL.getPath("w.prompts.puffle.tricksnopuffle");
+	_local_1.joinRoomActions = new Object();
+	_local_1.joinRoomActions.goThereButton = "pet";
+	_local_1.textClipStringTokens = new Object();
+	_local_1.textClipStringTokens.message = "w.app.prompt.puffletricks.nopuffle";
+	_local_1.textClipStringTokens.buttonText = "w.app.prompt.button.gotopetshop";
+	_local_1.buttonClipPredefinedActions = new Object();
+	_local_1.buttonClipPredefinedActions.closeBtn = "close";
+	_local_1.hideLoadingDialog = true;
+	showAssetPrompt(_local_1);
+}
+function openPuffleTricksModule() {
+	SHELL.sendAS3ShowPuffleTricksHUD();
+}
+function setCatalogType(type) {
+	this.currentCatalog = type;
+}
+function purchaseItemFromAS3(itemType, itemID) {
+	switch (itemType) {
+		case ITEM_TYPE_PUFFLE_ITEM : 
+			buyPuffleItem(itemID);
+			break;
+		case ITEM_TYPE_FURNITURE_ITEM : 
+			buyFurniture(itemID);
+			break;
+		case ITEM_TYPE_CLOTHING_ITEM : 
+			buyInventory(itemID);
+			break;
+		case ITEM_TYPE_IGLOO : 
+			buyIglooUpgrade(itemID);
+			break;
+		case ITEM_TYPE_PUFFLE_HAT : 
+			buyPuffleHat(itemID);
+			break;
+		case ITEM_TYPE_IGLOO_FLOOR : 
+			buyIglooFloor(itemID);
+			break;
+		case ITEM_TYPE_IGLOO_LOCATION : 
+			buyIglooLocation(itemID);
+	}
+}
+function buyInventory(itemID, logMoneyEvent) {
+	if (logMoneyEvent == undefined) {
+		logMoneyEvent = true;
+	}
+	waitingToLogMoneyEvent = logMoneyEvent;
+	if (isMember() || (!isInventoryMemberOnly(itemID))) {
+		if (isItemInInventory(itemID)) {
+			showPrompt("warn", getLocalizedString("item_in_inventory_warn"));
+			return(undefined);
+		}
+		var _local_1 = getInventoryObjectById(itemID);
+		var _local_7 = (getFilePath("clothing_icons") + itemID) + ".swf";
+		var _local_5 = getCoins();
+		var _local_3;
+		if (isInventoryMemberOnly(itemID)) {
+			updateMemberOnlyActivity("item_" + String(itemID), com.clubpenguin.shell.events.MembershipEventAction.BUY_INVENTORY_ITEM);
+		}
+		if (_local_5 >= _local_1.cost) {
+			setActiveShopItem(itemID);
+			if (_local_1.is_medal) {
+				_local_3 = replaceString("%name%", _local_1.name, getLocalizedString("inventory_medal"));
+			} else if (_local_1.is_gift) {
+				_local_3 = replaceString("%name%", _local_1.name, getLocalizedString("inventory_gift"));
+			} else if (_local_1.cost == 0) {
+				_local_3 = replaceString("%name%", _local_1.name, getLocalizedString("inventory_free"));
+			} else {
+				var _local_4 = replaceString("%name%", _local_1.name, getLocalizedString("buy_inventory"));
+				_local_4 = replaceString("%cost%", String(_local_1.cost), _local_4);
+				var _local_6 = replaceString("%num%", String(_local_5), getLocalizedString("num_coins"));
+				_local_3 = (_local_4 + " ") + _local_6;
+			}
+			showPrompt("shop", _local_3, _local_7, sendBuyInventory);
+			catalogOpcodeJournal.buyClothes(itemID, _local_1.type);
+		} else {
+			shell.$e("[INTERFACE] buyInventory -> Not enough coins", {error_code:shell.NOT_ENOUGH_COINS});
+			catalogOpcodeJournal.insufficientFunds();
+		}
+	} else {
+		showOopsMessage("oops_inventory");
+	}
+}
+function buyPowerCards() {
+	if (!isMember()) {
+		showOopsMessage("oops_cards");
+		return(undefined);
+	}
+	var _local_1 = getCoins();
+	if (_local_1 >= POWER_CARDS_COST) {
+		var _local_2 = replaceString("%cost%", String(POWER_CARDS_COST), getLocalizedString("buy_cards"));
+		var _local_3 = replaceString("%num%", String(_local_1), getLocalizedString("num_coins"));
+		var _local_4 = (_local_2 + " ") + _local_3;
+		showPrompt(PROMPT_STYLE_BUY_CARDS, _local_4, null, sendBuyCards);
+	} else {
+		shell.$e("[INTERFACE] buyPowerCards -> Not enough coins", {error_code:shell.NOT_ENOUGH_COINS});
+		catalogOpcodeJournal.insufficientFunds();
+	}
+}
+function showOopsMessage(defaultMessageFileKey) {
+	var _local_2 = defaultMessageFileKey;
+	if (this.currentCatalog && (catalogueTypeToOopsMessageFileKey[this.currentCatalog])) {
+		_local_2 = catalogueTypeToOopsMessageFileKey[this.currentCatalog];
+	}
+	showWindow(_local_2, null, this.currentCatalog);
+}
+function buyPuffleHat(itemID) {
+	var _local_3 = com.clubpenguin.shell.PuffleHatCollection.getInstance();
+	var _local_2 = _local_3.getPuffleHatVO(itemID);
+	if (_local_2 != null) {
+		if (_local_2.isMemberOnly && (!shell.isMyPlayerMember())) {
+			showOopsMessage("oops_inventory");
+		} else {
+			updateMemberOnlyActivity("pufflehat_" + String(itemID), com.clubpenguin.shell.events.MembershipEventAction.BUY_PUFFLE_HAT);
+			buyPuffleItem(itemID);
+		}
+	}
+}
+function buyPuffleItem(itemID) {
+	shell.sendGetBuyPuffleCareItemInfo(itemID);
+	puffleCatalogItemId = itemID;
+}
+function handleGetBuyPuffleCareItemInfo(itemInfo) {
+	if (itemInfo.isMemberOnly && (!shell.isMyPlayerMember())) {
+		showOopsMessage("oops_inventory");
+		return(undefined);
+	}
+	puffleCareItemInfo = itemInfo;
+	var _local_4 = Number(itemInfo.cost);
+	var _local_8 = getFilePath("puffle_care_item_buy_icons") + String(itemInfo.assetPath);
+	var _local_5 = getCoins();
+	var _local_7 = itemInfo.isHat;
+	if (_local_5 >= _local_4) {
+		if (Boolean(itemInfo.quantityLimitReached)) {
+			if (int(itemInfo.max_quantity) == 1) {
+				shell.$e("[INTERFACE] handleGetBuyPuffleCareItemInfo -> Already own superplay item", {error_code:shell.ALREADY_OWN_SUPERPLAY_ITEM});
+			} else {
+				(_local_7 ? (shell.$e("[INTERFACE] handleGetBuyPuffleCareItemInfo -> Maximum puffle hat items", {error_code:shell.MAX_PUFFLEHAT_ITEMS})) : (shell.$e("[INTERFACE] handleGetBuyPuffleCareItemInfo -> Maximum puffle care items", {error_code:shell.MAX_PUFFLECARE_ITEMS})));
+			}
+		} else {
+			var _local_6;
+			setActiveShopItem(Number(itemInfo.itemID));
+			setActiveShopItemName(itemInfo.prompt);
+			if (int(itemInfo.max_quantity) == 1) {
+				updateMemberOnlyActivity("puffletoy_" + String(itemInfo.itemID), com.clubpenguin.shell.events.MembershipEventAction.BUY_PUFFLE_SUPER_TOY);
+			}
+			if (_local_4 != 0) {
+				var _local_2 = getLocalizedString("buy_inventory");
+				var _local_3 = getLocalizedString("num_coins");
+				_local_2 = replaceString("%name%", itemInfo.prompt, _local_2);
+				_local_2 = replaceString("%cost%", String(_local_4), _local_2);
+				_local_3 = replaceString("%num%", String(_local_5), _local_3);
+				_local_6 = (_local_2 + " ") + _local_3;
+			} else {
+				_local_6 = replaceString("%name%", itemInfo.prompt, getLocalizedString("inventory_free"));
+			}
+			showPrompt("shop", _local_6, _local_8, sendBuyPuffleCareItem);
+		}
+	} else {
+		shell.$e("[INTERFACE] handleGetBuyPuffleCareItemInfo -> Not enough coins", {error_code:shell.NOT_ENOUGH_COINS});
+	}
+}
+function buyFurniture(item_id, logMoneyEvent, confirmedCallback) {
+	var _local_2 = shell.getFurnitureObjectById(item_id);
+	if (logMoneyEvent == undefined) {
+		logMoneyEvent = true;
+	}
+	waitingToLogMoneyEvent = logMoneyEvent;
+	if (((isMember() || (_local_2.is_member_only == 0)) || (_local_2.is_member_only == "0")) || (_local_2.is_member_only == false)) {
+		var _local_8 = _local_2.name;
+		var _local_6 = _local_2.cost;
+		var _local_11 = (getFilePath("furniture_icons") + item_id) + ".swf";
+		var _local_9 = getCoins();
+		if (_local_2.is_member_only) {
+			updateMemberOnlyActivity("furniture_" + String(item_id), com.clubpenguin.shell.events.MembershipEventAction.BUY_FURNITURE_ITEM);
+		}
+		if (_local_9 >= _local_6) {
+			setActiveShopItem(item_id);
+			if (_local_6 > 0) {
+				var _local_3 = getLocalizedString("buy_furniture");
+				var _local_5 = getLocalizedString("num_coins");
+				_local_3 = replaceString("%name%", _local_8, _local_3);
+				_local_3 = replaceString("%cost%", String(_local_6), _local_3);
+				_local_5 = replaceString("%num%", String(_local_9), _local_5);
+				var _local_7 = (_local_3 + " ") + _local_5;
+			} else {
+				var _local_7 = getLocalizedString("furniture_free");
+				_local_7 = replaceString("%name%", _local_8, _local_7);
+			}
+			var _local_13 = com.clubpenguin.util.Delegate.create(this, onPositiveSelection, sendBuyFurniture, confirmedCallback);
+			var _local_10 = com.clubpenguin.util.Delegate.create(this, onNegativeSelection, null, confirmedCallback);
+			showPrompt("shop", _local_7, _local_11, _local_13, _local_10);
+			catalogOpcodeJournal.buyFurniture(item_id, _local_2.type);
+		} else {
+			shell.$e("[INTERFACE] buyFurniture -> Not enough coins", {error_code:shell.NOT_ENOUGH_COINS});
+			catalogOpcodeJournal.insufficientFunds();
+		}
+	} else {
+		showOopsMessage("oops_furniture");
+	}
+}
+function onPositiveSelection(internalCallback, userCallback) {
+	internalCallback();
+	userCallback(true);
+}
+function onNegativeSelection(internalCallback, userCallback) {
+	internalCallback();
+	userCallback(false);
+}
+function buyIglooUpgrade(igloo_id, logMoneyEvent) {
+	if (shell.doesPlayerOwnIgloo(igloo_id)) {
+		shell.$e("[INTERFACE] buyIglooUpgrade -> Already own that igloo", {error_code:shell.ALREADY_OWN_IGLOO});
+	} else if (isMember()) {
+		if (logMoneyEvent == undefined) {
+			logMoneyEvent = true;
+		}
+		waitingToLogMoneyEvent = logMoneyEvent;
+		var _local_6 = shell.getIglooCrumbById(igloo_id);
+		var _local_7 = _local_6.name;
+		var _local_5 = _local_6.cost;
+		var _local_8 = getCoins();
+		updateMemberOnlyActivity("igloo_" + String(igloo_id), com.clubpenguin.shell.events.MembershipEventAction.BUY_IGLOO_UPGRADE);
+		if (_local_8 >= _local_5) {
+			setActiveShopItem(igloo_id);
+			if (_local_5 > 0) {
+				var _local_1 = getLocalizedString("buy_igloo_upgrade");
+				var _local_4 = getLocalizedString("num_coins");
+				_local_1 = replaceString("%name%", _local_7, _local_1);
+				_local_1 = replaceString("%cost%", String(_local_5), _local_1);
+				_local_4 = replaceString("%num%", String(_local_8), _local_4);
+				var _local_2 = (_local_1 + " ") + _local_4;
+			} else {
+				var _local_2 = getLocalizedString("igloo_upgrade_free");
+				_local_2 = replaceString("%name%", _local_7, _local_2);
+			}
+			showPrompt("question", _local_2, file, sendBuyIglooType);
+			catalogOpcodeJournal.buyIglooUpgrade(igloo_id, _local_6.type);
+		} else {
+			shell.$e("[INTERFACE] buyIglooUpgrade -> Not enough coins", {error_code:shell.NOT_ENOUGH_COINS});
+			catalogOpcodeJournal.insufficientFunds();
+		}
+	} else {
+		showOopsMessage("oops_catalog_igloo");
+	}
+}
+function buyIglooFloor(floor_id, logMoneyEvent) {
+	if (shell.doesPlayerOwnFloor(floor_id)) {
+		shell.$e("[INTERFACE] buyIglooFloor() -> Already own that floor", {error_code:shell.ALREADY_OWN_FLOOR});
+	} else if (isMember()) {
+		if (logMoneyEvent == undefined) {
+			logMoneyEvent = true;
+		}
+		waitingToLogMoneyEvent = logMoneyEvent;
+		var _local_5 = shell.getFloorCrumbById(floor_id);
+		var _local_7 = _local_5.name;
+		var _local_4 = _local_5.cost;
+		var _local_6 = getCoins();
+		updateMemberOnlyActivity("floor_" + String(floor_id), com.clubpenguin.shell.events.MembershipEventAction.BUY_IGLOO_FLOOR);
+		if (_local_6 >= _local_4) {
+			setActiveShopItem(floor_id);
+			var _local_1 = getLocalizedString("buy_igloo_floor");
+			var _local_3 = getLocalizedString("num_coins");
+			_local_1 = replaceString("%name%", _local_7, _local_1);
+			_local_1 = replaceString("%cost%", String(_local_4), _local_1);
+			_local_3 = replaceString("%num%", String(_local_6), _local_3);
+			var _local_9 = (_local_1 + " ") + _local_3;
+			showPrompt("question", _local_9, file, sendBuyIglooFloor);
+		} else {
+			shell.$e("[INTERFACE] buyIglooFloor -> Not enough coins", {error_code:shell.NOT_ENOUGH_COINS});
+		}
+	} else {
+		showOopsMessage("oops_catalog_igloo");
+	}
+}
+function buyIglooLocation(location_id, logMoneyEvent) {
+	if (shell.doesPlayerOwnLocation(location_id)) {
+		shell.$e("[INTERFACE] buyIglooLocation() -> Already own that location", {error_code:shell.ALREADY_OWN_LOCATION});
+	} else if (isMember()) {
+		if (logMoneyEvent == undefined) {
+			logMoneyEvent = true;
+		}
+		waitingToLogMoneyEvent = logMoneyEvent;
+		var _local_6 = shell.getLocationObjectById(location_id);
+		var _local_5 = _local_6.name;
+		var _local_4 = _local_6.cost;
+		var _local_7 = getCoins();
+		updateMemberOnlyActivity("location_" + String(location_id), com.clubpenguin.shell.events.MembershipEventAction.BUY_IGLOO_LOCATION);
+		if (_local_7 >= _local_4) {
+			setActiveShopItem(location_id);
+			var _local_8;
+			if (_local_4 != 0) {
+				var _local_1 = getLocalizedString("buy_igloo_floor");
+				var _local_3 = getLocalizedString("num_coins");
+				_local_1 = replaceString("%name%", _local_5, _local_1);
+				_local_1 = replaceString("%cost%", String(_local_4), _local_1);
+				_local_3 = replaceString("%num%", String(_local_7), _local_3);
+				_local_8 = (_local_1 + " ") + _local_3;
+			} else {
+				_local_8 = replaceString("%name%", _local_5, getLocalizedString("inventory_free"));
+			}
+			showPrompt("question", _local_8, file, sendBuyIglooLocation);
+		} else {
+			shell.$e("[INTERFACE] buyIglooLocation -> Not enough coins", {error_code:shell.NOT_ENOUGH_COINS});
+		}
+	} else {
+		showOopsMessage("oops_igloo");
+	}
+}
+function updateMemberOnlyActivity(context, action) {
+	shell.updateListeners(com.clubpenguin.shell.events.MembershipEvent.MEMBER_ONLY_ACTIVITY, new com.clubpenguin.shell.events.MembershipEvent(com.clubpenguin.shell.events.MembershipEvent.MEMBER_ONLY_ACTIVITY, context, action));
+}
+function getPufflePromptMessage(message) {
+	var _local_3 = getCoins();
+	var _local_2 = getLocalizedString(message);
+	var _local_1 = getLocalizedString("num_coins");
+	_local_1 = replaceString("%num%", _local_3, _local_1);
+	return((_local_2 + " ") + _local_1);
+}
+function setActiveShopItem(item_id) {
+	active_shop_item = item_id;
+}
+function getActiveShopItem() {
+	return(active_shop_item);
+}
+function setActiveShopItemName(name) {
+	active_shop_item_name = name;
+}
+function getActiveShopItemName() {
+	return(active_shop_item_name);
+}
+function setActivePuffleAction(action) {
+	active_puffle_action = action;
+}
+function getActivePuffleAction() {
+	return(active_puffle_action);
+}
+function showPrompt(style, message, file, positiveSelectionCallback, negativeSelectionCallback, cards) {
+	closePrompt();
+	_positiveSelectionCallback = positiveSelectionCallback;
+	_negativeSelectionCallback = negativeSelectionCallback;
+	var _local_3 = com.clubpenguin.util.URLUtils.getCacheResetURL(file);
+	enableTabLock();
+	stopQuickKeys();
+	SHELL.hideTriggers();
+	SHELL.sendAS3ShowPrompt(style, message, file, cards);
+}
+function showComplexPrompt(style, data) {
+	SHELL.sendAS3ShowComplexPrompt(style, data);
+}
+function showAssetPrompt(data) {
+	SHELL.sendAS3ShowAssetPrompt(data);
+}
+function onActionSelected(action, input) {
+	switch (action) {
+		case "yes" : 
+			onYesClicked();
+			break;
+		case "no" : 
+			onNoClicked();
+			break;
+		case "continue" : 
+			onContinueClicked(input);
+			break;
+		case "ok" : 
+			onOkClicked();
+			break;
+		case "close" : 
+			onCloseClicked();
+	}
+}
+function onYesClicked() {
+	closePrompt();
+	_positiveSelectionCallback();
+	removeTabLock();
+}
+function onNoClicked() {
+	closePrompt();
+	_negativeSelectionCallback();
+	removeTabLock();
+	SHELL.showTriggers();
+}
+function onContinueClicked() {
+	var _local_1 = PROMPT.text_input.text;
+	if (_local_1.length > 0) {
+		closePrompt();
+		_positiveSelectionCallback(_local_1);
+	}
+	removeTabLock();
+}
+function onOkClicked() {
+	closePrompt();
+	_positiveSelectionCallback();
+	removeTabLock();
+}
+function onCloseClicked() {
+	closePrompt();
+	_negativeSelectionCallback();
+	removeTabLock();
+}
+function enableTabLock() {
+	MovieClip.prototype.tabEnabled = false;
+	Button.prototype.tabEnabled = false;
+	Selection.setFocus(null);
+}
+function removeTabLock() {
+	delete MovieClip.prototype.tabEnabled;
+	delete Button.prototype.tabEnabled;
+}
+function showStaffWidget() {
+	showWidget(STAFF_WIDGET);
+	setupStaffWidget();
+}
+function setupStaffWidget() {
+	var _loc2_ = STAFF_WIDGET.art_mc;
+	_loc2_.hideplayers_btn.onRelease = function() {
+		STAFF_WIDGET_OPTIONS.gotoAndStop("hideplayers");
+		setupStaffWidgetHidePlayers();
+	}
+	_loc2_.hideplayers_btn.onRollOver = function() {
+		showHint(this,"Hide Players & Names",undefined,undefined,false);
+	}
+	_loc2_.hideplayers_btn.onRollOut = closeHint;
+	_loc2_.hideinterface_btn.onRelease = function() {
+		STAFF_WIDGET_OPTIONS.gotoAndStop("hideinterface");
+		setupStaffWidgetHideInterface();
+	}
+	_loc2_.hideinterface_btn.onRollOver = function() {
+		showHint(this,"Hide Interface",undefined,undefined,false);
+	}
+	_loc2_.hideinterface_btn.onRollOut = closeHint;
+	_loc2_.buyfurniture_btn.onRelease = function() {
+		STAFF_WIDGET_OPTIONS.gotoAndStop("buyfurniture");
+		setupStaffWidgetBuyFurniture();
+	}
+	_loc2_.buyfurniture_btn.onRollOver = function() {
+		showHint(this,"Buy Stuff & More",undefined,undefined,false);
+	}
+	_loc2_.buyfurniture_btn.onRollOut = closeHint;
+	_loc2_.removeclothing_btn.onRelease = function() {
+		STAFF_WIDGET_OPTIONS.gotoAndStop("removeclothing");
+		setupStaffWidgetRemoveClothing();
+	}
+	_loc2_.removeclothing_btn.onRollOver = function() {
+		showHint(this,"Remove Clothing",undefined,undefined,false);
+	}
+	_loc2_.removeclothing_btn.onRollOut = closeHint;
+	_loc2_.puffleadopt_btn.onRelease = function() {
+		STAFF_WIDGET_OPTIONS.gotoAndStop("puffleadopt");
+		setupStaffWidgetPuffleAdopt();
+	}
+	_loc2_.puffleadopt_btn.onRollOver = function() {
+		showHint(this,"Adopt Puffles",undefined,undefined,false);
+	}
+	_loc2_.puffleadopt_btn.onRollOut = closeHint;
+	_loc2_.postcard_btn.onRelease = function() {
+		STAFF_WIDGET_OPTIONS.gotoAndStop("postcard");
+		setupStaffWidgetPostcard();
+	}
+	_loc2_.postcard_btn.onRollOver = function() {
+		showHint(this,"Send Any Postcard",undefined,undefined,false);
+	}
+	_loc2_.postcard_btn.onRollOut = closeHint;
+	_loc2_.transform_btn.onRelease = function() {
+		STAFF_WIDGET_OPTIONS.gotoAndStop("transform");
+		setupStaffWidgetTransform();
+	}
+	_loc2_.transform_btn.onRollOver = function() {
+		showHint(this,"Transformations",undefined,undefined,false);
+	}
+	_loc2_.transform_btn.onRollOut = closeHint;
+	setupStaffWidgetHidePlayers();
+	setupStaffWidgetHideInterface();
+	setupStaffWidgetBuyFurniture();
+	setupStaffWidgetRemoveClothing();
+	setupStaffWidgetPuffleAdopt();
+	setupStaffWidgetPostcard();
+	setupStaffWidgetTransform();
+}
+function setupStaffWidgetHidePlayers() {
+	STAFF_WIDGET_OPTIONS.players_btn.onRelease = function() {
+		if(nicknames_mc._visible == false) {
+			ENGINE.showAllPlayers();
+		}
+		else {
+			ENGINE.hideAllPlayers();
+		}
+	}
+	STAFF_WIDGET_OPTIONS.names_btn.onRelease = function() {
+		if(ENGINE.hidingAllPlayerNames == true) {
+			ENGINE.showAllPlayerNames();
+		}
+		else {
+			ENGINE.hideAllPlayerNames();
+		}
+	}
+}
+function setupStaffWidgetHideInterface() {
+	STAFF_WIDGET_OPTIONS.interface_btn.onRelease = function() {
+		if(isInterfaceHidden == true) {
+			showInterface();
+			isInterfaceHidden = false;
+			showStaffWidget();
+			setupStaffWidgetHideInterface();
+		} else {
+			closeInterface();
+			isInterfaceHidden = true;
+		}
+	}
+}
+function setupStaffWidgetBuyFurniture() {
+	STAFF_WIDGET_OPTIONS.furniture_btn.onRelease = function() {
+		var _loc2_ = STAFF_WIDGET_OPTIONS.furniture_txt.text;
+		var _loc3_ = parseInt(_loc2_);
+		buyFurniture(_loc3_);
+	}
+	STAFF_WIDGET_OPTIONS.igloo_btn.onRelease = function() {
+		var _loc2_ = STAFF_WIDGET_OPTIONS.furniture_txt.text;
+		var _loc3_ = parseInt(_loc2_);
+		buyIglooUpgrade(_loc3_);
+	}
+	STAFF_WIDGET_OPTIONS.puffleitem_btn.onRelease = function() {
+		var _loc2_ = STAFF_WIDGET_OPTIONS.furniture_txt.text;
+		var _loc3_ = parseInt(_loc2_);
+		buyPuffleItem(_loc3_);
+	}
+	STAFF_WIDGET_OPTIONS.down_btn.onRelease = function() {
+		STAFF_WIDGET_OPTIONS.gotoAndStop("buyfurniture2");
+		setupStaffWidgetBuyFurniturePage2();
+	}
+}
+function setupStaffWidgetBuyFurniturePage2() {
+	STAFF_WIDGET_OPTIONS.location_btn.onRelease = function() {
+		var _loc2_ = STAFF_WIDGET_OPTIONS.furniture_txt.text;
+		var _loc3_ = parseInt(_loc2_);
+		buyIglooLocation(_loc3_);
+	}
+	STAFF_WIDGET_OPTIONS.music_btn.onRelease = function() {
+		var _loc2_ = STAFF_WIDGET_OPTIONS.furniture_txt.text;
+		var _loc3_ = parseInt(_loc2_);
+		if(!isNaN(_loc3_)) {
+			shell.playIglooMusicByID(_loc3_);
+			showPrompt("ok","Set music with the id " + _loc3_ + " as client-side room music.");
+		} else {
+			showPrompt("warn","Not a valid ID");
+		}
+	}
+	STAFF_WIDGET_OPTIONS.cards_btn.onRelease = buyPowerCards;
+	STAFF_WIDGET_OPTIONS.up_btn.onRelease = function() {
+		STAFF_WIDGET_OPTIONS.gotoAndStop("buyfurniture");
+		setupStaffWidgetBuyFurniture();
+	}
+}
+function setupStaffWidgetRemoveClothing() {
+	STAFF_WIDGET_OPTIONS.clothing_btn.onRelease = function() {
+		var _loc2_ = STAFF_WIDGET_OPTIONS.clothing_txt.text
+		var _loc3_ = parseInt(_loc2_);
+		var _loc4_ = getInventoryObjectById(_loc3_)
+		var _loc5_ = _loc4_.label;
+		if(shell.isItemInMyInventory(_loc3_))
+		{
+			showPrompt("ok","Removed " + _loc5_ + " from your inventory.");
+			shell.removeItemFromInventory(_loc3_);
+		}
+		else
+		{
+			showPrompt("warn","That item isn't in your inventory! :hogrida:");
+		}
+	}
+}
+	function setupStaffWidgetPuffleStuff(arg) {
+		if (isNaN(arg)) {
+		  argzero = arg[0];
+		  argone = arg[1];
+		  puffleinfo = arg[2];
+		  puffleinfoarray = puffleinfo.split("|");
+		  puffleid = puffleinfoarray[0];
+		  shell.sendStartPuffleWalk(puffleid,true);
+		}
+	  };
+function setupStaffWidgetPuffleAdopt() {
+	STAFF_WIDGET_OPTIONS.adopt_btn.onRelease = function() {
+		_global.pufflename = STAFF_WIDGET_OPTIONS.name_txt.text;
+		var _loc2_ = STAFF_WIDGET_OPTIONS.id_txt.text;
+		var puffid = parseInt(_loc2_);
+		shell.AIRTOWER.ADOPTIONPACKET = "pn";
+		shell.AIRTOWER.addListener(shell.AIRTOWER.ADOPTIONPACKET, setupStaffWidgetPuffleStuff);
+		if(puffid > 1000) {
+			shell.AIRTOWER.send(shell.AIRTOWER.PLAY_EXT, "p#pn", [0, name_input.text, puffid], "str", shell.getCurrentServerRoomId());
+		} else {
+			shell.AIRTOWER.send(shell.AIRTOWER.PLAY_EXT, "p#pn", [puffid, name_input.text, 0], "str", shell.getCurrentServerRoomId());
+		}
+	}
+}
+function setupStaffWidgetPostcard() {
+	STAFF_WIDGET_OPTIONS.mailsend_btn.onRelease = function() {
+		var _loc2_ = STAFF_WIDGET_OPTIONS.mailplayer_txt.text;
+		var _loc3_ = STAFF_WIDGET_OPTIONS.mailid_txt.text;
+		if(_loc2_ == "") { //if player id input is empty, set it to my player id
+			var _loc4_ = shell.getMyPlayerId();
+		} else {
+			var _loc4_ = parseInt(_loc2_);
+		}
+		var _loc5_ = parseInt(_loc3_);
+		if(!isNaN(_loc4_) && !isNaN(_loc5_))
+		{
+			shell.sendMail(_loc4_,_loc5_);
+			showPrompt("ok","Sent postcard with the id of " + _loc5_ + " to " + shell.getNicknameById(_loc4_));
+		}
+		else
+		{
+			showPrompt("warn","Not a valid player or postcard ID");
+		}
+	}
+}
+function setupStaffWidgetTransform() {
+	STAFF_WIDGET_OPTIONS.tf0.onRelease = function() {
+		ENGINE.avatarManager.transformationManager.sendTransformPlayer(0);
+	}
+	STAFF_WIDGET_OPTIONS.tf2014.onRelease = function() {
+		ENGINE.avatarManager.transformationManager.sendTransformPlayer(2014);
+	}
+	STAFF_WIDGET_OPTIONS.tf2015.onRelease = function() {
+		ENGINE.avatarManager.transformationManager.sendTransformPlayer(2015);
+	}
+	STAFF_WIDGET_OPTIONS.tf2016.onRelease = function() {
+		ENGINE.avatarManager.transformationManager.sendTransformPlayer(2016);
+	}
+	STAFF_WIDGET_OPTIONS.tf2012.onRelease = function() {
+		ENGINE.avatarManager.transformationManager.sendTransformPlayer(2012);
+	}
+	STAFF_WIDGET_OPTIONS.tf33.onRelease = function() {
+		ENGINE.avatarManager.transformationManager.sendTransformPlayer(33);
+	}
+	STAFF_WIDGET_OPTIONS.tf2010.onRelease = function() {
+		ENGINE.avatarManager.transformationManager.sendTransformPlayer(2010);
+	}
+	STAFF_WIDGET_OPTIONS.tf2000.onRelease = function() {
+		ENGINE.avatarManager.transformationManager.sendTransformPlayer(2000);
+	}
+	STAFF_WIDGET_OPTIONS.tf10.onRelease = function() {
+		ENGINE.avatarManager.transformationManager.sendTransformPlayer(10);
+	}
+	STAFF_WIDGET_OPTIONS.tf2011.onRelease = function() {
+		ENGINE.avatarManager.transformationManager.sendTransformPlayer(2011);
+	}
+	STAFF_WIDGET_OPTIONS.tf29.onRelease = function() {
+		ENGINE.avatarManager.transformationManager.sendTransformPlayer(29);
+	}
+	STAFF_WIDGET_OPTIONS.tf35.onRelease = function() {
+		ENGINE.avatarManager.transformationManager.sendTransformPlayer(35);
+	}
+	STAFF_WIDGET_OPTIONS.tf1987.onRelease = function() {
+		ENGINE.avatarManager.transformationManager.sendTransformPlayer(1987);
+	}
+	STAFF_WIDGET_OPTIONS.tf1980.onRelease = function() {
+		ENGINE.avatarManager.transformationManager.sendTransformPlayer(1980);
+	}
+	STAFF_WIDGET_OPTIONS.tf1981.onRelease = function() {
+		ENGINE.avatarManager.transformationManager.sendTransformPlayer(1981);
+	}
+	STAFF_WIDGET_OPTIONS.tf1982.onRelease = function() {
+		ENGINE.avatarManager.transformationManager.sendTransformPlayer(1982);
+	}
+	STAFF_WIDGET_OPTIONS.tf1983.onRelease = function() {
+		ENGINE.avatarManager.transformationManager.sendTransformPlayer(1983);
+	}
+	STAFF_WIDGET_OPTIONS.tf1984.onRelease = function() {
+		ENGINE.avatarManager.transformationManager.sendTransformPlayer(1984);
+	}
+	STAFF_WIDGET_OPTIONS.tf1985.onRelease = function() {
+		ENGINE.avatarManager.transformationManager.sendTransformPlayer(1985);
+	}
+	STAFF_WIDGET_OPTIONS.tf1986.onRelease = function() {
+		ENGINE.avatarManager.transformationManager.sendTransformPlayer(1986);
+	}
+	STAFF_WIDGET_OPTIONS.tf1988.onRelease = function() {
+		ENGINE.avatarManager.transformationManager.sendTransformPlayer(1988);
+	}
+	STAFF_WIDGET_OPTIONS.tf1989.onRelease = function() {
+		ENGINE.avatarManager.transformationManager.sendTransformPlayer(1989);
+	}
+}
+function showScopedPrompt(style, message, file, sendFunction, scope) {
+	var _local_2 = com.clubpenguin.util.URLUtils.getCacheResetURL(file);
+	SHELL.sendAS3StopNotificationServices();
+	enableTabLock();
+	stopQuickKeys();
+	if (style == "question") {
+		PROMPT.gotoAndStop(2);
+	} else if (style == "ok") {
+		PROMPT.gotoAndStop(4);
+	} else if (style == "wait") {
+		PROMPT.gotoAndStop(5);
+	} else if (style == "game") {
+		PROMPT.gotoAndStop(3);
+	} else if (style == "igloo") {
+		PROMPT.gotoAndStop(6);
+		PROMPT.icon_mc.loadMovie(_local_2);
+	} else if (style == "shop") {
+		PROMPT.gotoAndStop(7);
+		PROMPT.icon_mc.loadMovie(_local_2);
+	} else if (style == "coin") {
+		PROMPT.gotoAndStop(8);
+	} else if (style == "input") {
+		PROMPT.gotoAndStop(9);
+		PROMPT.icon_mc.loadMovie(_local_2);
+		PROMPT.text_input.restrict = getLocalizedString("chat_restrict");
+		Selection.setFocus(PROMPT.text_input);
+	} else if (style == "warn") {
+		PROMPT.gotoAndStop(10);
+	} else {
+		PROMPT.gotoAndStop(1);
+	}
+	PROMPT.block_mc.useHandCursor = false;
+	PROMPT.block_mc.tabEnabled = false;
+	PROMPT.block_mc.onRelease = null;
+	PROMPT.message_txt.text = message;
+	PROMPT.continue_txt.text = getLocalizedString("Continue");
+	PROMPT.yes_txt.text = getLocalizedString("Yes");
+	PROMPT.no_txt.text = getLocalizedString("No");
+	PROMPT.ok_txt.text = getLocalizedString("Ok");
+	PROMPT.yes_btn.onRelease = function () {
+		closePrompt();
+		sendFunction.call(scope);
+		removeTabLock();
+		SHELL.sendAS3StartNotificationServices();
+	};
+	PROMPT.ok_btn.onRelease = function () {
+		closePrompt();
+		sendFunction.call(scope);
+		removeTabLock();
+		SHELL.sendAS3StartNotificationServices();
+	};
+	PROMPT.continue_btn.onRelease = function () {
+		var _local_1 = PROMPT.text_input.text;
+		if (_local_1.length > 0) {
+			closePrompt();
+			sendFunction.call(scope, _local_1);
+		}
+		removeTabLock();
+		SHELL.sendAS3StartNotificationServices();
+	};
+	PROMPT.no_btn.onRelease = function () {
+		closePrompt();
+		removeTabLock();
+		SHELL.sendAS3StartNotificationServices();
+	};
+	PROMPT.close_btn.onRelease = function () {
+		closePrompt();
+		sendFunction.call(scope);
+		removeTabLock();
+		SHELL.sendAS3StartNotificationServices();
+	};
+}
+function showGamePrompt(name) {
+	setActiveGamePrompt(name);
+	showPrompt(question);
+}
+function clickGamePrompt() {
+	sendJoinGame(getActiveGamePrompt());
+}
+function setActiveGamePrompt(name) {
+	active_game_prompt = name;
+}
+function getActiveGamePrompt() {
+	return(active_game_prompt);
+}
+function showEndGameScreen(objParams, promptClosedCallback, roomName, doJoinRoomFirst) {
+	if (objParams.isCardJitsu == true) {
+		SHELL.isCardJitsuEndGameScreen = true;
+		SHELL.cardJitsuEndGameScreenVars = objParams;
+		ENGINE.sendGameOver(0);
+		return(undefined);
+	}
+	objParams.gameRoomId = SHELL.getCurrentRoomId();
+	var _local_5 = SHELL.getGameObject();
+	if (doJoinRoomFirst && (_local_5.show_player_in_room)) {
+		endGameClosedFunction = com.clubpenguin.util.Delegate.create(this, onDelayedEndGameClose);
+		startQuickKeys();
+		promptClosedCallback();
+		removeTabLock();
+		reloadLastRoom(((room_id != undefined) ? (room_id) : (SHELL.getLastRoomId())));
+		SHELL.sendAS3StartNotificationServices();
+		initEndGameScreen(null, objParams, promptClosedCallback, room_id);
+	} else if (doJoinRoomFirst) {
+		onRoomInitiatedFunc = com.clubpenguin.util.Delegate.create(this, initEndGameScreen, objParams, promptClosedCallback, null);
+		SHELL.addListener(SHELL.ROOM_INITIATED, onRoomInitiatedFunc);
+		endGameClosedFunction = com.clubpenguin.util.Delegate.create(this, onEndGameClosed);
+		if (roomName != null) {
+			ENGINE.setGameOverRoom(roomName);
+		}
+		ENGINE.sendJoinGameOverRoom();
+		SHELL.sendAS3StartNotificationServices();
+	} else {
+		endGameClosedFunction = com.clubpenguin.util.Delegate.create(this, (objParams.is_table ? (onEndGameClosed) : (onEndGameClosedJoinRoom)));
+		initEndGameScreen(null, objParams, promptClosedCallback, roomName);
+	}
+}
+function initEndGameScreen(objEvent, objParams, promptClosedCallback, roomName) {
+	PROMPT.gotoAndStop(1);
+	enableTabLock();
+	stopQuickKeys();
+	if (onRoomInitiatedFunc != null) {
+		SHELL.removeListener(SHELL.ROOM_INITIATED, onRoomInitiatedFunc);
+	}
+	if (endGameView == undefined) {
+		if (roomName != null) {
+			ENGINE.setGameOverRoom(roomName);
+		}
+		endGameSendFunction = promptClosedCallback;
+		var _local_2 = new com.clubpenguin.endgame.model.EndGameParams();
+		_local_2.totalCoins = objParams.total;
+		_local_2.earnedCoins = objParams.earned;
+		_local_2.numTotalStamps = objParams.numberOfGameStamps;
+		_local_2.numCompletedStamps = objParams.totalNumberOfGameStampsEarned;
+		_local_2.newStamps = objParams.stampIds;
+		_local_2.isTable = objParams.is_table;
+		_local_2.activeTable = objParams.activeTable;
+		_local_2.gameRoomId = objParams.gameRoomId;
+		var _local_10 = new com.clubpenguin.endgame.model.EndGameModel(this.SHELL, _local_2);
+		var _local_5;
+		if (objParams.isCardJitsu) {
+			_local_5 = com.clubpenguin.endgame.view.CardJitsuEndGameView.LINKAGE_ID;
+		} else {
+			_local_5 = com.clubpenguin.endgame.view.CoinEndGameView.LINKAGE_ID;
+		}
+		var _local_4 = ENGINE.getGameCompletedParams();
+		var _local_6 = _local_4.showGameOverModal;
+		if (_local_6 == true) {
+			var _local_7 = _local_4.gameOverModalPath;
+			showContent(_local_7);
+			onEndGameClosed();
+		} else {
+			endGameView = com.clubpenguin.endgame.view.BaseEndGameView(interface_mc.attachMovie(_local_5, "end_game_mc", interface_mc.getNextHighestDepth()));
+			var _local_8 = new com.clubpenguin.endgame.mediator.EndGameMediator(endGameView, _local_10);
+			_local_8.endGameClosed.addOnce(endGameClosedFunction, this);
+		}
+	}
+}
+function showScopedGameOverPrompt(total, earned, sendFunction, scope) {
+	var _local_2 = {total:total, earned:earned, numberOfGameStamps:0, totalNumberOfGameStampsEarned:0, stampIds:[], is_table:true, activeTable:ENGINE.getActiveTable()};
+	endGameClosedFunction = com.clubpenguin.util.Delegate.create(this, onEndGameClosed);
+	initEndGameScreen(null, _local_2, com.clubpenguin.util.Delegate.create(scope, sendFunction), null);
+}
+function onEndGameClosedJoinRoom() {
+	var _local_1 = SHELL.getGameObject();
+	startQuickKeys();
+	removeTabLock();
+	endGameView.removeMovieClip();
+	endGameView = undefined;
+	endGameSendFunction = undefined;
+	if (_local_1.show_player_in_room) {
+		reloadLastRoom(SHELL.getLastRoomId());
+		SHELL.sendAS3StartNotificationServices();
+	} else {
+		endGameSendFunction();
+		ENGINE.sendJoinGameOverRoom();
+		SHELL.sendAS3StartNotificationServices();
+	}
+}
+function onEndGameClosed() {
+	startQuickKeys();
+	endGameSendFunction();
+	removeTabLock();
+	endGameView.removeMovieClip();
+	endGameView = undefined;
+	endGameSendFunction = undefined;
+}
+function closeGameAndJoinRoom() {
+	var _local_1 = SHELL.getGameObject();
+	startQuickKeys();
+	removeTabLock();
+	if (_local_1.show_player_in_room) {
+		reloadLastRoom(SHELL.getLastRoomId());
+		SHELL.sendAS3StartNotificationServices();
+	} else {
+		ENGINE.sendJoinGameOverRoom();
+		SHELL.sendAS3StartNotificationServices();
+	}
+}
+function onDelayedEndGameClose() {
+	endGameView.removeMovieClip();
+	endGameView = undefined;
+	endGameSendFunction = undefined;
+}
+function reloadLastRoom(roomID) {
+	SHELL.sendLeaveNonBlackHoleGame();
+	SHELL.setCurrentRoomId(roomID);
+	SHELL.setCurrentServerRoomId(SHELL.getLastServerRoomId());
+	SHELL.getCurrentRoomService().refreshRoom();
+}
+function closePrompt() {
+	SHELL.sendAS3ClosePrompt();
+	PROMPT.gotoAndStop(1);
+	startQuickKeys();
+}
+function createBalloonByPlayerId(playerID, depth) {
+	BALLOONS.createMC(playerID, depth);
+}
+function removeBalloonByPlayerId(playerID) {
+	BALLOONS.removeMC(playerID);
+}
+function showBalloon(playerID, message) {
+	var _local_1 = getBalloonParams(playerID);
+	BALLOONS.showTextBalloon(playerID, message, undefined, _local_1);
+}
+function showBannedBalloon(playerID, message) {
+	BALLOONS.showTextBalloon(playerID, message, "BannedBalloon");
+}
+function showEmoteBalloon(playerID, emoteFrame, duration) {
+	var _local_1 = getBalloonParams(playerID);
+	BALLOONS.showEmoteBalloon(playerID, emoteFrame, undefined, _local_1, duration);
+}
+function resetRoomBalloonManager() {
+	BALLOONS.reset();
+}
+function getBalloonParams(playerID) {
+	var _local_1 = ENGINE.getPlayerMovieClip(playerID);
+	var _local_2 = SHELL.getPlayerObjectById(playerID);
+	var _local_4 = _local_2.avatarVO.speechBubbleOffsetX;
+	var _local_5 = _local_2.avatarVO.speechBubbleOffsetY;
+	var _local_3 = {_x:_local_1._x + _local_4, _y:_local_1._y + _local_5};
+	if (_local_1.scaleTopOffsetY != undefined) {
+		_local_3._y = _local_3._y + _local_1.scaleTopOffsetY;
+	}
+	return(_local_3);
+}
+function LEGACY_showWindow(name, ob) {
+	if (name == "Found Item") {
+		buyInventory(ob.ItemId);
+	} else if (name == "News Form") {
+		showWindow("news_form");
+	} else if (name == "Game Over") {
+		var _local_4 = ob.score;
+		var _local_3 = ob.coins;
+	}
+}
+function reintializeLog() {
+	LOG.tab_btn.onRelease = updateLog;
+	LOG.tab_btn.onPress = dragLog;
+}
+function dragLog() {
+	LOG.starty = LOG._y;
+	LOG.startDrag(false, LOG._x, 6, LOG._x, 420);
+	if (!hasHidTrigger) {
+		SHELL.hideTriggers();
+		hasHidTrigger = true;
+	}
+}
+function updateLog() {
+	LOG.stopDrag();
+	if (LOG._y == LOG.starty) {
+		if (LOG._y > 40) {
+			closeLog();
+			SHELL.showTriggers();
+			hasHidTrigger = false;
+		} else {
+			openLog();
+		}
+	} else {
+		is_log_open = true;
+		showLog();
+		if (LOG._y <= 40) {
+			SHELL.showTriggers();
+			hasHidTrigger = false;
+		}
+	}
+}
+function openLog() {
+	is_log_open = true;
+	LOG.arrow_mc.gotoAndStop(2);
+	LOG._y = 110;
+	showLog();
+}
+function closeLog() {
+	is_log_open = false;
+	LOG.arrow_mc.gotoAndStop(1);
+	LOG._y = 6;
+	clearLog();
+}
+function showLog() {
+	if (is_log_open) {
+		var _local_10 = getLog();
+		var _local_9 = LOG.menu_mc;
+		clearLog();
+		var _local_11 = Math.floor((LOG._y - 30) / 20);
+		var _local_8 = _local_10.length - 1;
+		var _local_4 = 0;
+		while (_local_4 < _local_11) {
+			var _local_3 = _local_10[_local_8];
+			_local_9.item_mc.duplicateMovieClip("item" + _local_4, _local_4 + 1);
+			var _local_2 = _local_9["item" + _local_4];
+			if (_local_3 != undefined) {
+				if (_local_3.type == shell.SEND_BLOCKED_MESSAGE) {
+					_local_2.gotoAndStop(2);
+				} else {
+					_local_2.gotoAndStop(1);
+				}
+				if (_local_3.mod_action != undefined) {
+					_local_2.message_text.text = ((("SERVER" + message_separator) + _local_3.message) + message_separator) + _local_3.nickname;
+				} else {
+					_local_2.message_text.text = (_local_3.nickname + message_separator) + _local_3.message;
+				}
+				_local_2.player_id = _local_3.player_id;
+				_local_2.nickname = _local_3.nickname;
+				_local_2.message = _local_3.message;
+				_local_2.type = _local_3.type;
+				_local_2.message_btn.onRelease = function () {
+					var _local_2 = this._parent.player_id;
+					var _local_3 = this._parent.nickname;
+					var _local_4 = this._parent.message;
+					if (!isClickableLogItem(_local_2)) {
+						return(undefined);
+					}
+					if (_local_2 != undefined) {
+						setActiveReport(_local_2, _local_3, _local_4);
+						showPlayerWidget(_local_2, _local_3);
+					}
+				};
+			} else {
+				_local_2.message_text.text = "";
+			}
+			_local_2._y = -(20 * _local_4);
+			if (!isClickableLogItem(_local_3.player_id)) {
+				_local_2.message_btn.onRelease = undefined;
+				delete _local_2.message_btn.onRelease;
+			}
+			_local_8--;
+			_local_4++;
+		}
+	}
+}
+function isClickableLogItem(player_id) {
+	if ((!shell.playerModel.playerExists(player_id)) && (!shell.isPlayerBuddyById(player_id))) {
+		return(false);
+	}
+	return(true);
+}
+function clearLog() {
+	var _local_1 = LOG.menu_mc;
+	for (var _local_2 in _local_1) {
+		if (_local_1[_local_2] != "item_mc") {
+			removeMovieClip(_local_1[_local_2]);
+		}
+	}
+}
+function setActiveReport(player_id, nickname, message) {
+	active_report = new Object();
+	active_report.player_id = player_id;
+	active_report.nickname = nickname;
+	active_report.message = message;
+}
+function getActiveReport() {
+	return(active_report);
+}
+function getActiveReportMessage() {
+	return(active_report.message);
+}
+function animateStampEarned(mainCategoryID, difficulty, title) {
+	var _local_1 = new Object();
+	_local_1.mainCategoryID = mainCategoryID;
+	_local_1.difficulty = difficulty;
+	_local_1.title = title;
+	SHELL.sendShowStamp(_local_1);
+}
+function handleEggTimerUpdate(ob) {
+	traceObject(ob);
+	var _local_1 = Math.ceil(ob.minutes_remaining);
+	if (_local_1 < 0) {
+		EGG_TIMER_ICON._visible = false;
+		return(undefined);
+	}
+	EGG_TIMER_ICON._visible = true;
+	if (_local_1 > 999) {
+		EGG_TIMER_ICON.message_mc.gotoAndStop(2);
+		EGG_TIMER_ICON.message_mc.message_txt.text = _local_1;
+	} else {
+		EGG_TIMER_ICON.message_mc.gotoAndStop(1);
+		EGG_TIMER_ICON.message_mc.message_txt.text = _local_1;
+	}
+	if (EGG_TIMER_ICON.minutes_remaining != _local_1) {
+		EGG_TIMER_ICON.minutes_remaining = _local_1;
+	}
+}
+function updateNewMailIcon(t) {
+	MAIL_ICON.new_mc._visible = true;
+	if (t > ONE_DIGIT_MAX) {
+		MAIL_ICON.new_mc.gotoAndStop(TWO_DIGITS_FRAME);
+	} else {
+		MAIL_ICON.new_mc.gotoAndStop(ONE_DIGIT_FRAME);
+	}
+	MAIL_ICON.new_mc.amount.text = t;
+	if (t < 1) {
+		MAIL_ICON.new_mc._visible = false;
+	}
+	if (t > last_new_total) {
+		bounceIcon(MAIL_ICON);
+	}
+	last_new_total = t;
+}
+function showEmoteMenu(page) {
+	EMOTE_MENU.gotoAndStop(page + 1);
+	EMOTE_MENU.back_btn.onRelease = closeEmoteMenu;
+	EMOTE_MENU.back_btn.onRollOver = closeEmoteMenu;
+	EMOTE_MENU.close_btn.onRelease = closeEmoteMenu;
+	EMOTE_MENU.back_btn.useHandCursor = false;
+	EMOTE_MENU.safe_btn.useHandCursor = false;
+	//next page
+	EMOTE_MENU.next_btn.onRelease = function () {
+		showEmoteMenu(page + 2);
+	};
+	EMOTE_MENU.prev_btn.onRelease = function () {
+		showEmoteMenu(page);
+	};
+	//defaults
+	EMOTE_MENU.e1_btn.onRelease = function () {
+		clickEmote(1);
+	};
+	EMOTE_MENU.e2_btn.onRelease = function () {
+		clickEmote(2);
+	};
+	EMOTE_MENU.e3_btn.onRelease = function () {
+		clickEmote(3);
+	};
+	EMOTE_MENU.e4_btn.onRelease = function () {
+		clickEmote(4);
+	};
+	EMOTE_MENU.e5_btn.onRelease = function () {
+		clickEmote(5);
+	};
+	EMOTE_MENU.e6_btn.onRelease = function () {
+		clickEmote(6);
+	};
+	EMOTE_MENU.e7_btn.onRelease = function () {
+		clickEmote(7);
+	};
+	EMOTE_MENU.e8_btn.onRelease = function () {
+		clickEmote(8);
+	};
+	EMOTE_MENU.e9_btn.onRelease = function () {
+		clickEmote(9);
+	};
+	EMOTE_MENU.e10_btn.onRelease = function () {
+		clickEmote(10);
+	};
+	EMOTE_MENU.e11_btn.onRelease = function () {
+		clickEmote(11);
+	};
+	EMOTE_MENU.coffee_btn.onRelease = function () {
+		clickEmote(13);
+	};
+	EMOTE_MENU.game_btn.onRelease = function () {
+		clickEmote(18);
+	};
+	EMOTE_MENU.popcorn_btn.onRelease = function () {
+		clickEmote(29);
+	};
+	EMOTE_MENU.pizza_btn.onRelease = function () {
+		clickEmote(24);
+	};
+	EMOTE_MENU.icecream_btn.onRelease = function () {
+		clickEmote(26);
+	};
+	EMOTE_MENU.luck_btn.onRelease = function () {
+		clickEmote(16);
+	};
+	EMOTE_MENU.flower_btn.onRelease = function () {
+		clickEmote(17);
+	};
+	EMOTE_MENU.cake_btn.onRelease = function () {
+		clickEmote(28);
+	};
+	EMOTE_MENU.heart_btn.onRelease = function () {
+		clickEmote(30);
+	};
+	EMOTE_MENU.idea_btn.onRelease = function () {
+		clickEmote(12);
+	};
+	//party emotes
+	EMOTE_MENU.party1_btn.onRelease = function () {
+		clickEmote(31);
+	};
+	EMOTE_MENU.party2_btn.onRelease = function () {
+		clickEmote(32);
+	};
+	EMOTE_MENU.party3_btn.onRelease = function () {
+		clickEmote(33);
+	};
+	//muppets emotes
+	EMOTE_MENU.m1_btn.onRelease = function () {
+		clickEmote(51);
+	};
+	EMOTE_MENU.m2_btn.onRelease = function () {
+		clickEmote(52);
+	};
+	EMOTE_MENU.m3_btn.onRelease = function () {
+		clickEmote(53);
+	};
+	EMOTE_MENU.m4_btn.onRelease = function () {
+		clickEmote(54);
+	};
+	EMOTE_MENU.m5_btn.onRelease = function () {
+		clickEmote(55);
+	};
+	EMOTE_MENU.m6_btn.onRelease = function () {
+		clickEmote(56);
+	};
+	EMOTE_MENU.m7_btn.onRelease = function () {
+		clickEmote(57);
+	};
+	EMOTE_MENU.m8_btn.onRelease = function () {
+		clickEmote(58);
+	};
+	EMOTE_MENU.m9_btn.onRelease = function () {
+		clickEmote(59);
+	};
+	EMOTE_MENU.m10_btn.onRelease = function () {
+		clickEmote(60);
+	};
+	EMOTE_MENU.m11_btn.onRelease = function () {
+		clickEmote(61);
+	};
+	EMOTE_MENU.cute_btn.onRelease = function () {
+		clickEmote(85);
+	};
+	//new emotes
+	EMOTE_MENU.olde1_btn.onRelease = function () {
+		clickEmote(62);
+	};
+	EMOTE_MENU.olde2_btn.onRelease = function () {
+		clickEmote(63);
+	};
+	EMOTE_MENU.olde3_btn.onRelease = function () {
+		clickEmote(64);
+	};
+	EMOTE_MENU.olde4_btn.onRelease = function () {
+		clickEmote(65);
+	};
+	EMOTE_MENU.olde5_btn.onRelease = function () {
+		clickEmote(66);
+	};
+	EMOTE_MENU.olde6_btn.onRelease = function () {
+		clickEmote(67);
+	};
+	EMOTE_MENU.olde7_btn.onRelease = function () {
+		clickEmote(68);
+	};
+	EMOTE_MENU.olde8_btn.onRelease = function () {
+		clickEmote(69);
+	};
+	EMOTE_MENU.olde9_btn.onRelease = function () {
+		clickEmote(70);
+	};
+	EMOTE_MENU.olde10_btn.onRelease = function () {
+		clickEmote(71);
+	};
+	EMOTE_MENU.olde11_btn.onRelease = function () {
+		clickEmote(11);
+	};
+	EMOTE_MENU.oldcoffee_btn.onRelease = function () {
+		clickEmote(74);
+	};
+	EMOTE_MENU.oldgame_btn.onRelease = function () {
+		clickEmote(77);
+	};
+	EMOTE_MENU.oldpopcorn_btn.onRelease = function () {
+		clickEmote(83);
+	};
+	EMOTE_MENU.oldpizza_btn.onRelease = function () {
+		clickEmote(79);
+	};
+	EMOTE_MENU.oldicecream_btn.onRelease = function () {
+		clickEmote(80);
+	};
+	EMOTE_MENU.oldluck_btn.onRelease = function () {
+		clickEmote(75);
+	};
+	EMOTE_MENU.oldflower_btn.onRelease = function () {
+		clickEmote(76);
+	};
+	EMOTE_MENU.oldcake_btn.onRelease = function () {
+		clickEmote(82);
+	};
+	EMOTE_MENU.oldheart_btn.onRelease = function () {
+		clickEmote(84);
+	};
+	EMOTE_MENU.oldidea_btn.onRelease = function () {
+		clickEmote(73);
+	};
+}
+function clickEmote(n) {
+	sendEmote(n);
+	closeEmoteMenu();
+}
+function closeEmoteMenu() {
+	EMOTE_MENU.gotoAndStop(1);
+}
+function showActionMenu() {
+	ACTION_MENU.gotoAndStop(1);
+	ACTION_MENU.gotoAndStop(2);
+	ACTION_MENU.back_btn.onRelease = closeActionMenu;
+	ACTION_MENU.back_btn.onRollOver = closeActionMenu;
+	ACTION_MENU.close_btn.onRelease = closeActionMenu;
+	ACTION_MENU.back_btn.useHandCursor = false;
+	ACTION_MENU.safe_btn.useHandCursor = false;
+	if (isAbleToSpecialDance) {
+		ACTION_MENU.dance_btn.staticHighlight.gotoAndStop(BUTTON_HIGHLIGHT_STATE_HIGHLIGHT);
+		if (!_global.getCurrentShell().playerModel.getMyPlayerObject().playerHasDanced) {
+			ACTION_MENU.danceArrow.gotoAndStop(NEW_EXPERIENCE_ARROW_STATE_SHOW);
+		}
+	}
+	ACTION_MENU.dance_btn.gotoAndStop("up");
+	ACTION_MENU.dance_btn.onPress = function () {
+		ACTION_MENU.dance_btn.gotoAndStop("down");
+	};
+	ACTION_MENU.dance_btn.onRelease = function () {
+		ACTION_MENU.dance_btn.gotoAndStop("up");
+		sendPlayerFrame(SHELL.DANCE_FRAME);
+		closeActionMenu();
+	};
+	ACTION_MENU.dance_btn.onReleaseOutside = function () {
+		ACTION_MENU.dance_btn.gotoAndStop("up");
+	};
+	ACTION_MENU.dance_btn.onRollOver = function () {
+		ACTION_MENU.dance_btn.gotoAndStop("over");
+	};
+	ACTION_MENU.dance_btn.onRollOut = function () {
+		ACTION_MENU.dance_btn.gotoAndStop("up");
+	};
+	if (isAbleToSpecialWave) {
+		ACTION_MENU.wave_btn.staticHighlight.gotoAndStop(BUTTON_HIGHLIGHT_STATE_HIGHLIGHT);
+		if (!_global.getCurrentShell().playerModel.getMyPlayerObject().playerHasWaved) {
+			ACTION_MENU.waveArrow.gotoAndStop(NEW_EXPERIENCE_ARROW_STATE_SHOW);
+		}
+	}
+	ACTION_MENU.wave_btn.gotoAndStop("up");
+	ACTION_MENU.wave_btn.onPress = function () {
+		ACTION_MENU.wave_btn.gotoAndStop("down");
+	};
+	ACTION_MENU.wave_btn.onRelease = function () {
+		ACTION_MENU.wave_btn.gotoAndStop("up");
+		sendPlayerAction(SHELL.WAVE_FRAME);
+		closeActionMenu();
+	};
+	ACTION_MENU.wave_btn.onReleaseOutside = function () {
+		ACTION_MENU.wave_btn.gotoAndStop("up");
+	};
+	ACTION_MENU.wave_btn.onRollOver = function () {
+		ACTION_MENU.wave_btn.gotoAndStop("over");
+	};
+	ACTION_MENU.wave_btn.onRollOut = function () {
+		ACTION_MENU.wave_btn.gotoAndStop("up");
+	};
+	ACTION_MENU.sit1_btn.onRelease = function () {
+		sendPlayerFrame(18);
+		closeActionMenu();
+	};
+	ACTION_MENU.sit2_btn.onRelease = function () {
+		sendPlayerFrame(20);
+		closeActionMenu();
+	};
+	ACTION_MENU.sit3_btn.onRelease = function () {
+		sendPlayerFrame(22);
+		closeActionMenu();
+	};
+	ACTION_MENU.sit4_btn.onRelease = function () {
+		sendPlayerFrame(24);
+		closeActionMenu();
+	};
+}
+function closeActionMenu() {
+	ACTION_MENU.gotoAndStop(1);
+}
+function showSafeMenu() {
+	SHELL.hideTriggers();
+	var _local_1 = getSafeMessages();
+	SAFE_MENU.gotoAndStop(1);
+	SAFE_MENU.gotoAndStop(2);
+	SAFE_MENU.back_btn.onRelease = closeSafeMenu;
+	SAFE_MENU.back_btn.onRollOver = startCloseSafeMenuDelay;
+	SAFE_MENU.close_btn.onRelease = closeSafeMenu;
+	SAFE_MENU.back_btn.useHandCursor = false;
+	SAFE_MENU.safe_btn.useHandCursor = false;
+	SAFE_MENU.master_mc._visible = false;
+	showMenuList(_local_1, 0, 0, 0);
+}
+function showMenuList(l, c, r, w) {
+	if (w == undefined) {
+		w = 1;
+	}
+	var _local_9 = SAFE_MENU.menu_mc;
+	var _local_7 = _local_9.master_mc.item_mc._height + 2;
+	var _local_13 = _local_9.master_mc.item_mc._width + 2;
+	var _local_12 = "menu" + c;
+	_local_9.master_mc.duplicateMovieClip(_local_12, (100 + c) + 1);
+	var _local_3 = _local_9[_local_12];
+	_local_3.item_mc._visible = false;
+	_local_3.c = c;
+	var _local_11 = l.length * _local_7;
+	if (c > 0) {
+		var _local_10 = _local_9["menu" + (c - 1)];
+		_local_3._y = _local_10._y + (r * _local_7);
+		_local_3._x = (_local_10._x + _local_10._width) + 2;
+	} else {
+		_local_3._y = (_local_3._y - _local_11) + _local_7;
+	}
+	if ((_local_3._y + _local_11) > _local_7) {
+		_local_3._y = _local_3._y - ((_local_3._y + _local_11) - _local_7);
+	}
+	i = 0;
+	while (i < l.length) {
+		var _local_2 = l[i];
+		var _local_4 = "item" + i;
+		_local_3.item_mc.duplicateMovieClip(_local_4, i + 1);
+		var _local_1 = _local_3[_local_4];
+		_local_1._y = _local_7 * i;
+		_local_1.c = c;
+		_local_1.r = i;
+		_local_1.ob = _local_2;
+		if (_local_2.menu) {
+			if (w > 1) {
+				_local_1.gotoAndStop(4);
+			} else {
+				_local_1.gotoAndStop(2);
+			}
+		} else if (w > 1) {
+			_local_1.gotoAndStop(3);
+		} else {
+			_local_1.gotoAndStop(1);
+		}
+		_local_1.large_txt.text = _local_2.message;
+		if (_local_1.large_txt.textWidth > _local_1.large_txt._width) {
+			_local_1.large_txt.text = "";
+			_local_1.small_txt.text = _local_2.message;
+		}
+		_local_1.item_btn.onRollOver = handleMenuItemRollOver;
+		_local_1.item_btn.onRelease = handleMenuItemRelease;
+		i++;
+	}
+}
+function closeMenuList(c) {
+	var _local_1 = SAFE_MENU.menu_mc;
+	for (var _local_3 in _local_1) {
+		if (_local_1[_local_3].c > c) {
+			_local_1[_local_3].removeMovieClip();
+		}
+	}
+}
+function handleMenuItemRollOver() {
+	var _local_3 = this._parent._parent.c;
+	var _local_4 = this._parent.r;
+	var _local_2 = this._parent.ob;
+	stopCloseSafeMenuDelay();
+	closeMenuList(_local_3);
+	if (_local_2.menu) {
+		showMenuList(_local_2.menu, _local_3 + 1, _local_4, _local_2.wide);
+	}
+}
+function handleMenuItemRelease() {
+	var _local_2 = this._parent;
+	if (_local_2.ob.action == "joke") {
+		sendJoke();
+	} else if (_local_2.ob.action == "tour") {
+		if (!shell.isItemOnMyPlayer(428) && !shell.isItemOnMyPlayer(1770) && !shell.isItemOnMyPlayer(95801)) {
+			var _local_3 = getLocalizedString("tour_guide_hat_required");
+			showPrompt("warn", _local_3);
+		} else {
+			sendTourGuideMessage();
+		}
+	} else {
+		sendSafeMessage(_local_2.ob.id);
+	}
+	closeSafeMenu();
+}
+function startCloseSafeMenuDelay() {
+	var _local_1 = interface_mc.safe_menu_mc.menu_mc;
+	var delay_counter = 48;
+	_local_1.onEnterFrame = function () {
+		if (delay_counter < 1) {
+			closeSafeMenu();
+		} else {
+			delay_counter--;
+		}
+	};
+}
+function stopCloseSafeMenuDelay() {
+	var _local_1 = SAFE_MENU.menu_mc;
+	delete _local_1.onEnterFrame;
+}
+function closeSafeMenu() {
+	SHELL.showTriggers();
+	SAFE_MENU.gotoAndStop(1);
+}
+function showBuddyWidget() {
+	showBuddyList();
+	setupBuddyWidget();
+}
+function showBuddyList() {
+	showWidget(BUDDY_WIDGET);
+	currentList = "buddy";
+	updateBuddyWidget(0, "buddy");
+}
+function showOnlineList() {
+	showWidget(BUDDY_WIDGET);
+	currentList = "online";
+	updateBuddyWidget(0, "online");
+}
+function showIgnoreList() {
+	showWidget(BUDDY_WIDGET);
+	is_buddy_widget_open = true;
+	currentList = "ignore";
+	updateBuddyWidget(0, "ignore");
+}
+function onPlayerRemoved(player_id) {
+	if (isBuddyWidgetOpen() && (currentList == "online")) {
+		var _local_1 = 0;
+		while (_local_1 < current_page_list.length) {
+			if (current_page_list[_local_1].player_id == player_id) {
+				buddy_player_list.splice(_local_1, 1);
+				break;
+			}
+			_local_1++;
+		}
+		updateBuddyWidget(currentPage, currentList);
+	}
+}
+function updateBuddyWidget(page_id, list_name) {
+	currentPage = page_id;
+	var _local_4 = BUDDY_WIDGET.art_mc;
+	var _local_8 = getPlayerId();
+	if (page_id == undefined) {
+		page_id = _local_4.page_id;
+		list_name = _local_4.list_name;
+	}
+	_local_4.page_id = page_id;
+	_local_4.list_name = list_name;
+	if (list_name == "buddy") {
+		buddy_player_list = getBuddyList();
+		_local_4.title_txt.text = getLocalizedString("buddy_list");
+	} else if (list_name == "ignore") {
+		buddy_player_list = getIgnoreList();
+		_local_4.title_txt.text = getLocalizedString("ignore_list");
+	} else {
+		buddy_player_list = getPlayerList();
+		_local_4.title_txt.text = getLocalizedString("online_list");
+	}
+	var _local_6 = paginateArray(buddy_player_list, page_id, MAX_BUDDIES_PER_PAGE);
+	var _local_7 = getMaxPage(buddy_player_list, MAX_BUDDIES_PER_PAGE);
+	if (page_id < _local_7) {
+		_local_4.next_btn.onRelease = function () {
+			updateBuddyWidget(page_id + 1, list_name);
+		};
+	} else {
+		_local_4.next_btn.onRelease = null;
+	}
+	if (page_id > 0) {
+		_local_4.back_btn.onRelease = function () {
+			updateBuddyWidget(page_id - 1, list_name);
+		};
+	} else {
+		_local_4.back_btn.onRelease = null;
+	}
+	var _local_3 = 0;
+	while (_local_3 < MAX_BUDDIES_PER_PAGE) {
+		var _local_1 = _local_4[("item" + _local_3) + "_mc"];
+		var _local_2 = _local_6[_local_3];
+		if (_local_2 != undefined) {
+			var _local_5 = getPlayerRelationship(_local_2);
+			_local_1.icon_mc.gotoAndStop(1);
+			_local_1.icon_mc.gotoAndStop(_local_5);
+			_local_1.icon_mc._visible = true;
+			_local_1.name_txt.text = _local_2.nickname;
+			_local_1.player_id = _local_2.player_id;
+			_local_1.nickname = _local_2.nickname;
+			_local_1.swid = _local_2.swid;
+			if (list_name == "ignore") {
+				_local_1.icon_mc.gotoAndStop("Ignore");
+				_local_1.item_btn.onRelease = clickIgnoreWidgetItem;
+			} else {
+				_local_1.item_btn.onRelease = clickBuddyWidgetItem;
+			}
+		} else {
+			_local_1.icon_mc.gotoAndStop(1);
+			_local_1.icon_mc._visible = false;
+			_local_1.name_txt.text = "";
+			_local_1.player_id = undefined;
+			_local_1.item_btn.onRelease = null;
+		}
+		_local_3++;
+	}
+	BUDDY_TOTAL_TEXT._visible = false;
+	if (list_name == "buddy") {
+		BUDDY_TOTAL_TEXT.text = buddy_player_list.length + "/100";
+		BUDDY_TOTAL_TEXT._visible = true;
+	}
+}
+function clickBuddyWidgetItem() {
+	var _local_2 = this._parent.player_id;
+	var _local_3 = this._parent.nickname;
+	if (currentList == "buddy") {
+		SHELL.showFriendsPlayerCard(this._parent.swid);
+	} else {
+		showPlayerWidget(_local_2, _local_3);
+	}
+}
+function clickIgnoreWidgetItem() {
+	var _local_2 = this._parent.player_id;
+	var _local_4 = this._parent.nickname;
+	setActiveIgnore(_local_2);
+	var _local_3 = getLocalizedString("ignore_remove_prompt");
+	var _local_5 = replaceString("%name%", _local_4, _local_3);
+	showPrompt("question", _local_5, "", sendIgnoreRemove);
+}
+function setupBuddyWidget() {
+	SHELL.removeListener(SHELL.REMOVE_PLAYER, com.clubpenguin.util.Delegate.create(this, onPlayerRemoved));
+	SHELL.addListener(SHELL.REMOVE_PLAYER, com.clubpenguin.util.Delegate.create(this, onPlayerRemoved));
+	var _local_2 = BUDDY_WIDGET.art_mc;
+	if (SHELL.getMyPlayerObject().remaining_hours != undefined) {
+		_local_2.buddy_btn.onRelease = function () {
+			var _local_1 = new Object();
+			_local_1.graceMax = SHELL.getMyPlayerObject().max_grace_hours;
+			_local_1.state = FRAME_LABEL_ABOUT;
+			_local_1.confirmationHash = SHELL.loginObject.confirmationHash;
+			_local_1.loginDataRaw = SHELL.loginObject.loginDataRaw;
+			_local_1.emailAddress = SHELL.getMyPlayerObject().emailAddress;
+			var _local_2 = new Object();
+			_local_2.modalBackgroundEnbaled = true;
+			_local_2.blockPuffleNotifications = true;
+			_local_2.hideLoadingDialog = true;
+			SHELL.sendOpenAS3Module("preactivation", _local_1, _local_2);
+		};
+	} else {
+		_local_2.buddy_btn.onRelease = function () {
+			showBuddyList();
+			closeHint();
+		};
+	}
+	_local_2.buddy_btn.onRollOver = function () {
+		showHint(this, "buddy_hint");
+	};
+	_local_2.buddy_btn.onRollOut = closeHint;
+	_local_2.online_btn.onRelease = function () {
+		showOnlineList();
+		closeHint();
+	};
+	_local_2.online_btn.onRollOver = function () {
+		showHint(this, "online_hint");
+	};
+	_local_2.online_btn.onRollOut = closeHint;
+	_local_2.ignore_btn.onRelease = function () {
+		showIgnoreList();
+		closeHint();
+	};
+	_local_2.ignore_btn.onRollOver = function () {
+		showHint(this, "ignore_hint");
+	};
+	_local_2.ignore_btn.onRollOut = closeHint;
+}
+function setActiveIgnore(player_id) {
+	active_ignore = player_id;
+}
+function getActiveIgnore() {
+	return(active_ignore);
+}
+function isBuddyWidgetOpen() {
+	if (BUDDY_WIDGET._currentframe == 1) {
+		return(true);
+	}
+	return(false);
+}
+function showScriptWidget() {
+	showWidget(SCRIPT_WIDGET);
+	updateScriptWidget(0);
+}
+function updateScriptWidget(page_id) {
+	var _local_6 = SCRIPT_WIDGET.art_mc;
+	var _local_3 = getScript();
+	var _local_7 = getMaxPage(_local_3, 4);
+	if (page_id > 0) {
+		_local_6.back_btn._visible = true;
+		_local_6.back_btn.onRelease = function () {
+			updateScriptWidget(page_id - 1);
+		};
+	} else {
+		_local_6.back_btn._visible = false;
+	}
+	if (page_id < _local_7) {
+		_local_6.next_btn._visible = true;
+		_local_6.next_btn.onRelease = function () {
+			updateScriptWidget(page_id + 1);
+		};
+	} else {
+		_local_6.next_btn._visible = false;
+	}
+	if (_local_7 > 0) {
+		var _local_8 = getLocalizedString("page");
+		_local_6.page_txt.text = (((_local_8 + " ") + (page_id + 1)) + " / ") + (_local_7 + 1);
+	}
+	var _local_2 = page_id * 4;
+	var _local_4 = 0;
+	while (_local_4 < 4) {
+		var _local_1 = _local_6[("item" + _local_4) + "_mc"];
+		if (_local_3[_local_2].note != undefined) {
+			_local_1._visible = true;
+			_local_1.gotoAndStop(2);
+			_local_1.message_txt.text = _local_3[_local_2].note;
+		} else if (_local_3[_local_2].message != undefined) {
+			_local_1._visible = true;
+			_local_1.gotoAndStop(1);
+			_local_1.line_id = _local_2;
+			_local_1.name_txt.text = _local_3[_local_2].name;
+			_local_1.message_txt.text = _local_3[_local_2].message;
+			_local_1.send_btn.onRelease = clickScriptLine;
+		} else {
+			_local_1._visible = false;
+		}
+		if (SHELL.getCurrentLanguageString() == "ru_RU") {
+			var _local_5 = new TextFormat();
+			_local_5.size = 10;
+			_local_1.message_txt.setTextFormat(_local_5);
+		}
+		_local_2++;
+		_local_4++;
+	}
+}
+function clickScriptLine() {
+	var _local_2 = this._parent.line_id;
+	sendLineMessage(_local_2);
+}
+function showGameWidget(game_name) {
+	var _local_5 = shell.getGameCrumbsByName(game_name);
+	var _local_3 = _local_5.path;
+	if ((_local_5 == undefined) || (_local_3 == undefined)) {
+		shell.$e("Interface -> showGameWidget() -> ERROR", {error_code:shell.LOAD_ERROR, file_path:_local_3});
+		return(undefined);
+	}
+	var _local_7 = shell.getLocalizedString("load_" + game_name);
+	var _local_13 = closeGameWidget;
+	var _local_10 = GAME_WIDGET.load_mc.startGame;
+	var _local_4 = new com.clubpenguin.hybrid.HybridMovieClipLoader();
+	var _local_2 = {};
+	GAME_WIDGET.load_mc.removeMovieClip();
+	GAME_WIDGET.createEmptyMovieClip("load_mc", 1);
+	WINDOW.gotoAndStop("Wait");
+	WINDOW.close_btn.onRelease = closeWindow;
+	WINDOW.progressbar_mc.message_txt.text = _local_7;
+	WINDOW.block_mc.useHandCursor = false;
+	WINDOW.block_mc.tabEnabled = false;
+	WINDOW.block_mc.onRelease = null;
+	_local_2.onLoadProgress = function (event) {
+		target_mc._lockroot = true;
+		var _local_1 = Math.floor((event.bytesLoaded / event.bytesTotal) * 100);
+		WINDOW.progressbar_mc.gotoAndStop(_local_1);
+	};
+	_local_2.onLoadInit = function (event) {
+		SHELL.logLoadGameTime(getTimer());
+		var _local_1 = event.target;
+		_local_1._lockroot = true;
+		showWidget(_local_1._parent);
+		centerWidget(_local_1._parent);
+		closeWindow();
+		_local_1.startGame();
+	};
+	_local_4.addEventListener(com.clubpenguin.hybrid.HybridMovieClipLoader.EVENT_ON_LOAD_INIT, com.clubpenguin.util.Delegate.create(this, _local_2.onLoadInit));
+	_local_4.addEventListener(com.clubpenguin.hybrid.HybridMovieClipLoader.EVENT_ON_LOAD_PROGRESS, com.clubpenguin.util.Delegate.create(this, _local_2.onLoadProgress));
+	var _local_6 = com.clubpenguin.util.URLUtils.getCacheResetURL(_local_3);
+	_local_4.loadClip(_local_6, GAME_WIDGET.load_mc, "game.as showGameWidget()");
+	SHELL.sendAS3StopNotificationServices();
+}
+function closeGameWidget(widgetClip) {
+	if (widgetClip != undefined) {
+		closeWidget(widgetClip);
+	} else {
+		closeWidget(GAME_WIDGET);
+	}
+	SHELL.sendAS3StartNotificationServices();
+}
+function showPhoneWidget() {
+	showContent("epfmessage");
+}
+function updatePhoneWidget() {
+	var mc = PHONE_WIDGET.art_mc;
+	mc.screen_mc.gotoAndStop(SHELL.getLocalizedFrame());
+	mc.screen_mc.art_mc.gotoAndStop(1);
+	mc.teleport_txt.text = getLocalizedString("teleport");
+	mc.hq_txt.text = getLocalizedString("visit_hq");
+	mc.secret_btn.onRelease = function () {
+		if (mc.gadget_mc._currentframe == mc.gadget_mc._totalframes) {
+			mc.gadget_mc.gotoAndStop(2);
+		} else {
+			mc.gadget_mc.nextFrame();
+		}
+	};
+	mc.teleport_btn.onRelease = function () {
+		var _local_1 = mc.screen_mc.art_mc._currentframe;
+		sendJoinRoom(phone_list[_local_1 - 1], 0, 0);
+	};
+	mc.hq_btn.onRelease = function () {
+		sendJoinRoom("agent", 0, 0);
+	};
+	mc.scroll_mc.next_btn.onRelease = function () {
+		mc.scroll_mc.gotoAndPlay("up");
+		if (mc.screen_mc.art_mc._currentframe == mc.screen_mc.art_mc._totalframes) {
+			mc.screen_mc.art_mc.gotoAndStop(1);
+		} else {
+			mc.screen_mc.art_mc.nextFrame();
+		}
+	};
+	mc.scroll_mc.back_btn.onRelease = function () {
+		mc.scroll_mc.gotoAndPlay("down");
+		if (mc.screen_mc.art_mc._currentframe == 1) {
+			mc.screen_mc.art_mc.gotoAndStop(mc.screen_mc.art_mc._totalframes);
+		} else {
+			mc.screen_mc.art_mc.prevFrame();
+		}
+	};
+	mc.next_btn.onRelease = mc.scroll_mc.next_btn.onRelease;
+}
+function initPlayerMenu() {
+	player_widget_menu_text = shell.getLocalizedString("all_items");
+	player_widget_last_click = getTimer();
+}
+function hideAvatarCardElements() {
+	PLAYER_WIDGET.art_mc.avatarCard._visible = false;
+	PLAYER_WIDGET.art_mc.revertAvatar_btn._visible = false;
+	PLAYER_WIDGET.art_mc.revert_btn_art._visible = false;
+}
+function showPlayerWidget(playerID, nickname) {
+	is_player_card_open = true;
+	playerID = Number(playerID);
+	_paperdoll = new com.clubpenguin.ui.PaperDoll(playerID);
+	_paperdoll.shell = shell;
+	_paperdoll.ui = this;
+	_paperdoll.fadeAfterLoad = true;
+	var _local_9 = SHELL.ROSTER;
+	var _local_5 = SHELL.isPlayerBuddyById(playerID);
+	var _local_4 = SHELL.isPlayerMascotById(playerID);
+	var _local_7;
+	if ((!_local_5) && (!_local_4)) {
+		SHELL.requestPlayerInfo(playerID, com.clubpenguin.util.Delegate.create(this, handlePlayerInfoReceived));
+	} else {
+		_local_7 = SHELL.getBuddySwidById(playerID);
+		var _local_6 = SHELL.getMascotNicknameByID(playerID);
+		SHELL._trackerAS2.sendToAS3LogGameAction(_local_6, "mascot_click");
+	}
+	var _local_3 = {};
+	_local_3.player_id = playerID;
+	_local_3.nickname = nickname;
+	setActivePlayerObject(_local_3);
+	showWidget(PLAYER_WIDGET, closePlayerWidget);
+	hideAvatarCardElements();
+	PLAYER_WIDGET.art_mc.name_txt.text = "";
+	PLAYER_WIDGET.art_mc.icon_mc.gotoAndStop(ICON_LABEL_OTHER_FREE);
+	PLAYER_WIDGET.art_mc.moderatorButtons_mc._visible = false;
+	PLAYER_WIDGET.art_mc.jumpholder_mc._visible = false;
+	if (_local_5 || (_local_4)) {
+		handlePlayerInfoReceived(_local_7, playerID, nickname);
+	}
+	updateListeners(PLAYER_CARD_OPENED);
+}
+function handlePlayerInfoReceived(swid, player_id, nickname) {
+	var _local_1 = getActivePlayerObject();
+	_local_1.swid = swid;
+	setActivePlayerObject(_local_1);
+	updatePlayerWidget();
+	SHELL.addListener(SHELL.LOAD_IS_PLAYER_IGLOO_OPEN, handleLoadIsPlayerIglooOpen);
+	SHELL.loadIsPlayerIglooOpen(_local_1.player_id);
+}
+function handleLoadIsPlayerIglooOpen(isIglooOpen) {
+	if (isIglooOpen) {
+		PLAYER_WIDGET.art_mc.home_mc.gotoAndStop(2);
+		showVisitIglooButton();
+	}
+}
+function closePlayerWidget() {
+	setActivePlayerObject(null);
+	is_player_card_open = false;
+	updateListeners(PLAYER_CARD_CLOSED);
+}
+function revertAvatar() {
+	hideAvatarCardElements();
+	PLAYER_WIDGET.art_mc.close_btn.onRelease();
+	ENGINE.avatarManager.transformationManager.sendTransformPlayer(0);
+	DOCK.action_btn.staticHighlight.gotoAndStop(BUTTON_HIGHLIGHT_STATE_PARK);
+	DOCK.action_btn.outerHighlight.gotoAndStop(BUTTON_HIGHLIGHT_STATE_PARK);
+}
+function leaveTrain(trainManager, train) {
+	if (train.driverId == SHELL.getMyPlayerId()) {
+		trainManager.service.sendDisbandTrain();
+	} else {
+		trainManager.service.sendLeaveTrain(train.driverId);
+	}
+	PLAYER_WIDGET.art_mc.revertAvatar_btn._visible = false;
+	PLAYER_WIDGET.art_mc.revert_btn_art._visible = false;
+	PLAYER_WIDGET.art_mc.revertAvatar_btn.onRelease = null;
+}
+function leaveTrain(trainManager, train) {
+	if (train.driverId == SHELL.getMyPlayerId()) {
+		trainManager.service.sendDisbandTrain();
+	} else {
+		trainManager.service.sendLeaveTrain(train.driverId);
+	}
+	PLAYER_WIDGET.art_mc.leaveTrain_btn._visible = false;
+	PLAYER_WIDGET.art_mc.leaveTrain_btn.onRelease = null;
+}
+function updatePlayerWidget(_playerObject) {
+	hideAvatarCardElements();
+	PLAYER_WIDGET.art_mc.tab_btn._visible = true;
+	var _local_13;
+	_local_13 = _playerObject;
+	if (playerWidgetOpen) {
+		openPlayerWidgetTab(true);
+		playerWidgetOpen = false;
+	}
+	var _local_2 = getActivePlayerId();
+	var _local_14 = getActivePlayerNickname();
+	var player_ob = getPlayerObject(_local_2);
+	if (player_ob == undefined) {
+		return(undefined);
+	}
+	var _local_6 = getPlayerRelationship(player_ob);
+	var _local_12 = getMembershipBadgeChevronFrame(player_ob.total_membership_days);
+	var _local_10 = PLAYER_WIDGET.art_mc.moderatorButtons_mc;
+	var _local_1 = PLAYER_WIDGET.art_mc.icon_mc;
+	var _local_4 = _local_1.member_badge_mc.ribbon_mc;
+	var _local_3 = _local_1.member_badge_mc.chevron_mc;
+	if (player_ob == undefined) {
+		PLAYER_WIDGET.art_mc.gotoAndStop(1);
+	} else {
+		if (_local_2 == getPlayerId()) {
+			if (!shell.getMyPlayerHasOpenedPlayerCard()) {
+				shell.setMyPlayerHasOpenedPlayerCard(true);
+				openPlayerWidgetTab(false);
+			} else if (is_player_widget_tab_open) {
+				openPlayerWidgetTab(false);
+			} else {
+				closePlayerWidgetTab();
+			}
+			updatePlayerWidgetCoins();
+			updatePlayerWidgetStamps();
+			showStampBookButton();
+		} else {
+			PLAYER_WIDGET.art_mc.gotoAndStop(2);
+		}
+		updateAvatarCard(player_ob);
+		if (isLocalPlayer(_local_2)) {
+			_paperdoll.isInteractive = true;
+		} else {
+			_paperdoll.isInteractive = false;
+		}
+		if (_paperdoll.paperDollClip == null) {
+			_paperdoll.paperDollClip = PLAYER_WIDGET.art_mc.paper_doll_mc;
+		}
+		if (_paperdoll.flagClip == null) {
+			_paperdoll.flagClip = PLAYER_WIDGET.art_mc.flag_mc;
+		}
+		if (_paperdoll.backgroundClip == null) {
+			_paperdoll.backgroundClip = PLAYER_WIDGET.art_mc.photo_mc;
+		}
+		if (shell.playerModel.isPlayerStealthModeratorByID(_local_2)) {
+			_paperdoll.paperDollClip._alpha = shell.playerModel.getPlayerObjectById(_local_2).avatarAlpha;
+		}
+		_paperdoll.colourID = player_ob.colour_id;
+		_paperdoll.flagID = player_ob.flag_id;
+		var _local_7 = player_ob.avatarVO;
+		if (_local_7.dynamicPlayerCardBackgroundFunc != null) {
+			_paperdoll.backgroundID = _local_7.dynamicPlayerCardBackgroundFunc(player_ob);
+		} else if (_local_7.customPlayerCardBackgroundID != -1) {
+			_paperdoll.backgroundID = _local_7.customPlayerCardBackgroundID;
+		} else {
+			_paperdoll.backgroundID = player_ob.photo_id;
+		}
+		for (var _local_8 in shell.PAPERDOLL_DEFAULT_LAYER_DEPTHS) {
+			_paperdoll.addItem(_local_8, player_ob[_local_8]);
+		}
+		if (com.clubpenguin.world.rooms.common.triggers.PlayerAction.isPlayer(player_ob, com.clubpenguin.world.rooms.common.triggers.PlayerAction.WALKING_PUFFLE)) {
+			_storedPuffleID = player_ob.attachedPuffle.id;
+			_paperdoll.loadPuffleItem(player_ob.attachedPuffle["color"], player_ob.attachedPuffle.id, player_ob.attachedPuffle.subTypeID, player_ob.attachedPuffle.hat);
+		} else if (_storedPuffleID != undefined) {
+			_paperdoll.onRemovePuffleItemByID(_storedPuffleID);
+			_storedPuffleID = undefined;
+		}
+		updatePlayerWidgetMenu(_local_2, _local_6);
+	}
+	PLAYER_WIDGET.art_mc.name_txt.text = _local_14;
+	_local_10._visible = false;
+	if (shell.playerModel.isPlayerModerator()) {
+		_local_10._visible = true;
+		_local_10.editPlayer_btn.onPress = function () {
+			var _local_2 = shell.getEnvironment();
+			var _local_1 = ("play.cpimagined.net/manager/manage/");
+			var _local_3 = "https://";
+			_local_1 = (_local_3 + _local_1) + player_ob.player_id;
+			getURL (_local_1, "_blank");
+		};
+	}
+	_local_11._visible = false;
+	updateListeners(PLAYER_CARD_UPDATED);
+	if (isLocalPlayer(_local_2)) {
+		if (isMember()) {
+			_local_1.gotoAndStop(ICON_LABEL_ME_MEMBER);
+			_local_4 = _local_1.member_badge_mc.ribbon_mc;
+			_local_3 = _local_1.member_badge_mc.chevron_mc;
+			_local_4.gotoAndStop(shell.getLocalizedFrame());
+			_local_3.gotoAndStop(_local_12);
+			return(undefined);
+		}
+		_local_1.gotoAndStop(ICON_LABEL_ME_FREE);
+		return(undefined);
+	}
+	if ((_local_6 == "Mascot") || (_local_6 == "MascotFriend")) {
+		_local_1.gotoAndStop(ICON_LABEL_MASCOT);
+		_local_4 = _local_1.member_badge_mc.ribbon_mc;
+		_local_3 = _local_1.member_badge_mc.chevron_mc;
+		_local_4.gotoAndStop(shell.getLocalizedFrame());
+		_local_3.gotoAndStop(FIVE_CHEVRON);
+		return(undefined);
+	}
+	if (_local_6 == "Offline") {
+		var _local_9;
+		if (player_ob) {
+			_local_9 = player_ob;
+		} else if (_local_13) {
+			_local_9 = _local_13;
+		} else if (_playerObject) {
+			_local_9 = _playerObject;
+		}
+		if (_local_9.is_member) {
+			var _local_17;
+			_local_17 = getMembershipBadgeChevronFrame(_local_9.total_membership_days);
+			_local_1.gotoAndStop(ICON_LABEL_OTHER_MEMBER);
+			_local_4 = _local_1.member_badge_mc.ribbon_mc;
+			_local_3 = _local_1.member_badge_mc.chevron_mc;
+			_local_4.gotoAndStop(shell.getLocalizedFrame());
+			_local_3.gotoAndStop(_local_17);
+			return(undefined);
+		}
+		_local_1.gotoAndStop(ICON_LABEL_OTHER_FREE);
+		return(undefined);
+	}
+	var isMember = shell.isPlayerMemberById(_local_2);
+	if (isMember) {
+		_local_1.gotoAndStop(ICON_LABEL_OTHER_MEMBER);
+		_local_4 = _local_1.member_badge_mc.ribbon_mc;
+		_local_3 = _local_1.member_badge_mc.chevron_mc;
+		_local_4.gotoAndStop(shell.getLocalizedFrame());
+		_local_3.gotoAndStop(_local_12);
+		return(undefined);
+	}
+	_local_1.gotoAndStop(ICON_LABEL_OTHER_FREE);
+	return(undefined);
+}
+function updateAvatarCard(player_ob) {
+	var _local_2 = player_ob.avatarVO;
+	if (_local_2.hasCustomPlayerCard) {
+		PLAYER_WIDGET.art_mc.avatarCard._visible = true;
+		if (_local_2.dynamicPlayerCardLabelFunc != null) {
+			PLAYER_WIDGET.art_mc.avatarCard.gotoAndStop(_local_2.dynamicPlayerCardLabelFunc(player_ob));
+		} else {
+			PLAYER_WIDGET.art_mc.avatarCard.gotoAndStop("id" + player_ob.avatarVO.avatar_id);
+		}
+		if (PLAYER_WIDGET.art_mc.avatarCard.avatarClip._totalFrames > 1) {
+			PLAYER_WIDGET.art_mc.avatarCard.avatarClip.gotoAndStop(player_ob.colour_id + 1);
+		}
+		if (player_ob.player_id == SHELL.getMyPlayerId()) {
+			PLAYER_WIDGET.art_mc.avatarCard.blockerBackground.useHandCursor = false;
+			PLAYER_WIDGET.art_mc.avatarCard.blockerBackground.onRelease = function () {
+			};
+			PLAYER_WIDGET.art_mc.avatarCard.blockerBackground._visible = true;
+			closePlayerWidgetTab();
+			PLAYER_WIDGET.art_mc.tab_btn._visible = false;
+		} else {
+			PLAYER_WIDGET.art_mc.avatarCard.blockerBackground._visible = false;
+		}
+	}
+	if (SHELL.isMyPlayer(player_ob.player_id)) {
+		if (_local_2.canRevertToDefault || (!_local_2.attributes.equalsDefault())) {
+			PLAYER_WIDGET.art_mc.revertAvatar_btn._visible = true;
+			PLAYER_WIDGET.art_mc.revert_btn_art._visible = true;
+			PLAYER_WIDGET.art_mc.revertAvatar_btn.onRelease = com.clubpenguin.util.Delegate.create(this, revertAvatar);
+		} else {
+			PLAYER_WIDGET.art_mc.revertAvatar_btn._visible = false;
+			PLAYER_WIDGET.art_mc.revert_btn_art._visible = false;
+		}
+	}
+}
+function getMembershipBadgeChevronFrame(totalMembershipDays) {
+	if (isNaN(totalMembershipDays)) {
+		return(1);
+	}
+	var _local_1 = Math.floor(totalMembershipDays / 30);
+	if (_local_1 <= 6) {
+		return(ONE_CHEVRON);
+	}
+	if (_local_1 <= 12) {
+		return(TWO_CHEVRON);
+	}
+	if (_local_1 <= 18) {
+		return(THREE_CHEVRON);
+	}
+	if (_local_1 <= 24) {
+		return(FOUR_CHEVRON);
+	}
+	return(FIVE_CHEVRON);
+}
+function updatePlayerWidgetCoins() {
+	var _local_1 = getLocalizedString("widget_coins");
+	_local_1 = replaceString("%total%", getCoins(), _local_1);
+	PLAYER_WIDGET.art_mc.coins_txt.text = _local_1;
+}
+function updatePlayerWidgetStamps() {
+	var _local_1 = getLocalizedString("widget_stamps");
+	var _local_2 = shell.getStampManager();
+	_local_1 = replaceString("%numerator%", String(_local_2.myStamps.length), _local_1);
+	_local_1 = replaceString("%denominator%", String(_local_2.numClubPenguinStamps), _local_1);
+	PLAYER_WIDGET.art_mc.stamps_txt.text = _local_1;
+}
+function updatePlayerWidgetMenu(player_id, playerRelationship) {
+	var _local_5 = shell.isPlayerMascotById(shell.getMyPlayerId());
+	PLAYER_WIDGET.art_mc.buddy_mc.gotoAndStop(1);
+	PLAYER_WIDGET.art_mc.profile_mc.gotoAndStop(1);
+	PLAYER_WIDGET.art_mc.home_mc.gotoAndStop(1);
+	PLAYER_WIDGET.art_mc.mail_mc.gotoAndStop(1);
+	PLAYER_WIDGET.art_mc.stamps_mc.gotoAndStop(1);
+	PLAYER_WIDGET.art_mc.ignore_mc.gotoAndStop(1);
+	PLAYER_WIDGET.art_mc.report_mc.gotoAndStop(1);
+	if ((playerRelationship == "Mascot") || (playerRelationship == "MascotFriend")) {
+		var _local_3 = getActivePlayerObject();
+		var _local_4 = SHELL.getMascotCrumbs();
+		var _local_2 = _local_4[player_id];
+		_local_3.mascot_id = _local_2.mascot_id;
+	}
+	switch (playerRelationship) {
+		case "Mascot":
+            PLAYER_WIDGET.art_mc.buddy_mc.gotoAndStop(2);
+            PLAYER_WIDGET.art_mc.profile_mc.gotoAndStop(4);
+            showMascotBuddyRequestButton();
+            showMascotFreeItemButton();
+            break;
+        case "MascotFriend":
+            PLAYER_WIDGET.art_mc.buddy_mc.gotoAndStop(1);
+            PLAYER_WIDGET.art_mc.profile_mc.gotoAndStop(4);
+            showMascotFreeItemButton();
+            break;
+		case "Player" : 
+			PLAYER_WIDGET.art_mc.stamps_mc.gotoAndStop(2);
+			showBuddyRequestButton();
+			showProfileButton();
+			break;
+		case "Online" : 
+			PLAYER_WIDGET.art_mc.buddy_mc.gotoAndStop(3);
+			PLAYER_WIDGET.art_mc.profile_mc.gotoAndStop(2);
+			PLAYER_WIDGET.art_mc.home_mc.gotoAndStop(2);
+			PLAYER_WIDGET.art_mc.mail_mc.gotoAndStop(2);
+			PLAYER_WIDGET.art_mc.stamps_mc.gotoAndStop(2);
+			PLAYER_WIDGET.art_mc.report_mc.gotoAndStop(2);
+			PLAYER_WIDGET.art_mc.jumpholder_mc._visible = true;
+			showJumpToBuddyButton();
+			showRemoveBuddyButton();
+			showProfileButton();
+			break;
+		case "Offline" : 
+			PLAYER_WIDGET.art_mc.buddy_mc.gotoAndStop(3);
+			PLAYER_WIDGET.art_mc.home_mc.gotoAndStop(2);
+			PLAYER_WIDGET.art_mc.mail_mc.gotoAndStop(2);
+			PLAYER_WIDGET.art_mc.stamps_mc.gotoAndStop(2);
+			PLAYER_WIDGET.art_mc.report_mc.gotoAndStop(2);
+			showRemoveBuddyButton();
+			showProfileButton();
+			break;
+		case "Ignore" : 
+			PLAYER_WIDGET.art_mc.ignore_mc.gotoAndStop(3);
+			showBuddyRequestButton();
+			showProfileButton();
+			break;
+		default : 
+			PLAYER_WIDGET.art_mc.buddy_mc.gotoAndStop(2);
+			PLAYER_WIDGET.art_mc.mail_mc.gotoAndStop(2);
+			PLAYER_WIDGET.art_mc.stamps_mc.gotoAndStop(2);
+			PLAYER_WIDGET.art_mc.ignore_mc.gotoAndStop(2);
+			PLAYER_WIDGET.art_mc.report_mc.gotoAndStop(2);
+			showBuddyRequestButton();
+			showProfileButton();
+	}
+	showMailButton();
+	showVisitIglooButton();
+	showToggleIgnorePlayerButton(playerRelationship == "Ignore");
+	showReportPlayerButton();
+	showRemoveAllItemsButton();
+	showStampBookButton();
+	if (shell.playerModel.isPlayerModerator()) {
+		if((playerRelationship != "Mascot") && (playerRelationship != "MascotFriend")) {
+			PLAYER_WIDGET.art_mc.ignore_mc.gotoAndStop(2);
+			showBanAndKickPlayerButtons();
+			showMutePlayerButton();
+			showProfileButton();
+		}
+		PLAYER_WIDGET.art_mc.jumpholder_mc._visible = true;
+		showJumpToBuddyButton();
+	} else if (_local_5) {
+		if(playerRelationship != "Mascot" && playerRelationship != "MascotFriend") {
+			PLAYER_WIDGET.art_mc.profile_mc.gotoAndStop(3);
+			showMutePlayerButton();
+		}
+	}
+}
+function showJumpToBuddyButton() {
+	var _local_11 = PLAYER_WIDGET.art_mc.jumpholder_mc;
+	if (shell.playerModel.isPlayerModerator()) {
+		_local_11.gotoAndStop(2);
+	} else {
+		_local_11.gotoAndStop(1);
+	};
+	_local_11.jump_mc.gotoAndStop(2);
+	_local_11.jump_mc.button_btn.onPress = function () {
+		_local_11.jump_mc.button_btn.onRelease = function () {
+			jumpToPlayer(getActivePlayerId());
+			closeHint();
+		};
+		_local_11.jump_mc.button_btn.onRollOver = function () {
+			showHint(this, "Jump to Buddy", 0, -28, false);
+		};
+		_local_11.jump_mc.button_btn.onRollOut = closeHint;
+	};
+}
+function showRemoveBuddyButton() {
+	PLAYER_WIDGET.art_mc.buddy_mc.button_btn.onRelease = function () {
+		if (isPlayerWidgetClickReady(2000)) {
+			var _local_2 = getActivePlayerNickname();
+			var _local_1 = getLocalizedString("friend_remove_prompt");
+			var _local_3 = replaceString("%name%", _local_2, _local_1);
+			showPrompt("question", _local_3, "", sendBuddyRemove);
+		}
+		closeHint();
+	};
+	PLAYER_WIDGET.art_mc.buddy_mc.button_btn.onRollOver = function () {
+		showHint(this, "remove_friend_hint");
+	};
+	PLAYER_WIDGET.art_mc.buddy_mc.button_btn.onRollOut = closeHint;
+}
+function showRemoveMascotBuddyButton() {
+	PLAYER_WIDGET.art_mc.buddy_mc.button_btn.onRelease = function () {
+		if (isPlayerWidgetClickReady(2000)) {
+			var _local_2 = getActivePlayerNickname();
+			var _local_1 = getLocalizedString("friend_remove_prompt");
+			var _local_3 = replaceString("%name%", _local_2, _local_1);
+			showPrompt("question", _local_3, "", sendMascotBuddyRemove);
+		}
+		closeHint();
+	};
+	PLAYER_WIDGET.art_mc.buddy_mc.button_btn.onRollOver = function () {
+		showHint(this, "remove_friend_hint");
+	};
+	PLAYER_WIDGET.art_mc.buddy_mc.button_btn.onRollOut = closeHint;
+}
+function showBuddyRequestButton() {
+	PLAYER_WIDGET.art_mc.buddy_mc.button_btn.onRelease = function () {
+		closeHint();
+		if (isPlayerWidgetClickReady(2000)) {
+			if (shell.getMyPlayerObject().remaining_hours != undefined) {
+				var _local_1 = new Object();
+				_local_1.graceMax = shell.getMyPlayerObject().max_grace_hours;
+				_local_1.state = FRAME_LABEL_ABOUT;
+				_local_1.confirmationHash = shell.getMyPlayerObject().confirmationHash;
+				_local_1.loginDataRaw = shell.getMyPlayerObject().loginDataRaw;
+				_local_1.emailAddress = shell.getMyPlayerObject().emailAddress;
+				var _local_2 = new Object();
+				_local_2.modalBackgroundEnbaled = true;
+				_local_2.blockPuffleNotifications = true;
+				_local_2.hideLoadingDialog = true;
+				shell.sendOpenAS3Module("preactivation", _local_1, _local_2);
+				return(undefined);
+			}
+			var _local_4 = getActivePlayerNickname();
+			var _local_3 = getLocalizedString("friend_request_prompt");
+			var _local_5 = replaceString("%name%", _local_4, _local_3);
+			showPrompt("question", _local_5, "", sendBuddyRequest);
+		}
+	};
+	PLAYER_WIDGET.art_mc.buddy_mc.button_btn.onRollOver = function () {
+		showHint(this, "add_friend_hint");
+	};
+	PLAYER_WIDGET.art_mc.buddy_mc.button_btn.onRollOut = closeHint;
+}
+function showMascotBuddyRequestButton() {
+	PLAYER_WIDGET.art_mc.buddy_mc.button_btn.onRelease = function () {
+		if (isPlayerWidgetClickReady(2000)) {
+			var _local_2 = getActivePlayerNickname();
+			var _local_1 = getLocalizedString("friend_request_prompt");
+			var _local_3 = replaceString("%name%", _local_2, _local_1);
+			showPrompt("question", _local_3, "", sendMascotBuddyRequest);
+		}
+		closeHint();
+	};
+	PLAYER_WIDGET.art_mc.buddy_mc.button_btn.onRollOver = function () {
+		showHint(this, "add_friend_hint");
+	};
+	PLAYER_WIDGET.art_mc.buddy_mc.button_btn.onRollOut = closeHint;
+}
+function showMascotFreeItemButton() {
+	PLAYER_WIDGET.art_mc.profile_mc.button_btn.onRelease = function () {
+		var _local_2 = getActivePlayerId();
+		var _local_1 = shell.getMascotGiftById(_local_2);
+		buyInventory(_local_1);
+		closeHint();
+	};
+	PLAYER_WIDGET.art_mc.profile_mc.button_btn.onRollOver = function () {
+		showHint(this, "free_item_hint");
+	};
+	PLAYER_WIDGET.art_mc.profile_mc.button_btn.onRollOut = closeHint;
+}
+function showMailButton() {
+	PLAYER_WIDGET.art_mc.mail_mc.button_btn.onRelease = function () {
+		if (isPlayerWidgetClickReady(2500)) {
+			var _local_1 = getActivePlayerId();
+			var _local_2 = getActivePlayerNickname();
+			shell.sendMailToUserById(_local_1, _local_2);
+		}
+		closeHint();
+	};
+	PLAYER_WIDGET.art_mc.mail_mc.button_btn.onRollOver = function () {
+		showHint(this, "send_mail_hint");
+	};
+	PLAYER_WIDGET.art_mc.mail_mc.button_btn.onRollOut = closeHint;
+}
+function showProfileButton() {
+	PLAYER_WIDGET.art_mc.profile_mc.button_btn.onRelease = function () {
+		findPlayer(getActivePlayerId());
+		closeHint();
+	};
+	PLAYER_WIDGET.art_mc.profile_mc.button_btn.onRollOver = function () {
+		showHint(this, "profile_hint");
+	};
+	PLAYER_WIDGET.art_mc.profile_mc.button_btn.onRollOut = closeHint;
+}
+function showVisitIglooButton() {
+	PLAYER_WIDGET.art_mc.home_mc.button_btn.onRelease = function () {
+		if (getActivePlayerId() != SHELL.igloo_player_id) {
+			sendJoinPlayerIgloo(getActivePlayerId());
+		}
+		closeHint();
+	};
+	PLAYER_WIDGET.art_mc.home_mc.button_btn.onRollOver = function () {
+		showHint(this, "visit_home_hint");
+	};
+	PLAYER_WIDGET.art_mc.home_mc.button_btn.onRollOut = closeHint;
+}
+function showToggleIgnorePlayerButton(isIgnoringPlayer) {
+	if (isIgnoringPlayer) {
+		PLAYER_WIDGET.art_mc.ignore_mc.button_btn.onRelease = function () {
+			if (isPlayerWidgetClickReady(2000)) {
+				setActiveIgnore(getActivePlayerId());
+				var _local_2 = getActivePlayerNickname();
+				var _local_1 = getLocalizedString("ignore_remove_prompt");
+				var _local_3 = replaceString("%name%", _local_2, _local_1);
+				showPrompt("question", _local_3, "", sendIgnoreRemove);
+			}
+			closeHint();
+		};
+		PLAYER_WIDGET.art_mc.ignore_mc.button_btn.onRollOver = function () {
+			showHint(this, "remove_ignore_hint");
+		};
+	} else {
+		PLAYER_WIDGET.art_mc.ignore_mc.button_btn.onRelease = function () {
+			if (isPlayerWidgetClickReady(2000)) {
+				var _local_2 = getActivePlayerNickname();
+				var _local_1 = getLocalizedString("ignore_request_prompt");
+				var _local_3 = replaceString("%name%", _local_2, _local_1);
+				showPrompt("ignore", _local_3, "", onIgnorePlayer);
+			}
+			closeHint();
+		};
+		PLAYER_WIDGET.art_mc.ignore_mc.button_btn.onRollOver = function () {
+			showHint(this, "add_ignore_hint");
+		};
+	}
+	PLAYER_WIDGET.art_mc.ignore_mc.button_btn.onRollOut = closeHint;
+}
+function onIgnorePlayer() {
+	PLAYER_WIDGET.art_mc.ignore_mc.gotoAndStop(3);
+	showToggleIgnorePlayerButton(true);
+	sendIgnoreRequest();
+}
+function showReportPlayerButton() {
+	PLAYER_WIDGET.art_mc.report_mc.button_btn.onRelease = function () {
+		showContent("report_form");
+		closeHint();
+	};
+	PLAYER_WIDGET.art_mc.report_mc.button_btn.onRollOver = function () {
+		showHint(this, "report_player_hint");
+	};
+	PLAYER_WIDGET.art_mc.report_mc.button_btn.onRollOut = closeHint;
+}
+function showRemoveAllItemsButton() {
+	PLAYER_WIDGET.art_mc.remove_btn.onRelease = function () {
+		if (isPlayerWidgetClickReady(1000)) {
+			shell.sendClearPaperdoll();
+		}
+		closeHint();
+	};
+	PLAYER_WIDGET.art_mc.remove_btn.onRollOver = function () {
+		showHint(this, "remove_hint");
+	};
+	PLAYER_WIDGET.art_mc.remove_btn.onRollOut = closeHint;
+}
+function showBanAndKickPlayerButtons() {
+	var _local_2 = getActiveReport();
+	var _local_3 = _local_2.player_id;
+	var _local_5 = _local_2.nickname;
+	var _local_6 = _local_2.message;
+	if ((_local_3 == getActivePlayerId()) && (isValidString(_local_6))) {
+		PLAYER_WIDGET.art_mc.report_mc.gotoAndStop(2);
+		PLAYER_WIDGET.art_mc.report_mc.button_btn.onRelease = function () {
+			PLAYER_WIDGET.art_mc.report_mc.gotoAndStop(1);
+			initBanPlayer();
+			closeHint();
+		};
+		PLAYER_WIDGET.art_mc.report_mc.button_btn.onRollOver = function () {
+			showHint(this, "ban_player_hint");
+		};
+		PLAYER_WIDGET.art_mc.report_mc.button_btn.onRollOut = closeHint;
+	} else {
+		PLAYER_WIDGET.art_mc.report_mc.gotoAndStop(1);
+	}
+	PLAYER_WIDGET.art_mc.ignore_mc.button_btn.onRelease = function () {
+		var _local_2 = getActivePlayerNickname();
+		var _local_1 = (shell.getLocalizedString("kick_player_hint") + message_separator) + _local_2;
+		showPrompt("question", _local_1, undefined, kickPlayer);
+		closeHint();
+	};
+	PLAYER_WIDGET.art_mc.ignore_mc.button_btn.onRollOver = function () {
+		showHint(this, "kick_player_hint");
+	};
+	PLAYER_WIDGET.art_mc.ignore_mc.button_btn.onRollOut = closeHint;
+}
+function showMutePlayerButton() {
+	PLAYER_WIDGET.art_mc.moderatorButtons_mc.mute_btn.onRelease = function () {
+		var _local_2 = getActivePlayerNickname();
+		var _local_1 = (shell.getLocalizedString("mute_player_hint") + message_separator) + _local_2;
+		showPrompt("question", _local_1, undefined, mutePlayer);
+		closeHint();
+	};
+	PLAYER_WIDGET.art_mc.moderatorButtons_mc.mute_btn.onRollOver = function () {
+		showHint(this, "mute_player_hint");
+	};
+	PLAYER_WIDGET.art_mc.moderatorButtons_mc.mute_btn.onRollOut = closeHint;
+	PLAYER_WIDGET.art_mc.moderatorButtons_mc.mute_btn.onReleaseOutside = closeHint;
+}
+function showStampBookButton() {
+	var _local_2 = PLAYER_WIDGET.art_mc;
+	_local_2.stamps_mc.button_btn.onRelease = function () {
+		showStampBook();
+	};
+	_local_2.stamps_mc.button_btn.onRollOver = function () {
+		showHint(this, "stamp_book_hint");
+	};
+	_local_2.stamps_mc.button_btn.onRollOut = closeHint;
+	if (SHELL._localLoginServerData.autoLogin) {
+		_local_2.stamps_mc._visible = false;
+		_local_2.stamps_txt._visible = false;
+	}
+}
+function unHideStampBookButton() {
+	mc.stamps_mc._visible = true;
+	mc.stamps_txt._visible = true;
+}
+function showStampBook() {
+	_trackerAS2.sendToAS3StartAssetLoad("load.stampbook");
+	var _local_1 = getActivePlayerObject();
+	if (_local_1.player_id == undefined) {
+		_local_1 = SHELL.getMyPlayerObject();
+	}
+	closeContent();
+	com.clubpenguin.stamps.stampbook.StampBook.activePlayer = _local_1;
+	showContent("load_stampbook", null, SHELL.getClientPath() + com.clubpenguin.stamps.StampManager.STAMPBOOK_SWF_FILENAME, null, true);
+}
+function showPlayerWidgetMenu() {
+	var _local_11 = PLAYER_WIDGET.art_mc;
+	var _local_4 = getItemList();
+	var _local_6 = [];
+	var _local_14 = PLAYER_WIDGET_MENU_MAX_ITEMS;
+	var _local_13 = player_widget_menu_type;
+	var _local_19 = player_widget_menu_text;
+	_local_11.sort_mc.sort_txt.text = _local_19;
+	if (_local_13 != undefined) {
+		if (_local_13 == "INVENTORY_TYPE_ALL") {
+			_local_6 = _local_4;
+		} else if (_local_13 == "INVENTORY_TYPE_AWARD") {
+			var _local_17 = shell.INVENTORY_TYPE_FLAG;
+			var _local_16 = shell.INVENTORY_TYPE_OTHER;
+			var _local_15 = shell.INVENTORY_TYPE_PHOTO;
+			var _local_8 = 0;
+			while (_local_8 < _local_4.length) {
+				var _local_9 = _local_4[_local_8].type;
+				if (((_local_9 == _local_17) || (_local_9 == _local_16)) || (_local_9 == _local_15)) {
+					traceOject(_local_4[_local_8]);
+					_local_6.push(_local_4[_local_8]);
+				}
+				_local_8++;
+			}
+		} else {
+			var _local_8 = 0;
+			while (_local_8 < _local_4.length) {
+				if (_local_4[_local_8].type == shell[_local_13]) {
+					_local_6.push(_local_4[_local_8]);
+				}
+				_local_8++;
+			}
+		}
+	} else {
+		_local_6 = _local_4;
+	}
+	_local_6 = _local_6.slice();
+	var _local_7 = 0;
+	while (_local_7 < _local_6.length) {
+		if (_local_6[_local_7].hidden == true) {
+			_local_6.splice(_local_7, 1);
+		}
+		_local_7++;
+	}
+	var _local_18 = Math.ceil(_local_6.length / _local_14) - 1;
+	var _local_12 = paginateArray(_local_6, player_widget_menu_page, _local_14);
+	if (player_widget_menu_page < _local_18) {
+		_local_11.next_btn.onRelease = com.clubpenguin.util.Delegate.create(this, onNextButtonReleased);
+	} else {
+		_local_11.next_btn.onRelease = undefined;
+	}
+	if (player_widget_menu_page > 0) {
+		_local_11.back_btn.onRelease = com.clubpenguin.util.Delegate.create(this, onBackButtonReleased);
+	} else {
+		_local_11.back_btn.onRelease = undefined;
+	}
+	if (_local_11.menu_mc_holder.menu_mc) {
+		_local_11.menu_mc_holder.menu_mc.removeMovieClip();
+	}
+	_local_11.menu_mc_holder.attachMovie(INVENTORY_LIST_LINKAGE_ID, "menu_mc", 1, {_x:0, _y:0});
+	var _local_5 = 0;
+	while (_local_5 < _local_14) {
+		var _local_3 = _local_12[_local_5];
+		var _local_2 = _local_11.menu_mc_holder.menu_mc[("item" + _local_5) + "_mc"];
+		if ((_local_3 != undefined) && (!_local_3.hidden)) {
+			var _local_10 = (!_local_3.is_member) || (_local_3.is_member && (isMember()));
+			if (_local_10) {
+				_local_2.gotoAndStop(1);
+				_local_2.button_btn.item_id = _local_3.id;
+				_local_2.button_btn.onRelease = function () {
+					clickPlayerWidgetItem(this.item_id);
+				};
+			} else {
+				_local_2.gotoAndStop(2);
+				_local_2.button_btn.onRelease = com.clubpenguin.util.Delegate.create(this, showMemberItemNotAvailablePrompt, _local_3);
+			}
+			_local_2.loader_mc.gotoAndStop(1);
+			_local_2.icon_mc._visible = false;
+			loadPlayerWidgetMenuIcon(_local_2.icon_mc, _local_3.id);
+		} else {
+			_local_2.loader_mc.gotoAndStop(3);
+			_local_2.gotoAndStop(3);
+			_local_2.button_btn.onRelease = undefined;
+		}
+		_local_5++;
+	}
+}
+function onNextButtonReleased() {
+	player_widget_menu_page++;
+	showPlayerWidgetMenu();
+}
+function onBackButtonReleased() {
+	player_widget_menu_page--;
+	showPlayerWidgetMenu();
+}
+function showMemberItemNotAvailablePrompt(item_ob) {
+	if (item_ob.is_epf) {
+		showWindow("oops_epf_lapsed");
+	} else {
+		showWindow("oops_inventory_equip");
+	}
+}
+function loadPlayerWidgetMenuIcon(mc, id) {
+	var _local_3 = ((getFilePath("clothing_icons") + "") + id) + ".swf";
+	if (com.clubpenguin.hud.IconCache.hasIcon(_local_3)) {
+		var _local_6 = com.clubpenguin.hud.IconCache.getBitmapData(_local_3);
+		var _local_2 = mc._parent.createEmptyMovieClip("bmdHolder", 5);
+		_local_2._xscale = (_local_2._yscale = 50);
+		_local_2.attachBitmap(_local_6, 20, "auto", true);
+		_local_2._x = _local_2._x - (_local_2._width / 2);
+		_local_2._y = _local_2._y - (_local_2._height / 2);
+		mc._parent.loader_mc.gotoAndStop(3);
+	} else {
+		var _local_4 = new com.clubpenguin.hybrid.HybridMovieClipLoader();
+		_local_4.addEventListener(com.clubpenguin.hybrid.HybridMovieClipLoader.EVENT_ON_LOAD_INIT, com.clubpenguin.util.Delegate.create(this, onPlayerWidgetMenuIconLoadInit));
+		_local_4.addEventListener(com.clubpenguin.hybrid.HybridMovieClipLoader.EVENT_ON_LOAD_ERROR, com.clubpenguin.util.Delegate.create(this, onPlayerWidgetMenuIconLoadError));
+		var _local_7 = com.clubpenguin.util.URLUtils.getCacheResetURL(_local_3);
+		_local_4.loadClip(_local_7, mc, "player.as loadPlayerWidgetMenuIcon()");
+	}
+}
+function onPlayerWidgetMenuIconLoadInit(event) {
+	var _local_1 = event.target;
+	if (_local_1) {
+		var _local_4 = shell.getLanguageAbbriviation();
+		if (_local_4 == shell.RU_ABBR) {
+			_local_1.icon_mc.gotoAndStop("ru");
+		}
+		var _local_2 = new flash.geom.Matrix();
+		_local_2.translate(_local_1._width, _local_1._height);
+		_local_2.scale(2, 2);
+		var _local_3 = new flash.display.BitmapData(_local_1._width * 4, _local_1._height * 4, true, 0);
+		_local_3.draw(_local_1, _local_2);
+		com.clubpenguin.hud.IconCache.cacheBitmapData(_local_3, event.url);
+		_local_1._parent.loader_mc.gotoAndStop(3);
+		_local_1._visible = true;
+	}
+}
+function onPlayerWidgetMenuIconLoadError(event) {
+	var _local_1 = event.target;
+	if (_local_1) {
+		_local_1._parent.loader_mc.gotoAndStop(2);
+	}
+}
+function openPlayerWidgetSortMenu() {
+	var sortMenuMC = PLAYER_WIDGET.art_mc.sort_mc;
+	sortMenuMC.gotoAndStop(2);
+	var _local_1 = {x:sortMenuMC._x, y:sortMenuMC._y};
+	sortMenuMC._parent.localToGlobal(_local_1);
+	sortMenuMC.back_btn._x = -_local_1.x;
+	sortMenuMC.back_btn._y = -_local_1.y;
+	sortMenuMC.sort_btn.onRelease = closePlayerWidgetSortMenu;
+	sortMenuMC.back_btn.onRelease = closePlayerWidgetSortMenu;
+	sortMenuMC.back_btn.onRollOver = closePlayerWidgetSortMenu;
+	sortMenuMC.back_btn.useHandCursor = false;
+	sortMenuMC.safe_btn.useHandCursor = false;
+	sortMenuMC.head_txt.text = shell.getLocalizedString("head_items");
+	sortMenuMC.head_btn.onRollOver = closePlayerWidgetSortOtherMenu;
+	sortMenuMC.head_btn.onRelease = function () {
+		player_widget_menu_text = sortMenuMC.head_txt.text;
+		clickPlayerWidgetSortMenu("INVENTORY_TYPE_HEAD");
+	};
+	sortMenuMC.face_txt.text = shell.getLocalizedString("face_items");
+	sortMenuMC.face_btn.onRollOver = closePlayerWidgetSortOtherMenu;
+	sortMenuMC.face_btn.onRelease = function () {
+		player_widget_menu_text = sortMenuMC.face_txt.text;
+		clickPlayerWidgetSortMenu("INVENTORY_TYPE_FACE");
+	};
+	sortMenuMC.neck_txt.text = shell.getLocalizedString("neck_items");
+	sortMenuMC.neck_btn.onRollOver = closePlayerWidgetSortOtherMenu;
+	sortMenuMC.neck_btn.onRelease = function () {
+		player_widget_menu_text = sortMenuMC.neck_txt.text;
+		clickPlayerWidgetSortMenu("INVENTORY_TYPE_NECK");
+	};
+	sortMenuMC.body_txt.text = shell.getLocalizedString("body_items");
+	sortMenuMC.body_btn.onRollOver = closePlayerWidgetSortOtherMenu;
+	sortMenuMC.body_btn.onRelease = function () {
+		player_widget_menu_text = sortMenuMC.body_txt.text;
+		clickPlayerWidgetSortMenu("INVENTORY_TYPE_BODY");
+	};
+	sortMenuMC.hand_txt.text = shell.getLocalizedString("hand_items");
+	sortMenuMC.hand_btn.onRollOver = closePlayerWidgetSortOtherMenu;
+	sortMenuMC.hand_btn.onRelease = function () {
+		player_widget_menu_text = sortMenuMC.hand_txt.text;
+		clickPlayerWidgetSortMenu("INVENTORY_TYPE_HAND");
+	};
+	sortMenuMC.feet_txt.text = shell.getLocalizedString("feet_items");
+	sortMenuMC.feet_btn.onRollOver = closePlayerWidgetSortOtherMenu;
+	sortMenuMC.feet_btn.onRelease = function () {
+		player_widget_menu_text = sortMenuMC.feet_txt.text;
+		clickPlayerWidgetSortMenu("INVENTORY_TYPE_FEET");
+	};
+	sortMenuMC.colour_txt.text = shell.getLocalizedString("colour_items");
+	sortMenuMC.colour_btn.onRollOver = closePlayerWidgetSortOtherMenu;
+	sortMenuMC.colour_btn.onRelease = function () {
+		player_widget_menu_text = sortMenuMC.colour_txt.text;
+		clickPlayerWidgetSortMenu("INVENTORY_TYPE_COLOUR");
+	};
+	sortMenuMC.other_txt.text = shell.getLocalizedString("other_items");
+	sortMenuMC.other_btn.onRollOver = openPlayerWidgetSortOtherMenu;
+	sortMenuMC.other_btn.onRelease = function () {
+		player_widget_menu_text = sortMenuMC.other_txt.text;
+		clickPlayerWidgetSortMenu("INVENTORY_TYPE_AWARD");
+	};
+	sortMenuMC.all_txt.text = shell.getLocalizedString("all_items");
+	sortMenuMC.all_btn.onRollOver = closePlayerWidgetSortOtherMenu;
+	sortMenuMC.all_btn.onRelease = function () {
+		player_widget_menu_text = sortMenuMC.all_txt.text;
+		clickPlayerWidgetSortMenu("INVENTORY_TYPE_ALL");
+	};
+}
+function openPlayerWidgetSortOtherMenu() {
+	var mc = PLAYER_WIDGET.art_mc.sort_mc;
+	mc.gotoAndStop(3);
+	mc.award_txt.text = shell.getLocalizedString("award_items");
+	mc.award_btn.onRelease = function () {
+		player_widget_menu_text = mc.award_txt.text;
+		clickPlayerWidgetSortMenu("INVENTORY_TYPE_OTHER");
+	};
+	mc.flag_txt.text = shell.getLocalizedString("flag_items");
+	mc.flag_btn.onRelease = function () {
+		player_widget_menu_text = mc.flag_txt.text;
+		clickPlayerWidgetSortMenu("INVENTORY_TYPE_FLAG");
+	};
+	mc.photo_txt.text = shell.getLocalizedString("photo_items");
+	mc.photo_btn.onRelease = function () {
+		player_widget_menu_text = mc.photo_txt.text;
+		clickPlayerWidgetSortMenu("INVENTORY_TYPE_PHOTO");
+	};
+}
+function closePlayerWidgetSortOtherMenu() {
+	var _local_1 = PLAYER_WIDGET.art_mc.sort_mc;
+	_local_1.gotoAndStop(2);
+}
+function clickPlayerWidgetSortMenu(type) {
+	player_widget_menu_type = type;
+	player_widget_menu_page = 0;
+	closePlayerWidgetSortMenu();
+	showPlayerWidgetMenu();
+}
+function closePlayerWidgetSortMenu() {
+	var _local_1 = PLAYER_WIDGET.art_mc.sort_mc;
+	_local_1.gotoAndStop(1);
+	_local_1.sort_btn.onRelease = openPlayerWidgetSortMenu;
+}
+function openPlayerWidgetTab(isAnimated) {
+	var _local_1 = PLAYER_WIDGET.art_mc;
+	is_player_widget_tab_open = true;
+	if (isAnimated) {
+		_local_1.gotoAndStop(12);
+	} else {
+		_local_1.gotoAndStop(12);
+	}
+	_local_1.tab_btn.onRelease = closePlayerWidgetTab;
+	_local_1.tab_mc.onRelease = undefined;
+	_local_1.tab_mc.useHandCursor = false;
+	showPlayerWidgetMenu(item_list);
+	_local_1.sort_mc.sort_btn.onRelease = function () {
+		openPlayerWidgetSortMenu();
+	};
+}
+function closePlayerWidgetTab() {
+	var _local_1 = PLAYER_WIDGET.art_mc;
+	is_player_widget_tab_open = false;
+	_local_1.gotoAndStop(3);
+	_local_1.tab_btn.onRelease = openPlayerWidgetTab;
+}
+function clickPlayerWidgetItem(itemID) {
+	if (shell._localLoginServerData.autoLogin) {
+		shell.sendAS2Clicked(INVENTORY_CLICKED);
+	}
+	var _local_2 = getInventoryObjectById(itemID);
+	if (isPlayerWidgetClickReady(1000)) {
+		if (itemID == SPY_PHONE_ICON_ID) {
+			showPhoneWidget();
+		} else if (isCJDeckIcon(itemID)) {
+			showContent("ninjaProgress", null, null, {playerHasTuskCape:shell.isItemInMyInventory(TUSK_CAPE_ITEM)}, null);
+			closeWidget(PLAYER_WIDGET);
+		} else if (isItemOnPlayer(itemID)) {
+		} else if (_local_2.type == getShellConstant("INVENTORY_TYPE_OTHER")) {
+			showContent(itemID + "_award");
+		} else if (_local_2.type == getShellConstant("INVENTORY_TYPE_COLOUR")) {
+			shell.sendUpdatePlayerColour(itemID);
+		} else if (_local_2.type == getShellConstant("INVENTORY_TYPE_PHOTO")) {
+			shell.sendUpdatePlayerPhoto(itemID);
+		} else if (_local_2.type == getShellConstant("INVENTORY_TYPE_FLAG")) {
+			shell.sendUpdatePlayerFlag(itemID);
+		} else if (_local_2.type == getShellConstant("INVENTORY_TYPE_HEAD")) {
+			shell.sendUpdatePlayerHead(itemID);
+		} else if (_local_2.type == getShellConstant("INVENTORY_TYPE_FACE")) {
+			shell.sendUpdatePlayerFace(itemID);
+		} else if (_local_2.type == getShellConstant("INVENTORY_TYPE_NECK")) {
+			shell.sendUpdatePlayerNeck(itemID);
+		} else if (_local_2.type == getShellConstant("INVENTORY_TYPE_BODY")) {
+			shell.sendUpdatePlayerBody(itemID);
+		} else if (_local_2.type == getShellConstant("INVENTORY_TYPE_HAND")) {
+			shell.sendUpdatePlayerHand(itemID);
+		} else if (_local_2.type == getShellConstant("INVENTORY_TYPE_FEET")) {
+			shell.sendUpdatePlayerFeet(itemID);
+		}
+	}
+	closeWindow();
+}
+function isCJDeckIcon(itemID) {
+	return((((itemID == CJ_VANILLA_DECK_ICON_ID) || (itemID == CJ_FIRE_DECK_ICON_ID)) || (itemID == CJ_WATER_DECK_ICON_ID)) || (itemID == CJ_SNOW_DECK_ICON_ID));
+}
+function clickPlayerWidgetRemoveItem(name) {
+	var _local_2 = PLAYER_WIDGET.art_mc;
+	if (isPlayerWidgetClickReady(1000)) {
+		if (name == "colour_id") {
+			shell.sendUpdatePlayerColour(0);
+		} else if (name == "head") {
+			shell.sendUpdatePlayerHead(0);
+		} else if (name == "face") {
+			shell.sendUpdatePlayerFace(0);
+		} else if (name == "neck") {
+			shell.sendUpdatePlayerNeck(0);
+		} else if (name == "body") {
+			shell.sendUpdatePlayerBody(0);
+		} else if (name == "hand") {
+			shell.sendUpdatePlayerHand(0);
+		} else if (name == "feet") {
+			shell.sendUpdatePlayerFeet(0);
+		} else if (name == "flag_id") {
+			shell.sendUpdatePlayerFlag(0);
+		} else if (name == "photo_id") {
+			shell.sendUpdatePlayerPhoto(0);
+		}
+	}
+}
+function setActivePlayerObject(player) {
+	active_player_object = player;
+}
+function getActivePlayerObject() {
+	return(active_player_object);
+}
+function getActivePlayerId() {
+	var _local_1 = getActivePlayerObject();
+	return(_local_1.player_id);
+}
+function getActivePlayerNickname() {
+	var _local_1 = getActivePlayerObject();
+	return(_local_1.nickname);
+}
+function getActiveMascotId() {
+	return(getActivePlayerObject().mascot_id);
+}
+function getActivePlayerSwid() {
+	var _local_1 = getActivePlayerObject();
+	return(_local_1.swid);
+}
+function isActivePlayer(playerID) {
+	if (playerID == getActivePlayerId()) {
+		return(true);
+	}
+	return(false);
+}
+function isItemOnPlayer(itemID) {
+	var _local_3 = getPlayerId();
+	var _local_1 = getPlayerObject(_local_3);
+	if (_local_1.colour_id == itemID) {
+		return(true);
+	}
+	if (_local_1.head == itemID) {
+		return(true);
+	}
+	if (_local_1.face == itemID) {
+		return(true);
+	}
+	if (_local_1.neck == itemID) {
+		return(true);
+	}
+	if (_local_1.body == itemID) {
+		return(true);
+	}
+	if (_local_1.hand == itemID) {
+		return(true);
+	}
+	if (_local_1.feet == itemID) {
+		return(true);
+	}
+	if (_local_1.flag_id == itemID) {
+		return(true);
+	}
+	if (_local_1.photo_id == itemID) {
+		return(true);
+	}
+	return(false);
+}
+function isPlayerWidgetOpen() {
+	if (PLAYER_WIDGET._currentframe == 1) {
+		return(true);
+	}
+	return(false);
+}
+function isPlayerWidgetClickReady(delayTime) {
+	var _local_1 = getTimer();
+	if ((player_widget_last_click + delayTime) < _local_1) {
+		player_widget_last_click = _local_1;
+		return(true);
+	}
+	return(false);
+}
+function showRemoveItemPrompt(promptMCName, promptFunctionality, itemID) {
+	var _local_2 = this.interface_mc.attachMovie(promptMCName, promptMCName + "MC", this.interface_mc.getNextHighestDepth());
+	promptFunctionality(_local_2, itemID);
+}
+function showWaddleWidget(name, waddle_id) {
+	if (((waddle_id >= 200) && (waddle_id <= 203)) || (isFireOrWaterGame(name))) {
+		active_waddle_name = name;
+		active_waddle_id = waddle_id;
+		return(undefined);
+	}
+	showWidget(WADDLE_WIDGET, closeWaddleWidget);
+	active_waddle_name = name;
+	active_waddle_id = waddle_id;
+	updateWaddleWidget();
+}
+function isFireOrWaterGame(name) {
+	return((((name == FIRE) || (name == WATER)) ? true : false));
+}
+function updateWaddleWidget() {
+	var _local_3 = WADDLE_WIDGET.art_mc;
+	var _local_8 = active_waddle_id;
+	var _local_7 = active_waddle_name;
+	var _local_9 = shell.getWaddleById(_local_8);
+	var _local_4 = _local_9.player_list;
+	if (_local_3.load_mc.art_mc == undefined) {
+		_local_3.load_mc.createEmptyMovieClip("art_mc", 1);
+		var _local_6 = com.clubpenguin.util.URLUtils.getCacheResetURL(shell.getPath(_local_7 + "_bg"));
+		_local_3.load_mc.art_mc.loadMovie(_local_6);
+	}
+	_local_3.title_txt.text = getLocalizedString(_local_7);
+	_local_3.item0_mc._visible = false;
+	_local_3.item1_mc._visible = false;
+	_local_3.item2_mc._visible = false;
+	_local_3.item3_mc._visible = false;
+	for (var _local_5 in _local_4) {
+		var _local_1 = _local_3[("item" + _local_5) + "_mc"];
+		var _local_2 = _local_4[_local_5];
+		_local_1._visible = true;
+		if (_local_2 != undefined) {
+			if (_local_2 == getPlayerNickname()) {
+				_local_1.icon_mc.gotoAndStop("Player");
+			} else {
+				_local_1.icon_mc.gotoAndStop("None");
+			}
+			_local_1.name_txt.text = _local_2;
+		} else {
+			_local_1.icon_mc.gotoAndStop("Wait");
+			_local_1.name_txt.text = getLocalizedString("empty");
+		}
+	}
+}
+function handleUpdateWaddle(ob) {
+	traceObject(ob);
+	var _local_2 = ob.waddle_id;
+	var _local_3 = ob.player_list;
+	if (_local_2 == active_waddle_id) {
+		updateWaddleWidget();
+	}
+}
+function closeWaddleWidget() {
+	SHELL.sendAS3StartNotificationServices();
+	ENGINE.sendLeaveWaddle();
+}
+function setActiveWaddle(name) {
+	active_waddle = name;
+}
+function getActiveWaddle() {
+	return(active_waddle);
+}
+function loadFile(mc, file_path, load_message, closeFunction, initFunction, params) {
+	var _local_3 = new com.clubpenguin.hybrid.HybridMovieClipLoader();
+	mc.load_mc.removeMovieClip();
+	mc.gotoAndStop("Wait");
+	mc.createEmptyMovieClip("load_mc", 1);
+	mc.block_mc.useHandCursor = false;
+	mc.block_mc.tabEnabled = false;
+	mc.block_mc.onRelease = null;
+	mc.close = closeFunction;
+	mc.close_btn.onRelease = closeFunction;
+	var _local_4 = com.clubpenguin.util.URLUtils.getCacheResetURL(file_path);
+	_local_3.addEventListener(com.clubpenguin.hybrid.HybridMovieClipLoader.EVENT_ON_LOAD_START, com.clubpenguin.util.Delegate.create(this, onFileLoadStart));
+	_local_3.addEventListener(com.clubpenguin.hybrid.HybridMovieClipLoader.EVENT_ON_LOAD_PROGRESS, com.clubpenguin.util.Delegate.create(this, onFileLoadProgress, mc));
+	_local_3.addEventListener(com.clubpenguin.hybrid.HybridMovieClipLoader.EVENT_ON_LOAD_INIT, com.clubpenguin.util.Delegate.create(this, onFileLoadInit, mc, initFunction, params));
+	_local_3.addEventListener(com.clubpenguin.hybrid.HybridMovieClipLoader.EVENT_ON_LOAD_ERROR, com.clubpenguin.util.Delegate.create(this, onFileLoadError));
+	_local_3.loadClip(_local_4, mc.load_mc, "igloo_control.as loadFile()");
+}
+function onFileLoadStart(event) {
+	event.target._visible = false;
+}
+function onFileLoadInit(event, mc, initFunction, params) {
+	if (mc.logAssetLoadName != undefined) {
+		mc.logAssetLoadName = undefined;
+	}
+	if (params != undefined) {
+		event.params = params;
+	}
+	event.target._visible = true;
+	mc._lockroot = true;
+	mc.buyItem = buyInventory;
+	mc.buyFurniture = buyFurniture;
+	mc.upgradeIgloo = buyIglooUpgrade;
+	mc.upgradeIglooFloor = buyIglooFloor;
+	mc.adoptPet = adoptPuffle;
+	mc.showWindow = LEGACY_showWindow;
+	mc.myPlayer = {};
+	mc.myPlayer.Nickname = shell.getMyPlayerNickname();
+	mc.gotoAndStop("Done");
+	if (initFunction != undefined) {
+		initFunction(event);
+	}
+}
+function onFileLoadProgress(event, mc) {
+	var _local_1 = Math.floor((event.bytesLoaded / event.bytesTotal) * 100);
+	mc.progressbar_mc.progressBar._xscale = _local_1;
+}
+function onFileLoadError(event) {
+}
+function replaceString(target, word, message) {
+	return(message.split(target).join(word));
+}
+function isValidString(txt) {
+	if (txt.length < 1) {
+		return(false);
+	}
+	if (txt == "") {
+		return(false);
+	}
+	if (txt == undefined) {
+		return(false);
+	}
+	if (txt == null) {
+		return(false);
+	}
+	if (txt == "undefined") {
+		return(false);
+	}
+	return(true);
+}
+function convertToSafeCase(m) {
+	m = m.split(" ");
+	for (var _local_5 in m) {
+		var _local_1 = m[_local_5];
+		if (_local_1.length > 1) {
+			var _local_2 = _local_1.charCodeAt(1);
+			if ((_local_2 > 64) && (_local_2 < 91)) {
+				_local_1 = _local_1.toUpperCase();
+			} else {
+				var _local_3 = _local_1.charCodeAt(0);
+				if ((_local_3 > 64) && (_local_3 < 91)) {
+					_local_1 = _local_1.substr(0, 1).toUpperCase() + _local_1.substr(1).toLowerCase();
+				} else {
+					_local_1 = _local_1.toLowerCase();
+				}
+			}
+		}
+		m[_local_5] = _local_1;
+	}
+	return(m.join(" "));
+}
+function convertToTitleCase(m) {
+	m = m.toLowerCase();
+	var _local_4 = m.substr(0, 1).toUpperCase();
+	var _local_3 = false;
+	var _local_2 = 1;
+	while (_local_2 < m.length) {
+		var _local_1 = m.substr(_local_2, 1);
+		if (_local_1 == " ") {
+			_local_3 = true;
+		} else {
+			if (_local_3) {
+				_local_1 = _local_1.toUpperCase();
+			}
+			_local_3 = false;
+		}
+		_local_4 = (_local_4 + "") + _local_1;
+		_local_2++;
+	}
+	return(_local_4);
+}
+function convertToSentenceCase(m) {
+	m = m.toLowerCase();
+	var _local_2 = m.substr(0, 1).toUpperCase() + m.substr(1);
+	return(_local_2);
+}
+function removeExtraSpaces(m) {
+	var _local_4 = "";
+	var _local_3 = true;
+	var _local_2 = 0;
+	while (_local_2 < m.length) {
+		var _local_1 = m.substr(_local_2, 1);
+		if (_local_1 != " ") {
+			_local_4 = _local_4 + _local_1;
+			_local_3 = false;
+		} else if ((_local_1 == " ") && (!_local_3)) {
+			_local_4 = _local_4 + " ";
+			_local_3 = true;
+		}
+		_local_2++;
+	}
+	if (_local_4.substr(_local_4.length - 1) == " ") {
+		_local_4 = _local_4.substr(0, _local_4.length - 1);
+	}
+	return(_local_4);
+}
+function removeSymbols(m) {
+	var _local_4 = "";
+	var _local_1 = 0;
+	while (_local_1 < m.length) {
+		var _local_2 = m.charCodeAt(_local_1);
+		if ((_local_2 > 96) && (_local_2 < 123)) {
+			_local_4 = _local_4 + m.charAt(_local_1);
+		} else if (_local_2 == 32) {
+			_local_4 = _local_4 + " ";
+		}
+		_local_1++;
+	}
+	return(_local_4);
+}
+function removeDuplicateLetters(m) {
+	var _local_4;
+	var _local_2;
+	var _local_3;
+	var _local_1 = 0;
+	while (_local_1 < m.length) {
+		_local_2 = m.substr(_local_1, 1);
+		if (_local_2 != _local_4) {
+			_local_3 = _local_3 + _local_2;
+		}
+		_local_4 = _local_2;
+		_local_1++;
+	}
+	return(_local_3);
+}
+function traceObject(object) {
+	var _local_2 = [];
+	for (var _local_3 in object) {
+		_local_2.push((_local_3 + ":") + object[_local_3]);
+	}
+}
+function paginateArray(in_array, page, items_on_page) {
+	var _local_2 = page * items_on_page;
+	var _local_1 = _local_2 + items_on_page;
+	if (_local_1 > in_array.length) {
+		_local_1 = in_array.length;
+	}
+	return(in_array.slice(_local_2, _local_1));
+}
+function getMaxPage(in_array, items_on_page) {
+	return(Math.ceil(in_array.length / items_on_page) - 1);
+}
+function setupEPFPhoneLayer() {
+	if (isPhoneSetup) {
+		return(undefined);
+	}
+	isPhoneSetup = true;
+	var _local_12 = ENGINE.fieldOpTriggered;
+	var _local_9 = SHELL.getClientPath();
+	var _local_5 = SHELL.getGamesPath();
+	var _local_8 = SHELL.getCurrentRoomService();
+	var _local_2 = SHELL.getEquipmentService();
+	var _local_6 = SHELL.getEPFService();
+	var _local_3 = SHELL.getLanguageObject();
+	var _local_10 = SHELL.getMyPlayerObject();
+	var _local_7 = SHELL.getMyInventoryArray();
+	var _local_11 = SHELL.getRoomCrumbs();
+	var _local_13 = SHELL.getInventoryCrumbsObject();
+	var _local_4 = SHELL.getFieldOp();
+	epfContext = new com.clubpenguin.hud.phone.EPFContext(_local_9, _local_5, epfPhoneLayer, iconLayer, _local_8, _local_2, _local_6, _local_11, SHELL.getLanguageAbbreviation(), _local_3, _local_7, _local_10, _local_4, _local_12, cancelFieldOpTrigger, this, SHELL, ENGINE, _local_13);
+	epfContext.layoutChanged.add(onLayoutChanged, this);
+	iconLayer.hudIconView._visible = false;
+	SHELL.getPlayerEPFStatusChanged().add(showEPFPhoneHUDIcon, this);
+}
+function onLayoutChanged(layout) {
+	if (layout == com.clubpenguin.hud.phone.model.PhoneLayout.LANDSCAPE) {
+		stopQuickKeys();
+	} else {
+		startQuickKeys();
+	}
+}
+function showEPFPhoneHUDIcon(newAgentStatus) {
+	iconLayer.hudIconView._visible = newAgentStatus;
+	if (newAgentStatus) {
+		iconLayer.phone_mc._visible = false;
+		SHELL.getEPFStatusChanged().remove(showEPFPhoneHUDIcon, this);
+	}
+	if (iconLayer.hudIconView._x < 0) {
+		iconLayer.hudIconView._x = 26;
+		iconLayer.phone_mc._x = 26;
+	}
+}
+function setupScavengerHunt() {
+	if (!scavengerHunt) {
+		if (displayScavengerHunt()) {
+			scavengerHunt = new com.clubpenguin.hud.scavengerhunt.ScavengerHunt();
+			scavengerHunt.scavengerHuntCompletedSignal.add(claimPrize, this);
+			scavengerHunt.scavengerHuntClosedSignal.add(closeContent, this);
+		}
+	}
+}
+function displayScavengerHunt() {
+	var _local_1 = SHELL.getPartyOptions();
+	if (_local_1.hunt_active && (!SHELL.isInSoloRoom())) {
+		memberHunt = _local_1.member_hunt;
+		if ((!memberHunt) || (memberHunt && (isMember()))) {
+			SHELL.updateListeners(com.clubpenguin.shell.events.MembershipEvent.MEMBER_ONLY_ACTIVITY, new com.clubpenguin.shell.events.MembershipEvent(com.clubpenguin.shell.events.MembershipEvent.MEMBER_ONLY_ACTIVITY, com.clubpenguin.shell.events.MembershipEventContext.SCAVENGER_HUNT, "enterScavengerHunt"));
+			itemRewardID = _local_1.itemRewardID;
+			return(true);
+		}
+	}
+	return(false);
+}
+function claimPrize() {
+	closeContent();
+	SHELL.stampEarned(SCAVENGER_HUNT_STAMP);
+	buyInventory(itemRewardID);
+}
+function getTickets() {
+	if (currentNumTickets == null) {
+		SHELL.sendGetScavengerHuntTickets();
+	}
+	return(currentNumTickets);
+}
+function addTickets(numTickets) {
+}
+function subtractTickets(numTickets) {
+	SHELL.sendDecrementScavengerHuntTickets(numTickets);
+	currentNumTickets = currentNumTickets - numTickets;
+}
+function setTickets(numTickets) {
+	var _local_1 = currentNumTickets - numTickets;
+	if (_local_1 > 0) {
+		subtractTickets(_local_1);
+	} else if (_local_1 < 0) {
+		addTickets(-_local_1);
+	}
+}
+function onTicketsReceived(numTickets) {
+	currentNumTickets = numTickets;
+}
+function openIglooMap() {
+	iglooMapContainer = WINDOW.createEmptyMovieClip("igloo_map", WINDOW.getNextHighestDepth());
+	var _local_2 = new com.clubpenguin.hybrid.HybridMovieClipLoader();
+	_local_2.addEventListener(com.clubpenguin.hybrid.HybridMovieClipLoader.EVENT_ON_LOAD_INIT, com.clubpenguin.util.Delegate.create(this, onIglooMapLoadInit));
+	_local_2.addEventListener(com.clubpenguin.hybrid.HybridMovieClipLoader.EVENT_ON_LOAD_ERROR, com.clubpenguin.util.Delegate.create(this, onIglooMapLoadError));
+	_local_2.loadClip(SHELL.getClientPath() + "/igloo_map.swf", iglooMapContainer);
+}
+function onIglooMapLoadInit(event) {
+	iglooMapContainer.init(SHELL, this, ENGINE, SHELL.AIRTOWER);
+}
+function onIglooMapLoadError(event) {
+	iglooMapContainer.removeMovieClip();
+}
+function closeIglooMap() {
+	iglooMapContainer.destroy();
+	iglooMapContainer.removeMovieClip();
+	_shell.currentRoomService.unpauseRoomView();
+}
+function setDependencies(shell, engine, party) {
+	SHELL = shell;
+	ENGINE = engine;
+	PARTY = party;
+	this.shell = SHELL;
+}
+function init() {
+	attachShellListeners();
+	embeddedFontsClip._visible = false;
+	BALLOONS = com.clubpenguin.ui.balloons.BalloonManager(balloons_mc);
+	BALLOONS.setDependencies(SHELL, ENGINE, this);
+	catalogOpcodeJournal = new com.clubpenguin.merch.catalogs.CatalogOpcodeJournal(SHELL.getMyPlayerId());
+	initPlayerMenu();
+	SHELL.setInterfaceForStampNotifier(this);
+	if (SHELL.getPhraseChatPath() != "") {
+		phraseChatService = new com.disney.dce.phrasechat.PhraseChatAPI(SHELL.getPhraseChatPath());
+		DOCK.btnRemove._visible = false;
+		DOCK.btnRemove.enabled = false;
+		DOCK.chat_mc.chat_input._visible = false;
+		DOCK.chat_mc.chat_input.enabled = false;
+		if (SHELL.getMyPlayerObject().remaining_hours == undefined) {
+			SHELL.sendOpenAS3Module("phraseAutoComplete", null, {modalBackgroundEnabled:false, hideLoadingDialog:true, blockPuffleNotifications:false, persistent:true});
+		}
+		SHELL.sendOpenAS3Module(com.clubpenguin.modules.AS3ModuleConstants.PUFFLE_TRICKS_HUD, null, {modalBackgroundEnabled:false, hideLoadingDialog:true, blockPuffleNotifications:true, persistent:true});
+	} else {
+		chatController = new com.disney.dce.phrasechat.ChatController(sendMessage, SHELL, interface_mc, this);
+	}
+}
+function attachShellListeners() {
+	SHELL.addListener(SHELL.UPDATE_SHELL_STATE, handleUpdateShellState);
+	SHELL.addListener(SHELL.SEND_MESSAGE, handleSendMessage);
+	SHELL.addListener(SHELL.SEND_PHRASECHAT_MESSAGE, handleSendPhraseChatMessage);
+	SHELL.addListener(SHELL.SEND_PHRASEAUTOCOMPLETE_ID, handleSendPhraseAutocompleteID);
+	SHELL.addListener(SHELL.SEND_BLOCKED_MESSAGE, handleSendBlockedMessage);
+	SHELL.addListener(SHELL.SEND_SAFE_MESSAGE, handleSendSafeMessage);
+	SHELL.addListener(SHELL.SEND_LINE_MESSAGE, handleSendLineMessage);
+	SHELL.addListener(SHELL.SEND_MASCOT_MESSAGE, handleSendMascotMessage);
+	SHELL.addListener(SHELL.SEND_TOUR_GUIDE_MESSAGE, handleSendTourGuideMessage);
+	SHELL.addListener(SHELL.SEND_QUICK_MESSAGE, handleSendQuickMessage);
+	SHELL.addListener(SHELL.SEND_JOKE, handleSendJoke);
+	SHELL.addListener(SHELL.SEND_EMOTE, handleSendEmote);
+	SHELL.addListener(SHELL.BUY_INVENTORY, handleBuyInventory);
+	SHELL.addListener(SHELL.BUY_CARDS, handleBuyCards);
+	SHELL.addListener(SHELL.BUY_FURNITURE, handleBuyFurniture);
+	SHELL.addListener(SHELL.BUY_PUFFLE_CARE_ITEM, handleBuyPuffleCareItem);
+	SHELL.addListener(SHELL.BUY_IGLOO_TYPE, handleBuyIglooUpgrade);
+	SHELL.addListener(SHELL.BUY_IGLOO_LOCATION, handleBuyIglooLocation);
+	SHELL.addListener(SHELL.BUY_IGLOO_FLOOR, handleBuyIglooFloor);
+	SHELL.addListener(SHELL.ADOPT_PUFFLE, handleAdoptPuffle);
+	SHELL.addListener(SHELL.UPDATE_PLAYER, handleUpdatePlayer);
+	SHELL.addListener(SHELL.UPDATE_CHAT_LOG, handleUpdateLog);
+	SHELL.addListener(SHELL.UPDATE_COINS, handleUpdateCoins);
+	SHELL.addListener(SHELL.UPDATE_BUDDY_LIST, handleUpdateBuddyList);
+	SHELL.addListener(SHELL.EGG_TIMER_UPDATE, com.clubpenguin.util.Delegate.create(this, handleEggTimerUpdate));
+	SHELL.addListener(SHELL.UPDATE_INVENTORY, handleUpdateInventory);
+	SHELL.addListener(SHELL.LOAD_PLAYER_OBJECT, handleLoadPlayerObject);
+	SHELL.addListener(SHELL.GET_PLAYER_LOCATION, com.clubpenguin.util.Delegate.create(this, handleFindPlayer));
+	SHELL.addListener(SHELL.GET_PLAYER_LOCATION_JUMP, com.clubpenguin.util.Delegate.create(this, handleJumpToPlayer));
+	SHELL.addListener(SHELL.NEW_MAIL, updateNewMailIcon);
+	SHELL.addListener(SHELL.UPDATE_WADDLE, handleUpdateWaddle);
+	SHELL.addListener(SHELL.ROOM_INITIATED, handleRoomInitiated);
+	SHELL.addListener(SHELL.ROOM_DESTROYED, handleRoomDestroyed);
+	SHELL.addListener(SHELL.UPDATE_INVENTORY, handleUpdatedInventory);
+	SHELL.addListener(SHELL.SCAVENGER_HUNT_TICKETS_RECEIVED, onTicketsReceived, this);
+	SHELL.addListener(SHELL.JUMP_TO_PLAYER_ANIMATION_COMPLETE, handleGoToCurrentJumpPlayerRoom);
+}
+function handleUpdatedInventory() {
+	setupEPFPhoneLayer();
+	setupEPFMissionHUDLayer();
+	if (SHELL.getMyPlayerObject().is_member) {
+		goldNuggetsHUDController = new com.clubpenguin.hud.goldnuggets.controller.GoldNuggetsHUDController(SHELL, interface_mc.icons_mc);
+	}
+}
+function handleRoomInitiated() {
+	showInterface();
+	if ((SHELL.getRoomObject().room_id == 112) && (SHELL._localLoginServerData.autoLogin)) {
+		hideInterfaceForSoloRoom();
+	}
+}
+function handleRoomDestroyed() {
+	closeInterface();
+	resetRoomBalloonManager();
+}
+var phraseChatService;
+var chatController;
+var SHELL;
+var shell;
+var ENGINE;
+var PARTY;
+var BALLOONS;
+var goldNuggetsHUDController;
+var catalogOpcodeJournal;
+var updateListeners;
+var addEventListener;
+var removeEventListener;
+var PLAYER_CARD_UPDATED = "playerCardUpdated";
+var PLAYER_CARD_CLOSED = "playerCardClosed";
+var _trackerAS2 = com.clubpenguin.util.TrackerAS2.getInstance();
+com.clubpenguin.util.EventDispatcher.initialize(this);
+var active_player;
+var active_ignore;
+var walkPuffleAfterAdoption = false;
+var clipboardBuffer = "";
+var clipboardBufferEnabled = false;
+SHELL.addListener(SHELL.ROOM_DESTROYED, handleRoomDestroyed);
+var showBuyPuffleCareItemSuccessPrompt = false;
+var PARTY_ROOM_ID_START = 852;
+var PARTY_ROOM_ID_END = 867;
+var NORMAL_HUD_FRAME = 1;
+var PARTY_HUD_FRAME = 2;
+var ICONS = interface_mc.icons_mc;
+var NEWS_ICON = interface_mc.icons_mc.news_mc;
+var MAIL_ICON = interface_mc.icons_mc.mail_mc;
+var MAP_ICON = interface_mc.icons_mc.map_mc;
+var SAFETY_QUIZ_ICON = interface_mc.icons_mc.safetyquiz_mc;
+var PHONE_ICON = interface_mc.icons_mc.phone_mc;
+var EGG_TIMER_ICON = interface_mc.icons_mc.egg_timer_mc;
+var PARTY_ICON_INSTANCE_NAME = "partyIcon";
+var MAP_BUTTON = "map";
+var mapIsVisible = false;
+var defaultSafetyQuizIconPos = SAFETY_QUIZ_ICON._x;
+var defaultHeroIconPos = CHANGE_AVATAR_ICON._x;
+var defaultPartyIconPos = 0;
+var ONE_DIGIT_MAX = 9;
+var TWO_DIGITS_FRAME = "twoDigits";
+var ONE_DIGIT_FRAME = "oneDigit";
+var PARK_FRAME = "park";
+var ANIMATE_FRAME = "animate";
+var currentRewardCount = 0;
+var CROSSHAIR = interface_mc.crosshair_mc;
+CROSSHAIR._visible = false;
+var snowballCrosshairShown = (new org.osflash.signals.Signal());
+var widgetActive = false;
+var WIDGETS = interface_mc.widgets_mc;
+var is_quick_keys_active = false;
+var myKeyListener;
+var CONTENT = interface_mc.content_mc;
+var WINDOW = interface_mc.window_mc;
+var is_news_open = false;
+var prompt_requested = false;
+var membership_window_requested = false;
+var TOUR_FORM = "tour_form";
+var contentBlockPuffleNotifications = false;
+var windowBlockPuffleNotifications = false;
+var catalogOpeningPage = 1;
+var showContentFunc = null;
+var delayShowContentTimeoutID;
+var HINT = interface_mc.hint_mc;
+var DOCK = interface_mc.dock_mc;
+var DOCK_PLAYER_ICON = DOCK.player_icon_mc;
+var SAFE_CHAT_BUTTON = "safechat";
+var CHAT_BUTTON = "chat";
+var EMOTE_BUTTON = "emote";
+var ACTIONS_BUTTON = "actions";
+var SNOWBALL_BUTTON = "snowball";
+var BUTTON_HIGHLIGHT_STATE_PARK = "park";
+var BUTTON_HIGHLIGHT_STATE_HIGHLIGHT = "highlight";
+var BUTTON_HIGHLIGHT_STATE_STATIC = "static";
+var isAbleToSpecialDance = false;
+var isAbleToSpecialWave = false;
+var _handleUpdatePlayerDelegate;
+var is_chat_focused = false;
+enableIglooButton();
+var SHOP = interface_mc.shop_mc;
+var active_shop_item = 0;
+var active_puffle_action = undefined;
+var active_shop_item_name = "";
+var waitingToLogMoneyEvent = false;
+var puffleCareItemInfo;
+var puffleCatalogItemId;
+var puffleCareItemDescription = "";
+var POWER_CARDS_COST = 1500;
+var ITEM_TYPE_PUFFLE_ITEM = 0;
+var ITEM_TYPE_FURNITURE_ITEM = 1;
+var ITEM_TYPE_CLOTHING_ITEM = 2;
+var ITEM_TYPE_IGLOO = 3;
+var ITEM_TYPE_PUFFLE_HAT = 4;
+var ITEM_TYPE_IGLOO_FLOOR = 5;
+var ITEM_TYPE_IGLOO_LOCATION = 6;
+var CATALOG_PATHLINK_PUFFLE_ITEMS = "pets_catalogue";
+var CATALOG_PATHLINK_IGLOO_FURNITURE = "furniture_catalogue";
+var CATALOG_PATHLINK_IGLOO = "igloo_catalogue";
+var CATALOG_PATHLINK_CLOTHING = "clothing_catalogue";
+var CATALOG_PATHLINK_COSTUME = "costume_catalogue";
+var CATALOG_PATHLINK_NINJA = "ninja_catalogue";
+var CATALOG_PATHLINK_SPORTS = "sport_catalogue";
+var CATALOG_PATHLINK_INSTRUMENTS = "light_catalogue";
+var CATALOG_PATHLINK_SURF = "cove_catalogue";
+var CATALOG_PATHLINK_MUSIC_TRACKS = "dance_catalogue";
+var CATALOG_PATHLINK_HYDRO_HOPPER = "dock_catalogue";
+var CATALOG_PATHLINK_FISHING = "lodge_catalogue";
+var CATALOG_PATHTYPE_SLED = "mtn_catalogue";
+var CATALOG_PATHLINK_RH_RARE_ITEMS = "pirate_catalogue";
+var CATALOG_TYPE_PUFFLE_ITEMS = "catalog_puffleitems";
+var CATALOG_TYPE_IGLOO_FURNITURE = "catalog_igloofurn";
+var CATALOG_TYPE_IGLOO = "catalog_igloo";
+var CATALOG_TYPE_CLOTHING = "catalog_clothing";
+var CATALOG_TYPE_COSTUME = "catalog_costume";
+var CATALOG_TYPE_NINJA = "catalog_martial_artworks";
+var CATALOG_TYPE_SPORTS = "catalog_sports";
+var CATALOG_TYPE_STAGE = "catalog_stage";
+var CATALOG_TYPE_INSTRUMENTS = "catalog_music";
+var CATALOG_TYPE_SURF = "upgrades_waves";
+var CATALOG_TYPE_MUSIC_TRACKS = "upgrades_dj3k";
+var CATALOG_TYPE_HYDRO_HOPPER = "upgrades_hydro";
+var CATALOG_TYPE_FISHING = "upgrades_fish";
+var CATALOG_TYPE_SLED = "upgrades_sled";
+var CATALOG_TYPE_RH_RARE_ITEMS = "catalog_rh_rare_items";
+var catalogueTypeToOopsMessageFileKey = new Object();
+catalogueTypeToOopsMessageFileKey[CATALOG_TYPE_PUFFLE_ITEMS] = "oops_catalog_puffleitems";
+catalogueTypeToOopsMessageFileKey[CATALOG_TYPE_IGLOO_FURNITURE] = "oops_catalog_igloofurniture";
+catalogueTypeToOopsMessageFileKey[CATALOG_TYPE_IGLOO] = "oops_catalog_igloo";
+catalogueTypeToOopsMessageFileKey[CATALOG_TYPE_CLOTHING] = "oops_catalog_clothing";
+catalogueTypeToOopsMessageFileKey[CATALOG_TYPE_COSTUME] = "oops_catalog_costume";
+catalogueTypeToOopsMessageFileKey[CATALOG_TYPE_NINJA] = "oops_catalog_martial_artworks";
+catalogueTypeToOopsMessageFileKey[CATALOG_TYPE_SPORTS] = "oops_catalog_sports";
+catalogueTypeToOopsMessageFileKey[CATALOG_TYPE_STAGE] = "oops_catalog_clothing";
+catalogueTypeToOopsMessageFileKey[CATALOG_TYPE_INSTRUMENTS] = "oops_catalog_instruments";
+catalogueTypeToOopsMessageFileKey[CATALOG_TYPE_SURF] = "oops_catalog_surf";
+catalogueTypeToOopsMessageFileKey[CATALOG_TYPE_MUSIC_TRACKS] = "oops_catalog_tracks";
+catalogueTypeToOopsMessageFileKey[CATALOG_TYPE_HYDRO_HOPPER] = "oops_catalog_hydro_hopper";
+catalogueTypeToOopsMessageFileKey[CATALOG_TYPE_FISHING] = "oops_catalog_fishing";
+catalogueTypeToOopsMessageFileKey[CATALOG_TYPE_SLED] = "oops_catalog_sleds";
+catalogueTypeToOopsMessageFileKey[CATALOG_TYPE_RH_RARE_ITEMS] = "oops_catalog_rh_rare_items";
+var PROMPT = interface_mc.prompt_mc;
+var PROMPT_STYLE_QUESTION = "question";
+var PROMPT_STYLE_GAME = "game";
+var PROMPT_STYLE_OK = "ok";
+var PROMPT_STYLE_WAIT = "wait";
+var PROMPT_STYLE_IGLOO = "igloo";
+var PROMPT_STYLE_SHOP = "shop";
+var PROMPT_STYLE_COIN = "coin";
+var PROMPT_STYLE_INPUT = "input";
+var PROMPT_STYLE_WARN = "warn";
+var PROMPT_STYLE_IGNORE = "ignore";
+var PROMPT_STYLE_BUY_CARDS = "buyCards";
+var PROMPT_STYLE_GET_CARDS = "getCards";
+var active_game_prompt = undefined;
+var endGameView = undefined;
+var endGameClosedFunction;
+var endGameSendFunction;
+var onRoomInitiatedFunc = null;
+var _positiveSelectionCallback;
+var _negativeSelectionCallback;
+var LOG = interface_mc.log_mc;
+var message_separator = ": ";
+if (shell.getLanguageAbbriviation() == shell.FR_ABBR) {
+	message_separator = " : ";
+}
+var active_report;
+var is_log_open = false;
+var hasHidTriggers = false;
+LOG.tab_btn.onRelease = updateLog;
+LOG.tab_btn.onPress = dragLog;
+LOG.menu_mc.item_mc._visible = false;
+var last_new_total = 0;
+var ONE_DIGIT_MAX = 9;
+var TWO_DIGITS_FRAME = "twoDigits";
+var ONE_DIGIT_FRAME = "oneDigit";
+MAIL_ICON.new_mc._visible = false;
+var EMOTE_MENU = interface_mc.emote_menu_mc;
+var ACTION_MENU = interface_mc.action_menu_mc;
+var NEW_EXPERIENCE_ARROW_STATE_SHOW = "show";
+var NEW_EXPERIENCE_ARROW_STATE_PARK = "park";
+var SAFE_MENU = interface_mc.safe_menu_mc;
+var BUDDY_WIDGET = interface_mc.widgets_mc.buddy_mc;
+var BUDDY_TOTAL_TEXT = BUDDY_WIDGET.art_mc.buddy_total_txt;
+var FRAME_LABEL_ABOUT = "about";
+var MAX_BUDDIES_PER_PAGE = 9;
+var currentList;
+var currentPage = 0;
+var buddy_player_list = [];
+var current_page_list = [];
+var STAFF_WIDGET = interface_mc.widgets_mc.staffpanel_mc;
+var STAFF_WIDGET_OPTIONS = STAFF_WIDGET.art_mc.paneloptions_mc;
+var SCRIPT_WIDGET = interface_mc.widgets_mc.script_mc;
+var GAME_WIDGET = interface_mc.widgets_mc.game_mc;
+var PHONE_WIDGET = interface_mc.widgets_mc.phone_mc;
+var phone_list = ["town", "coffee", "book", "dance", "lounge", "shop", "village", "lodge", "attic", "mtn", "plaza", "pet", "stage", "pizza", "beach", "light", "beacon", "dock", "forts", "rink", "boiler", "berg", "cave", "mine", "shack", "forest", "cove"];
+var PLAYER_WIDGET = interface_mc.widgets_mc.player_mc;
+var PLAYER_WIDGET_MENU_MAX_ITEMS = 12;
+var INVENTORY_LIST_LINKAGE_ID = "InventoryMenu";
+var CJ_VANILLA_DECK_ICON_ID = 821;
+var CJ_FIRE_DECK_ICON_ID = 8006;
+var CJ_WATER_DECK_ICON_ID = 8010;
+var CJ_SNOW_DECK_ICON_ID = 8011;
+var SPY_PHONE_ICON_ID = 800;
+var TUSK_CAPE_ITEM = 3160;
+var active_player_object = {};
+var is_player_widget_tab_open = false;
+var is_player_card_open = false;
+var player_widget_menu_page = 0;
+var player_widget_menu_type = "INVENTORY_TYPE_ALL";
+var player_widget_menu_text;
+var player_widget_last_click;
+var ICON_LABEL_ME_MEMBER = "member";
+var ICON_LABEL_ME_FREE = "player";
+var ICON_LABEL_OTHER_MEMBER = "member";
+var ICON_LABEL_OTHER_FREE = "free";
+var ICON_LABEL_MASCOT = "member";
+var ONE_CHEVRON = 1;
+var TWO_CHEVRON = 2;
+var THREE_CHEVRON = 3;
+var FOUR_CHEVRON = 4;
+var FIVE_CHEVRON = 5;
+var FRAME_LABEL_ABOUT = "about";
+var INVENTORY_CLICKED = "inventory";
+var _paperdoll;
+var _storedPuffleID;
+var CARD_JITSU_WADDLE_WIDGET = interface_mc.widgets_mc.card_jitsu_widget;
+var WADDLE_WIDGET = interface_mc.widgets_mc.waddle_mc;
+var active_waddle_name = undefined;
+var active_waddle_id = undefined;
+var FIRE = "fire";
+var WATER = "water";
+var epfPhoneLayer = interface_mc.epfPhoneLayer;
+var iconLayer = interface_mc.icons_mc;
+var epfContext;
+var isPhoneSetup = false;
+var SCAVENGER_HUNT_STAMP = 188;
+var huntActive;
+var itemRewardID;
+var memberHunt;
+var scavengerHunt;
+var currentNumTickets = null;
+var iglooMapContainer;
+hideInterface();

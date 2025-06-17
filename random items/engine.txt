@@ -1,0 +1,2853 @@
+    function handleStartEngine() {
+        _drawInterval = setInterval(com.clubpenguin.util.Delegate.create(this, onDrawInterval), Math.floor(1000 / FPS));
+    }
+    function onDrawInterval() {
+        if (puffleAvatarController != null) {
+            puffleAvatarController.update();
+        }
+        snowballManager.update();
+    }
+    function handleUpdateShellState(event) {
+        if (event.state == SHELL.PLAY_STATE) {
+            startMouse();
+        } else {
+            stopMouse();
+        }
+        if (event.state == SHELL.EDIT_STATE) {
+            puffleManager.cancelAllPuffleInteractions();
+        }
+    }
+    function handleAddPlayer(event) {
+        if (((!SHELL.isMyPlayer(event.player_id)) && (isRoomReady())) && (SHELL.add_more_players)) {
+            addPlayer(event);
+        }
+    }
+    function handleRemovePlayer(playerID) {
+        if (!SHELL.isMyPlayer(playerID)) {
+            removePlayer(playerID);
+        }
+    }
+    function sendPlayerMove(x, y, is_trigger, frame) {
+        if (!isMovementEnabled()) {
+            return(undefined);
+        }
+        if (SHELL._localLoginServerData.autoLogin) {
+            SHELL.sendAS2Clicked(MOVE_CLICKED);
+        }
+        var _local_1 = SHELL.getMyPlayerId();
+        var _local_4 = getPlayerMovieClip(_local_1);
+        if (SHELL.isPlayerJumping(_local_1) || (SHELL.localPlayerIsJumping)) {
+            return(undefined);
+        }
+        if (SHELL.isPlayerJumping(_local_1) || (SHELL.localPlayerIsJumping)) {
+            return(undefined);
+        }
+        var _local_6 = Math.round(_local_4._x);
+        var _local_5 = Math.round(_local_4._y);
+        var _local_8 = findPlayerPath(_local_1, x, y);
+        var _local_2 = _local_8.x;
+        var _local_3 = _local_8.y;
+        var _local_7 = findDistance(_local_6, _local_5, _local_2, _local_3);
+        if (_local_7 > 10) {
+            setPlayerAction("move");
+            movePlayer(_local_1, _local_2, _local_3, is_trigger, frame);
+            SHELL.sendPlayerMove(_local_2, _local_3);
+        } else if (frame != undefined) {
+            SHELL.sendPlayerFrame(frame);
+        }
+    }
+    function sendPlayerTeleport(x, y) {
+        var _local_1 = SHELL.getMyPlayerId();
+        SHELL.sendPlayerTeleport(x, y);
+        teleportPlayer(_local_1, x, y);
+    }
+    function sendPlayerTeleportAndMove(teleportX, teleportY, moveX, moveY) {
+        sendPlayerTeleport(teleportX, teleportY);
+        sendPlayerMove(moveX, moveY);
+    }
+    function handlePlayerMove(player_ob) {
+        var _local_1 = player_ob.player_id;
+        if (!SHELL.isMyPlayer(_local_1)) {
+            var _local_7 = player_ob.x;
+            var _local_6 = player_ob.y;
+            var _local_3 = findPlayerPath(_local_1, _local_7, _local_6);
+            var _local_4 = _local_3.x;
+            var _local_5 = _local_3.y;
+            movePlayer(_local_1, _local_4, _local_5);
+        }
+    }
+    function handlePlayerTeleport(player_ob) {
+        var _local_1 = player_ob.player_id;
+        if (!SHELL.isMyPlayer(_local_1)) {
+            var _local_4 = player_ob.x;
+            var _local_3 = player_ob.y;
+            teleportPlayer(_local_1, _local_4, _local_3);
+        }
+    }
+    function handleRequestPuffleMove(event) {
+        var _local_1 = puffleManager.getRandomSafeZonePoint();
+        SHELL.sendPuffleMove(event.id, _local_1.x, _local_1.y);
+    }
+    function handlePuffleMove(event) {
+        var _local_2 = new flash.geom.Point(event.x, event.y);
+        puffleManager.movePuffleToPointByID(event.id, _local_2, event.supperHappy);
+    }
+    function handlePuffleInteraction(event) {
+        if (event.id == undefined) {
+            return(undefined);
+        }
+        if (event.interactionType == undefined) {
+            return(undefined);
+        }
+        var _local_3 = SHELL.getGlobalIgloo();
+        var _local_2 = _local_3.iglooContext.getFurnitureOnPointByType(new flash.geom.Point(event.x, event.y), event.interactionType);
+        if (_local_2 == undefined) {
+            SHELL.sendPuffleInteraction(false, event.id, event.interactionType, event.x, event.y);
+            return(undefined);
+        }
+        puffleManager.makePuffleInteractWithFurnitureByID(event.id, _local_2);
+    }
+    function handlePuffleWalk(event) {
+        if (event.isWalking) {
+            puffleManager.walkPuffleByID(event.id);
+        } else {
+            puffleManager.stopWalkingPuffleByID(event.id);
+        }
+    }
+    function sendPlayerAction(frame) {
+        var _local_1 = SHELL.getMyPlayerId();
+        if (validateUpdateFrame(_local_1, frame)) {
+            updatePlayerFrame(_local_1, frame, true);
+            setPlayerAction("custom");
+            SHELL.sendPlayerAction(frame);
+        }
+    }
+    function handlePlayerAction(ob) {
+        var _local_1 = ob.player_id;
+        var _local_2 = ob.frame;
+        if (!SHELL.isMyPlayer(_local_1)) {
+            if (validateUpdateFrame(_local_1, _local_2)) {
+                updatePlayerFrame(_local_1, _local_2, true);
+            }
+        }
+    }
+    function sendPlayerSitDown() {
+        sendPlayerFrame(getPlayerDirectionToMouse() + 16);
+    }
+    function sendPlayerFrame(frame) {
+        var _local_1 = SHELL.getMyPlayerId();
+        if (validateUpdateFrame(_local_1, frame)) {
+            SHELL.updateListeners(SHELL.UPDATE_PLAYER, SHELL.getMyPlayerObject());
+            updatePlayerFrame(_local_1, frame);
+            setPlayerAction("custom");
+            SHELL.sendPlayerFrame(frame);
+        }
+    }
+    function handlePlayerFrame(ob) {
+        var _local_1 = ob.player_id;
+        var _local_2 = ob.frame;
+        if (!SHELL.isMyPlayer(_local_1)) {
+            if (validateUpdateFrame(_local_1, _local_2)) {
+                updatePlayerFrame(_local_1, _local_2);
+            } else {
+                framesRequestedAfterMove[_local_1] = _local_2;
+                SHELL.addListener(SHELL.PLAYER_MOVE_DONE, handleUpdateFrameAfterMove);
+            }
+        }
+    }
+    function handleUpdateFrameAfterMove(event) {
+        if (event == undefined) {
+            return(undefined);
+        }
+        updatePlayerFrame(event.player_id, framesRequestedAfterMove[event.player_id]);
+        delete framesRequestedAfterMove[event.player_id];
+        SHELL.removeListener(SHELL.PLAYER_MOVE_DONE, handleUpdateFrameAfterMove);
+    }
+    function handlePuffleFrame(event) {
+        puffleManager.updatePuffleFrameByID(event.id, event.frame);
+    }
+    function sendThrowBall(x, y) {
+        if (!SHELL.sendThrowEnabled) {
+            return(undefined);
+        }
+        ENGINE.setPlayerAction("throw");
+        snowballManager.throwBall(SHELL.getMyPlayerId(), x, y);
+        SHELL.sendThrowBall(x, y);
+    }
+    function handleThrowBall(event) {
+        var _local_2 = SHELL.getPlayerObjectById(event.player_id);
+        _local_2.thrownSnowballInCurrentRoom = true;
+        if (!SHELL.isMyPlayer(event.player_id)) {
+            snowballManager.throwBall(event.player_id, event.x, event.y);
+        }
+    }
+    function handleUpdatePlayer(player_ob) {
+        updatePlayer(player_ob);
+    }
+    function sendOpenBook(book_id) {
+        setPlayerAction("reading");
+        loadPlayerBook(SHELL.getMyPlayerId(), book_id);
+        SHELL.sendOpenBook(book_id);
+    }
+    function handleOpenBook(args) {
+        if (!SHELL.isMyPlayer(player_id)) {
+            loadPlayerBook(args.player_id, args.book_id);
+        }
+    }
+    function sendCloseBook(biString) {
+        setPlayerAction("wait");
+        removePlayerBook(SHELL.getMyPlayerId());
+        SHELL.sendCloseBook(biString);
+    }
+    function handleCloseBook(player_id) {
+        if (!SHELL.isMyPlayer(player_id)) {
+            removePlayerBook(player_id);
+        }
+    }
+    function sendJoinRoom(name, x, y) {
+        if (SHELL.getIsGameQueWidgetOpen() == true) {
+            __cardJitsuWidget.cleanUp();
+        }
+        SHELL.sendJoinRoom(name, x, y);
+    }
+    function setGameCompletedParams(params) {
+        gameCompletedParams = params;
+    }
+    function getGameCompletedParams() {
+        return(gameCompletedParams);
+    }
+    function sendGameOver(score, room) {
+        setGameOverRoom(room);
+        SHELL.sendAS3StopNotificationServices();
+        SHELL.sendGameOver(score);
+    }
+    function sendJoinGameOverRoom(x, y) {
+        var _local_1 = getGameOverRoom();
+        if (_local_1 != undefined) {
+            sendJoinRoom(_local_1, ((x != undefined) ? (x) : 0), ((y != undefined) ? (y) : 0));
+        } else {
+            sendJoinLastRoom();
+        }
+    }
+    function sendJoinLastRoom() {
+        SHELL.sendJoinLastRoom();
+    }
+    function handleJoinRoom() {
+        var _local_1 = SHELL.getRoomObject();
+        stopMouse();
+        loadRoom(_local_1);
+    }
+    function handleRefreshRoom() {
+        var _local_1 = SHELL.getRoomObject();
+        if (_local_1 == undefined) {
+            _local_1 = new Object();
+            _local_1.name = "igloo";
+            _local_1.room_key = "igloo";
+            _local_1.path = ((SHELL.getClientPath() + SHELL.IGLOO_PATH) + ".swf") + SHELL._localLoginServerData.getClientCacheVersion();
+        }
+        reloadRoom(_local_1);
+        forceReloadRoomOnRefresh = true;
+    }
+    function handleJoinGame() {
+        var _local_1 = SHELL.getGameObject();
+        SHELL.isLastJoinedRoomIgloo = false;
+        stopMouse();
+        if (_local_1.is_as3) {
+            loadAs3Game(_local_1);
+            SHELL.startGameMusic();
+        } else {
+            loadGame(_local_1);
+        }
+        SHELL.sendTrigger(_local_1["key"]);
+        SHELL.sendMapTracking(_local_1["key"]);
+    }
+    function handleAddPuffle(event) {
+        puffleManager.addPuffleData(event);
+    }
+    function handleRemovePuffle(event) {
+        puffleManager.removePuffle(event);
+    }
+    function handleSwapPuffle(event) {
+        puffleManager.swapPuffle(event);
+    }
+    function loadRoom(room_ob, playerHostedRoomTypeValue, prejoinedRoomData) {
+        _prejoinedRoomData = prejoinedRoomData;
+        setRoomReady(false);
+        if (playerHostedRoomTypeValue == undefined) {
+            playerHostedRoomTypeValue = "";
+        }
+        playerHostedRoomType = playerHostedRoomTypeValue;
+        if (room_key == undefined) {
+            room_key = room_name;
+        }
+        removeRoom();
+        removeGame();
+        showWaitScreen(room_ob);
+    }
+    function reloadRoom(room_ob) {
+        setRoomReady(false);
+        showWaitScreen(room_ob);
+    }
+    function showWaitScreen(room_ob) {
+        SHELL.showLoading("");
+        var _local_3 = room_ob.room_key;
+        var _local_4 = room_ob.path;
+        this.createEmptyMovieClip("room_mc", 100);
+        room_mc.createEmptyMovieClip("load_mc", 1);
+        var _local_5 = SHELL.getLocalizedString("load_" + _local_3);
+        var _local_6 = com.clubpenguin.util.URLUtils.getCacheResetURL(_local_4);
+        var _local_2 = new com.clubpenguin.hybrid.HybridMovieClipLoader();
+        _local_2.addEventListener(com.clubpenguin.hybrid.HybridMovieClipLoader.EVENT_ON_LOAD_ERROR, com.clubpenguin.util.Delegate.create(this, onRoomLoadError));
+        _local_2.addEventListener(com.clubpenguin.hybrid.HybridMovieClipLoader.EVENT_ON_LOAD_INIT, com.clubpenguin.util.Delegate.create(this, onRoomLoadInit));
+        _local_2.addEventListener(com.clubpenguin.hybrid.HybridMovieClipLoader.EVENT_ON_LOAD_PROGRESS, com.clubpenguin.util.Delegate.create(this, onRoomLoadProgress));
+        _local_2.loadClip(_local_6, room_mc.load_mc, "room.as showWaitScreen()");
+    }
+    function onRoomLoadError(event) {
+    }
+    function onRoomLoadProgress(event) {
+        var _local_2 = Math.floor((event.bytes_loaded / event.bytes_total) * 100);
+    }
+    function onRoomLoadInit(event) {
+        var _local_1 = event.target;
+        _local_1._lockroot = true;
+        if (playerHostedRoomType == com.clubpenguin.world.rooms.common.RoomConstants.PLAYER_HOSTED_ROOM_IGLOO) {
+            IGLOO = _local_1;
+            SHELL.setGlobalIgloo(IGLOO);
+            IGLOO.init(SHELL, INTERFACE, ENGINE, SHELL.AIRTOWER, _prejoinedRoomData);
+            _prejoinedRoomData = null;
+        } else if (playerHostedRoomType == com.clubpenguin.world.rooms.common.RoomConstants.PLAYER_HOSTED_ROOM_BACKYARD) {
+            SHELL.backyardMovieClip = _local_1;
+            _local_1.backyard.backyardContext.init(SHELL, ENGINE, INTERFACE, SHELL.AIRTOWER);
+        } else {
+            setupRoom(_local_1);
+        }
+    }
+    function setupRoom(mc) {
+        var _local_4;
+        if (mc.room_mc != undefined) {
+            _local_4 = mc.room_mc;
+            _local_4.start_x = mc.start_x;
+            _local_4.start_y = mc.start_y;
+        } else {
+            _local_4 = mc;
+        }
+        setRoomMovieClip(_local_4);
+        for (var _local_5 in mc) {
+            if (typeof(mc[_local_5]) == "movieclip") {
+                var _local_2 = mc[_local_5];
+                if (_local_2 == mc.block_mc) {
+                    setRoomBlockMovieClip(_local_2);
+                    _local_2._visible = com.clubpenguin.debug.Debug.drawRoomBlockLayer;
+                } else if (_local_2 == mc.triggers_mc) {
+                    setRoomTriggersMovieClip(_local_2);
+                    _local_2._visible = com.clubpenguin.debug.Debug.drawRoomTriggers;
+                } else if (_local_2 == mc.snowballBlock) {
+                    _local_2._visible = com.clubpenguin.debug.Debug.drawRoomSnowballBlockLayer;
+                } else if (_local_2 == mc.interface_mc) {
+                    setRoomInterfaceMovieClip(_local_2);
+                    _local_2.swapDepths(900002);
+                } else if (_local_2 == mc.foreground_mc) {
+                    _local_2.swapDepths(900001);
+                } else if (_local_2 == mc.background_mc) {
+                    _local_2._visible = true;
+                } else if ((_local_2._x > 0) && (_local_4._x < MAX_SCREEN_WIDTH)) {
+                    if ((_local_2._y > 0) && (_local_4._y < MAX_SCREEN_HEIGHT)) {
+                        updateObjectDepth(_local_2);
+                    }
+                }
+            }
+        }
+        avatarManager.effectManager.loadEffectLibs(_local_4);
+        setRoomReady(true);
+        setupTables();
+        setupWaddle();
+        _roomPin.setupPin();
+        setupPlayer();
+        SHELL.startRoomMusic();
+        if ((_global.getCurrentRoom() == null) && ((_local_4.room == null) && (_local_4.roomFunctionality == null))) {
+            _local_4.room = _global.createBaseRoom(_local_4);
+        }
+        _local_4.startRoom();
+        SHELL.setThrowEnabled(true);
+        SHELL.roomInitiated();
+        puffleManager.setupPathEngine();
+        puffleManager.clearPuffles();
+    }
+    function removeRoom() {
+        var _local_4 = SHELL.getGlobalIgloo();
+        _local_4.destroy();
+        var _local_2 = SHELL.backyardMovieClip;
+        if ((_local_2 != undefined) || (_local_2 != null)) {
+            _local_2.backyard.backyardContext.destroy();
+            _local_2 = null;
+        }
+        if (room_mc.load_mc != undefined) {
+            room_mc.load_mc.destroyRoom();
+            SHELL.roomDestroyed();
+            room_mc.removeMovieClip();
+        }
+        for (var _local_3 in INTERFACE.nicknames_mc) {
+            var _local_1 = INTERFACE.nicknames_mc[_local_3];
+            if (_local_1._parent == INTERFACE.nicknames_mc) {
+                _local_1.removeMovieClip();
+            }
+        }
+    }
+    function checkTrigger(mc) {
+        var _local_1 = getRoomTriggersMovieClip();
+        var _local_6 = mc._x;
+        var _local_5 = mc._y;
+        var _local_2;
+        if (_local_1.hitTest(_local_6, _local_5, true)) {
+            for (var _local_7 in _local_1) {
+                _local_2 = _local_1[_local_7];
+                if (_local_2.hitTest(_local_6, _local_5, true)) {
+                    if (_local_2._name.indexOf(EPF_TRIGGER_PREFIX) >= 0) {
+                        var _local_3 = _local_2._name.split(TRIGGER_NAME_SEPARATOR);
+                        fieldOpTriggered.dispatch(_local_3[1]);
+                    } else {
+                        _local_1[_local_7].player_mc = mc;
+                        _local_1[_local_7].triggerFunction();
+                        _local_1[_local_7].player_mc = null;
+                    }
+                    break;
+                }
+            }
+            return(true);
+        }
+        return(false);
+    }
+    function setRoomMovieClip(mc) {
+        my_room_movieclips.room_mc = mc;
+    }
+    function hideRoomWithBitmap(depth) {
+        var _local_2 = new flash.display.BitmapData(Stage.width, Stage.height);
+        _local_2.draw(getRoomMovieClip());
+        bitmapClip = this.createEmptyMovieClip("bitmapClip", bitmapClip.getNextHighestDepth());
+        bitmapClip.attachBitmap(_local_2, depth, "never", true);
+    }
+    function removeRoomBitmap() {
+        bitmapClip.removeMovieClip();
+        bitmapClip = null;
+    }
+    function hideAndUnloadRoomMovieClip() {
+        if (my_room_movieclips.room_mc) {
+            var _local_1 = my_room_movieclips.room_mc.getDepth();
+            hideRoomWithBitmap(_local_1);
+            my_room_movieclips.room_mc.removeMovieClip();
+        }
+    }
+    function hideRoomMovieClipOffscreen() {
+        if (my_room_movieclips.room_mc) {
+            var _local_1 = my_room_movieclips.room_mc.getDepth();
+            hideRoomWithBitmap(_local_1);
+            my_room_movieclips.room_mc._x = my_room_movieclips.room_mc._x + 10000;
+        }
+    }
+    function returnRoomMovieClipOnscreen() {
+        if (my_room_movieclips.room_mc) {
+            my_room_movieclips.room_mc._x = my_room_movieclips.room_mc._x - 10000;
+            removeRoomBitmap();
+        }
+    }
+    function showQuestTargetInitial(questTarget, tryAgainAfterRoomLoad) {
+        com.clubpenguin.util.Log.debug(((("\t[ENGINE] showQuestTargetInitial(questTarget: " + questTarget) + ", tryAgainAfterRoomLoad: ") + tryAgainAfterRoomLoad) + ")");
+        _questTargetShown = false;
+        showQuestTarget(questTarget);
+        if (tryAgainAfterRoomLoad && (!shown)) {
+            _questTarget = questTarget;
+            _tryAgainAfterRoomLoad = tryAgainAfterRoomLoad;
+            SHELL.addListener(SHELL.ROOM_INITIATED, showQuestTargetOnRoomLoad);
+        }
+    }
+    function showQuestTargetOnRoomLoad() {
+        com.clubpenguin.util.Log.debug("\t[ENGINE] showQuestTargetOnRoomLoad()");
+        SHELL.removeListener(SHELL.ROOM_INITIATED, showQuestTargetOnRoomLoad);
+        showQuestTarget(_questTarget);
+        _questTarget = null;
+        _tryAgainAfterRoomLoad = null;
+    }
+    function showQuestTarget(questTarget) {
+        com.clubpenguin.util.Log.debug(("\t[ENGINE] showQuestTarget(questTarget: " + questTarget) + ")");
+        var _local_1 = getRoomMovieClip();
+        if (_local_1.room.hasQuestTarget(questTarget)) {
+            _local_1.room.showQuestTarget(questTarget);
+            _questTargetShown = true;
+        } else if (_local_1.room.hasQuestTarget) {
+            com.clubpenguin.util.Log.debug((("\t\t\troom_mc.room.hasQuestTarget exists but room_mc.room.hasQuestTarget(" + questTarget) + "): ") + _local_1.room.hasQuestTarget(questTarget));
+        } else {
+            com.clubpenguin.util.Log.debug("\t\t\tThis room has not been updated with the new BaseRoom changes.  Quest Targets will not display");
+        }
+        _questTargetShown = false;
+    }
+    function updateQuestIconVisibility(data) {
+        if (((shopClothingCatalogueIconVisibility != data.shopClothingCatalogueIconVisibility) || (petPuffleAdoptionIconVisibility != data.petPuffleAdoptionIconVisibility)) || (iglooEditIglooIconVisibility != data.iglooEditIglooIconVisibility)) {
+            shopClothingCatalogueIconVisibility = data.shopClothingCatalogueIconVisibility;
+            petPuffleAdoptionIconVisibility = data.petPuffleAdoptionIconVisibility;
+            iglooEditIglooIconVisibility = data.iglooEditIglooIconVisibility;
+            if (!shopClothingCatalogueIconVisibility) {
+                shopClothingCatalogueIconHide = true;
+            }
+            if (!petPuffleAdoptionIconVisibility) {
+                petPuffleAdoptionIconHide = true;
+            }
+            if (!iglooEditIglooIconVisibility) {
+                iglooEditIglooIconHide = true;
+            }
+            questIconVisibilityChanged.dispatch();
+        }
+    }
+    function getRoomMovieClip() {
+        return(my_room_movieclips.room_mc);
+    }
+    function getRoomWaypointsClip() {
+        return(getRoomMovieClip()._parent.waypointsClip);
+    }
+    function getPuffleSafeZoneClip() {
+        if (getRoomMovieClip()._parent.pet_area) {
+            return(getRoomMovieClip()._parent.pet_area);
+        } else {
+            return(getRoomMovieClip().pet_area);
+        }
+    }
+    function setRoomInterfaceMovieClip(mc) {
+        my_room_movieclips.interface_mc = mc;
+    }
+    function getRoomInterfaceMovieClip() {
+        return(my_room_movieclips.interface_mc);
+    }
+    function setRoomTriggersMovieClip(mc) {
+        my_room_movieclips.triggers_mc = mc;
+    }
+    function getRoomTriggersMovieClip() {
+        return(my_room_movieclips.triggers_mc);
+    }
+    function setRoomBlockMovieClip(mc) {
+        my_room_movieclips.block_mc = mc;
+    }
+    function getRoomBlockMovieClip() {
+        return(my_room_movieclips.block_mc);
+    }
+    function setRoomBallMovieClip(mc) {
+        my_room_movieclips.ball_mc = mc;
+        is_ball_moving = false;
+    }
+    function getRoomBallMovieClip() {
+        return(my_room_movieclips.ball_mc);
+    }
+    function setRoomReady(is_ready) {
+        is_room_ready = is_ready;
+    }
+    function isRoomReady() {
+        return(is_room_ready);
+    }
+    function isInAnIgloo() {
+        return(playerHostedRoomType == com.clubpenguin.world.rooms.common.RoomConstants.PLAYER_HOSTED_ROOM_IGLOO);
+    }
+    function isRoomMyBackyard() {
+        return(playerHostedRoomType == com.clubpenguin.world.rooms.common.RoomConstants.PLAYER_HOSTED_ROOM_BACKYARD);
+    }
+    function LEGACY_showWindow(name, ob, room_id) {
+        if (name == "Found Item") {
+            INTERFACE.buyInventory(ob.ItemId);
+        } else if (room_id != undefined) {
+            var _local_2 = SHELL.getRoomNameById(room_id);
+            sendGameOver(ob.score, _local_2);
+        } else {
+            sendGameOver(ob.score);
+        }
+    }
+    function LEGACY_checkPlayerItem(item_id) {
+        return(SHELL.isItemInMyInventory(item_id));
+    }
+    function LEGACY_joinRoom() {
+        SHELL.sendJoinLastRoom();
+    }
+    function loadAs3Game(game_ob) {
+        var _local_2 = game_ob.path;
+        var _local_3 = game_ob.name;
+        var _local_5 = SHELL.MUSIC.isMusicMuted();
+        removeRoom();
+        removeGame();
+        setGameOverRoom(undefined);
+        SHELL.showLoading();
+        var _local_9 = getAS3gameStartParams();
+        trackGameStarted(game_ob["key"]);
+        SHELL.sendOpenAS3Module("game_launcher", {gamePath:_local_2, gameStartParams:_local_9, isMusicMuted:_local_5, myStampsByIds:SHELL.getStampManager().myStampsByIds, loadGameStartTime:SHELL.loadGameStartTime, gameName:_local_3, roomID:game_ob.room_id}, {modalBackgroundEnabled:false, hideLoadingDialog:true, blockPuffleNotifications:true});
+    }
+    function loadGame(game_ob) {
+        var _local_7 = (((_global.getCacheVersion() == undefined) || (_global.getCacheVersion() == "")) ? "" : ("?cacheVersion=" + _global.getCacheVersion()));
+        var _local_6 = game_ob.path + _local_7;
+        var _local_9 = game_ob.name;
+        removeRoom();
+        removeGame();
+        setGameOverRoom(undefined);
+        this.createEmptyMovieClip("game_mc", 100);
+        game_mc.createEmptyMovieClip("load_mc", 1);
+        game_mc._lockroot = true;
+        game_mc.myCrumbs = new Object();
+        game_mc.myCrumbs.colors = SHELL.getPlayerColoursObject();
+        var _local_4 = SHELL.getPlayerObjectById(SHELL.getMyPlayerId());
+        game_mc.myPlayer = new Object();
+        game_mc.myPlayer.Colour = _local_4.colour_id;
+        if (com.clubpenguin.world.rooms.common.triggers.PlayerAction.isPlayer(_local_4, com.clubpenguin.world.rooms.common.triggers.PlayerAction.WALKING_PUFFLE) && (!_local_4.attachedPuffle.isWildPuffle())) {
+            var _local_3;
+            switch (_local_4.attachedPuffle["color"]) {
+                case "blue" : 
+                    _local_3 = 750;
+                    break;
+                case "pink" : 
+                    _local_3 = 751;
+                    break;
+                case "black" : 
+                    _local_3 = 752;
+                    break;
+                case "green" : 
+                    _local_3 = 753;
+                    break;
+                case "purple" : 
+                    _local_3 = 754;
+                    break;
+                case "red" : 
+                    _local_3 = 755;
+                    break;
+                case "yellow" : 
+                    _local_3 = 756;
+                    break;
+                case "white" : 
+                    _local_3 = 757;
+                    break;
+                case "orange" : 
+                    _local_3 = 758;
+                    break;
+                case "brown" : 
+                    _local_3 = 759;
+                    break;
+                default : 
+                    _local_3 = _local_4.hand;
+                    break;
+            }
+            game_mc.myPlayer.Hand = _local_3;
+        }
+        game_mc.myMediaPath = SHELL.getGamesPath().split("/").slice(0, -2).join("/") + "/";
+        game_mc.checkPlayerItem = LEGACY_checkPlayerItem;
+        game_mc.showWindow = LEGACY_showWindow;
+        game_mc.joinRoom = LEGACY_joinRoom;
+        var loader = new MovieClipLoader();
+        var gameURL = com.clubpenguin.util.URLUtils.getCacheResetURL(_local_6);
+        loader.loadClip(gameURL, game_mc.load_mc, "game.as loadGame()");
+        trackGameStarted(game_ob["key"]);
+        SHELL.sendAS3StopNotificationServices();
+        var listener = new Object();
+        listener.onLoadError = function (target_mc, errorCode, httpStatus) {
+            _trackerAS2.sendToAS3LogError("Movieclip load error", "Loading game: " + gameURL, (("httpStatus:" + httpStatus) + " errorCode:") + errorCode);
+        };
+        listener.onLoadProgress = function (target_mc, bytes_loaded, bytes_total) {
+            var _local_1 = Math.floor((bytes_loaded / bytes_total) * 100);
+            SHELL.loadingScreenLoadProgress(bytes_loaded, bytes_total);
+            WINDOW.progressbar_mc.gotoAndStop(_local_1);
+        };
+        listener.onLoadInit = function (target_mc) {
+            SHELL.logLoadGameTime(getTimer());
+            loader.removeListener(listener);
+            SHELL.hideLoading();
+            SHELL.startGameMusic();
+        };
+        SHELL.showLoading();
+        loader.addListener(listener);
+        __listener = listener;
+        if (AS3Manager.isUnderAS3()) {
+            clearInterval(__progressInterval);
+            __progressInterval = setInterval(trackProgress, PROGRESS_RATE, this.game_mc.load_mc);
+        }
+    }
+    function trackGameStarted(gameKey) {
+        currentGameKey = gameKey;
+        com.clubpenguin.util.TrackerAS2.getInstance().trackStepTimingEvent("game_session_" + gameKey, "start");
+    }
+    function trackGameEnded() {
+        if (currentGameKey != null) {
+            com.clubpenguin.util.TrackerAS2.getInstance().trackStepTimingEvent("game_session_" + currentGameKey, "end");
+        }
+    }
+    function trackProgress(mc) {
+        if ((mc.getBytesLoaded() == mc.getBytesTotal()) && (mc.getBytesTotal() > 4)) {
+            __listener.onLoadInit(mc);
+            clearInterval(__progressInterval);
+        }
+        __listener.onLoadProgress(mc, mc.getBytesLoaded(), mc.getBytesTotal());
+    }
+    function sendJoinGame(name, is_prompt, gameParams) {
+        var _local_4 = gameParams.gameStartParams.isAS3;
+        if (_local_4) {
+            var _local_5 = gameParams.gameStartParams;
+            setAS3gameStartParams(_local_5);
+        }
+        if (is_prompt) {
+            setActiveGame(name);
+            setActiveGameParams(gameParams);
+            var _local_3 = SHELL.getLocalizedString(name + "_prompt");
+            INTERFACE.closePrompt();
+            INTERFACE.showPrompt("game", _local_3, undefined, clickJoinGamePrompt);
+            SHELL.updateListeners(com.clubpenguin.shell.events.MembershipEvent.MEMBER_ONLY_ACTIVITY, new com.clubpenguin.shell.events.MembershipEvent(com.clubpenguin.shell.events.MembershipEvent.MEMBER_ONLY_ACTIVITY, name, com.clubpenguin.shell.events.MembershipEventAction.JOIN_GAME_ROOM));
+        } else {
+            SHELL.sendJoinGame(name);
+        }
+    }
+    function clickJoinGamePrompt() {
+        var _local_1 = getActiveGame();
+        sendJoinGame(_local_1, false);
+    }
+    function setShowEndGameAfterRoomJoin(showAfter) {
+        showEndGameAfterRoomJoin = showAfter;
+    }
+    function setShowEndGame(show) {
+        showEndGame = show;
+    }
+    function handleGameOver(ob) {
+        traceObject(ob);
+        var _local_2 = ob.is_table;
+        if (_local_2) {
+            ob.activeTable = getActiveTable();
+            game_over_object = ob;
+        } else {
+            if (showEndGame) {
+                INTERFACE.showEndGameScreen(ob, null, null, showEndGameAfterRoomJoin);
+            } else {
+                INTERFACE.closeGameAndJoinRoom();
+            }
+            showEndGameAfterRoomJoin = false;
+            showEndGame = true;
+            SHELL.sendAS3StartNotificationServices();
+        }
+    }
+    function showGameOver() {
+        return(undefined);
+    }
+    function removeGame() {
+        trackGameEnded();
+        currentGameKey = null;
+        SHELL.sendAS3StartNotificationServices();
+        game_mc.removeMovieClip();
+    }
+    function setActiveGame(name) {
+        active_game = name;
+    }
+    function getActiveGame() {
+        return(active_game);
+    }
+    function setActiveGameParams(gameParams) {
+        game_params = gameParams;
+    }
+    function getActiveGameParams() {
+        return(game_params);
+    }
+    function setGameOverRoom(name) {
+        game_over_room = name;
+    }
+    function getGameOverRoom() {
+        return(game_over_room);
+    }
+    function setAS3gameStartParams(gameStartParams) {
+        _as3GameStartParams = gameStartParams;
+    }
+    function getAS3gameStartParams() {
+        return(_as3GameStartParams);
+    }
+    function setupPlayer() {
+        var _local_1 = SHELL.getMyPlayerObject();
+        achievementManager.deleteAllEarnedAchievements();
+        setupDepthList();
+        addPlayer(_local_1, _local_1.x, _local_1.y);
+        startMouse();
+        SHELL.getStampManager().checkForEPFFieldOpsMedalStamps(null);
+    }
+    function setupDepthList() {
+        if (speechBubbleDepths == null) {
+            speechBubbleDepths = new Array(SPEECH_BUBBLE_DEPTH_ARRAY_SIZE);
+            var _local_1 = 0;
+            while (_local_1 < SPEECH_BUBBLE_DEPTH_ARRAY_SIZE) {
+                speechBubbleDepths[_local_1] = {playerID:SPEECH_BUBBLE_DEPTH_EMPTY_VALUE, depth:_local_1};
+                _local_1++;
+            }
+        } else {
+            var _local_1 = 0;
+            while (_local_1 < SPEECH_BUBBLE_DEPTH_ARRAY_SIZE) {
+                speechBubbleDepths[_local_1].playerID = SPEECH_BUBBLE_DEPTH_EMPTY_VALUE;
+                speechBubbleDepths[_local_1].depth = _local_1;
+                _local_1++;
+            }
+        }
+    }
+    function addPlayer(player_ob, targetX, targetY) {
+        if (!player_ob.is_in_room) {
+            return(undefined);
+        }
+        var _local_6 = getRoomMovieClip();
+        var _local_20 = getRoomBlockMovieClip();
+        var _local_4 = player_ob.player_id;
+        var _local_8 = player_ob.nickname;
+        com.clubpenguin.util.Log.debug("\n============= Adding Player ===============\n", com.clubpenguin.util.Log.ENGINE);
+        com.clubpenguin.util.Log.debug("Nickname: " + _local_8, com.clubpenguin.util.Log.ENGINE);
+        removePlayer(_local_4);
+        var _local_12 = addPlayerDepth(_local_4);
+        var _local_13 = "p" + String(_local_4);
+        var _local_2 = INTERFACE.nicknames_mc.attachMovie("nickname", _local_13, _local_12, {_x:targetX, _y:targetY, _visible:false});
+        _local_2.name_txt.text = _local_8;
+        com.clubpenguin.util.Log.debug("Adding player:", com.clubpenguin.util.Log.ENGINE);
+        com.clubpenguin.util.Log.debug("\t-local player: " + SHELL.isMyPlayer(_local_4), com.clubpenguin.util.Log.ENGINE);
+        if (SHELL.isMyPlayer(_local_4) || SHELL.isPlayerMascotById(_local_4)) {
+            var _local_15 = new flash.filters.DropShadowFilter(0, 0, 3355443, 100, 4, 4, 2000, 1);
+            var _local_10 = _local_2.name_txt.filters;
+            _local_10.push(_local_15);
+            _local_2.name_txt.filters = _local_10;
+            _local_2.name_txt.textColor = 15658734 /* 0xEEEEEE */;
+            com.clubpenguin.util.Log.debug((("-nickname != player_ob.username: " + _local_8) + " != ") + player_ob.username, com.clubpenguin.util.Log.ENGINE);
+            if (_local_8 != player_ob.username) {
+                com.clubpenguin.util.Log.debug("\t-nickname_mc.name_txt.text: " + _local_2.name_txt.text, com.clubpenguin.util.Log.ENGINE);
+                var _local_5 = "localPlayerName";
+                var _local_16 = 14;
+                _local_2.createTextField(_local_5, _local_2.getNextHighestDepth(), _local_2.name_txt._x, _local_2.name_txt._y + _local_16, _local_2.name_txt._width, _local_2.name_txt.height);
+                var _local_17 = _local_2.name_txt.getNewTextFormat();
+                _local_2[_local_5].text.setNewTextFormat(_local_17);
+                _local_2[_local_5].textColor = 14540253 /* 0xDDDDDD */;
+                _local_2[_local_5].filters = _local_10;
+                _local_2[_local_5].selectable = false;
+                _local_2[_local_5].wordWrap = false;
+                _local_2[_local_5].autoSize = "center";
+                var _local_18 = ("(" + player_ob.username) + ")";
+                _local_2[_local_5].text = _local_18;
+                com.clubpenguin.util.Log.debug("\t-nickname_mc[localPlayerNameInstanceName].text: " + _local_2[_local_5].text, com.clubpenguin.util.Log.ENGINE);
+            }
+        }
+        var _local_9 = ENGINE.avatarManager.transformationManager.createAvatar(_local_6, player_ob, _local_13, _local_12);
+        var _local_7 = null;
+        if (_local_6.invertedPenguins) {
+            _local_9._rotation = -180;
+            _local_2._y = _local_2._y - 45;
+        } else if (SHELL.isPlayerMascotById(_local_4) && (_local_6.customMascotSize != undefined)) {
+            _local_7 = _local_6.customMascotSize;
+        } else if (_local_6.isSmallPenguin) {
+            _local_7 = SMALL_PENGUIN_SIZE;
+        } else if (_local_6.customPenguinSize != undefined) {
+            _local_7 = _local_6.customPenguinSize;
+        }
+        if (_local_7 != null) {
+            _local_9._xscale = _local_7;
+            _local_9._yscale = _local_7;
+            if (_local_7 < 100) {
+                _local_2._y = _local_2._y - 25;
+            }
+        }
+        _local_9.onRelease = com.clubpenguin.util.Delegate.create(this, clickPlayer, _local_4, _local_8);
+        _local_2.cacheAsBitmap = true;
+        if (SHELL.isMyPlayer(_local_4)) {
+            SHELL.showLoading();
+        }
+        player_ob.isSpriteLoaded = false;
+        player_ob.setIsBitmapCacheable(false);
+        var _local_11 = SHELL.checkMascotTransformation(_local_4);
+        var _local_14;
+        if (_local_11 > -1) {
+            player_ob.avatarVO.avatar_id = _local_11;
+            _local_14 = ENGINE.avatarManager.transformationManager.localTransformPlayer(player_ob, _local_11, true);
+        } else {
+            _local_14 = ENGINE.avatarManager.transformationManager.transformPlayer(player_ob, null);
+        }
+        _local_14.addOnce(com.clubpenguin.util.Delegate.create(this, onPlayerLoadInit, targetX, targetY), this);
+    }
+    function loadSpecialActionForPlayer(actionFrame, playerObj) {
+        com.clubpenguin.util.Log.debug(((("loadSpecialActionForPlayer(" + actionFrame) + ",") + playerObj.player_id) + ")", com.clubpenguin.util.Log.ENGINE);
+        var _local_4 = getPlayerMovieClip(playerObj.player_id);
+        if ((actionFrame != SHELL.WAVE_FRAME) && (actionFrame != SHELL.DANCE_FRAME)) {
+            if (!_local_4[String(actionFrame)]) {
+                var _local_6 = ((SHELL.getGlobalContentPath() + "penguin/actions/") + actionFrame) + ".swf";
+                var _local_8 = String(actionFrame);
+                var _local_3 = _local_4.createEmptyMovieClip(_local_8, actionFrame);
+                _local_3.loaded = false;
+                com.clubpenguin.util.Log.debug("loadSpecialActionForPlayer():loading: " + _local_6, com.clubpenguin.util.Log.ENGINE);
+                com.clubpenguin.util.Log.debug("loadSpecialActionForPlayer():actionclip: " + [_local_4, _local_3], com.clubpenguin.util.Log.ENGINE);
+                var _local_7 = new com.clubpenguin.hybrid.HybridMovieClipLoader();
+                _local_7.addEventListener(com.clubpenguin.hybrid.HybridMovieClipLoader.EVENT_ON_LOAD_INIT, com.clubpenguin.util.Delegate.create(this, onPlayerActionLoadInit, _local_3, playerObj));
+                _local_7.loadClip(_local_6, _local_3, "player.as loadSpecialActionForPlayer()");
+            } else {
+                com.clubpenguin.util.Log.debug("\t-clip already loaded", com.clubpenguin.util.Log.ENGINE);
+            }
+        }
+        localPlayerSpecialActionIndicators(playerObj);
+    }
+    function localPlayerSpecialActionIndicators(playerObj) {
+        if (SHELL.isMyPlayer(playerObj.player_id)) {
+            com.clubpenguin.util.Log.debug("\t-Checking local player for special actions", com.clubpenguin.util.Log.ENGINE);
+            if ((playerObj.dance_frame != SHELL.DANCE_FRAME) || (playerObj.avatarVO.isSpriteTransformed)) {
+                com.clubpenguin.util.Log.debug((("\t-Special Dance - playerObj.dance_frame: " + playerObj.dance_frame) + ", SHELL.DANCE_FRAME: ") + SHELL.DANCE_FRAME, com.clubpenguin.util.Log.ENGINE);
+                INTERFACE.enableSpecialDance();
+            } else {
+                INTERFACE.disableSpecialDance();
+            }
+            if ((playerObj.wave_frame != SHELL.WAVE_FRAME) || (playerObj.avatarVO.isSpriteTransformed)) {
+                com.clubpenguin.util.Log.debug((("\t-Special Wave - playerObj.wave_frame: " + playerObj.wave_frame) + ", SHELL.WAVE_FRAME: ") + SHELL.WAVE_FRAME, com.clubpenguin.util.Log.ENGINE);
+                INTERFACE.enableSpecialWave();
+            } else {
+                INTERFACE.disableSpecialWave();
+            }
+        }
+    }
+    function onPlayerActionLoadInit(event, actionClip, playerObj) {
+        actionClip._visible = false;
+        actionClip.loaded = true;
+        actionClip.stop();
+        actionClip._x = -2000;
+        var _local_2 = event.target;
+        _local_2.gotoAndStop(2);
+        _local_2.onRelease = com.clubpenguin.util.Delegate.create(this, clickPlayer, playerObj.player_id, playerObj.nickname);
+        _local_2.gotoAndStop(1);
+        updatePlayer(playerObj);
+        com.clubpenguin.util.Log.debug("loaded action", com.clubpenguin.util.Log.ENGINE);
+    }
+    function isPlayerTransformedIntoPuffle(playerObject) {
+        return(false);
+        if (SHELL.isPlayerMascotById(playerObject.player_id)) {
+            return(false);
+        }
+        return(((playerObject.avatarVO.avatar_id == 1) && (playerObject.is_member)) && ((playerObject.hand >= 750) && (playerObject.hand <= 759)));
+    }
+    function checkHideIgnoredPenguin(player_id) {
+        var _local_5 = getPlayerMovieClip(player_id);
+        var _local_3 = getNicknameMovieClip(player_id);
+        var _local_2 = INTERFACE.getIgnoreList();
+        com.clubpenguin.util.Log.debug("Current User " + player_id, com.clubpenguin.util.Log.ENGINE);
+        var _local_1 = 0;
+        while (_local_1 < _local_2.length) {
+            com.clubpenguin.util.Log.debug("Checking " + _local_2[_local_1].player_id, com.clubpenguin.util.Log.ENGINE);
+            if (_local_2[_local_1].player_id == player_id) {
+                com.clubpenguin.util.Log.debug("MATCH, HIDE PENGUIN", com.clubpenguin.util.Log.ENGINE);
+                com.clubpenguin.util.Log.debug("Nickname name field is " + _local_3.name_txt, com.clubpenguin.util.Log.ENGINE);
+                _local_3._visible = false;
+                _local_5._visible = false;
+                return(undefined);
+            }
+            _local_1++;
+        }
+        com.clubpenguin.util.Log.debug("NO MATCH, SHOW PENGUIN", com.clubpenguin.util.Log.ENGINE);
+        com.clubpenguin.util.Log.debug("Nickname name field is " + _local_3.name_txt, com.clubpenguin.util.Log.ENGINE);
+        _local_3._visible = true;
+        _local_5._visible = true;
+    }
+    function hideIgnoredPenguin(player_id, isIgnored) {
+        com.clubpenguin.util.Log.debug((("HIDING  " + player_id) + " is ") + isIgnored, com.clubpenguin.util.Log.ENGINE);
+        var _local_1 = getPlayerMovieClip(player_id);
+        if (_local_1 != undefined) {
+            var _local_5 = getNicknameMovieClip(player_id);
+            _local_5._visible = !isIgnored;
+            _local_1._visible = !isIgnored;
+            var _local_3 = SHELL.getPlayerObjectById(player_id);
+            if (isIgnored) {
+                puffleAvatarController.detachPuffle(_local_3.attachedPuffle.id);
+            } else {
+                puffleAvatarController.attachPuffle(_local_3);
+            }
+        }
+    }
+    function onPlayerLoadStart(event) {
+        event.target._visible = false;
+    }
+    function onPlayerLoadProgress(event) {
+        var _local_1 = event.target;
+        SHELL.loadingScreenLoadProgress(_local_1.getBytesLoaded(), _local_1.getBytesTotal());
+    }
+    function onPlayerLoadError(target_mc) {
+        com.clubpenguin.util.Log.debug("onPlayerLoadError: " + target_mc, com.clubpenguin.util.Log.ENGINE);
+    }
+    function onPlayerLoadInit(player_ob, newAvatar, targetX, targetY) {
+        com.clubpenguin.util.Log.debug("onPlayerLoadInit " + player_ob.nickname, com.clubpenguin.util.Log.ENGINE);
+        var _local_3 = getPlayerMovieClip(player_ob.player_id);
+        initPenguinClip(_local_3, player_ob, player_ob.player_id, targetX, targetY);
+        penguinTransformComplete.dispatch(player_ob);
+        if (SHELL.isPlayerMascotById(player_ob.player_id) && (player_ob.player_id != SHELL.getMyPlayerId())) {
+            var _local_4 = SHELL.getMascotNicknameByID(player_ob.player_id);
+        }
+        player_ob.setIsBitmapCacheable(true);
+        if (((_local_3._visible && (_puffleShouldBeDisplayed)) && (player_ob.attachedPuffle != null)) && (player_ob.attachedPuffle != undefined)) {
+            puffleAvatarController.attachPuffle(player_ob);
+        }
+        if (areAllInitialPenguinsReady()) {
+            initialPlayersInRoom.length = 0;
+            var _local_2 = SHELL.AIRTOWER;
+            _local_2.send(_local_2.PLAY_EXT, (_local_2.NAVIGATION + "#") + _local_2.CLIENT_ROOM_LOADED, [], "str", SHELL.getCurrentServerRoomId());
+            SHELL.updateListeners(SHELL.ALL_PLAYERS_LOADED);
+        }
+    }
+    function areAllInitialPenguinsReady() {
+        if (initialPlayersInRoom.length == 0) {
+            return(false);
+        }
+        var _local_1 = 0;
+        for ( ; _local_1 < initialPlayersInRoom.length ; _local_1++) {
+            var _local_2 = initialPlayersInRoom[_local_1].player_id;
+            if (_local_2 == null) {
+                continue;
+            }
+            var _local_4 = SHELL.getPlayerObjectById(_local_2);
+            var _local_3 = getPlayerMovieClip(_local_2);
+            if ((_local_4 == null) || (_local_3 == null)) {
+                continue;
+                continue;
+            }
+            if (!_local_3.is_ready) {
+                return(false);
+            }
+        }
+        return(true);
+    }
+    function initPenguinClip(clip, player_ob, player_id) {
+        com.clubpenguin.util.Log.debug("JC: INit Penguin Clip", com.clubpenguin.util.Log.ENGINE);
+        var _local_3 = clip;
+        updatePlayer(player_ob);
+        checkTablesForPlayer(_local_3.player_i);
+        if (SHELL.isMyPlayer(player_id)) {
+            SHELL.sendAS3JoinRoom(SHELL.getRoomObject().room_id, SHELL.getPlayerList().length);
+        }
+        _local_3.is_ready = true;
+        if ((SHELL.isMyPlayer(player_id) && (SHELL.localPlayerIsJumping)) || (player_ob.isJumping)) {
+            SHELL.playJumpToPlayerOutAnimation(player_id);
+        }
+        if (SHELL.getIsRoomIgloo()) {
+            SHELL.puffleManager.checkOpenPuffleCare();
+        }
+        checkHideIgnoredPenguin(player_id);
+        if (player_ob.dance_frame != SHELL.DANCE_FRAME) {
+            loadSpecialActionForPlayer(player_ob.dance_frame, player_ob);
+        }
+        if (player_ob.wave_frame != SHELL.WAVE_FRAME) {
+            loadSpecialActionForPlayer(player_ob.wave_frame, player_ob);
+        }
+        if (SHELL.isMyPlayer(player_id)) {
+            initPlayerPenguin();
+        }
+    }
+    function initPlayerPenguin() {
+        if (avatarFirstLoad) {
+            avatarFirstLoad = false;
+        }
+        if (!SHELL.getIsRoomIgloo()) {
+            SHELL.logLoadRoomTime(getTimer());
+            if (SHELL.getRoomObject().room_id != 898) {
+                SHELL.hideLoading();
+            }
+        } else {
+            SHELL.logLoadRoomTime(getTimer());
+        }
+        com.clubpenguin.util.Log.debug("Sending to as3 with room ID: " + SHELL.getRoomObject().room_id, com.clubpenguin.util.Log.ENGINE);
+        SHELL.hideJumpLoading();
+        SHELL.sendRoomLoaded(SHELL.getRoomObject().room_id);
+        avatarManager.expirationManager.doDelayedTransformations();
+        SHELL.add_more_players = true;
+        addAllPlayers();
+    }
+    function movePlayerToSpawnLocation(player_ob, useTeleport) {
+        if (useTeleport == null) {
+            useTeleport = false;
+        }
+        var _local_1 = getRoomMovieClip();
+        var _local_6 = _local_1.start_x;
+        var _local_5 = _local_1.start_y;
+        if (_local_1.mapSpawnDiameter == undefined) {
+            _local_1.mapSpawnDiameter = RANDOM_RANGE_FOR_MAP_ENTRY;
+        }
+        var _local_2 = getRandomPlayerPos(player_ob, _local_6, _local_5, _local_1.mapSpawnDiameter);
+        if (useTeleport) {
+            teleportPlayer(player_ob.player_id, _local_2.x, _local_2.y);
+        } else {
+            updatePlayerPosition(player_ob.player_id, _local_2.x, _local_2.y);
+        }
+    }
+    function removePlayer(player_id) {
+        var _local_2 = SHELL.getPlayerObjectById(player_id);
+        var _local_3 = getPlayerMovieClip(player_id);
+        if (_local_3 == undefined) {
+            removePlayerFromRoom(player_id);
+            return(undefined);
+        }
+        if (_local_2.isJumping) {
+            SHELL.playJumpToPlayerInAnimation(player_id);
+        } else {
+            removePlayerFromRoom(player_id);
+        }
+    }
+    function onPlayerJumpInComplete(player_id) {
+        if (SHELL.getMyPlayerId() == player_id) {
+            return(undefined);
+        }
+        removePlayerFromRoom(player_id);
+    }
+    function removePlayerFromRoom(player_id) {
+        var _local_2 = getPlayerMovieClip(player_id);
+        var _local_3 = getNicknameMovieClip(player_id);
+        _local_2.removeMovieClip();
+        _local_3.removeMovieClip();
+        INTERFACE.removeBalloonByPlayerId(player_id);
+        removePlayerDepth(player_id);
+    }
+    function getRandomPlayerPos(player, x, y, range) {
+        var _local_6 = getRoomBlockMovieClip();
+        var _local_4 = 0;
+        while (_local_4 < MAX_RANDOMIZE_ATTEMPTS) {
+            var _local_3 = findRandomLocation(x, range);
+            var _local_2 = findRandomLocation(y, range);
+            var _local_5 = isPositionValid(_local_3, _local_2);
+            if (_local_5) {
+                return({x:_local_3, y:_local_2});
+            }
+            range = range - RANDOM_RANGE_ATTEMPT_REDUCTION;
+            if (range <= 0) {
+                range = 1;
+            }
+            _local_4++;
+        }
+        return({x:x, y:y});
+    }
+    function isPositionValid(testX, testY) {
+        var _local_3 = getTimer();
+        var _local_2 = getRoomBlockMovieClip();
+        var _local_1 = (isValidXPosition(testX) && (isValidYPosition(testY))) && (!_local_2.hitTest(testX, testY, true));
+        return(_local_1);
+        com.clubpenguin.util.Log.debug(("player.isPositionValid took " + (getTimer() - _local_3)) + "ms", com.clubpenguin.util.Log.ENGINE);
+    }
+    function hideAllPlayers() {
+        _puffleShouldBeDisplayed = false;
+        hidePlayerList(SHELL.getPlayerList());
+    }
+    function hidePlayerList(players) {
+        var _local_1 = 0;
+        while (_local_1 < players.length) {
+            getPlayerMovieClip(players[_local_1].player_id)._visible = false;
+            puffleAvatarController.detachPuffle(players[_local_1].attachedPuffle.id);
+            _local_1++;
+        }
+        INTERFACE.nicknames_mc._visible = false;
+        INTERFACE.balloons_mc._visible = false;
+    }
+	function hidePlayerListSpecial() {
+		var players = SHELL.getPlayerList();
+        var _local_1 = 0;
+        while (_local_1 < players.length) {
+			if(!SHELL.isPlayerMascotById(players[_local_1].player_id) && players[_local_1].player_id != SHELL.getMyPlayerId()) {
+            	getPlayerMovieClip(players[_local_1].player_id)._visible = false;
+            	puffleAvatarController.detachPuffle(players[_local_1].attachedPuffle.id);
+            	_local_1++;
+			};
+        }
+        INTERFACE.nicknames_mc._visible = false;
+        INTERFACE.balloons_mc._visible = false;
+    }
+    function hidePlayer(playerObj) {
+        hidePlayerList([playerObj]);
+    }
+    function showAllPlayers() {
+        _puffleShouldBeDisplayed = true;
+        var _local_1 = SHELL.getPlayerList();
+        for (var _local_2 in _local_1) {
+            getPlayerMovieClip(_local_1[_local_2].player_id)._visible = true;
+            puffleAvatarController.attachPuffle(_local_1[_local_2]);
+        }
+        INTERFACE.nicknames_mc._visible = true;
+        INTERFACE.balloons_mc._visible = true;
+    }
+    function hideAllPlayerNames() {
+        hidingAllPlayerNames = true;
+        INTERFACE.nicknames_mc._visible = false;
+    }
+    function showAllPlayerNames() {
+        hidingAllPlayerNames = false;
+        INTERFACE.nicknames_mc._visible = true;
+    }
+    function isHidingAllPlayerNames() {
+        return(hidingAllPlayerNames);
+    }
+	function hideAllPenguins() {
+        hidingAllPenguins = true;
+        hideAllPlayersSpecial();
+    }
+    function showAllPenguins() {
+        hidingAllPenguins = false;
+		trueHidingAllPenguins = false;
+        showAllPlayers();
+    }
+	function isHidingAllPenguins() {
+        return(hidingAllPenguins);
+    }
+	function trueHideAllPenguins() {
+        trueHidingAllPenguins = true;
+        hideAllPlayers();
+    }
+    function isTrueHidingAllPenguins() {
+        return(trueHidingAllPenguins);
+    }
+    function addAllPlayers() {
+        com.clubpenguin.util.Log.debug("\n\n ******** addAllPlayers() *********** \n\n", com.clubpenguin.util.Log.ENGINE);
+        clearInterval(playerLoadInterval);
+        if (SHELL.add_more_players) {
+            var _local_5 = SHELL.getPlayerList();
+            initialPlayersInRoom = _local_5.slice();
+            for (var _local_6 in _local_5) {
+                var _local_4 = _local_5[_local_6].player_id;
+                var _local_1 = SHELL.getPlayerObjectById(_local_4);
+                var _local_3 = _local_1.x;
+                var _local_2 = _local_1.y;
+                if (_local_4 != SHELL.getMyPlayerId()) {
+                    if (!checkIsValidPosition(_local_3, _local_2, _local_1)) {
+                        _local_2 = 0;
+                        _local_3 = _local_2;
+                        _local_1.x = (_local_1.y = _local_3);
+                    }
+                    addPlayer(_local_5[_local_6], _local_3, _local_2);
+                }
+            }
+        }
+        var _local_7 = SHELL.getGlobalIgloo();
+        if (_local_7.iglooContext.iglooModel.getIsInManagementMode()) {
+            hideAllPlayers();
+        }
+    }
+    function removeAllPlayers() {
+        var _local_2 = SHELL.getPlayerList();
+        for (var _local_3 in _local_2) {
+            var _local_1 = _local_2[_local_3].player_id;
+            if (_local_1 != SHELL.getMyPlayerId()) {
+                removePlayer(_local_1);
+            }
+        }
+    }
+    function updatePlayerFromId(player_id) {
+        var _local_1 = SHELL.getPlayerObjectById(player_id);
+        updatePlayer(_local_1);
+    }
+    function updatePlayer(player_ob) {
+        var _local_3 = player_ob.player_id;
+        var _local_1 = getPlayerMovieClip(_local_3);
+        if (((_local_1.frame > SHELL.DANCE_FRAME) && (_local_1.frame != SHELL.JUMP_IN_DANCE_FRAME)) && (_local_1.frame != SHELL.JUMP_OUT_DANCE_FRAME)) {
+            _local_1.frame = 1;
+        }
+        if (_local_1.colour_id != player_ob.colour_id) {
+            updateColour(_local_1.art_mc.body, player_ob.colour_id);
+            _local_1.colour_id = player_ob.colour_id;
+        }
+        if (!isPlayerTransformedIntoPuffle(player_ob)) {
+            updatePlayerItem(_local_1, player_ob, "book", BOOK_LAYER);
+            updatePlayerItem(_local_1, player_ob, "head", HEAD_LAYER);
+            updatePlayerItem(_local_1, player_ob, "face", FACE_LAYER);
+            updatePlayerItem(_local_1, player_ob, "neck", NECK_LAYER);
+            updatePlayerItem(_local_1, player_ob, "body", BODY_LAYER);
+            updatePlayerItem(_local_1, player_ob, "feet", FEET_LAYER);
+            var _local_4 = SHELL.getPlayerObjectById(_local_3).hand;
+            if (com.clubpenguin.world.rooms.common.skateboard.SkateboardConstants.isSkateboard(_local_4)) {
+                var _local_5 = getPlayerMovieClip(player_ob.player_id);
+                var _local_6 = _local_5.art_mc.getDepth();
+                updatePlayerItem(_local_1, player_ob, "hand", _local_6 - 1);
+            } else {
+                updatePlayerItem(_local_1, player_ob, "hand", HAND_LAYER);
+            }
+        }
+        updatePlayerFrame(_local_3, _local_1.frame);
+    }
+    function playerRingCheck(player_id, art_mc) {
+        var _local_3 = SHELL.getPlayerObjectById(player_id);
+        if (SHELL.isMyPlayer(player_id)) {
+            art_mc.ring._visible = true;
+            if (SHELL.playerModel.isPlayerStealthModerator()) {
+                setPenguinRingColor(art_mc, isBuddy, player_id);
+            }
+        } else {
+            var isBuddy = SHELL.isPlayerBuddyById(player_id);
+            setPenguinRingColor(art_mc, isBuddy, player_id);
+        }
+    }
+    function setPenguinRingColor(art_clip, isBuddy, player_id) {
+        if ((!isBuddy) && (!SHELL.playerModel.isPlayerStealthModeratorByID(player_id))) {
+            art_clip.ring._visible = false;
+        } else if (isBuddy) {
+            art_clip.ring._visible = true;
+            var _local_2 = new flash.geom.ColorTransform(0, 0, 0, 0, 0, 153, 0, 100);
+            var _local_3 = new flash.geom.Transform(art_clip.ring);
+            _local_3.colorTransform = _local_2;
+        } else {
+            art_clip.ring._visible = true;
+            var _local_2 = new flash.geom.ColorTransform(0, 0, 0, 0, 255, 255, 0, 100);
+            var _local_3 = new flash.geom.Transform(art_clip.ring);
+            _local_3.colorTransform = _local_2;
+        }
+    }
+    function updateColour(mc, colour_id) {
+        var _local_1 = new Color(mc);
+        _local_1.setRGB(SHELL.getPlayerHexFromId(colour_id));
+    }
+    function addPlayerDepth(playerID) {
+        var _local_3 = SPEECH_BUBBLE_DEPTH_EMPTY_VALUE;
+        if (playerID == SHELL.getMyPlayerId()) {
+            speechBubbleDepths[SPEECH_BUBBLE_DEPTH_LOCAL_INDEX].playerID = playerID;
+            _local_3 = speechBubbleDepths[SPEECH_BUBBLE_DEPTH_LOCAL_INDEX].depth;
+        } else {
+            var _local_5 = findPlayerDepth(playerID);
+            if (_local_5 == SPEECH_BUBBLE_DEPTH_EMPTY_VALUE) {
+                var _local_1 = 0;
+                while (_local_1 < SPEECH_BUBBLE_DEPTH_ARRAY_SIZE) {
+                    var _local_2 = speechBubbleDepths[_local_1].playerID;
+                    if (_local_2 == SPEECH_BUBBLE_DEPTH_EMPTY_VALUE) {
+                        speechBubbleDepths[_local_1].playerID = playerID;
+                        _local_3 = speechBubbleDepths[_local_1].depth;
+                        break;
+                    }
+                    _local_1++;
+                }
+            } else {
+                _local_3 = _local_5;
+            }
+        }
+        return(_local_3);
+    }
+    function findPlayerDepth(playerID) {
+        var _local_3 = SPEECH_BUBBLE_DEPTH_EMPTY_VALUE;
+        if (playerID == SHELL.getMyPlayerId()) {
+            _local_3 = speechBubbleDepths[SPEECH_BUBBLE_DEPTH_LOCAL_INDEX].playerID;
+        } else {
+            var _local_1 = 0;
+            while (_local_1 < SPEECH_BUBBLE_DEPTH_ARRAY_SIZE) {
+                var _local_2 = speechBubbleDepths[_local_1].playerID;
+                if (_local_2 == playerID) {
+                    _local_3 = speechBubbleDepths[_local_1].depth;
+                    break;
+                } else if (_local_2 == SPEECH_BUBBLE_DEPTH_EMPTY_VALUE) {
+                    break;
+                }
+                _local_1++;
+            }
+        }
+        return(_local_3);
+    }
+    function removePlayerDepth(playerID) {
+        var _local_1 = 0;
+        while (_local_1 < SPEECH_BUBBLE_DEPTH_ARRAY_SIZE) {
+            var _local_2 = speechBubbleDepths[_local_1].playerID;
+            if (_local_2 == playerID) {
+                var _local_4 = speechBubbleDepths.splice(_local_1, 1);
+                var _local_3 = _local_4[0];
+                _local_3.playerID = SPEECH_BUBBLE_DEPTH_EMPTY_VALUE;
+                speechBubbleDepths.splice(SPEECH_BUBBLE_DEPTH_LOCAL_INDEX - 1, 0, _local_3);
+                break;
+            } else if (_local_2 == SPEECH_BUBBLE_DEPTH_EMPTY_VALUE) {
+                break;
+            }
+            _local_1++;
+        }
+    }
+    function updatePlayerItem(mc, ob, name, depth) {
+        var _local_4 = ob.player_id;
+        var _local_6 = SHELL.isItemAPuffle(ob[name]);
+        var _local_5 = ob.avatarVO;
+        if (ob[name] != mc[name]) {
+            var _local_7 = getRoomMovieClip();
+            if (_local_5.attachItems) {
+                removeMovieClip(mc[name + "_mc"]);
+                mc.createEmptyMovieClip(name + "_mc", depth);
+                loadPlayerItem(mc[name + "_mc"], ob[name], _local_4);
+                mc[name] = ob[name];
+            }
+        }
+    }
+    function loadPlayerItem(mc, item_id, player_id) {
+        if (item_id > 0) {
+            var _local_4 = (SHELL.getPath("clothing_sprites") + item_id) + ".swf";
+            mc._visible = false;
+            var _local_2 = new com.clubpenguin.hybrid.HybridMovieClipLoader();
+            _local_2.addEventListener(com.clubpenguin.hybrid.HybridMovieClipLoader.EVENT_ON_LOAD_COMPLETE, com.clubpenguin.util.Delegate.create(this, onPlayerItemLoadComplete));
+            _local_2.addEventListener(com.clubpenguin.hybrid.HybridMovieClipLoader.EVENT_ON_LOAD_INIT, com.clubpenguin.util.Delegate.create(this, onPlayerItemLoadInit));
+            _local_2.loadClip(_local_4, mc, "player.as loadPlayerItem()");
+            var _local_3 = SHELL.getPlayerObjectById(player_id);
+            _local_3.setIsBitmapCacheable(false);
+        }
+    }
+    function isHandItem(mc) {
+        var _local_1 = String(mc._name);
+        var _local_3 = "hand_mc";
+        var _local_2 = ((_local_1.indexOf(_local_3) != -1) ? true : false);
+        return(_local_2);
+    }
+    function onPlayerItemLoadComplete(event) {
+        event.target._visible = false;
+    }
+    function onPlayerItemLoadInit(event, arr) {
+        var _local_2 = event.target;
+        _local_2._visible = true;
+        var _local_1 = _local_2._parent.player_id;
+        updatePlayerFrame(_local_1);
+        var _local_3 = SHELL.getPlayerObjectById(_local_1);
+        if (!avatarArtMovieClipsStillLoading(_local_1)) {
+            _local_3.setIsBitmapCacheable(true);
+        }
+    }
+    function loadPuffleHat(puffleCanvas, puffleHatVO) {
+        var _local_1 = new com.clubpenguin.engine.PuffleHatManager(SHELL, puffleCanvas, puffleHatVO, com.clubpenguin.engine.PuffleHatLocEnum.WORLD_HAT_LOC);
+    }
+    function headTest(target, f) {
+        target.gotoAndStop(f);
+        delete target.onEnterFrame;
+    }
+    function loadPlayerBook(player_id, book_id) {
+        var _local_1 = getPlayerMovieClip(player_id);
+        if (book_id == undefined) {
+            book_id = 1;
+        }
+        if (_local_1.is_ready && (!_local_1.is_moving)) {
+            var _local_3 = SHELL.getPath("clothing_book" + book_id);
+            _local_1.book_mc.createEmptyMovieClip("load_mc", 1);
+            var _local_4 = com.clubpenguin.util.URLUtils.getCacheResetURL(_local_3) + SHELL._localLoginServerData.getContentCacheVersion();
+            _local_1.book_mc.load_mc.loadMovie(_local_4);
+            _local_1.is_reading = true;
+            updatePlayerFrame(player_id, 1);
+        }
+    }
+    function removePlayerBook(player_id) {
+        var _local_1 = getPlayerMovieClip(player_id);
+        removeMovieClip(_local_1.book_mc.load_mc);
+        _local_1.is_reading = false;
+    }
+    function updatePlayerPosition(player_id, x, y, ignoreBlockLayer) {
+        var _local_1 = getPlayerMovieClip(player_id);
+        var _local_7 = getBalloonMovieClip(player_id);
+        var _local_6 = getNicknameMovieClip(player_id);
+        var _local_4 = SHELL.getPlayerObjectById(player_id);
+        if ((ignoreBlockLayer == undefined) || (!ignoreBlockLayer)) {
+            x = getValidXPosition(x);
+            y = getValidYPosition(y);
+        }
+        _local_1._x = x;
+        _local_1._y = y;
+        _local_7._x = x + _local_4.avatarVO.speechBubbleOffsetX;
+        _local_7._y = y + _local_4.avatarVO.speechBubbleOffsetY;
+        if (_local_1.scaleTopOffsetY != undefined) {
+            _local_7._y = _local_7._y + _local_1.scaleTopOffsetY;
+        }
+        _local_6._x = x;
+        _local_6._y = y + _local_4.avatarVO.nicknameOffsetY;
+        if (_local_1.scaleBottomOffsetY != undefined) {
+            _local_6._y = _local_6._y + _local_1.scaleBottomOffsetY;
+        }
+        updatePlayerDepth(_local_1, _local_1.depth_id);
+        if (SHELL.isMyPlayer(player_id)) {
+            player_x = x;
+            player_y = y;
+            var _local_8 = SHELL.getMyPlayerObject();
+            _local_8.x = x;
+            _local_8.y = y;
+        }
+        _local_4.x = x;
+        _local_4.y = y;
+    }
+    function updatePlayerFrame(player_id, frame, is_action) {
+        var mc = getPlayerMovieClip(player_id);
+        var _local_3 = SHELL.getPlayerObjectById(player_id);
+        if (mc.blackHoleAnimPlaying == true) {
+            return(undefined);
+        }
+        if (frame == undefined) {
+            frame = mc.frame;
+        }
+        if (_local_3.isSpriteTransformed) {
+            com.clubpenguin.util.Log.debug((((("updatePlayerFrame frame: " + frame) + " playerObject.frame_hack: ") + _local_3.frame_hack) + " ") + getTimer(), com.clubpenguin.util.Log.ENGINE);
+            mc.art_mc.gotoAndStop(1);
+            mc.art_mc.gotoAndStop(frame);
+            mc.secretFrame = frame;
+            _engine.playerRingCheck(player_id, mc.shadow_ring_mc);
+            if (is_action) {
+                SHELL.setFrameHacked(player_id, false);
+                mc.frame = 1;
+            } else {
+                mc.frame = frame;
+            }
+            return(undefined);
+        }
+        var _local_2;
+        if (frame == SHELL.WAVE_FRAME) {
+            com.clubpenguin.util.Log.debug("Player waving", com.clubpenguin.util.Log.ENGINE);
+            _local_2 = _local_3.wave_frame;
+            if (_local_3.avatarVO.isSpriteTransformed) {
+                _local_2 = SHELL.WAVE_FRAME;
+            }
+            if ((_local_3.wave_frame != SHELL.WAVE_FRAME) || (_local_3.avatarVO.isSpriteTransformed)) {
+                com.clubpenguin.util.Log.debug("\t-special waving or transformed sprite", com.clubpenguin.util.Log.ENGINE);
+                if (SHELL.isMyPlayer(_local_3.player_id)) {
+                    if (SHELL.playerModel.updateActionStatusWave()) {
+                        com.clubpenguin.util.Log.debug("\t\t-special waving for the first time", com.clubpenguin.util.Log.ENGINE);
+                        INTERFACE.firstTimeActionPerformed();
+                        var _local_6 = SHELL.AIRTOWER;
+                        _local_6.send(_local_6.PLAY_EXT, (_local_6.NEW_USER_EXPERIENCE_HANDLER + "#") + _local_6.SEND_ACTION_WAVE, [], "str", SHELL.getCurrentServerRoomId());
+                    }
+                }
+            }
+            SHELL.updateListeners(SHELL.PLAYER_WAVE_START, _local_3);
+        } else if (frame == SHELL.DANCE_FRAME) {
+            com.clubpenguin.util.Log.debug("Player dancing", com.clubpenguin.util.Log.ENGINE);
+            _local_2 = _local_3.dance_frame;
+            if (_local_3.avatarVO.isSpriteTransformed) {
+                _local_2 = SHELL.DANCE_FRAME;
+            }
+            if (mc[_local_3.dance_frame].loaded || (_local_3.avatarVO.isSpriteTransformed)) {
+                com.clubpenguin.util.Log.debug("updating the dance frame to: " + _local_3.dance_frame, com.clubpenguin.util.Log.ENGINE);
+                if (SHELL.isMyPlayer(_local_3.player_id)) {
+                    if (SHELL.playerModel.updateActionStatusDance()) {
+                        com.clubpenguin.util.Log.debug("\t-special dancing for the first time", com.clubpenguin.util.Log.ENGINE);
+                        INTERFACE.firstTimeActionPerformed();
+                        var _local_6 = SHELL.AIRTOWER;
+                        _local_6.send(_local_6.PLAY_EXT, (_local_6.NEW_USER_EXPERIENCE_HANDLER + "#") + _local_6.SEND_ACTION_DANCE, [], "str", SHELL.getCurrentServerRoomId());
+                    }
+                }
+                com.clubpenguin.util.Log.debug("Make the shadow invisible ", com.clubpenguin.util.Log.ENGINE);
+                mc.shadow_ring_mc.shadow_mc._visible = false;
+            } else {
+                _local_2 = SHELL.DANCE_FRAME;
+            }
+            SHELL.updateListeners(SHELL.PLAYER_DANCE_START, _local_3);
+        } else if ((frame >= MIN_SITTING_FRAME) && (frame <= MAX_SITTING_FRAME)) {
+            SHELL.updateListeners(SHELL.PLAYER_SIT_START, _local_3);
+            _local_2 = frame;
+        } else {
+            _local_2 = frame;
+        }
+        var _local_7 = String(mc.secretFrame);
+        mc[_local_7]._visible = false;
+        mc[_local_7]._x = -2000;
+        mc[_local_7].stop();
+        if (mc[String(_local_2)]) {
+            mc.art_mc._visible = false;
+            mc.art_mc.stop();
+            mc.art_mc._x = -2000;
+            mc[String(_local_2)]._visible = !_local_3.avatarVO.attributes.isInvisible;
+            mc[String(_local_2)]._x = 0;
+            mc[String(_local_2)].gotoAndStop(1);
+            mc[String(_local_2)].gotoAndStop(2);
+            mc.secretFrame = _local_2;
+            playerRingCheck(player_id, mc[String(_local_2)]);
+            updateColour(mc[String(_local_2)].body, mc.colour_id);
+        } else {
+            mc.art_mc._visible = !_local_3.avatarVO.attributes.isInvisible;
+            mc.shadow_ring_mc.shadow_mc._visible = !_local_3.avatarVO.attributes.isFloating;
+            playerRingCheck(player_id, mc.shadow_ring_mc);
+            mc.art_mc.gotoAndStop(1);
+            var _local_8 = SHELL.getPlayerObjectById(player_id).hand;
+            if (com.clubpenguin.world.rooms.common.skateboard.SkateboardConstants.isSkateboard(_local_8)) {
+                mc.art_mc.gotoAndStop(com.clubpenguin.world.rooms.common.skateboard.SkateboardConstants.getSkateboardFrame(_local_2));
+            } else {
+                mc.art_mc.gotoAndStop(_local_2);
+            }
+            mc.art_mc._x = 0;
+            updateColour(mc.art_mc.body, mc.colour_id);
+        }
+        if ((is_action && (_local_2 >= SHELL.CJ_BOW_RIGHT_FRAME)) && (_local_2 <= SHELL.CJ_BOW_RIGHT_FRAME_ANGLE_UP)) {
+            mc.blackHoleAnimPlaying = true;
+            toggleClothingVisibility(false, mc);
+            mc.art_mc.ring._visible = false;
+            getNicknameMovieClip(player_id)._visible = false;
+            mc.art_mc.blackHole.onEnterFrame = com.clubpenguin.util.Delegate.create(this, function () {
+                mc.art_mc.blackHole.onEnterFrame = null;
+                var _local_3 = com.clubpenguin.util.Delegate.create(this, onBlackHoleAnimationComplete, player_id);
+                mc.art_mc.blackHole.setAnimationCompleteCallback(_local_3, player_id);
+                var _local_2 = SHELL.getPlayerHexFromId(mc.penguin_colour_id);
+                var _local_4 = SHELL.getBeltColourHexFromRank(mc.belt_colour_id);
+                mc.art_mc.blackHole.setBodyColour(_local_2, _local_4);
+            });
+        } else {
+            var _local_8 = SHELL.getPlayerObjectById(player_id).hand;
+            if (com.clubpenguin.world.rooms.common.skateboard.SkateboardConstants.isSkateboard(_local_8)) {
+                var _local_5 = com.clubpenguin.world.rooms.common.skateboard.SkateboardConstants.getSkateboardFrame(_local_2);
+                mc.art_mc.gotoAndStop(_local_5);
+                updatePlayerItemFrame(mc.head_mc, _local_5);
+                updatePlayerItemFrame(mc.face_mc, _local_5);
+                updatePlayerItemFrame(mc.neck_mc, _local_5);
+                updatePlayerItemFrame(mc.body_mc, _local_5);
+                updatePlayerItemFrame(mc.feet_mc, _local_5);
+                updatePlayerItemFrame(mc.head_mc, _local_5);
+                updatePlayerItemFrame(mc.hand_mc, _local_2);
+            } else {
+                mc.art_mc.gotoAndStop(_local_2);
+                updatePlayerItemFrame(mc.head_mc, _local_2);
+                updatePlayerItemFrame(mc.face_mc, _local_2);
+                updatePlayerItemFrame(mc.neck_mc, _local_2);
+                updatePlayerItemFrame(mc.body_mc, _local_2);
+                updatePlayerItemFrame(mc.hand_mc, _local_2);
+                updatePlayerItemFrame(mc.feet_mc, _local_2);
+                updatePlayerItemFrame(mc.head_mc, _local_2);
+            }
+        }
+        if (is_action) {
+            SHELL.setFrameHacked(player_id, false);
+            mc.frame = 1;
+        } else {
+            mc.frame = frame;
+        }
+        _local_3.frame = mc.frame;
+        if (SHELL.isMyPlayer(player_id)) {
+            SHELL.setMyPlayerFrame(mc.frame);
+        }
+    }
+    function avatarArtMovieClipsStillLoading(playerID) {
+        var _local_3 = getPlayerMovieClip(playerID);
+        var _local_2 = ["art_mc", "book", "head", "face", "hand", "neck", "body", "feet"];
+        var _local_4 = false;
+        var _local_1 = 0;
+        while (_local_1 < _local_2.length) {
+            if (_local_3[_local_2[_local_1]]) {
+                if (_local_3[_local_2[_local_1]].getBytesLoaded() < _local_3[_local_2[_local_1]].getBytesTotal()) {
+                    _local_4 = true;
+                    break;
+                }
+            }
+            _local_1++;
+        }
+        return(_local_4);
+    }
+    function onBlackHoleAnimationComplete(playerId) {
+        AIRTOWER.addListener(AIRTOWER.REMOVE_PLAYER, SHELL.handleRemovePlayerFromRoom);
+        SHELL.handleRemovePlayerFromRoom([playerId, playerId]);
+        var _local_2 = getPlayerMovieClip(playerId);
+        _local_2.blackHoleAnimPlaying = false;
+        com.clubpenguin.util.Log.debug(("################## BLACK HOLE ANIMATION COMPLETE:    " + playerId) + " ###################", com.clubpenguin.util.Log.ENGINE);
+        com.clubpenguin.util.Log.debug(("################## SHELL.handleRemovePlayerFromRoom: " + SHELL.handleRemovePlayerFromRoom) + " ###################", com.clubpenguin.util.Log.ENGINE);
+    }
+    function onJumpToPlayerInAnimationComplete(mc, player_id) {
+        SHELL.removePlayerFromJumpMap(player_id);
+        SHELL.updateListeners(SHELL.JUMP_TO_PLAYER_ANIMATION_COMPLETE, player_id);
+    }
+    function onJumpToPlayerOutAnimationComplete(mc, player_id) {
+        mc.frame = 1;
+        updatePlayerFrame(player_id, 1);
+        toggleClothingVisibility(true, mc);
+        mc.art_mc.ring._visible = true;
+        getNicknameMovieClip(player_id)._visible = true;
+        if (player_id == SHELL.getMyPlayerId()) {
+            SHELL.localPlayerIsJumping = false;
+        }
+        SHELL.removePlayerFromJumpMap(player_id);
+    }
+    function toggleClothingVisibility(isVisible, mc) {
+        com.clubpenguin.util.Log.debug("toggleClothingVisibility:", com.clubpenguin.util.Log.ENGINE);
+        for (var _local_2 in mc) {
+        }
+        mc.face_mc._visible = isVisible;
+        mc.neck_mc._visible = isVisible;
+        mc.body_mc._visible = isVisible;
+        mc.hand_mc._visible = isVisible;
+        mc.feet_mc._visible = isVisible;
+        mc.head_mc._visible = isVisible;
+    }
+    function syncPuffle() {
+        var _local_1 = _puffleCanvas._currentFrame;
+        _hatForeground.gotoAndStop(_local_1);
+        _hatBackground.gotoAndStop(_local_1);
+    }
+    function clickPlayer(player_id, nickname) {
+        com.clubpenguin.util.Log.debug(((("ENGINE:clickPlayer:" + nickname) + " (") + player_id) + ")", com.clubpenguin.util.Log.ENGINE);
+        if (SHELL._localLoginServerData.autoLogin) {
+            SHELL.sendAS2Clicked(PLAYER_CARD_CLICKED);
+        }
+        if ((!SHELL.isMyPlayer(player_id)) && (SHELL.playerModel.isPlayerModerator())) {
+            if (Key.isDown(16) && (Key.isDown(90))) {
+                SHELL.mutePlayerById(player_id);
+            }
+            if (INTERFACE.clipboardBuffer == "") {
+                INTERFACE.addToClipboardBuffer(String(player_id));
+            } else {
+                INTERFACE.addToClipboardBuffer("," + String(player_id));
+            }
+        }
+        var _local_2 = SHELL.isPlayerMascotById(player_id);
+        if (_local_2) {
+            var _local_3 = SHELL.getMascotNicknameByID(player_id);
+            SHELL._trackerAS2.sendToAS3LogGameAction(_local_3, "mascot_click");
+        }
+        if (!SHELL.isPlayerJumping(player_id)) {
+            INTERFACE.showPlayerWidget(player_id, nickname);
+        }
+    }
+    function setPlayerAction(action) {
+        player_action = action;
+    }
+    function getPlayerAction() {
+        return(player_action);
+    }
+    function validateUpdateFrame(player_id, frame) {
+        var _local_1 = getPlayerMovieClip(player_id);
+        if (_local_1.is_reading || (_local_1.is_table)) {
+            return(false);
+        } else if (!_local_1.is_moving) {
+            if ((frame > 8) && (frame < 17)) {
+                return(false);
+            } else if (frame < 27) {
+                return(true);
+            } else {
+                return(false);
+            }
+        } else {
+            return(false);
+        }
+    }
+    function updatePlayerItemFrame(mc, frame) {
+        if (clothingAnimsLooped[mc._name] == true) {
+            return(undefined);
+        }
+        mc.gotoAndStop(1);
+        mc.gotoAndStop(frame);
+    }
+    function getValidXPosition(x) {
+        if (x < MAP_WIDTH_MIN) {
+            return(MAP_WIDTH_MIN);
+        } else if (x > MAP_WIDTH_MAX) {
+            return(MAP_WIDTH_MAX);
+        } else {
+            return(Math.round(x));
+        }
+    }
+    function getValidYPosition(y) {
+        if (y < MAP_HEIGHT_MIN) {
+            return(MAP_HEIGHT_MIN);
+        } else if (y > MAP_HEIGHT_MAX) {
+            return(MAP_HEIGHT_MAX);
+        } else {
+            return(Math.round(y));
+        }
+    }
+    function isValidXPosition(x) {
+        if (x < MAP_WIDTH_MIN) {
+            return(false);
+        } else if (x > MAP_WIDTH_MAX) {
+            return(false);
+        } else {
+            return(true);
+        }
+    }
+    function isValidYPosition(y) {
+        if (y < MAP_HEIGHT_MIN) {
+            return(false);
+        } else if (y > MAP_HEIGHT_MAX) {
+            return(false);
+        } else {
+            return(true);
+        }
+    }
+    function getPlayerMovieClip(player_id) {
+        var _local_1 = getRoomMovieClip();
+        return(_local_1["p" + player_id]);
+    }
+    function getBalloonMovieClip(player_id) {
+        return(INTERFACE.balloons_mc["p" + player_id]);
+    }
+    function getNicknameMovieClip(player_id) {
+        return(INTERFACE.nicknames_mc["p" + player_id]);
+    }
+    function findRandomLocation(n, d) {
+        return(Math.floor(n + (random(d) - (d / 2))));
+    }
+    function setClothingAnimLooped(bodyPart, clothingLooped) {
+        clothingAnimsLooped[bodyPart] = clothingLooped;
+        com.clubpenguin.util.Log.debug("player clothingAnimsLooped changed" + clothingAnimsLooped[bodyPart], com.clubpenguin.util.Log.ENGINE);
+    }
+    function scalePlayer(player) {
+        var _local_1 = getPlayerMovieClip(player.player_id);
+        var _local_2 = getRoomMovieClip();
+        var _local_3;
+        if (SHELL.isPlayerMascotById(player.player_id) && (_local_2.customMascotSize != undefined)) {
+            _local_3 = _local_2.customMascotSize;
+        } else if (_local_2.isSmallPenguin) {
+            _local_3 = SMALL_PENGUIN_SIZE;
+        } else if (_local_2.customPenguinSize != undefined) {
+            _local_3 = _local_2.customPenguinSize;
+        } else if (SHELL.getIsRoomIgloo() || (isRoomMyBackyard())) {
+            _local_3 = 130;
+        } else {
+            _local_3 = 100;
+        }
+        var _local_4 = ((player.avatarVO.attributes.spriteScale / 100) * (_local_3 / 100)) * 100;
+        _local_1._yscale = (_local_1._xscale = 100);
+        var _local_5 = _local_1.getBounds(_local_1._parent).yMax;
+        var _local_6 = _local_1.getBounds(_local_1._parent).yMin;
+        _local_1._yscale = (_local_1._xscale = _local_4);
+        var _local_9 = _local_1.getBounds(_local_1._parent).yMax;
+        var _local_7 = _local_1.getBounds(_local_1._parent).yMin;
+        _local_1.scaleBottomOffsetY = _local_9 - _local_5;
+        _local_1.scaleTopOffsetY = _local_7 - _local_6;
+    }
+    function showAllPuffles() {
+        puffleManager.showAllPuffles();
+    }
+    function hideAllPuffles() {
+        puffleManager.hideAllPuffles();
+    }
+    function startMouse() {
+        is_mouse_active = true;
+        this.onMouseMove = function () {
+            if (getPlayerAction() == "wait") {
+                var _local_3 = getRoomMovieClip();
+                var _local_1 = getPlayerDirectionToMouse();
+                if (_local_3.invertedPenguins) {
+                    _local_1 = _local_1 + 4;
+                    if (_local_1 > 8) {
+                        var _local_2 = _local_1 - 8;
+                        _local_1 = _local_2;
+                    }
+                }
+                if (_local_1 != current_direction_to_mouse) {
+                    current_direction_to_mouse = _local_1;
+                    updatePlayerFrame(SHELL.getMyPlayerId(), _local_1);
+                }
+            }
+        };
+        mouse_mc.useHandCursor = false;
+        mouse_mc.tabEnabled = false;
+        mouse_mc.onRelease = clickMouse;
+    }
+    function clickMouse() {
+        if ((getPlayerAction() != "busy") && (isMouseMovementEnabled)) {
+            var _local_2 = Math.round(_xmouse);
+            var _local_1 = Math.round(_ymouse);
+            if (!isMouseOverInterface(_local_2, _local_1)) {
+                sendPlayerMove(_local_2, _local_1);
+            }
+        }
+    }
+    function getPlayerDirectionToMouse() {
+        var _local_3 = getRoomMovieClip();
+        var _local_2 = Math.round(_xmouse);
+        var _local_1 = Math.round(_ymouse);
+        if (!_local_3.invertedPenguins) {
+            _local_1 = _local_1 + 40;
+        }
+        var _local_4 = findAngle(player_x, player_y, _local_2, _local_1);
+        return(findDirection(_local_4));
+    }
+    function stopMouse() {
+        is_mouse_active = false;
+        this.onMouseMove = null;
+        this.onMouseDown = null;
+        mouse_mc.onRelease = null;
+    }
+    function disableMouseMovement() {
+        isMouseMovementEnabled = false;
+    }
+    function enableMouseMovement() {
+        isMouseMovementEnabled = true;
+    }
+    function isMouseActive() {
+        return(is_mouse_active);
+    }
+    function isMovementEnabled() {
+        return(isMouseMovementEnabled);
+    }
+    function isMouseOverInterface(x, y) {
+        if (INTERFACE.interface_mc.hitTest(x, y, true)) {
+            return(true);
+        } else if (INTERFACE.debug_mc.hitTest(x, y, true)) {
+            return(true);
+        } else if (getRoomInterfaceMovieClip().hitTest(x, y, true)) {
+            return(true);
+        } else if (debug_mc.hitTest(x, y, true)) {
+            return(true);
+        } else {
+            return(false);
+        }
+    }
+    function updateMovingPlayerPositions() {
+        bitmapFrameTrottle++;
+        for (var _local_8 in movingPlayers) {
+            movingPlayers[_local_8].updateMCPosition();
+        }
+        if (com.clubpenguin.debug.Debug.disablePlayerBitmapCaching) {
+            return(undefined);
+        }
+        if (bitmapFrameTrottle < 1) {
+            return(undefined);
+        }
+        bitmapFrameTrottle = 0;
+        var _local_5 = SHELL.getPlayerList();
+        var _local_6 = 0;
+        var _local_7 = 10;
+        var _local_1;
+        var _local_3 = 0;
+        while (_local_3 < _local_5.length) {
+            _local_1 = getPlayerMovieClip(_local_5[_local_3].player_id);
+            var _local_4 = _local_1.art_mc._currentframe;
+            if ((((_local_4 >= MIN_STANDING_FRAME) && (_local_4 <= MAX_STANDING_FRAME)) || ((_local_4 >= MIN_SITTING_FRAME) && (_local_4 <= MAX_SITTING_FRAME))) && (_local_1.art_mc._x >= 0)) {
+                _local_5[_local_3].setIsBitmapCacheable(_local_5[_local_3].lastFrame == _local_4);
+            } else {
+                _local_5[_local_3].setIsBitmapCacheable(false);
+            }
+            _local_5[_local_3].lastFrame = _local_4;
+            if (_local_5[_local_3].isReadyToBeBitmapCached()) {
+                if ((_local_6 < _local_7) && (!_local_1.cacheAsBitmap)) {
+                    if (com.clubpenguin.debug.Debug.drawBitmapCachingRects) {
+                        var _local_2 = _local_1.getBounds();
+                        _local_1.debug_mc.lineStyle(1, 65535, 100);
+                        _local_1.debug_mc.moveTo(_local_2.xMin, _local_2.yMin);
+                        _local_1.debug_mc.lineTo(_local_2.xMax, _local_2.yMin);
+                        _local_1.debug_mc.lineTo(_local_2.xMax, _local_2.yMax);
+                        _local_1.debug_mc.lineTo(_local_2.xMin, _local_2.yMax);
+                        _local_1.debug_mc.lineTo(_local_2.xMin, _local_2.yMin);
+                    }
+                    _local_1.cacheAsBitmap = true;
+                    _local_6++;
+                }
+            } else if (_local_1.cacheAsBitmap) {
+                _local_1.debug_mc.clear();
+                _local_1.cacheAsBitmap = false;
+            }
+            _local_3++;
+        }
+    }
+    function movePlayer(player_id, target_x, target_y, is_trigger, frame) {
+        if (SHELL.isPlayerJumping(player_id)) {
+            return(undefined);
+        }
+        var mc = getPlayerMovieClip(player_id);
+        var _local_3 = SHELL.getPlayerObjectById(player_id);
+        _local_3.hasNotMovedSince = -1;
+        mc.cacheAsBitmap = false;
+        mc.debug_mc.clear();
+        if (mc.is_reading) {
+            removePlayerBook(player_id);
+        }
+        if (!mc.is_ready) {
+            updatePlayerPosition(player_id, target_x, target_y);
+            return(undefined);
+        }
+        var start_x = Math.round(mc._x);
+        var start_y = Math.round(mc._y);
+        var _local_5 = findDistance(start_x, start_y, target_x, target_y);
+        if (_global.getCurrentShell().playerModel.isPlayerStealthModerator() && (_global.getCurrentShell().playerModel.isMyPlayer(player_id))) {
+            var duration = (_local_5 / 32);
+        } else {
+            var duration = ((_local_5 / 4) * (100 / _local_3.avatarVO.attributes.spriteSpeed));
+        }
+        var _local_10 = findAngle(start_x, start_y, target_x, target_y);
+        var d = findDirection(_local_10);
+        var change_x = (target_x - start_x);
+        var change_y = (target_y - start_y);
+        if (is_trigger == undefined) {
+            is_trigger = true;
+        }
+        var _local_6 = getRoomMovieClip();
+        var easeFunction = _local_6.easeMethod;
+        if (easeFunction == undefined) {
+            easeFunction = mathLinearTween;
+        }
+        if (_local_3.avatarVO.attributes.isFloating) {
+            easeFunction = mathEaseFloat;
+        }
+        var _local_11 = mc.is_moving;
+        mc.is_moving = true;
+        mc.lastMoveDirection = d;
+        var _local_2;
+        if (easeFunction == mathEaseFloat) {
+            _local_2 = d;
+        } else {
+            _local_2 = d + MAX_STANDING_FRAME;
+            if (_local_6.invertedPenguins) {
+                _local_2 = _local_2 + 4;
+                if (_local_2 > MAX_WALKING_FRAME) {
+                    var _local_9 = MAX_STANDING_FRAME + (_local_2 - MAX_WALKING_FRAME);
+                    _local_2 = _local_9;
+                }
+            }
+        }
+        updatePlayerFrame(player_id, _local_2);
+        var t = 0;
+        movingPlayers["p" + player_id] = mc;
+        mc.updateMCPosition = function () {
+            t++;
+            if ((mc.is_moving && (t < duration)) && (((mc.frame >= MIN_WALKING_FRAME) && (mc.frame <= MAX_WALKING_FRAME)) || (easeFunction == mathEaseFloat))) {
+                var _local_3;
+                var _local_2;
+                if (easeFunction == mathEaseFloat) {
+                    var _local_1 = easeFunction(t, start_x, target_x, start_y, target_y, duration);
+                    _local_3 = _local_1.x;
+                    _local_2 = _local_1.y;
+                } else {
+                    _local_3 = Math.round(easeFunction(t, start_x, change_x, duration));
+                    _local_2 = Math.round(easeFunction(t, start_y, change_y, duration));
+                }
+                updatePlayerPosition(player_id, _local_3, _local_2);
+            } else if (mc.is_moving && (t >= duration)) {
+                mc.is_moving = false;
+                updatePlayerFrame(player_id, d);
+                SHELL.sendPlayerMoveDone(player_id);
+                delete movingPlayers["p" + player_id];
+                if (SHELL.isMyPlayer(player_id)) {
+                    var _local_4 = false;
+                    playerMoved.dispatch();
+                    setPlayerAction("wait");
+                    if (is_trigger && (isMouseActive())) {
+                        checkTrigger(mc);
+                    }
+                    if (frame != undefined) {
+                        sendPlayerFrame(frame);
+                    }
+                }
+            }
+        };
+        if (!_local_11) {
+            SHELL.updateListeners(SHELL.PLAYER_MOVE_START, _local_3);
+        }
+    }
+    function mathEaseFloat(t, start_x, end_x, start_y, end_y, duration) {
+        var _local_7 = 15;
+        var _local_13 = 120;
+        var _local_6 = new flash.geom.Point(start_x, start_y);
+        var _local_11 = new flash.geom.Point(end_x, end_y);
+        var _local_2 = _local_11.subtract(_local_6);
+        var _local_8 = _local_2.length;
+        var _local_3 = _local_8 / _local_13;
+        _local_3 = Math.ceil(_local_3);
+        if (_local_3 == 1) {
+            _local_7 = 7;
+        }
+        var _local_4 = new flash.geom.Point(_local_2.y, -_local_2.x);
+        _local_4.normalize(1);
+        var _local_1 = new flash.geom.Point();
+        _local_1.x = mathLinearTween(t, _local_6.x, _local_2.x, duration);
+        _local_1.y = mathLinearTween(t, _local_6.y, _local_2.y, duration);
+        var _local_5 = t / duration;
+        _local_5 = _local_5 * (Math.PI*2);
+        var _local_12 = Math.sin(_local_5 * _local_3);
+        _local_4.normalize(_local_12 * _local_7);
+        _local_1 = _local_1.add(_local_4);
+        return(_local_1);
+    }
+    function teleportPlayer(player_id, x, y, isTrigger, frame) {
+        if (!checkIsValidPosition(x, y, SHELL.getPlayerObjectById(player_id))) {
+            return(undefined);
+        }
+        if (isTrigger == undefined) {
+            isTrigger = true;
+        }
+        var _local_7 = getRoomMovieClip();
+        var _local_2 = getPlayerMovieClip(player_id);
+        if (_local_2.is_moving) {
+            _local_2.is_moving = false;
+            delete movingPlayers["p" + player_id];
+            updatePlayerFrame(player_id, ((frame != undefined) ? (frame) : (_local_2.lastMoveDirection)));
+            if (SHELL.isMyPlayer(player_id)) {
+                playerMoved.dispatch();
+                setPlayerAction("wait");
+            }
+        }
+        updatePlayerPosition(player_id, x, y);
+        SHELL.sendPlayerMoveDone(player_id);
+        if (SHELL.isMyPlayer(player_id)) {
+            if (isTrigger && (isMouseActive())) {
+                checkTrigger(_local_2);
+            }
+        }
+    }
+    function findPlayerPath(player_id, x, y) {
+        var _local_12 = getPlayerMovieClip(player_id);
+        var _local_17 = getRoomBlockMovieClip();
+        var _local_13 = getValidXPosition(x);
+        var _local_14 = getValidYPosition(y);
+        var _local_11 = Math.round(_local_12._x);
+        var _local_10 = Math.round(_local_12._y);
+        var _local_15 = findDistance(_local_11, _local_10, _local_13, _local_14);
+        var _local_6 = Math.round(_local_15);
+        var _local_9 = (_local_13 - _local_11) / _local_6;
+        var _local_8 = (_local_14 - _local_10) / _local_6;
+        var _local_4 = _local_11;
+        var _local_3 = _local_10;
+        var _local_5 = new Object();
+        _local_5.x = _local_11;
+        _local_5.y = _local_10;
+        var _local_16 = !checkIsValidPosition(_local_11, _local_10, SHELL.getPlayerObjectById(player_id));
+        while (_local_6 > 0) {
+            _local_4 = _local_4 + _local_9;
+            _local_3 = _local_3 + _local_8;
+            var _local_2 = Math.round(_local_4);
+            var _local_1 = Math.round(_local_3);
+            if (!checkIsValidPosition(_local_2, _local_1, SHELL.getPlayerObjectById(player_id))) {
+                break;
+            } else {
+                _local_5.x = _local_2;
+                _local_5.y = _local_1;
+            }
+            _local_6--;
+        }
+        return(_local_5);
+    }
+    function checkIsValidPosition(x, y, player) {
+        if (isNaN(x) || (isNaN(y))) {
+            return(false);
+        }
+        if (player.avatarVO.attributes.ignoresBlockLayer || (_global.getCurrentShell().playerModel.isPlayerStealthModerator())) {
+            return(true);
+        }
+        var _local_2 = getRoomBlockMovieClip();
+        return(!_local_2.hitTest(x, y, true));
+    }
+    function setupTables() {
+        var _local_1 = getTableListFromRoom();
+        if ((_local_1 != undefined) && (_local_1.length > 0)) {
+            SHELL.getTablesPopulationById(_local_1);
+        }
+    }
+    function sendJoinTable(name, table_id, is_prompt) {
+        if (is_prompt) {
+            setActiveTable(name, table_id);
+            var _local_2 = SHELL.getLocalizedString(name + "_prompt");
+            INTERFACE.showPrompt("game", _local_2, undefined, clickJoinTablePrompt);
+        } else {
+            SHELL.sendJoinTableById(table_id, name);
+        }
+    }
+    function clickJoinTablePrompt() {
+        var _local_1 = getActiveTable();
+        traceObject(_local_1);
+        sendJoinTable(_local_1.name, _local_1.table_id, false);
+    }
+    function handleJoinTable(ob) {
+        traceObject(ob);
+        var _local_5 = ob.table_id;
+        var _local_1 = ob.seat_id;
+        setActiveTableSeat(_local_1);
+        var _local_3 = getActiveTable();
+        var _local_4 = _local_3.name;
+        stopMouse();
+        movePlayerToTableSeat(_local_5, _local_1);
+        INTERFACE.showGameWidget(_local_4);
+    }
+    function handleUpdateTable(table_ob) {
+        traceObject(table_ob);
+        var _local_5 = table_ob.table_id;
+        var _local_4 = table_ob.num_players;
+        var _local_2 = _local_4 + 1;
+        var _local_1 = getTableMovieClip(_local_5);
+        if (_local_2 > _local_1._totalframes) {
+            _local_1.gotoAndStop(_local_1._totalframes);
+        } else {
+            _local_1.gotoAndStop(_local_2);
+        }
+    }
+    function sendLeaveTable() {
+        SHELL.sendLeaveTable();
+        movePlayerToTableDone();
+        startMouse();
+    }
+    function movePlayerToTableSeat(table_id, seat_id) {
+        var _local_1 = getTableSeatMovieClip(table_id, seat_id);
+        var _local_4 = getTableSeatFrame(table_id, seat_id);
+        var _local_2 = {x:_local_1._x, y:_local_1._y};
+        _local_1._parent.localToGlobal(_local_2);
+        var _local_7 = Math.round(_local_2.x);
+        var _local_6 = Math.round(_local_2.y);
+        sendPlayerMove(_local_7, _local_6, false, _local_4);
+    }
+    function movePlayerToTableDone() {
+        var _local_3 = getActiveTable();
+        var _local_5 = _local_3.table_id;
+        var _local_4 = _local_3.seat_id;
+        var _local_1 = getTableDoneMovieClip(_local_5, _local_4);
+        var _local_2 = {x:_local_1._x, y:_local_1._y};
+        _local_1._parent.localToGlobal(_local_2);
+        var _local_7 = Math.round(_local_2.x);
+        var _local_6 = Math.round(_local_2.y);
+        sendPlayerMove(_local_7, _local_6, false);
+    }
+    function setActiveTable(name, table_id, seat_id) {
+        active_table = {name:name, table_id:table_id, seat_id:seat_id};
+    }
+    function setActiveTableSeat(seat_id) {
+        active_table.seat_id = seat_id;
+    }
+    function getActiveTable() {
+        return(active_table);
+    }
+    function getTableListFromRoom() {
+        var _local_1 = getRoomMovieClip();
+        return(_local_1.table_list);
+    }
+    function getTableSeatFrame(table_id, seat_id) {
+        var _local_1 = getTableMovieClip(table_id);
+        var _local_2 = _local_1.seat_frames[seat_id - 1];
+        return(_local_2);
+    }
+    function getTableMovieClip(table_id) {
+        var _local_1 = getRoomMovieClip();
+        return(_local_1[("table" + table_id) + "_mc"]);
+    }
+    function getTableSeatMovieClip(table_id, seat_id) {
+        var _local_1 = getTableMovieClip(table_id);
+        return(_local_1[("seat" + seat_id) + "_mc"]);
+    }
+    function getTableDoneMovieClip(table_id, seat_id) {
+        var _local_1 = getTableMovieClip(table_id);
+        return(_local_1[("done" + seat_id) + "_mc"]);
+    }
+    function setupWaddle() {
+        var _local_1 = getWaddleListFromRoom();
+        if ((_local_1 != undefined) && (_local_1.length > 0)) {
+            SHELL.getWaddlePopulationById(_local_1);
+        }
+    }
+    function getCardJitsuGameQueWidget() {
+        return(_cardJitsuWidget);
+    }
+    function handleUpdateWaddle(ob) {
+        traceObject(ob);
+        var _local_6 = ob.waddle_id;
+        var _local_3 = ob.player_list;
+        for (var _local_7 in _local_3) {
+            var _local_4 = Number(_local_7);
+            var _local_1 = getWaddleSeatMovieClip(_local_6, _local_4);
+            if (_local_3[_local_7] != undefined) {
+                var _local_2 = SHELL.getPlayerObjectByNickname(_local_3[_local_7]);
+                var _local_5 = SHELL.getCurrentRoomId();
+                if (_local_2 != undefined) {
+                    if ((_local_5 == 230) && (((_local_2.hand == 5021) || (_local_2.hand == 5046)) || (_local_2.hand == 5047))) {
+                        _local_1._visible = false;
+                    } else {
+                        _local_1._visible = true;
+                    }
+                } else {
+                    _local_1._visible = false;
+                }
+            } else {
+                _local_1._visible = false;
+            }
+        }
+    }
+    function sendJoinCJWaddle(name, waddle_id, is_prompt, numOfPlayers, fromIgloo) {
+        active_waddle_id = waddle_id;
+        active_waddle_name = name;
+        active_numOfPlayers = numOfPlayers;
+        active_fromIgloo = fromIgloo;
+        if (is_prompt) {
+            var _local_3 = SHELL.getLocalizedString(name + "_prompt");
+            INTERFACE.showPrompt("game", _local_3, undefined, clickJoinWaddleFromIgloo, handleClickNo);
+            return(undefined);
+        }
+        SHELL.sendAS3StopPuffleNotificationService();
+        var _local_1 = INTERFACE.CARD_JITSU_WADDLE_WIDGET;
+        _local_1._visible = true;
+        _local_1.swapDepths(99);
+        _local_1.gotoAndStop(1);
+        stopMouse();
+        _cardJitsuWidget = new com.clubpenguin.util.GameQueueWidget(_local_1.game_queue_mc);
+        _cardJitsuWidget.sendJoinGameQueueMessage(waddle_id, numOfPlayers, active_fromIgloo);
+    }
+    function handleClickNo() {
+        SHELL.setJoinGameFromIgloo(false, "");
+    }
+    function sendJoinWaddle(name, waddle_id, is_prompt) {
+        active_waddle_id = waddle_id;
+        active_waddle_name = name;
+        if (is_prompt) {
+            var _local_7 = SHELL.getLocalizedString(name + "_prompt");
+            INTERFACE.showPrompt("game", _local_7, undefined, clickJoinWaddlePrompt);
+        } else {
+            var _local_2 = true;
+            var _local_5 = SHELL.getWaddleById(waddle_id);
+            traceObject(_local_5);
+            var _local_1 = _local_5.player_list;
+            for (var _local_3 in _local_1) {
+                if (_local_1[_local_3] == undefined) {
+                    _local_2 = false;
+                    break;
+                }
+            }
+            if (!_local_2) {
+                SHELL.sendJoinWaddleById(waddle_id);
+            }
+        }
+    }
+    function clickJoinWaddlePrompt() {
+        sendJoinWaddle(active_waddle_name, active_waddle_id, false);
+    }
+    function clickJoinWaddleFromIgloo() {
+        sendJoinCJWaddle(active_waddle_name, active_waddle_id, false, active_numOfPlayers, active_fromIgloo);
+    }
+    function handleJoinWaddle(ob) {
+        traceObject(ob);
+        var _local_2 = active_waddle_id;
+        var _local_3 = active_waddle_name;
+        var _local_1 = ob.seat_id;
+        SHELL.AIRTOWER.sendAck("jx", ["seat_id=" + _local_1, "waddle_id=" + _local_2, "waddle_name=" + _local_3]);
+        active_seat_id = _local_1;
+        stopMouse();
+        movePlayerToWaddleSeat(_local_2, _local_1);
+        INTERFACE.showWaddleWidget(_local_3, _local_2);
+    }
+    function sendLeaveWaddle() {
+        SHELL.sendLeaveWaddle();
+        movePlayerToWaddleDone();
+        startMouse();
+    }
+    function movePlayerToWaddleSeat(waddle_id, seat_id) {
+        var _local_1 = getWaddleSeatMovieClip(waddle_id, seat_id);
+        var _local_5 = getWaddleSeatFrame(waddle_id, seat_id);
+        var _local_2 = {x:_local_1._x, y:_local_1._y};
+        _local_1._parent.localToGlobal(_local_2);
+        var _local_7 = Math.round(_local_2.x);
+        var _local_6 = Math.round(_local_2.y);
+        sendPlayerMove(_local_7, _local_6, false, _local_5);
+    }
+    function movePlayerToWaddleDone() {
+        var _local_4 = active_waddle_id;
+        var _local_3 = active_seat_id;
+        var _local_1 = getWaddleDoneMovieClip(_local_4, _local_3);
+        var _local_2 = {x:_local_1._x, y:_local_1._y};
+        _local_1._parent.localToGlobal(_local_2);
+        var _local_6 = Math.round(_local_2.x);
+        var _local_5 = Math.round(_local_2.y);
+        sendPlayerMove(_local_6, _local_5, false);
+    }
+    function getWaddleMovieClip(waddle_id) {
+        if (SHELL.joinGameFromIglooStatus) {
+            var _local_1 = 0;
+            while (_local_1 < IGLOO.active_furniture_list.length) {
+                if (IGLOO.active_furniture_list[_local_1].waddle_id == waddle_id) {
+                    return(IGLOO.active_furniture_list[_local_1].mc.item);
+                }
+                _local_1++;
+            }
+        }
+        var _local_3 = getRoomMovieClip();
+        return(_local_3[("waddle" + waddle_id) + "_mc"]);
+    }
+    function getWaddleSeatMovieClip(waddle_id, seat_id) {
+        var _local_1 = getWaddleMovieClip(waddle_id);
+        return(_local_1[("seat" + seat_id) + "_mc"]);
+    }
+    function getWaddleDoneMovieClip(waddle_id, seat_id) {
+        var _local_1 = getWaddleMovieClip(waddle_id);
+        return(_local_1[("done" + seat_id) + "_mc"]);
+    }
+    function getWaddleListFromRoom() {
+        var _local_1 = getRoomMovieClip();
+        return(_local_1.waddle_list);
+    }
+    function getWaddleSeatFrame(waddle_id, seat_id) {
+        var _local_1 = getWaddleMovieClip(waddle_id);
+        var _local_2 = _local_1.seat_frames[seat_id];
+        return(_local_2);
+    }
+    function getActiveWaddleId() {
+        return(active_waddle_id);
+    }
+    function checkFieldOpTriggered() {
+        var _local_1 = getPlayerMovieClip(SHELL.getMyPlayerId());
+        if (fieldOp.hit.contains(_local_1._x, _local_1._y)) {
+            fieldOpTriggered.dispatch(fieldOp.gameName);
+        }
+    }
+    function isPlayerOnFieldOpTrigger() {
+        if (!fieldOp) {
+            fieldOp = SHELL.getFieldOp();
+        }
+        var _local_1 = getPlayerMovieClip(SHELL.getMyPlayerId());
+        if (isPlayerLookingForFieldOp()) {
+            if (isPlayerInTheRightRoom()) {
+                if (fieldOp.hit.contains(_local_1._x, _local_1._y)) {
+                    return(true);
+                }
+            }
+        }
+        return(false);
+    }
+    function isPlayerLookingForFieldOp() {
+        return(SHELL.getMyPlayerObject().fieldOpStatus == FIELD_OP_IN_PROGRESS);
+    }
+    function isPlayerInTheRightRoom() {
+        return(SHELL.getCurrentCrumbRoomId() == fieldOp.roomID);
+    }
+    function addEPFFieldOpCheckToPlayerMoved() {
+        if (!fieldOp) {
+            fieldOp = SHELL.getFieldOp();
+        }
+        getPlayerMoved().add(checkFieldOpTriggered, this);
+    }
+    function removeEPFFieldOpCheckToPlayerMoved() {
+        getPlayerMoved().remove(checkFieldOpTriggered, this);
+    }
+    function getPlayerMoved() {
+        return(playerMoved);
+    }
+    function updatePlayerDepth(clip, depth) {
+        var _local_2 = Math.floor(clip._y);
+        var _local_1 = ((depth + 1) + 900) + (1000 * _local_2);
+        clip.swapDepths(_local_1);
+        return(_local_1);
+    }
+    function updatePuffleDepth(clip, depth) {
+        return(updatePlayerDepth(clip, depth));
+    }
+    function updateObjectDepth(clip) {
+        var _local_4 = Math.floor(clip._x);
+        var _local_3 = Math.floor(clip._y);
+        var _local_1 = _local_4 + (1000 * _local_3);
+        clip.swapDepths(_local_1);
+        return(_local_1);
+    }
+    function updateItemDepth(clip, depth) {
+        var _local_4 = Math.floor(clip._x);
+        var _local_3 = Math.floor(clip._y);
+        var _local_1 = ((depth + 1) + 800) + (1000 * _local_3);
+        clip.swapDepths(_local_1);
+        return(_local_1);
+    }
+    function findAngle(x1, y1, x2, y2) {
+        var _local_3 = x2 - x1;
+        var _local_2 = y2 - y1;
+        var _local_1 = int((Math.atan2(_local_2, _local_3) * 57.2957795130823) - 90);
+        if (_local_1 < 0) {
+            return(_local_1 + 360);
+        } else {
+            return(_local_1);
+        }
+    }
+    function findDirection(angle) {
+        var _local_1 = Math.round(angle / 45) + 1;
+        if (_local_1 > 8) {
+            _local_1 = 1;
+        }
+        return(_local_1);
+    }
+    function findDirectionQuarters(angle) {
+        var _local_1 = Math.floor(angle / 90) + 1;
+        if (_local_1 > 4) {
+            _local_1 = 1;
+        }
+        return(_local_1);
+    }
+    function findDistance(x1, y1, x2, y2) {
+        var _local_2 = x2 - x1;
+        var _local_1 = y2 - y1;
+        return(Math.sqrt((_local_2 * _local_2) + (_local_1 * _local_1)));
+    }
+    function mathLinearTween(t, b, c, d) {
+        return(((c * t) / d) + b);
+    }
+    function mathEaseInQuad(t, b, c, d) {
+        t = t / d;
+        return(((c * t) * t) + b);
+    }
+    function mathEaseOutQuad(t, b, c, d) {
+        t = t / d;
+        return((((-c) * t) * (t - 2)) + b);
+    }
+    function mathEaseInOutQuad(t, b, c, d) {
+        t = t / (d / 2);
+        if (t < 1) {
+            return((((c / 2) * t) * t) + b);
+        }
+        t--;
+        return((((-c) / 2) * ((t * (t - 2)) - 1)) + b);
+    }
+    function mathEaseInCubic(t, b, c, d) {
+        t = t / d;
+        return((((c * t) * t) * t) + b);
+    }
+    function mathEaseOutCubic(t, b, c, d) {
+        t = (t / d) - 1;
+        return((c * (((t * t) * t) + 1)) + b);
+    }
+    function mathEaseInOutCubic(t, b, c, d) {
+        t = t / (d / 2);
+        if (t < 1) {
+            return(((((c / 2) * t) * t) * t) + b);
+        }
+        t = t - 2;
+        return(((c / 2) * (((t * t) * t) + 2)) + b);
+    }
+    function mathEaseInQuart(t, b, c, d) {
+        t = t / d;
+        return(((((c * t) * t) * t) * t) + b);
+    }
+    function mathEaseOutQuart(t, b, c, d) {
+        t = (t / d) - 1;
+        return(((-c) * ((((t * t) * t) * t) - 1)) + b);
+    }
+    function mathEaseInOutQuart(t, b, c, d) {
+        t = t / (d / 2);
+        if (t < 1) {
+            return((((((c / 2) * t) * t) * t) * t) + b);
+        }
+        t = t - 2;
+        return((((-c) / 2) * ((((t * t) * t) * t) - 2)) + b);
+    }
+    function mathEaseInQuint(t, b, c, d) {
+        t = t / d;
+        return((((((c * t) * t) * t) * t) * t) + b);
+    }
+    function mathEaseOutQuint(t, b, c, d) {
+        t = (t / d) - 1;
+        return((c * (((((t * t) * t) * t) * t) + 1)) + b);
+    }
+    function mathEaseInOutQuint(t, b, c, d) {
+        t = t / (d / 2);
+        if (t < 1) {
+            return(((((((c / 2) * t) * t) * t) * t) * t) + b);
+        }
+        t = t - 2;
+        return(((c / 2) * (((((t * t) * t) * t) * t) + 2)) + b);
+    }
+    function mathEaseInSine(t, b, c, d) {
+        return((((-c) * Math.cos((t / d) * (Math.PI/2))) + c) + b);
+    }
+    function mathEaseOutSine(t, b, c, d) {
+        return((c * Math.sin((t / d) * (Math.PI/2))) + b);
+    }
+    function mathEaseInOutSine(t, b, c, d) {
+        return((((-c) / 2) * (Math.cos((Math.PI * t) / d) - 1)) + b);
+    }
+    function mathEaseInExpo(t, b, c, d) {
+        return(((t == 0) ? (b) : ((c * Math.pow(2, 10 * ((t / d) - 1))) + b)));
+    }
+    function mathEaseOutExpo(t, b, c, d) {
+        return(((t == d) ? (b + c) : ((c * ((-Math.pow(2, (-10 * t) / d)) + 1)) + b)));
+    }
+    function mathEaseInOutExpo(t, b, c, d) {
+        if (t == 0) {
+            return(b);
+        }
+        if (t == d) {
+            return(b + c);
+        }
+        t = t / (d / 2);
+        if (t < 1) {
+            return(((c / 2) * Math.pow(2, 10 * (t - 1))) + b);
+        }
+        t--;
+        return(((c / 2) * ((-Math.pow(2, -10 * t)) + 2)) + b);
+    }
+    function mathEaseInCirc(t, b, c, d) {
+        t = t / d;
+        return(((-c) * (Math.sqrt(1 - (t * t)) - 1)) + b);
+    }
+    function mathEaseOutCirc(t, b, c, d) {
+        t = (t / d) - 1;
+        return((c * Math.sqrt(1 - (t * t))) + b);
+    }
+    function mathEaseInOutCirc(t, b, c, d) {
+        t = t / (d / 2);
+        if (t < 1) {
+            return((((-c) / 2) * (Math.sqrt(1 - (t * t)) - 1)) + b);
+        }
+        t = t - 2;
+        return(((c / 2) * (Math.sqrt(1 - (t * t)) + 1)) + b);
+    }
+    function mathEaseInElastic(t, b, c, d) {
+        var _local_2 = 1;
+        var _local_1 = 10;
+        if (t == 0) {
+            return(b);
+        }
+        t = t / d;
+        if (t == 1) {
+            return(b + c);
+        }
+        if (!_local_1) {
+            _local_1 = d * 0.3;
+        }
+        if (_local_2 < Math.abs(c)) {
+            _local_2 = c;
+            var _local_7 = _local_1 / 4;
+        } else {
+            var _local_7 = (_local_1 / (Math.PI*2)) * Math.asin(c / _local_2);
+        }
+        t = t - 1;
+        return((-((_local_2 * Math.pow(2, 10 * t)) * Math.sin((((t * d) - _local_7) * (Math.PI*2)) / _local_1))) + b);
+    }
+    function mathEaseOutElastic(t, b, c, d) {
+        var _local_2 = 1;
+        var _local_1 = 10;
+        if (t == 0) {
+            return(b);
+        }
+        t = t / d;
+        if (t == 1) {
+            return(b + c);
+        }
+        if (!_local_1) {
+            _local_1 = d * 0.3;
+        }
+        if (_local_2 < Math.abs(c)) {
+            _local_2 = c;
+            var _local_7 = _local_1 / 4;
+        } else {
+            var _local_7 = (_local_1 / (Math.PI*2)) * Math.asin(c / _local_2);
+        }
+        return((((_local_2 * Math.pow(2, -10 * t)) * Math.sin((((t * d) - _local_7) * (Math.PI*2)) / _local_1)) + c) + b);
+    }
+    function mathEaseInOutElastic(t, b, c, d) {
+        var _local_3 = 1;
+        var _local_1 = 10;
+        if (t == 0) {
+            return(b);
+        }
+        t = t / (d / 2);
+        if (t == 2) {
+            return(b + c);
+        }
+        if (!_local_1) {
+            _local_1 = d * 0.45;
+        }
+        if (_local_3 < Math.abs(c)) {
+            _local_3 = c;
+            var _local_7 = _local_1 / 4;
+        } else {
+            var _local_7 = (_local_1 / (Math.PI*2)) * Math.asin(c / _local_3);
+        }
+        if (t < 1) {
+            t = t - 1;
+            return((-0.5 * ((_local_3 * Math.pow(2, 10 * t)) * Math.sin((((t * d) - _local_7) * (Math.PI*2)) / _local_1))) + b);
+        }
+        t = t - 1;
+        return(((((_local_3 * Math.pow(2, -10 * t)) * Math.sin((((t * d) - _local_7) * (Math.PI*2)) / _local_1)) * 0.5) + c) + b);
+    }
+    function mathEaseInBack(t, b, c, d) {
+        var _local_1 = 2;
+        if (_local_1 == undefined) {
+            _local_1 = 1.70158;
+        }
+        t = t / d;
+        return((((c * t) * t) * (((_local_1 + 1) * t) - _local_1)) + b);
+    }
+    function mathEaseOutBack(t, b, c, d) {
+        var _local_1 = 2;
+        if (_local_1 == undefined) {
+            _local_1 = 1.70158;
+        }
+        t = (t / d) - 1;
+        return((c * (((t * t) * (((_local_1 + 1) * t) + _local_1)) + 1)) + b);
+    }
+    function mathEaseInOutBack(t, b, c, d) {
+        var _local_1 = 2;
+        if (_local_1 == undefined) {
+            _local_1 = 1.70158;
+        }
+        t = t / (d / 2);
+        if (t < 1) {
+            _local_1 = _local_1 * 1.525;
+            return(((c / 2) * ((t * t) * (((_local_1 + 1) * t) - _local_1))) + b);
+        }
+        t = t - 2;
+        _local_1 = _local_1 * 1.525;
+        return(((c / 2) * (((t * t) * (((_local_1 + 1) * t) + _local_1)) + 2)) + b);
+    }
+    function mathEaseInBounce(t, b, c, d) {
+        return((c - mathEaseOutBounce(d - t, 0, c, d)) + b);
+    }
+    function mathEaseOutBounce(t, b, c, d) {
+        t = t / d;
+        if (t < 0.363636363636364) {
+            return((c * ((7.5625 * t) * t)) + b);
+        } else if (t < 0.727272727272727) {
+            t = t - 0.545454545454545;
+            return((c * (((7.5625 * t) * t) + 0.75)) + b);
+        } else if (t < 0.909090909090909) {
+            t = t - 0.818181818181818;
+            return((c * (((7.5625 * t) * t) + 0.9375)) + b);
+        } else {
+            t = t - 0.954545454545455;
+            return((c * (((7.5625 * t) * t) + 0.984375)) + b);
+        }
+    }
+    function mathEaseInOutBounce(t, b, c, d) {
+        if (t < (d / 2)) {
+            return((mathEaseInBounce(t * 2, 0, c, d) * 0.5) + b);
+        }
+        return(((mathEaseOutBounce((t * 2) - d, 0, c, d) * 0.5) + (c * 0.5)) + b);
+    }
+    function replaceString(target, word, message) {
+        return(message.split(target).join(word));
+    }
+    function setDependencies(shell, _interface, _party) {
+        SHELL = shell;
+        INTERFACE = _interface;
+        PARTY = _party;
+    }
+    function init() {
+        attachShellListeners();
+        puffleManager = new com.clubpenguin.engine.PuffleManager(SHELL, this, INTERFACE);
+        achievementManager = new com.clubpenguin.achievements.AchievementManager(SHELL, this, INTERFACE);
+        avatarManager = new com.clubpenguin.engine.avatar.AvatarManager();
+        avatarManager.init();
+        puffleTreasureContext = new com.clubpenguin.engine.puffletreasure.PuffleTreasureContext(SHELL.puffleTreasureHuntService);
+        puffleCareStationController = new com.clubpenguin.engine.puffles.pufflecarestations.controller.PuffleCareStationController(SHELL, this);
+        puffleGoldBerryStationController = new com.clubpenguin.engine.puffles.pufflegoldberrystation.controller.PuffleGoldBerryStationController(SHELL, this, INTERFACE);
+        puffleGoldRevealController = new com.clubpenguin.engine.puffles.pufflegoldreveal.controller.PuffleGoldRevealController(SHELL, this, INTERFACE);
+        puffleAvatarController = new com.clubpenguin.puffleavatar.PuffleAvatarController(SHELL, this);
+        puffleUIWidgetController = new com.clubpenguin.engine.puffles.uiwidget.PuffleUIWidgetController(SHELL);
+        puffleEmoteManager = new com.clubpenguin.engine.puffles.emote.manager.PuffleEmoteManager(SHELL);
+        puffleCareEmoteManager = new com.clubpenguin.engine.puffles.emote.manager.PuffleCareEmoteManager(SHELL, this, puffleEmoteManager);
+        puffleTricksEmoteManager = new com.clubpenguin.engine.puffles.emote.manager.PuffleTricksEmoteManager(SHELL, this, puffleEmoteManager);
+        puffleTricks = new com.clubpenguin.engine.puffles.puffletricks.PuffleTricks(SHELL, this, INTERFACE);
+        snowballManager = new com.clubpenguin.engine.projectiles.SnowballManager(SHELL, this, INTERFACE);
+        _roomPin = new com.clubpenguin.engine.RoomPin(SHELL, this, INTERFACE);
+    }
+    function attachShellListeners() {
+        SHELL.addListener(SHELL.START_ENGINE, handleStartEngine);
+        SHELL.addListener(SHELL.UPDATE_SHELL_STATE, handleUpdateShellState);
+        SHELL.addListener(SHELL.ADD_PLAYER, handleAddPlayer);
+        SHELL.addListener(SHELL.REMOVE_PLAYER, handleRemovePlayer);
+        SHELL.addListener(SHELL.UPDATE_PLAYER, handleUpdatePlayer);
+        SHELL.addListener(SHELL.PLAYER_ACTION, handlePlayerAction);
+        SHELL.addListener(SHELL.PLAYER_FRAME, handlePlayerFrame);
+        SHELL.addListener(SHELL.PLAYER_MOVE, handlePlayerMove);
+        SHELL.addListener(SHELL.PLAYER_TELEPORT, handlePlayerTeleport);
+        SHELL.addListener(SHELL.THROW_BALL, handleThrowBall);
+        SHELL.addListener(SHELL.ADD_PUFFLE, handleAddPuffle);
+        SHELL.addListener(SHELL.REMOVE_PUFFLE, handleRemovePuffle);
+        SHELL.addListener(SHELL.SWAP_PUFFLE, handleSwapPuffle);
+        SHELL.addListener(SHELL.REQUEST_PUFFLE_MOVE, handleRequestPuffleMove);
+        SHELL.addListener(SHELL.PUFFLE_MOVE, handlePuffleMove);
+        SHELL.addListener(SHELL.PUFFLE_FRAME, handlePuffleFrame);
+        SHELL.addListener(SHELL.PUFFLE_WALK, handlePuffleWalk);
+        SHELL.addListener(SHELL.PUFFLE_INTERACTION, handlePuffleInteraction);
+        SHELL.addListener(SHELL.OPEN_BOOK, handleOpenBook);
+        SHELL.addListener(SHELL.CLOSE_BOOK, handleCloseBook);
+        SHELL.addListener(SHELL.JOIN_ROOM, handleJoinRoom);
+        SHELL.addListener(SHELL.REFRESH_ROOM, handleRefreshRoom);
+        SHELL.addListener(SHELL.JOIN_GAME, handleJoinGame);
+        SHELL.addListener(SHELL.JOIN_TABLE, handleJoinTable);
+        SHELL.addListener(SHELL.JOIN_WADDLE, handleJoinWaddle);
+        SHELL.addListener(SHELL.UPDATE_TABLE, handleUpdateTable);
+        SHELL.addListener(SHELL.UPDATE_WADDLE, handleUpdateWaddle);
+        SHELL.addListener(SHELL.GAME_OVER, handleGameOver);
+    }
+    var puffleAvatarController;
+    var framesRequestedAfterMove = {};
+    var MOVE_CLICKED = "move";
+    var FPS = 24;
+    var _drawInterval;
+    var gameCompletedParams = {};
+    var forceReloadRoomOnRefresh = true;
+    MAX_SCREEN_WIDTH = 760;
+    MAX_SCREEN_HEIGHT = 480;
+    MAP_MARGIN = 20;
+    var INTERFACE_BAR_HEIGHT = 30;
+    MAP_WIDTH_MIN = MAP_MARGIN;
+    MAP_WIDTH_MAX = MAX_SCREEN_WIDTH - MAP_MARGIN;
+    MAP_HEIGHT_MIN = MAP_MARGIN;
+    MAP_HEIGHT_MAX = (MAX_SCREEN_HEIGHT - MAP_MARGIN) - INTERFACE_BAR_HEIGHT;
+    my_room_movieclips = new Object();
+    is_ball_moving = false;
+    is_room_ready = false;
+    var bitmapClip = new MovieClip();
+    var _prejoinedRoomData;
+    var playerHostedRoomType = "";
+    var _questTargetShown = false;
+    var _questTarget;
+    var _tryAgainAfterRoomLoad;
+    var shopClothingCatalogueIconHide = false;
+    var shopClothingCatalogueIconVisibility = true;
+    var petPuffleAdoptionIconHide = false;
+    var petPuffleAdoptionIconVisibility = true;
+    var iglooEditIglooIconHide = false;
+    var iglooEditIglooIconVisibility = true;
+    var questIconVisibilityChanged = (new org.osflash.signals.Signal());
+    var showHiddenQuestIcon = (new org.osflash.signals.Signal());
+    var active_game = undefined;
+    var game_over_room = undefined;
+    var game_params = undefined;
+    var game_over_object = new Object();
+    var __listener = null;
+    var __progressInterval = null;
+    var PROGRESS_RATE = 10;
+    var _as3GameStartParams = setAS3gameStartParams({});
+    var currentGameKey;
+    var showEndGameAfterRoomJoin = false;
+    var showEndGame = true;
+    var player_action = "wait";
+    var MAX_RANDOMIZE_ATTEMPTS = 11;
+    var RANDOM_RANGE_FOR_DOOR_ENTRY = 60;
+    var RANDOM_RANGE_FOR_MAP_ENTRY = 220;
+    var RANDOM_RANGE_ATTEMPT_REDUCTION = 20;
+    var SPEECH_BUBBLE_DEPTH_ARRAY_SIZE = 100;
+    var SPEECH_BUBBLE_DEPTH_EMPTY_VALUE = -1;
+    var SPEECH_BUBBLE_DEPTH_LOCAL_INDEX = (SPEECH_BUBBLE_DEPTH_ARRAY_SIZE - 1);
+    var HAND = "hand";
+    var CLOTHING_SPRITES = "clothing_sprites";
+    var SWF = ".swf";
+    var player_x = 0;
+    var player_y = 0;
+    var hidingAllPlayerNames = false;
+	var hidingAllPenguins = false;
+	var trueHidingAllPenguins = false;
+    var speechBubbleDepths = null;
+    var HAT_FOREGROUND = "hatForeground_mc";
+    var HAT_BACKGROUND = "hatBackground_mc";
+    var hatManagers = null;
+    var IGLOO_SIZE_UP = 130;
+    var PLAYER_CARD_CLICKED = "playerCard";
+    var SMALL_PENGUIN_SIZE = 60;
+    var puffleHatCollection = com.clubpenguin.shell.PuffleHatCollection.getInstance();
+    var _puffleShouldBeDisplayed = true;
+    var clothingAnimsLooped = {head_mc:false, face_mc:false, neck_mc:false, body_mc:false, hand_mc:false, feet_mc:false};
+    var initialPlayersInRoom;
+    SHELL.addListener(SHELL.JUMP_TO_PLAYER_ANIMATION_COMPLETE, onPlayerJumpInComplete, this);
+    var BOOK_LAYER = 270;
+    var HEAD_LAYER = 260;
+    var FACE_LAYER = 250;
+    var HAND_LAYER = 240;
+    var NECK_LAYER = 230;
+    var BODY_LAYER = 220;
+    var FEET_LAYER = 210;
+    var hotspotReleaseDelegate;
+    var avatarFirstLoad = true;
+    var is_mouse_active = false;
+    var isMouseMovementEnabled = true;
+    var current_direction_to_mouse = 0;
+    var MIN_STANDING_FRAME = 1;
+    var MAX_STANDING_FRAME = 8;
+    var MIN_WALKING_FRAME = 9;
+    var MAX_WALKING_FRAME = 16;
+    var MIN_SITTING_FRAME = 17;
+    var MAX_SITTING_FRAME = 24;
+    var movingPlayers = {};
+    var bitmapFrameTrottle = 0;
+    this.onEnterFrame = updateMovingPlayerPositions;
+    var active_table = new Object();
+    var pending_table = new Object();
+    var active_waddle_id = undefined;
+    var active_waddle_name = undefined;
+    var active_numOfPlayers = undefined;
+    var active_fromIgloo = undefined;
+    var active_seat_id = undefined;
+    var _cardJitsuWidget;
+    var FIRE = "fire";
+    var WATER = "water";
+    list[waddle1] = ["name1", "name2"];
+    list[waddle2] = ["name1", "name2"];
+    list[waddle3] = ["name1", "name2"];
+    list[waddle4] = ["name1", "name2"];
+    list[waddle1][0] = "name";
+    var FIELD_OP_IN_PROGRESS = 1;
+    var fieldOpTriggered = (new org.osflash.signals.Signal(String));
+    var cancelFieldOpTrigger = (new org.osflash.signals.Signal());
+    var playerMoved = (new org.osflash.signals.Signal());
+    var fieldOp;
+    var SHELL;
+    var INTERFACE;
+    var ENGINE = this;
+    var IGLOO;
+    var PARTY;
+    var puffleManager;
+    var achievementManager;
+    var avatarManager;
+    var snowballManager;
+    var puffleTreasureContext;
+    var puffleCareStationController;
+    var puffleGoldBerryStationController;
+    var puffleGoldRevealController;
+    var puffleUIWidgetController;
+    var puffleEmoteManager;
+    var puffleCareEmoteManager;
+    var puffleTricksEmoteManager;
+    var _roomPin;
+    var puffleTricks;
+    var penguinTransformComplete = (new org.osflash.signals.Signal(Object));

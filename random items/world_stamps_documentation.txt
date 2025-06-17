@@ -1,0 +1,137 @@
+Parsed by engine.
+
+Main contents must be enclosed by <achievementDocument> tags.
+
+<achievementGroup>
+	Params:
+		- See common params below.
+		
+		- type
+			- Defines the order the achievements must be earned in this group.
+			- Either 0 (GROUPTYPE_ANY_ORDER) or 1 (GROUPTYPE_SPECIFIC_ORDER).
+
+	Tags inside:
+		<achievementLink>
+			Params:
+				- id: Specifically a reference to a singular achievement defined in other section.
+		
+		Also see common tags.
+
+<achievement>
+	Params:
+		- See common params below.
+		
+	Tags inside:
+		<event>:
+			- May have multiple
+			- Most of these are self-explanatory. I will only describe the ones that might not be.
+		
+			- All event types:
+				- login
+				- enterIgloo: Fires upon entering an igloo (furniture will not be loaded yet).
+				- enterRoom
+				- leaveRoom
+				- iglooFurnitureLoaded: Fires after every furniture item is loaded.
+				- iglooEdited
+				- wearItem
+				- throwSnowball
+				- snowballHit
+				- move
+				- moveEnd
+				- changesFrame: Player does a wave or a sit.
+				- playerAction: Player does a dance.
+				- purchaseItem
+				- sendMessage
+				- purchaseFurniture
+				- sendEmote
+				- hasAchievementEvent: Simply listens for the generic stamp earned event.
+				- every
+					- Specified by a time frame i.e. "every 2 seconds"
+					- Valid values for units of time:
+						- seconds or second
+						- minute or minutes
+						- hour or hours
+						- day or days
+		<condition> and <optionalCondition>
+			- May have multiple
+			- These are identical except that optionalConditions are optional.
+			
+			- Special object types:
+				- localize(""): Can be used to localize a string at runtime.
+			
+			- Standard conditional operators:
+				- or
+				- and
+			
+			- All condition subjects:
+				- user: the local user
+				- mascot: any mascots
+				- sameSubjects: anyone satisfying the condition
+				- any: anyone
+				- anyWithUser: anyone + local user
+				- event: the event that fired
+			
+			- All condition verbs:
+				- hasProperty
+					- Does the referenced Object have this property?
+					- Can optionally specify the following comparison operators w/ a value:
+						- greaterThan
+						- lessThan
+						- equals
+						- stringEquals
+						- stringNotEquals
+				- owns: Check if player owns an item by its id.
+				- wearing
+					- Adds an only operator.
+					- Check if player is wearing an item by its id.
+				- in: Adds myIgloo: can check if in the local user's igloo.
+				- hits: Checks for a collision with a name of a MovieClip in the current scene.
+				- occurs: Counts how many times the event fires (all events if multiple) until it reaches the specified count.
+				- occursUniquely
+					- Same as occurs.
+					- Currently only setup for room events as it was only used for the Going Places stamp.
+				- puffles
+					- Only valid property is countGreaterThan.
+					- Check if player has more puffles than an amount.
+				- isOnFrame: Used with player actions to check if current frame matches specified.
+				- hasItemID: Same as owns I believe (so completely redundant).
+				- hasEmoteID: Checks if emote matches by id.
+				- hasEventID
+					- Checks if event matches by id.
+					- Only seems to be used with hasAchievementEvent.
+				- hasPenguinColourID
+					- Checks if color matches by id.
+					- Can specify myPenguinColourID to check against your own.
+				- containsText
+					- Checks for subjects' messages containing a matching substring.
+					- Was most likely meant for player chat as it compares against a field called message.
+		
+		<expiryDate>
+			- Expiration UTC timestamp in milliseconds.
+			
+		Also see common tags.
+
+Common params:
+	- name
+	- id
+		
+Common tags:
+	<result>
+		- May have multiple
+	
+		- Does a thing when one of the conditions is satisfied.
+		- Valid results:
+			- stampEarned
+				- Awards the id passed as the first argument.
+			- callback
+				- Calls the function specified as the first argument.
+				- Passes the AchievementResult instance for this achievement as the only argument.
+			- broadcast
+				- Send an event by calling SHELL.updateListeners with the specified arguments.
+			- trace (meant for debugging only)
+				- Passes arguments to a trace call.
+		
+	<debug>
+		- Prints debug trace messages if true (all instances of this were dummied out it seems).
+		
+		

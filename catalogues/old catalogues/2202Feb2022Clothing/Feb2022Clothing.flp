@@ -1,0 +1,5 @@
+﻿<flash_project name="Feb2022Clothing" version="1">
+	<project_file path="./Feb2022Clothing.fla" filetype="fla" profile="" def_file="true"/>
+	<project_file path="./com/clubpenguin/util/TrackerAS2.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/util/Delegate.as" filetype="as"/>
+</flash_project>
