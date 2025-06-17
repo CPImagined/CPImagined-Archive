@@ -1,0 +1,98 @@
+[
+    {
+        "igloo_location_id": 1,
+        "label": "Default",
+        "prompt": "Default",
+        "igloo_id": "45",
+        "name": "Default",
+        "cost": 0
+    },
+    {
+        "igloo_location_id": 2,
+        "label": "Beach",
+        "prompt": "Beach",
+        "igloo_id": "46",
+        "name": "Beach",
+        "cost": 2800
+    },
+    {
+        "igloo_location_id": 3,
+        "label": "Forest",
+        "prompt": "Forest",
+        "igloo_id": "47",
+        "name": "Forest",
+        "cost": 2700
+    },
+    {
+        "igloo_location_id": 4,
+        "label": "Mountain",
+        "prompt": "Mountain",
+        "igloo_id": "48",
+        "name": "Mountain",
+        "cost": 2800
+    },
+    {
+        "igloo_location_id": 5,
+        "label": "Age Of Dinosaurs",
+        "prompt": "Age Of Dinosaurs",
+        "igloo_id": "59",
+        "name": "Age Of Dinosaurs",
+        "cost": 0
+    },
+    {
+        "igloo_location_id": 6,
+        "label": "Distant Planet",
+        "prompt": "Distant Planet",
+        "igloo_id": "72",
+        "name": "Distant Planet",
+        "cost": 1800
+    },
+    {
+        "igloo_location_id": 7,
+        "label": "Soccer Pitch",
+        "prompt": "Soccer Pitch",
+        "igloo_id": "74",
+        "name": "Soccer Pitch",
+        "cost": 1800
+    },
+    {
+        "igloo_location_id": 8,
+        "label": "Undersea",
+        "prompt": "Undersea",
+        "igloo_id": "80",
+        "name": "Undersea",
+        "cost": 1800
+    },
+    {
+        "igloo_location_id": 9,
+        "label": "Darkest Times",
+        "prompt": "Darkest Times",
+        "igloo_id": "99",
+        "name": "Darkest Times",
+        "cost": 0
+    },
+    {
+        "igloo_location_id": 10,
+        "label": "Crystal Iceberg",
+        "prompt": "Crystal Iceberg",
+        "igloo_id": "45",
+        "name": "Crystal Iceberg",
+        "cost": 0
+    },
+    {
+        "igloo_location_id": 11,
+        "label": "Box Dimension",
+        "prompt": "Box Dimension",
+        "igloo_id": "100",
+        "name": "Box Dimension",
+        "cost": 0
+    },
+    {
+        "igloo_location_id": 12,
+        "label": "Fairgrounds",
+        "prompt": "Fairgrounds",
+        "igloo_id": "45",
+        "name": "Fairgrounds",
+        "cost": 0
+    }
+]

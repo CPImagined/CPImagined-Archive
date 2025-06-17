@@ -1,0 +1,51 @@
+{
+    "0": {
+        "title": "IMAGINING WHAT'S NEXT",
+        "path": "news\/papers\/20250406",
+        "issue": "Issue: 35",
+        "date": "April 6, 2025",
+        "key": "current_news"
+    },
+    "1": {
+        "title": "LETTER FROM THE EDITOR",
+        "path": "news\/papers\/20250223",
+        "issue": "Issue: 566",
+        "date": "March 22, 2017",
+        "key": "old_news0"
+    },
+    "2": {
+        "title": "WELCOME TO THE FUTURE FAIR!",
+        "path": "news\/papers\/20250202",
+        "issue": "Issue: 34",
+        "date": "February 2, 2024",
+        "key": "old_news1"
+    },
+    "3": {
+        "title": "'TIS THE TIME FOR TRAVEL",
+        "path": "news\/papers\/20250112",
+        "issue": "Issue: 33",
+        "date": "January 12, 2024",
+        "key": "old_news2"
+    },
+    "4": {
+        "title": "SNOW PLACE LIKE HOME",
+        "path": "news\/papers\/20241209",
+        "issue": "Issue: 32",
+        "date": "December 9, 2024",
+        "key": "old_news3"
+    },
+    "5": {
+        "title": "DOJO DILEMMA",
+        "path": "news\/papers\/20241112",
+        "issue": "Issue: 31",
+        "date": "November 12, 2024",
+        "key": "old_news4"
+    },
+    "6": {
+        "title": "HALLOWEEN HIJINKS",
+        "path": "news\/papers\/20241026",
+        "issue": "Issue: 30",
+        "date": "October 26, 2024",
+        "key": "old_news5"
+    }
+}

@@ -1,0 +1,93 @@
+{
+	
+	"boot": [
+		{
+			"id": "servers",
+			"title": "servers"
+		},
+		{
+			"id": "party",
+			"title": "Party"
+		},
+		{
+			"id": "airtower",
+			"title": "Communication"
+		},
+		{
+			"id": "sentry",
+			"title": "Communication"
+		}
+	],
+	
+	"login": [
+		{
+			"id": "login",
+			"title": "Login Screen"
+		}
+	],
+	
+	"join": [
+		{
+			"id": "engine",
+			"title": "Engine"
+		},
+		{
+			"id": "interface",
+			"title": "Interface"
+		},
+		{
+			"id": "prompt",
+			"title": "Prompt"
+		},
+		{
+			"id": "gridview",
+			"title": "Gridview"
+		},
+		{
+			"id": "mail",
+			"title": "Mail"
+		},
+		{
+			"id": "book",
+			"title": "Mail"
+		},
+		{
+			"id": "AvatarPointer",
+			"title": "AvatarPointer"
+		},
+		{
+			"id": "stampbook",
+			"title": "StampBook"
+		},
+		{
+			"id": "buddies",
+			"title": "StampBook"
+		},
+		{
+			"id": "rooms_common",
+			"title": "Rooms Common"
+		},
+		{
+			"id": "plugins",
+			"title": "Plugins"
+		},
+		{
+			"id": "announcement",
+			"title": "Announcement"
+		},
+		{
+			"id": "snolaf",
+			"title": "Snolaf"
+		}
+	],
+	
+	"merch": [
+		{
+			"id": "app",
+			"folder": "merch/",
+			"title": "Communication"
+		}
+	]
+	
+}
+
