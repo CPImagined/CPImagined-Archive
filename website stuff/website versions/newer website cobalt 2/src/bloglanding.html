@@ -1,0 +1,94 @@
+<html>
+<script>
+    const getPosts = async () => {
+        const response = await fetch(`/api/blog/posts`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        const { content } = await response.json();
+        console.log(content)
+        const posts = content.sort((a, b) => { return new Date(b.date) - new Date(a.date) })
+
+        const getDateString = (d) => {
+            const date = new Date(d)
+            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'].map(m => m.toUpperCase())
+
+            const month = months[date.getMonth()]
+            const day = date.getDate();
+            const year = date.getFullYear();
+
+            return `${month} ${day}${year != new Date().getFullYear() ? `, ${year}` : ''}`
+        }
+
+        const postsHtml = posts.map(p =>
+            `
+            <a href="whats-new/${file}">
+            <div class="postcont">
+                <div class="post" style="border-color:${color};">
+                <div class="posttextimg" style="background-image: url(images/${textimg}.png);"></div>
+                <div class="postimg" style="border-color:${color};background-image:url(images/${postimg}.png);">
+                    <div class="postimggrad" style="background-image: linear-gradient(rgba(${rgbcolor}, 0), rgba(${rgbcolor}, 0), rgba(${rgbcolor}, 0.7));">
+                    <div class="postauthimg" style="border-color:${color};background-image:url(https://play.cpimagined.net/avatar/${authorid}/cp?=100)"></div>
+                    <div class="posttitle">
+                        ${title}
+                    </div>
+                    <div class="postauth">
+                        ${author}
+                    </div>
+                    </div>
+                </div>
+                <div class="posttext">
+                    ${description}
+                </div>
+                <div class="postdate" style="background-color:${color};">
+                    ${date}
+                </div>
+                <div class="postcategory" style="color:${color};">
+                    <img src="images/Category${categoryimg}.png" width="90%"><br>
+                    ${category}
+                </div>
+                </div>
+            </div>
+            </a>
+            `
+        )
+
+
+        document.getElementById("post-cards").innerHTML = postsHtml
+
+    }
+    getPosts()
+</script>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/vnd.microsoft.icon" />
+    <title>What's New? | Club Penguin Imagined</title>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.cpimagined.net/whats-new">
+    <meta property="og:title" content="Club Penguin Imagined | Waddle and chat with other penguins!">
+    <meta property="og:description" content="Welcome to Club Penguin Imagined! Waddle around and make new friends!">
+    <meta property="og:image" content="https://www.cpimagined.net/images/CPIWEBSITEnAVLOGO.png">
+</head>
+
+<body>
+    <object type="text/html" data="header" width="100%"
+        style="position:fixed; left:0px; top:0px; right:0px;z-index:4;"></object>
+    <div class="headerbox"></div><br><br>
+    <div class="ImageBox"
+        style="width:90%; height:fit-content; padding:50px; background-image:url(images/CPIBanner3.png); background-size:auto; margin:0px;">
+        <div style="font-size:50px; text-align:center;"><b>WHAT'S NEW?</b></div><br>
+        <hr noshade="true"><br>
+        <span class="post-cards">
+            
+        </span>
+    </div><br><br>
+    <object type="text/html" data="footer" width="100%"
+        style="position:static; left:0px; bottom:0px; right:0px; z-index:4; transform: translate(-8px, 100px);"></object>
+</body>
+
+</html>

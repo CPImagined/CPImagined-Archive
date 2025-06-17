@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/vnd.microsoft.icon" />
+    <title>Home | Club Penguin Imagined</title>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.cpimagined.net/">
+    <meta property="og:title" content="Club Penguin Imagined | Waddle and chat with other penguins!">
+    <meta property="og:description" content="Welcome to Club Penguin Imagined! Waddle around and make new friends!">
+    <meta property="og:image" content="https://www.cpimagined.net/images/CPIWEBSITEnAVLOGO.png">
+</head>
+
+<body>
+    <object type="text/html" data="header" width="100%" style="position:fixed; left:0px; top:0px; right:0px;z-index:4;"></object>
+    <div class="headerbox"></div><br><br>
+    <section class="important">
+        <div class="img-slider">
+            <div class="slide active">
+                <img src="images/Download.png" alt="Download and play today!">
+                <div class="img-button">
+                    <a class="cta" href="https://www.cpimagined.net/download"><button>Download</button></a>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="images/JamPartyBanner.png" alt="Rock out at the musical celebration of the year! Join DJ K-Dance, the Penguin Band, and even some special guests on the Music Cruise, and around the island!"> <!--What's up next? Only time will tell...-->
+                <div class="img-button">
+                    <a class="cta" href="https://play.cpimagined.net/"><button>Play Now!</button></a>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="images/Discord.png" alt="Join our Discord for updates and news!">
+                <div class="img-button">
+                    <a class="cta" href="https://discord.gg/g5k5jh3M8J"><button>Join</button></a>
+                </div>
+            </div>
+            <div class="navigation">
+                <div class="btn active"></div>
+                <div class="btn"></div>
+                <div class="btn"></div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            var slides = document.querySelectorAll('.slide');
+            var btns = document.querySelectorAll('.btn');
+            let currentSlide = 1;
+
+            // Javascript for image slider manual navigation
+            var manualNav = function (manual) {
+                slides.forEach((slide) => {
+                    slide.classList.remove('active');
+
+                    btns.forEach((btn) => {
+                        btn.classList.remove('active');
+                    });
+                });
+
+                slides[manual].classList.add('active');
+                btns[manual].classList.add('active');
+            }
+
+            btns.forEach((btn, i) => {
+                btn.addEventListener("click", () => {
+                    manualNav(i);
+                    currentSlide = i;
+                });
+            });
+
+            // Javascript for image slider autoplay navigation
+            var repeat = function (activeClass) {
+                let active = document.getElementsByClassName('active');
+                let i = 1;
+
+                var repeater = () => {
+                    setTimeout(function () {
+                        [...active].forEach((activeSlide) => {
+                            activeSlide.classList.remove('active');
+                        });
+
+                        slides[i].classList.add('active');
+                        btns[i].classList.add('active');
+                        i++;
+
+                        if (slides.length == i) {
+                            i = 0;
+                        }
+                        if (i >= slides.length) {
+                            return;
+                        }
+                        repeater();
+                    }, 10000);
+                }
+                repeater();
+            }
+            repeat();
+        </script>
+    </section>
+    <div class="ImageBoxContainer" style="height:85px; transform:translate(0px, -100px)">
+        <div class="ImageBox" style="background-image: url(images/CPIBanner.png); text-align:center; width:95%; height:100%;">
+            <br>
+            <div style="font-size:15px; line-height:0px; float:left; line-height:30px; margin:10px">Redeem this code for exclusive,
+                limited-time items!</div>
+            <div style="font-size:40px; line-height:30px; text-align:center; transform:translate(-150px); margin:10px">
+                ANIMALS4U</div>
+            <span style="float:right; transform:translate(-37px, -70px)">
+                <a href="https://play.cpimagined.net/">
+                    <unlockbutton><img src="images/UnlockButton.png"></unlockbutton>
+                </a>
+            </span>
+        </div>
+    </div>
+    <div class="ImageBoxContainer">
+        <div class="ImageBox" style="background-image:url(images/JamPartyNews.png);">
+            <div class="wn-head">
+                <div class="header-container">
+                    <h2><strong>
+                            <div class="corner-month">
+                                <div class="month-txt">
+                                    <font>JUL 2023</font>
+                                </div>
+                            </div>
+                            <font>NEWS THIS MONTH</font>
+                        </strong>
+                    </h2>
+                </div>
+            </div>
+            <div class="ImageBoxColor">
+                <div class="TextContainer">
+                    Rock out at the musical celebration of the year!<br>
+                    Join DJ K-Dance, the Penguin Band, and even some special guests on the Music Cruise,<br>
+                    and around the island!
+                    <br>
+                    <div>
+                        <br><!--What's up next? Only time will tell... (4 breaks for no party messages, 1 on top 3 on bottom)-->
+                        <a href="https://play.cpimagined.net/">
+                            <button2>Play Now!</button2>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ImageBox">
+            <div class="wn-head">
+                <div class="header-container">
+                    <h2><strong>
+                            <div class="corner-month">
+                                <div class="month-txt">
+                                    <font>CHECK OUT OUR</font>
+                                </div>
+                            </div>
+                            <font>DISCORD</font>
+                        </strong></h2>
+                </div>
+            </div>
+            <div class="ImageBoxColor">
+                <div class="TextContainer">
+                    Missed something, or looking for more?<br>
+                    Check out our Discord for updates and exclusive content!
+                    <div>
+                        <br><br>
+                        <a href="https://discord.gg/g5k5jh3M8J">
+                            <button2>Join Now!</button2>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br><br><br>
+    <div class="ImageBoxContainer" style="width:85%; height:20%;">
+        <div class="ImageBox"
+            style="background-image:url(images/admin-ajax.png); width:85%; height:20%; background-size:auto; background-repeat:repeat;">
+            <div class="TextContainer" style="font-size:40px; padding:50px;">
+                <br><br>
+                DOWNLOAD AND PLAY TODAY!
+                <br><br><br><br>
+                <a class="cta" href="https://www.cpimagined.net/download"><button>Download</button></a>
+            </div>
+        </div>
+    </div>
+    <object type="text/html" data="footer" width="100%" style="position:static; left:0px; bottom:0px; right:0px; z-index:4; transform: translate(-8px, 100px);"></object>
+</body>
+
+</html>

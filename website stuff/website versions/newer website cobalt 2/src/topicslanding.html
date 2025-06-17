@@ -1,0 +1,68 @@
+<html>
+<script>
+    const getTopics = async () => {
+        const response = await fetch(`/api/blog/tags`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        const { content } = await response.json();
+        console.log(content)
+        const posts = content.sort((a,b) => {return new Date(b.date) - new Date(a.date)})
+
+        const getDateString = (d) => {
+            const date = new Date(d)
+            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'].map(m => m.toUpperCase())
+
+            const month = months[date.getMonth()]
+            const day = date.getDate();
+            const year = date.getFullYear();
+
+            return `${month} ${day}${year != new Date().getFullYear() ? `, ${year}` : ''}`
+        }
+
+        const topicsHtml = posts.map(p => 
+            `
+            <div class="card">
+                <span class="top">
+                    <a class="title" href="/blog/topics/${p.url_name}">${p.name}</a>
+                </span>
+                
+                <span class="description">
+                    ${p.description}
+                </span>
+            </div>
+            `
+        ).join('\n')
+        
+        
+        document.getElementById("topic-cards").innerHTML = topicsHtml
+
+    }
+    getTopics()
+</script>
+
+<head>
+    <title id="page_title"></title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        
+    </style>
+</head>
+
+<body class="dark">
+    <a class="back" href="/blog">< back</a>
+    <div id="postinfo">
+        <h1>topics</h1>
+        <div class="underline">
+            <span class="tagline">fine tuned.</span>
+        </div>
+    </div>
+    <br>
+    <div class="topic-cards" id="topic-cards">
+        
+    </div>
+</body>
+
+</html>

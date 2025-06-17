@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="shortcut icon" href="IMAGES/favicon.ico" type="image/vnd.microsoft.icon" />
+  <title>Home | Club Penguin Imagined</title>
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.cp-imagined.xyz/">
+  <meta property="og:title" content="Club Penguin Imagined | Waddle and chat with other penguins!">
+  <meta property="og:description" content="Welcome to Club Penguin Imagined! Waddle around and make new friends!">
+  <meta property="og:image" content="IMAGES/CPIWEBSITEnAVLOGO.png">
+  <link rel="import" href="header.html">
+</head>
+
+<body>
+  <object type="text/html" data="header.html" width="100%"></object>
+  <!-- <div class="starelement-cell">
+    <div class="starelement">
+      <div class="starcontent-cell"><img class="staricon" src="IMAGES/Happypuffle.png" width="40"
+          height="40"></span><span class="startext" style="font-size: 24px">Welcome to Club Penguin Imagined! Waddle
+          around and make new friends!</span>
+        <div class="star-button"></div>
+      </div>
+      <div class="mobile-star-button"></div>
+    </div>
+  </div> -->
+  <section class="Importent">
+    <div class="img-slider">
+      <div class="slide active">
+        <img src="IMAGES/Download.png" alt="Download and play today!">
+        <div class="First">
+          <a class="cta" href="https://www.cp-imagined.xyz/download"><button>Download</button></a>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="IMAGES/FairPartyBanner.png" alt="What's up next? Only time will tell...">
+        <div class="First">
+          <a class="cta" href="https://play.cp-imagined.xyz/"><button>Play Now!</button></a>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="IMAGES/Discord.png" alt="Join our Discord for updates and news!">
+        <div class="First">
+          <a class="cta" href="https://discord.gg/g5k5jh3M8J"><button>Join</button></a>
+        </div>
+      </div>
+      <div class="navigation">
+        <div class="btn active"></div>
+        <div class="btn"></div>
+        <div class="btn"></div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      var slides = document.querySelectorAll('.slide');
+      var btns = document.querySelectorAll('.btn');
+      let currentSlide = 1;
+
+      // Javascript for image slider manual navigation
+      var manualNav = function (manual) {
+        slides.forEach((slide) => {
+          slide.classList.remove('active');
+
+          btns.forEach((btn) => {
+            btn.classList.remove('active');
+          });
+        });
+
+        slides[manual].classList.add('active');
+        btns[manual].classList.add('active');
+      }
+
+      btns.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+          manualNav(i);
+          currentSlide = i;
+        });
+      });
+
+      // Javascript for image slider autoplay navigation
+      var repeat = function (activeClass) {
+        let active = document.getElementsByClassName('active');
+        let i = 1;
+
+        var repeater = () => {
+          setTimeout(function () {
+            [...active].forEach((activeSlide) => {
+              activeSlide.classList.remove('active');
+            });
+
+            slides[i].classList.add('active');
+            btns[i].classList.add('active');
+            i++;
+
+            if (slides.length == i) {
+              i = 0;
+            }
+            if (i >= slides.length) {
+              return;
+            }
+            repeater();
+          }, 10000);
+        }
+        repeater();
+      }
+      repeat();
+    </script>
+  </section>
+  <div class="Image-theme"
+    style="background-image: url(IMAGES/CPIBanner.png?width=2026&height=471); text-align:center;">
+  <br>
+    <div style="font-size:15px; line-height:0px; float:left; line-height:30px;">Redeem this code for exclusive, limited-time items!</div>
+    <div style="font-size:40px; line-height:30px; text-align:center; transform:translate(-150px);">FAIRESSENTIALS</div>
+    <span style="float:right; transform:translate(-37px, -60px)">
+    <a href="https://play.cp-imagined.xyz">
+      <img src="IMAGES/UnlockButton.png">
+    <unlockbutton></unlockbutton>
+    </a>
+  </span>
+  </div>
+  <div class="Long">
+    <!-- <div class="module-content">
+      <div class="whatsnew-block">
+        <div class="whatsnew-image" style="background-image: url(IMAGES/PartyNews.png?width=1850&height=1041)"></div>
+        <div class="whatsnew-info">
+          <div class="module-header wn-head">
+            <div class="header-container">
+              <h2 class="header-title"><strong>
+                  <div class="corner-month">
+                    <div class="month-txt">
+                      <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">Feb 2022</font>
+                      </font>
+                    </div>
+                  </div>
+                  <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">NEWS THIS MONTH</font>
+                  </font>
+                </strong></h2>
+            </div>
+          </div>
+          <div class="wn-content">
+            <div class="wn-list-container">
+              <font style="vertical-align: inherit;"></font><strong>
+                <font style="vertical-align: inherit;">
+                  <font style="vertical-align: inherit;">The Puffle Party is on now! Grab cool new puffle stuffies, costumes, and more! Search around the island for hidden puffles and collect exclusive rewards!</font>
+
+                </font>
+                </font>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <div class="module-content">
+      <div class="whatsnew-block">
+        <div class="whatsnew-image" style="background-image: url(IMAGES/FairPartyNews.png?width=1850&height=104)"></div>
+        <div class="whatsnew-info">
+          <div class="module-header wn-head2">
+            <div class="header-container">
+              <h2 class="header-title"><strong>
+                  <div class="corner-month">
+                    <div class="month-txt">
+                      <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">Mar 2022</font>
+                      </font>
+                    </div>
+                  </div>
+                  <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">NEWS THIS MONTH</font>
+                  </font>
+                </strong></h2>
+            </div>
+          </div>
+          <div class="blog-details">
+            <div class="wn-list-container">
+              <font style="vertical-align: inherit;"></font><strong>
+                <font style="vertical-align: inherit;">
+                  <font style="vertical-align: top; text-align: center;">The Fair is here! Gear up in silly costumes, play cool games to earn tickets, and more!
+                  </font>
+                </font>
+              </strong>
+              <br><br><br>
+              <font style="vertical-align: inherit;"></font><span style="color: #33cccc;"><strong>
+                  <font style="vertical-align: inherit;"></font>
+                </strong></span>
+              <font style="vertical-align: middle; text-align: center;">
+                <a class="cta" href="https://play.cp-imagined.xyz/">
+                  <button3>Play Now!</button3>
+                </a>
+              </font>
+              </font>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="module-content2">
+      <div class="whatsnew-block">
+        <div class="whatsnew-image" style="background-image: url(IMAGES/DiscordBackground.jpg)"></div>
+        <div class="whatsnew-info">
+          <div class="module-header wn-head2">
+            <div class="header-container">
+              <h2 class="header-title"><strong>
+                  <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">CHECK OUT OUR BLOG FOR MORE NEWS</font>
+                  </font>
+                </strong></h2>
+            </div>
+          </div>
+          <div class="blog-details">
+            <div class="wn-list-container">
+              <font style="vertical-align: inherit;"></font><strong>
+                <font style="vertical-align: inherit;">
+                  <font style="vertical-align: top; text-align: center;">Missed something, or looking for more?<br>Check out
+                    our blog for updates and exclusive content!
+                  </font>
+                </font>
+              </strong>
+              <br><br><br>
+              <font style="vertical-align: inherit;"></font><span style="color: #33cccc;"><strong>
+                  <font style="vertical-align: inherit;"></font>
+                </strong></span>
+              <font style="vertical-align: middle; text-align: center;">
+                <a class="cta" href="https://www.cp-imagined.xyz/blog">
+                  <button3>Blog</button3>
+                </a>
+              </font>
+              </font>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="Download-Today" style="background-image: url(IMAGES/admin-ajax.png)"">
+    <h1 class=" header-title1"><strong>
+      <font style="vertical-align: inherit;">
+        <br><br>
+        <font style="vertical-align: inherit; font-size: 40px;">DOWNLOAD CLUB PENGUIN IMAGINED TODAY!</font>
+      </font>
+    </strong>
+    </h1>
+    <a class="cta" href="https://www.cp-imagined.xyz/download">
+      <button4>Download</button4>
+    </a>
+  </div>
+  <a href="https://www.cp-imagined.xyz/secrets">
+    <div class="icon">
+      <img src="IMAGES/favicon.ico">
+    </div>
+  </a>
+</body>
+<object type="text/html" data="footer.html" width="100%"></object>
+</html>

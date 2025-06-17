@@ -1,0 +1,74 @@
+<html>
+    <script>
+        
+        const re = new RegExp(/\/blog\/(.+)/gm)
+        const postname = re.exec(window.location.pathname)[1]
+        
+        const getTag = async (id) => {
+            const response = await fetch(`/api/blog/tag?id=${id}`, {
+                method: 'GET',
+                headers: {
+                'Content-Type': 'application/json'
+                }
+            });
+
+            const { content } = await response.json(); 
+            return content
+        }
+
+        const getPost = async () => {
+            const response = await fetch(`/api/blog/post?name=${postname}`, {
+                method: 'GET',
+                headers: {
+                'Content-Type': 'application/json'
+                }
+            });
+            const { content } = await response.json(); 
+            const { body, name, author, tags } = content
+            const date = new Date(content.date)
+            // add metadata
+            document.getElementById("post").innerHTML = body
+            document.getElementById("page_title").innerText = name
+            document.getElementById("post_title").innerText = name
+            document.getElementById("date").innerText = (() => {
+                const months = ['Jan', 'Feb', 'Mar', 'Apr', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+
+                const month = months[date.getMonth()]
+                const day = date.getDate();
+                const year = date.getFullYear();
+
+                return `${month} ${day}, ${year}`
+            })()
+            document.getElementById("time").innerText = `${date.getHours()}:${date.getMinutes() < 10 ? '0': ''}${date.getMinutes()}`    
+            document.getElementById("author").innerText = `by ${author}`
+            // Add tags
+            tags.forEach(async t => {
+                const tag = await getTag(t)
+                document.getElementById("topics").innerHTML = document.getElementById("topics").innerHTML + `<a class="topic" style="background-color:${tag.colour}" href="/blog/topics/${tag.url_name}">${tag.name}</a>`
+            })
+        }
+        getPost()
+        
+    </script>
+
+    <head>
+        <title id="page_title"></title>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+
+    <body class="dark">
+        <a class="back" href="/blog">< back</a>
+        <div id="postinfo">
+            <h1 id="post_title"></h1>
+            <div class="underline">
+                <span class="tagline" id="author"></span>
+                <span class="tagline" id="date"></span>
+                <span class="tagline" id="time"></span>
+                <span class="topics" id="topics"></span>
+            </div>
+        </div>
+        
+        <div class="post" id="post">
+        </div>
+    </body>
+</html>
