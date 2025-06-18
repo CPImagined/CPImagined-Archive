@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<locale game="Diving" language="English" version="1.0">
+	
+	<!-- Title Screen -->
+	<entry id="diving_start_btn" value="START"/>
+	<entry id="diving_instructions_btn" value="INSTRUCTIONS"/>
+	<!-- This is this font size. -->
+	<entry id="diving_instructions_btn_text_size" value="65"/>
+	
+	<!-- Instructions Screen -->
+	<entry id="diving_instructions_treasure" value="Treasures will appear at the bottom of the ocean."/>
+	<entry id="diving_instructions_move" value="Use the arrow keys to swim and take the treasures back up to the boat!"/>
+	<entry id="diving_instructions_puffle" value="If you take your brown puffle with you, it will occasionally use its sonar to scare away fish."/>
+	<entry id="diving_instructions_text_size" value="14"/>
+	
+	<!-- General GUI -->
+	<entry id="diving_score" value="SCORE:"/>
+	<entry id="diving_total_score" value="TOTAL SCORE:"/>
+	<entry id="diving_coins" value="COINS:"/>
+	
+	<!-- Finish Screen -->
+	<entry id="diving_play_again" value="PLAY AGAIN"/>
+	<entry id="diving_exit" value="EXIT"/>
+	
+</locale>

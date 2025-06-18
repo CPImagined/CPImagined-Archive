@@ -1,0 +1,22 @@
+- This uses a custom gameStartParam: hasBrownPuffle. It's currently set to true in the HostEmulator.
+- This exists because the AS3 minigame environment can't check if a specific puffle is being walked; it can only check if the player that puffle.
+
+- There's some extra stuff here that diving doesn't use cuz I designed this to be a framework for future AS3 games.
+
+- Messing with the XML values doesn't require recompiling the SWFs. This'll save some time.
+
+Before shipping:
+- Set debugMode to false in the config file. (Make empty)
+- Set ALLOW_LOCAL to false in SecurityHandler.
+
+TODO:
+- Puffle graphics
+- The sub and puffle just have some placeholder graphics cuz I'm not an animator.
+- Can use the puffle's setState method if you want to change his expression based on whether he's attacking, idle, etc.
+
+- More penguin animations maybe
+- There's just the neutral one.
+
+- Mess with sfx
+- Some of em could be better.
+- Choose background music. I just put Puffle Rescue as placeholder.

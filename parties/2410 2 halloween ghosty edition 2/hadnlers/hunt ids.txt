@@ -1,0 +1,17 @@
+0 - pumpkin - plaza
+1 - square thing - shack
+2 - lollipop - beach
+3 - stick - mtn
+4 - apple - lounge
+5 - candy corn - cave
+6 - bonbon - rink
+7 - candy bar - forts
+
+keys
+10 - foyer
+11 - greenhouse
+12 - dining room
+13 - library
+14 - attic
+
+15 - skip defeat

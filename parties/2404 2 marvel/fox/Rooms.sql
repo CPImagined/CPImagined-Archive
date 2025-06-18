@@ -1,0 +1,4 @@
+INSERT INTO "room" ("id", "internal_id", "name", "member", "max_users", "required_item", "game", "blackhole", "spawn", "stamp_group") VALUES (1208, 2002, 'stage', 'false', 80, NULL, 'false', 'false', 'false', NULL);
+INSERT INTO "room" ("id", "internal_id", "name", "member", "max_users", "required_item", "game", "blackhole", "spawn", "stamp_group") VALUES (1210, 2200, 'eco', 'false', 80, NULL, 'false', 'false', 'false', NULL);
+INSERT INTO "room" ("id", "internal_id", "name", "member", "max_users", "required_item", "game", "blackhole", "spawn", "stamp_group") VALUES (1648, 2201, 'robotfactory', 'false', 800, NULL, 'true', 'false', 'false', NULL);
+INSERT INTO "room" ("id", "internal_id", "name", "member", "max_users", "required_item", "game", "blackhole", "spawn", "stamp_group") VALUES (1601, 2203, 'bounce', 'false', 800, NULL, 'true', 'false', 'false', NULL);

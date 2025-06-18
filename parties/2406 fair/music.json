@@ -1,0 +1,222 @@
+{
+	"text" :
+	{
+		"goToButtonText" :  { 
+			"fontSize" : 9,
+			"translation": {
+				"en": "Go to DJ3K!",
+				"es": "¡Ir a DJ3K!",
+				"fr": "Va à DJ3K !",
+				"pt": "Ir pro DJ3K!"			
+			}
+		},
+		"dialogDescription" : { 
+			"fontSize" : 12,
+			"translation": {
+				"en": "Record and save your own music mixes in DJ3K.",
+				"es": "Graba y guarda tus temas en DJ3K.",
+				"fr": "Enregistre tes propres mix dans DJ3K.",
+				"pt": "Grave e salve sua própria música no DJ3K."		
+			}
+		},
+		"dialogButtonText" : { 
+			"fontSize" : 9,
+			"translation": {
+				"en": "Go There!",
+				"es": "¡Ir allí!",
+				"fr": "Vas-y !",
+				"pt": "Ir pra lá!"		
+			}
+		},
+		"savedMixesText" : { 
+			"fontSize" : 18,
+			"translation": {
+				"en": "My Saved Mixes",
+				"es": "Mis temas mezclados",
+				"fr": "Mes Mix",
+				"pt": "Minhas Músicas"		
+			}
+		},
+		"musicListText" : { 
+			"fontSize" : 18,
+			"translation": {
+				"en": "Music List",
+				"es": "Lista musical",
+				"fr": "Liste de Musiques",
+				"pt": "Lista de Músicas"		
+			}
+		}
+	},
+	"songs" : 	
+	[
+
+			{
+			"id" : 297,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "The Ringmaster",
+				"es": "The Ringmaster",
+				"fr": "The Ringmaster",
+				"pt": "The Ringmaster"
+			}
+		},		
+
+			{
+			"id" : 221,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "All The Fun Of The Fair",
+				"es": "All The Fun Of The Fair",
+				"fr": "All The Fun Of The Fair",
+				"pt": "All The Fun Of The Fair"
+			}
+		},		
+
+			{
+			"id" : 593,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Into Orbit",
+				"es": "Into Orbit",
+				"fr": "Into Orbit",
+				"pt": "Into Orbit"
+			}
+		},		
+
+			{
+			"id" : 594,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Martian Landing",
+				"es": "Martian Landing",
+				"fr": "Martian Landing",
+				"pt": "Martian Landing"
+			}
+		},		
+
+			{
+			"id" : 596,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Bulls Eye",
+				"es": "Ojo de buey",
+				"fr": "En Plein Dans le Mille",
+				"pt": "Na Mira"
+			}
+		},		
+
+			{
+			"id" : 595,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Desert Roads",
+				"es": "Desert Roads",
+				"fr": "Desert Roads",
+				"pt": "Desert Roads"
+			}
+		},		
+
+			{
+			"id" : 598,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Carnival Fun",
+				"es": "Carnavaleando",
+				"fr": "Forains en Fête",
+				"pt": "Festa Festiva"
+			}
+		},		
+
+			{
+			"id" : 597,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Marooned Lagoon",
+				"es": "Marooned Lagoon",
+				"fr": "Marooned Lagoon",
+				"pt": "Marooned Lagoon"
+			}
+		},		
+
+			{
+			"id" : 599,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "The Viking Opera",
+				"es": "The Viking Opera",
+				"fr": "The Viking Opera",
+				"pt": "The Viking Opera"
+			}
+		},		
+
+			{
+			"id" : 914,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "The Rhythm Takes Ye",
+				"es": "The Rhythm Takes Ye",
+				"fr": "The Rhythm Takes Ye",
+				"pt": "The Rhythm Takes Ye"
+			}
+		},		
+
+			{
+			"id" : 915,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Castle Chaos",
+				"es": "Castle Chaos",
+				"fr": "Castle Chaos",
+				"pt": "Castle Chaos"
+			}
+		},		
+
+			{
+			"id" : 31,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "The Stage",
+				"es": "The Stage",
+				"fr": "The Stage",
+				"pt": "The Stage"
+			}
+		},		
+
+			{
+			"id" : 13,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "One Very Grumpy Polar Bear",
+				"es": "One Very Grumpy Polar Bear",
+				"fr": "One Very Grumpy Polar Bear",
+				"pt": "One Very Grumpy Polar Bear"
+			}
+		},		
+
+			{
+			"id" : 2023,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Voyage Into Imagination",
+				"es": "Voyage Into Imagination",
+				"fr": "Voyage Into Imagination",
+				"pt": "Voyage Into Imagination"
+			}
+		}			
+
+	]
+}

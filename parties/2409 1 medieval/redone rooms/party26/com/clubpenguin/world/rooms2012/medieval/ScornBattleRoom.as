@@ -1,0 +1,82 @@
+﻿//Created by Action Script Viewer - https://www.buraks.com/asv
+    class com.clubpenguin.world.rooms2012.medieval.ScornBattleRoom extends com.clubpenguin.world.rooms.BaseRoom
+    {
+        var _isWeek2, _stage, _PARTY, _INTERFACE, _triggerWatcher, _SHELL, setupNavigationButtons, _revealScornTrigger, _roomUpdateInterval, _destroyDelegate, _ENGINE, _scornBattleTriggerTimeout, _opcodeJournal;
+        function ScornBattleRoom (stageReference, isWeek2) {
+            super(stageReference);
+            _isWeek2 = isWeek2;
+            _stage.start_x = 665;
+            _stage.start_y = 390;
+        }
+        function init() {
+			_PARTY = _global.getCurrentParty().BaseParty.CURRENT_PARTY;
+            _triggerWatcher = new com.clubpenguin.world.rooms2012.common.triggers.TriggerWatcher(_stage, _SHELL);
+            setupNavigationButtons([new com.clubpenguin.world.rooms.common.NavigationButtonVO(_stage.scorn_statue_mc.btn_dragonfight, 580, 300)]);
+			_stage.triggers_mc.dragonfight_mc.triggerFunction = com.clubpenguin.util.Delegate.create(this, startBossBattle);
+            _revealScornTrigger = new com.clubpenguin.world.rooms2012.common.triggers.PlayerWalkTrigger(_stage.triggers_mc.dragonanim_mc);
+            _revealScornTrigger.isLocalPlayerOnly();
+            _revealScornTrigger.playersRemoved.add(com.clubpenguin.util.Delegate.create(this, revealScorn));
+            _triggerWatcher.addTrigger(_revealScornTrigger);
+            clearInterval(_roomUpdateInterval);
+            _roomUpdateInterval = setInterval(this, "update", 40);
+            _stage.triggers_mc.bossbattle_mc.triggerFunction = com.clubpenguin.util.Delegate.create(this, startBossBattle);
+            _destroyDelegate = com.clubpenguin.util.Delegate.create(this, destroy);
+            _SHELL.addListener(_SHELL.ROOM_DESTROYED, _destroyDelegate);
+            _stage.triggers_mc.bridge_mc.triggerFunction = com.clubpenguin.util.Delegate.create(this, exit, "party25", 680, 90);
+            _stage.triggers_mc.sky_kingdom_exit.triggerFunction = com.clubpenguin.util.Delegate.create(this, exit, "party27", 668, 383);
+            if (_SHELL.isItemInMyInventory(com.clubpenguin.world.rooms2012.medieval.MedievalParty.SCORN_CROWN_PIN_ID) || _PARTY.getTaskComplete(7)) {
+                setScornDefeatedState();
+                var _local_2 = _ENGINE.getGameCompletedParams();
+                if (_local_2.isScornBattleJustPlayed) {
+                    onScornBattleGameComplete();
+                };
+				if (!_PARTY.getTaskComplete(7)) {
+					_PARTY.setTaskComplete(7);
+				};
+            } else if (!_PARTY.getTaskComplete(7)) {
+                clearInterval(_scornBattleTriggerTimeout);
+                _scornBattleTriggerTimeout = setInterval(this, "startBossBattle", 10000);
+            }
+            _opcodeJournal = new com.clubpenguin.world.rooms2012.medieval.OpcodeJournal();
+            _opcodeJournal.init(_SHELL.getMyPlayerId());
+        }
+        function onScornBattleGameComplete() {
+			if (!_PARTY.getMessageViewed(4)) {
+				_INTERFACE.showContent("w.p2024.medieval.gary.scorn");
+			};
+        }
+        function setScornDefeatedState() {
+            _stage.foreground_mc.gotoAndStop(2);
+            _stage.background_mc.gotoAndStop(2);
+            _stage.block_mc.gotoAndStop(2);
+			_stage.scorn_statue_mc.gotoAndStop(2);
+			_stage.rock_mc.gotoAndStop(2);
+			_stage.triggers_mc.gotoAndStop(2);
+            _opcodeJournal.sendOpcode(com.clubpenguin.world.rooms2012.medieval.OpcodeJournal.SCORN_DEFEATED);
+			_SHELL.startMusicById(39);
+        }
+        function revealScorn() {
+            if (_stage.background_mc.dragonrise_mc._currentframe == 1) {
+                _stage.background_mc.dragonrise_mc.gotoAndPlay(2);
+				clearInterval(_scornBattleTriggerTimeout);
+                _scornBattleTriggerTimeout = setInterval(this, "startBossBattle", 10000);
+            }
+        }
+        function startBossBattle() {
+            com.clubpenguin.world.rooms2012.medieval.MedievalParty.track("startScornBattle");
+            clearInterval(_scornBattleTriggerTimeout);
+            _ENGINE.sendJoinGame(com.clubpenguin.world.rooms2012.medieval.MedievalParty.GAME_SCORN_BATTLE, true);
+        }
+        function update() {
+            _triggerWatcher.checkAllPlayers();
+        }
+        function exit(roomName, x, y) {
+            _SHELL.sendJoinRoom(roomName, x, y);
+        }
+        function destroy() {
+            _SHELL.removeListener(_SHELL.ROOM_DESTROYED, _destroyDelegate);
+            clearInterval(_scornBattleTriggerTimeout);
+            clearInterval(_roomUpdateInterval);
+        }
+        static var CLASS_NAME = "ScornBattleRoom";
+    }

@@ -1,0 +1,68 @@
+	[
+		"w.app.loadingscreen.2014mayparty",
+		"Travel to the future until June 1!"
+	],
+	[
+		"w.p2014.future.dialogue.gary.login.1",
+		"Welcome to the future. I’d show you around, but we have an emergency. Ultimate Protobot is launching meteors at us!"
+	],
+        [
+		"w.p2014.future.dialogue.gary.login.2",
+		"Open this holo-comm to gear up for space. You’re all that stands between us and those meteors!"
+	],
+        [
+		"w.p2014.future.dialogue.gary.transform.1",
+		"Now you’re ready to blast off and take out meteors! Good luck, pilot!"
+	],
+        [
+		"w.p2014.future.dialogue.gary.transform.2",	
+		"Ok"
+	],
+        [
+		"w.p2014.future.dialogue.gary.protobot.1",
+		"gary protobot 1"
+	],
+        [
+		"w.p2014.future.dialogue.gary.protobot.2",
+		"Open Holo-comm"
+	],
+        [
+		"w.p2014.future.dialogue.gary.instructions",
+		"gary instructions"
+	],
+        [
+		"w.p2014.future.dialogue.protobot.intro.1",
+		"I AM PROTOBOT. YOU ARE OBSOLETE."
+	],
+        [
+		"w.p2014.future.dialogue.protobot.intro.2",
+		"I AM PROTOBOT. YOU ARE OBSOLETE."
+	],
+        [
+		"w.p2014.future.dialogue.protobot.intro.3",
+		"SURRENDER NOW OR BE DESTROYED!"
+	],
+        [
+		"w.p2014.future.dialogue.protobot.intro.4",
+		"SURRENDER NOW OR BE DESTROYED!"
+	],
+        [
+		"w.p2014.future.dialogue.protobot.success.1",
+		"CANNOT COMPUTE FAILURE..."
+	],
+        [
+		"w.p2014.future.dialogue.protobot.success.2",
+		"HOW COULD YOU DEFEAT ME?"
+	],
+        [
+		"w.p2014.future.dialogue.protobot.success.3",
+		"BZZT! UNABLE TO REBOOT!"
+	],
+        [
+		"w.p2014.future.dialogue.protobot.success.4",
+		"YOUR ROBOS ARE TOO STRONG!"
+	],
+        [
+		"w.p2014.future.dialogue.protobot.fail",
+		"YOU WILL BE ASSIMILATED."
+	],

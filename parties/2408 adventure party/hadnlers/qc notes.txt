@@ -1,0 +1,5 @@
+8 - start
+9 - hidden lake
+10 - tree forts
+11 - cove
+12 - done

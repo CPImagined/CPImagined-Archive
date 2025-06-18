@@ -1,0 +1,222 @@
+{
+	"text" :
+	{
+		"goToButtonText" :  { 
+			"fontSize" : 9,
+			"translation": {
+				"en": "Go to DJ3K!",
+				"es": "¡Ir a DJ3K!",
+				"fr": "Va à DJ3K !",
+				"pt": "Ir pro DJ3K!"			
+			}
+		},
+		"dialogDescription" : { 
+			"fontSize" : 12,
+			"translation": {
+				"en": "Record and save your own music mixes in DJ3K.",
+				"es": "Graba y guarda tus temas en DJ3K.",
+				"fr": "Enregistre tes propres mix dans DJ3K.",
+				"pt": "Grave e salve sua própria música no DJ3K."		
+			}
+		},
+		"dialogButtonText" : { 
+			"fontSize" : 9,
+			"translation": {
+				"en": "Go There!",
+				"es": "¡Ir allí!",
+				"fr": "Vas-y !",
+				"pt": "Ir pra lá!"		
+			}
+		},
+		"savedMixesText" : { 
+			"fontSize" : 18,
+			"translation": {
+				"en": "My Saved Mixes",
+				"es": "Mis temas mezclados",
+				"fr": "Mes Mix",
+				"pt": "Minhas Músicas"		
+			}
+		},
+		"musicListText" : { 
+			"fontSize" : 18,
+			"translation": {
+				"en": "Music List",
+				"es": "Lista musical",
+				"fr": "Liste de Musiques",
+				"pt": "Lista de Músicas"		
+			}
+		}
+	},
+	"songs" : 	
+	[
+
+			{
+			"id" : 717,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Cadence - Best Day Ever",
+				"es": "Cadence - Best Day Ever",
+				"fr": "Cadence - Best Day Ever",
+				"pt": "Cadence - Best Day Ever"
+			}
+		},		
+
+			{
+			"id" : 718,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Cole - Puffle Party Remix",
+				"es": "Cole - Puffle Party Remix",
+				"fr": "Cole - Puffle Party Remix",
+				"pt": "Cole - Puffle Party Remix"
+			}
+		},		
+
+			{
+			"id" : 744,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Starting Fresh",
+				"es": "Starting Fresh",
+				"fr": "Starting Fresh",
+				"pt": "Starting Fresh"
+			}
+		},		
+
+			{
+			"id" : 242,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Mix Maestro",
+				"es": "Mix Maestro",
+				"fr": "Mélodies du Maestro",
+				"pt": "Escala do Maestro"
+			}
+		},		
+
+			{
+			"id" : 746,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Starting Fresh 8-Bit Remix",
+				"es": "Starting Fresh 8-Bit Remix",
+				"fr": "Starting Fresh 8-Bit Remix",
+				"pt": "Starting Fresh 8-Bit Remix"
+			}
+		},		
+
+			{
+			"id" : 747,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Starting Fresh Elevator Remix",
+				"es": "Starting Fresh Elevator Remix",
+				"fr": "Starting Fresh Elevator Remix",
+				"pt": "Starting Fresh Elevator Remix"
+			}
+		},		
+
+			{
+			"id" : 716,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Rock The Boat",
+				"es": "Rock The Boat",
+				"fr": "Rock The Boat",
+				"pt": "Rock The Boat"
+			}
+		},		
+
+			{
+			"id" : 719,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Honolulu Honey",
+				"es": "Honolulu Honey",
+				"fr": "Honolulu Honey",
+				"pt": "Honolulu Honey"
+			}
+		},		
+
+			{
+			"id" : 720,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "The Cruise Ship",
+				"es": "The Cruise Ship",
+				"fr": "The Cruise Ship",
+				"pt": "The Cruise Ship"
+			}
+		},		
+
+			{
+			"id" : 721,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Rock The Boat Quartet",
+				"es": "Rock The Boat Quartet",
+				"fr": "Rock The Boat Quartet",
+				"pt": "Rock The Boat Quartet"
+			}
+		},		
+
+			{
+			"id" : 377,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Summer Song",
+				"es": "Summer Song",
+				"fr": "Summer Song",
+				"pt": "Summer Song"
+			}
+		},		
+
+			{
+			"id" : 702,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Hello Yellow!",
+				"es": "Hello Yellow!",
+				"fr": "Hello Yellow!",
+				"pt": "Hello Yellow!"
+			}
+		},		
+
+			{
+			"id" : 852,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Music Jamming",
+				"es": "Music Jamming",
+				"fr": "Music Jamming",
+				"pt": "Music Jamming"
+			}
+		},		
+
+			{
+			"id" : 2023,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Voyage Into Imagination",
+				"es": "Voyage Into Imagination",
+				"fr": "Voyage Into Imagination",
+				"pt": "Voyage Into Imagination"
+			}
+		}			
+
+	]
+}

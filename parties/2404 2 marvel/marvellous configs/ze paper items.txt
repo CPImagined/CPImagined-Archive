@@ -1,0 +1,262 @@
+chunking +32,
+    {
+        "paper_item_id": 5303,
+        "type": 6,
+        "cost": 0,
+        "is_member": false,
+        "label": "Remote Robot 01 Red",
+        "prompt": "Remote Robot 01 Red",
+        "layer": 7000
+    },
+    {
+        "paper_item_id": 5304,
+        "type": 6,
+        "cost": 0,
+        "is_member": false,
+        "label": "Remote Robot 02 Aqua",
+        "prompt": "Remote Robot 02 Aqua",
+        "layer": 7000
+    },
+    {
+        "paper_item_id": 5305,
+        "type": 6,
+        "cost": 0,
+        "is_member": false,
+        "label": "Remote Robot 02 Navy",
+        "prompt": "Remote Robot 02 Navy",
+        "layer": 7000
+    },
+    {
+        "paper_item_id": 5306,
+        "type": 6,
+        "cost": 0,
+        "is_member": false,
+        "label": "Remote Robot 02 Yellow",
+        "prompt": "Remote Robot 02 Yellow",
+        "layer": 7000
+    },
+    {
+        "paper_item_id": 5307,
+        "type": 6,
+        "cost": 0,
+        "is_member": false,
+        "label": "Remote Robot 02 Ice",
+        "prompt": "Remote Robot 02 Ice",
+        "layer": 7000
+    },
+    {
+        "paper_item_id": 5308,
+        "type": 6,
+        "cost": 0,
+        "is_member": false,
+        "label": "Remote Robot 03 Navy",
+        "prompt": "Remote Robot 03 Navy",
+        "layer": 7000
+    },
+    {
+        "paper_item_id": 5309,
+        "type": 6,
+        "cost": 0,
+        "is_member": false,
+        "label": "Remote Robot 03 Yellow",
+        "prompt": "Remote Robot 03 Yellow",
+        "layer": 7000
+    },
+    {
+        "paper_item_id": 5310,
+        "type": 6,
+        "cost": 0,
+        "is_member": false,
+        "label": "Remote Robot 03 Purple",
+        "prompt": "Remote Robot 03 Purple",
+        "layer": 7000
+    },
+    {
+        "paper_item_id": 5311,
+        "type": 6,
+        "cost": 0,
+        "is_member": false,
+        "label": "Remote Robot 03 Aqua",
+        "prompt": "Remote Robot 03 Aqua",
+        "layer": 7000
+    },
+    {
+        "paper_item_id": 5312,
+        "type": 6,
+        "cost": 0,
+        "is_member": false,
+        "label": "Remote Robot 04 Navy",
+        "prompt": "Remote Robot 04 Navy",
+        "layer": 7000
+    },
+    {
+        "paper_item_id": 5313,
+        "type": 6,
+        "cost": 0,
+        "is_member": false,
+        "label": "Remote Robot 04 Red",
+        "prompt": "Remote Robot 04 Red",
+        "layer": 7000
+    },
+    {
+        "paper_item_id": 5314,
+        "type": 6,
+        "cost": 0,
+        "is_member": false,
+        "label": "Remote Robot 04 Ice",
+        "prompt": "Remote Robot 04 Ice",
+        "layer": 7000
+    },
+    {
+        "paper_item_id": 5315,
+        "type": 6,
+        "cost": 0,
+        "is_member": false,
+        "label": "Remote Robot 04 Aqua",
+        "prompt": "Remote Robot 04 Aqua",
+        "layer": 7000
+    },
+    {
+        "paper_item_id": 5316,
+        "type": 6,
+        "cost": 0,
+        "is_member": false,
+        "label": "Remote Robot 05 Yellow",
+        "prompt": "Remote Robot 05 Yellow",
+        "layer": 7000
+    },
+    {
+        "paper_item_id": 5317,
+        "type": 6,
+        "cost": 0,
+        "is_member": false,
+        "label": "Remote Robot 05 Purple",
+        "prompt": "Remote Robot 05 Purple",
+        "layer": 7000
+    },
+    {
+        "paper_item_id": 5318,
+        "type": 6,
+        "cost": 0,
+        "is_member": false,
+        "label": "Remote Robot 05 Aqua",
+        "prompt": "Remote Robot 05 Aqua",
+        "layer": 7000
+    },
+    {
+        "paper_item_id": 5319,
+        "type": 6,
+        "cost": 0,
+        "is_member": false,
+        "label": "Remote Robot 05 Navy",
+        "prompt": "Remote Robot 05 Navy",
+        "layer": 7000
+    },
+    {
+        "paper_item_id": 5320,
+        "type": 6,
+        "cost": 0,
+        "is_member": false,
+        "label": "Remote Robot 06 Ooze",
+        "prompt": "Remote Robot 06 Ooze",
+        "layer": 7000
+    },
+    {
+        "paper_item_id": 5321,
+        "type": 6,
+        "cost": 0,
+        "is_member": false,
+        "label": "Remote Robot 06 Aqua",
+        "prompt": "Remote Robot 06 Aqua",
+        "layer": 7000
+    },
+    {
+        "paper_item_id": 5322,
+        "type": 6,
+        "cost": 0,
+        "is_member": false,
+        "label": "Remote Robot 06 Red",
+        "prompt": "Remote Robot 06 Red",
+        "layer": 7000
+    },
+    {
+        "paper_item_id": 5323,
+        "type": 6,
+        "cost": 0,
+        "is_member": false,
+        "label": "Remote Robot 06 Ice",
+        "prompt": "Remote Robot 06 Ice",
+        "layer": 7000
+    },
+    {
+        "paper_item_id": 5324,
+        "type": 6,
+        "cost": 0,
+        "is_member": false,
+        "label": "Remote Robot 07 Yellow",
+        "prompt": "Remote Robot 07 Yellow",
+        "layer": 7000
+    },
+    {
+        "paper_item_id": 5325,
+        "type": 6,
+        "cost": 0,
+        "is_member": false,
+        "label": "Remote Robot 07 Ooze",
+        "prompt": "Remote Robot 07 Ooze",
+        "layer": 7000
+    },
+    {
+        "paper_item_id": 5326,
+        "type": 6,
+        "cost": 0,
+        "is_member": false,
+        "label": "Remote Robot 07 Red",
+        "prompt": "Remote Robot 07 Red",
+        "layer": 7000
+    },
+    {
+        "paper_item_id": 5327,
+        "type": 6,
+        "cost": 0,
+        "is_member": false,
+        "label": "Remote Robot 07 Purple",
+        "prompt": "Remote Robot 07 Purple",
+        "layer": 7000
+    },
+    {
+        "paper_item_id": 5328,
+        "type": 6,
+        "cost": 0,
+        "is_member": false,
+        "label": "Remote Robot 08 Ice",
+        "prompt": "Remote Robot 08 Ice",
+        "layer": 7000
+    },
+    {
+        "paper_item_id": 5329,
+        "type": 6,
+        "cost": 0,
+        "is_member": false,
+        "label": "Remote Robot 08 Navy",
+        "prompt": "Remote Robot 08 Navy",
+        "layer": 7000
+    },
+    {
+        "paper_item_id": 5330,
+        "type": 6,
+        "cost": 0,
+        "is_member": false,
+        "label": "Remote Robot 08 Ooze",
+        "prompt": "Remote Robot 08 Ooze",
+        "layer": 7000
+    },
+    {
+        "paper_item_id": 5331,
+        "type": 6,
+        "cost": 0,
+        "is_member": false,
+        "label": "Remote Robot 08 Red",
+        "prompt": "Remote Robot 08 Red",
+        "layer": 7000
+    }

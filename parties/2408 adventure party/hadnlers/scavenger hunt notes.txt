@@ -1,0 +1,7 @@
+13 - start
+14 - telescope
+15 - fruit
+16 - cheese
+17 - bracelet
+18 - walrus
+19 - camera

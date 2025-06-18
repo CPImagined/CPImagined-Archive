@@ -1,0 +1,222 @@
+﻿<content>
+	<gameClass>com.clubpenguin.games.diving.DivingEngine</gameClass>
+	
+	<!-- Not showing end game dialog because adding new icons to minigame_end_screens is tedious. -->
+	<!-- This is referring to the AS3 game complete screen after exiting the minigame. -->
+	<!-- its not that tedious ive already done it -->
+	<showEndGame>1</showEndGame>
+	
+	<gameLocaleText>
+		<file>locale</file>
+	</gameLocaleText>
+	
+	<!-- Timer -->
+	<timeToPlay>120</timeToPlay>
+	<timerWarningStart>10</timerWarningStart>
+	
+	<!-- Bubbles can't spawn when this close to the top. -->
+	<bubbleHeightCutoff>155.0</bubbleHeightCutoff>
+	
+	<!-- Player stuff -->
+	<camBoundsInfo>
+		<xpos>-752.8</xpos>
+		<ypos>-1404.3</ypos>
+		<width>1520</width>
+		<height>2850.2</height>
+	</camBoundsInfo>
+	
+	<wallBoundsInfo>
+		<xpos>-625</xpos>
+		<ypos>-1125</ypos>
+		<width>1260</width>
+		<height>2425</height>
+	</wallBoundsInfo>
+	
+	<cameraZoom>0.5</cameraZoom>
+	
+	<startPos>
+		<xpos>0</xpos>
+		<ypos>-1000</ypos>
+		<rotation>90</rotation>
+	</startPos>
+	
+	<movementUnlockCycles>2</movementUnlockCycles>
+	<hitCooldownCycles>5</hitCooldownCycles>
+	<blinkRate>150</blinkRate>
+	
+	<!-- Movement velocity settings -->
+	<velocityForward>1.5</velocityForward>
+	<velocityBackward>0.75</velocityBackward>
+	<velocityFalloff>0.85</velocityFalloff>
+	<velocityZeroThreshold>0.1</velocityZeroThreshold>
+	
+	<rotateVelocityAdd>2.0</rotateVelocityAdd>
+	<rotateVelocityFalloff>0.75</rotateVelocityFalloff>
+	<rotateVelocityZeroThreshold>0.1</rotateVelocityZeroThreshold>
+	
+	<boundsBounceBack>10.0</boundsBounceBack>
+	<hitBounceBack>2.0</hitBounceBack>
+	
+	<!-- Puffle stuff -->
+	<puffleFishZoomAwaySpeed>25</puffleFishZoomAwaySpeed>
+	<puffleAttackCooldownCycles>5</puffleAttackCooldownCycles>
+
+	<!-- Starting pos offset from startPos above -->
+	<puffleOffset>
+		<xpos>-150</xpos>
+		<ypos>-150</ypos>
+	</puffleOffset>
+	
+	<!-- Spawner info -->
+	<spawnerInfo>
+		<!-- Treasure return -->
+		<spawner>
+			<xpos>0</xpos>
+			<ypos>-1175</ypos>
+			<type>6</type>
+			<max>1</max>
+			<delay>0</delay>
+			<dir>1</dir>
+			<initDelay>0</initDelay>
+		</spawner>
+		
+		<!-- Mullet -->
+		<spawner>
+			<xpos>-1000</xpos>
+			<ypos>-750</ypos>
+			<type>2</type>
+			<max>1</max>
+			<delay>0</delay>
+			<dir>1</dir>
+			<initDelay>0</initDelay>
+		</spawner>
+		
+		<!-- Mullet -->
+		<spawner>
+			<xpos>1000</xpos>
+			<ypos>-500</ypos>
+			<type>2</type>
+			<max>2</max>
+			<delay>9000</delay>
+			<dir>-1</dir>
+			<initDelay>1000</initDelay>
+		</spawner>
+		
+		<!-- Shark -->
+		<spawner>
+			<xpos>-1000</xpos>
+			<ypos>-250</ypos>
+			<type>1</type>
+			<max>1</max>
+			<delay>0</delay>
+			<dir>1</dir>
+			<initDelay>2000</initDelay>
+		</spawner>
+		
+		<!-- Shark -->
+		<spawner>
+			<xpos>1000</xpos>
+			<ypos>0</ypos>
+			<type>1</type>
+			<max>1</max>
+			<delay>0</delay>
+			<dir>-1</dir>
+			<initDelay>2000</initDelay>
+		</spawner>
+	
+		<!-- Fluffy -->
+		<spawner>
+			<xpos>-1000</xpos>
+			<ypos>250</ypos>
+			<type>0</type>
+			<max>3</max>
+			<delay>2750</delay>
+			<dir>1</dir>
+			<initDelay>6000</initDelay>
+		</spawner>
+		
+		<!-- Shark -->
+		<spawner>
+			<xpos>1000</xpos>
+			<ypos>550</ypos>
+			<type>1</type>
+			<max>2</max>
+			<delay>7500</delay>
+			<dir>-1</dir>
+			<initDelay>6000</initDelay>
+		</spawner>
+		
+		<!-- Fluffy -->
+		<spawner>
+			<xpos>-1000</xpos>
+			<ypos>875</ypos>
+			<type>0</type>
+			<max>4</max>
+			<delay>3325</delay>
+			<dir>1</dir>
+			<initDelay>7000</initDelay>
+		</spawner>
+		
+		<!-- Crabs -->
+		<spawner>
+			<xpos>0</xpos>
+			<ypos>1300</ypos>
+			<type>3</type>
+			<max>2</max>
+			<delay>2000</delay>
+			<dir>1</dir>
+			<initDelay>0</initDelay>
+		</spawner>
+		
+		<!-- Chest crab: spawns near the end of the game-->
+		<spawner>
+			<xpos>-1000</xpos>
+			<ypos>1300</ypos>
+			<type>4</type>
+			<max>1</max>
+			<delay>0</delay>
+			<dir>1</dir>
+			<!-- 45 seconds before the end -->
+			<initDelay>75000</initDelay>
+		</spawner>
+		
+		<!-- Treasure chests -->
+		<spawner>
+			<xpos>-500</xpos>
+			<ypos>1300</ypos>
+			<type>5</type>
+			<max>1</max>
+			<delay>0</delay>
+			<dir>1</dir>
+			<initDelay>0</initDelay>
+		</spawner>
+		
+		<spawner>
+			<xpos>500</xpos>
+			<ypos>1300</ypos>
+			<type>5</type>
+			<max>1</max>
+			<delay>0</delay>
+			<dir>1</dir>
+			<initDelay>0</initDelay>
+		</spawner>
+		
+	</spawnerInfo>
+
+	<!-- Obstacle attributes -->
+	<moveRate-FluffyDivingObstacle>6.5</moveRate-FluffyDivingObstacle>
+	
+	<moveRate-MulletDivingObstacle>2.5</moveRate-MulletDivingObstacle>
+	
+	<moveRate-SharkDivingObstacle>5</moveRate-SharkDivingObstacle>
+	
+	<crabDirectionSwitchMin>450</crabDirectionSwitchMin>
+	<crabDirectionSwitchMax>600</crabDirectionSwitchMax>
+	<moveRate-CrabDivingObstacle>5</moveRate-CrabDivingObstacle>
+	
+	<treasureScore>500</treasureScore>
+	<bigTreasureScore>1500</bigTreasureScore>
+	
+	<moveRate-TreasureCrabDivingObstacle>3.5</moveRate-TreasureCrabDivingObstacle>
+
+</content>

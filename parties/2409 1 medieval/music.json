@@ -1,0 +1,222 @@
+{
+	"text" :
+	{
+		"goToButtonText" :  { 
+			"fontSize" : 9,
+			"translation": {
+				"en": "Go to DJ3K!",
+				"es": "¡Ir a DJ3K!",
+				"fr": "Va à DJ3K !",
+				"pt": "Ir pro DJ3K!"			
+			}
+		},
+		"dialogDescription" : { 
+			"fontSize" : 12,
+			"translation": {
+				"en": "Record and save your own music mixes in DJ3K.",
+				"es": "Graba y guarda tus temas en DJ3K.",
+				"fr": "Enregistre tes propres mix dans DJ3K.",
+				"pt": "Grave e salve sua própria música no DJ3K."		
+			}
+		},
+		"dialogButtonText" : { 
+			"fontSize" : 9,
+			"translation": {
+				"en": "Go There!",
+				"es": "¡Ir allí!",
+				"fr": "Vas-y !",
+				"pt": "Ir pra lá!"		
+			}
+		},
+		"savedMixesText" : { 
+			"fontSize" : 18,
+			"translation": {
+				"en": "My Saved Mixes",
+				"es": "Mis temas mezclados",
+				"fr": "Mes Mix",
+				"pt": "Minhas Músicas"		
+			}
+		},
+		"musicListText" : { 
+			"fontSize" : 18,
+			"translation": {
+				"en": "Music List",
+				"es": "Lista musical",
+				"fr": "Liste de Musiques",
+				"pt": "Lista de Músicas"		
+			}
+		}
+	},
+	"songs" : 	
+	[
+
+			{
+			"id" : 2121,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Medieval Times",
+				"es": "Llego tarde",
+				"fr": "En Retard",
+				"pt": "Chego Logo"
+			}
+		},		
+
+			{
+			"id" : 2122,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "In the Tower",
+				"es": "King of Kingston",
+				"fr": "King of Kingston",
+				"pt": "King of Kingston"
+			}
+		},		
+
+			{
+			"id" : 2123,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "The Quest",
+				"es": "Fair Winds",
+				"fr": "Fair Winds",
+				"pt": "Fair Winds"
+			}
+		},		
+
+			{
+			"id" : 2124,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Walk Among The Roses",
+				"es": "Tranquil Tarnation",
+				"fr": "Tranquil Tarnation",
+				"pt": "Tranquil Tarnation"
+			}
+		},		
+
+			{
+			"id" : 2125,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Beware the Dragon",
+				"es": "Pirates in Beach Chairs",
+				"fr": "Pirates in Beach Chairs",
+				"pt": "Pirates in Beach Chairs"
+			}
+		},		
+
+			{
+			"id" : 2126,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "To Battle!",
+				"es": "Operación Apagón",
+				"fr": "Opération Black-out",
+				"pt": "Operação Apagão"
+			}
+		},		
+
+			{
+			"id" : 2127,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "A Hero Is Born",
+				"es": "Slush Rush",
+				"fr": "Slush Rush",
+				"pt": "Slush Rush"
+			}
+		},		
+
+			{
+			"id" : 2128,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Path of the Hydra",
+				"es": "The Command Room",
+				"fr": "The Command Room",
+				"pt": "The Command Room"
+			}
+		},		
+
+			{
+			"id" : 2129,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Of Unknown Perils",
+				"es": "Welcome to the Dojo",
+				"fr": "Welcome to the Dojo",
+				"pt": "Welcome to the Dojo"
+			}
+		},		
+
+			{
+			"id" : 2130,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "A Time For Heroes",
+				"es": "Down in the Mine",
+				"fr": "Down in the Mine",
+				"pt": "Down in the Mine"
+			}
+		},		
+
+			{
+			"id" : 2092,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Brown Puffle Lab",
+				"es": "This Ol' Shack",
+				"fr": "This Ol' Shack",
+				"pt": "This Ol' Shack"
+			}
+		},		
+
+			{
+			"id" : 2132,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Scorn Awakened",
+				"es": "The Stage",
+				"fr": "The Stage",
+				"pt": "The Stage"
+			}
+		},		
+
+			{
+			"id" : 2133,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Wizard Waltz",
+				"es": "One Very Grumpy Polar Bear",
+				"fr": "One Very Grumpy Polar Bear",
+				"pt": "One Very Grumpy Polar Bear"
+			}
+		},		
+
+			{
+			"id" : 2023,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Voyage Into Imagination",
+				"es": "Voyage Into Imagination",
+				"fr": "Voyage Into Imagination",
+				"pt": "Voyage Into Imagination"
+			}
+		}			
+
+	]
+}

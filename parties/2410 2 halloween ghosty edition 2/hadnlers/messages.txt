@@ -1,0 +1,8 @@
+0 - login
+1 - gus
+2 - login 2
+3 - gus mansion
+4 - gus mansion inside
+5 - skip start
+6 - skip mid
+7 - gariwald end

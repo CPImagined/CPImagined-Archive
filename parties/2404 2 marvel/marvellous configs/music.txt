@@ -1,0 +1,13 @@
+town - 389
+dock - 389
+beach - 388
+hero lab - 392
+lighthouse - 394
+hero carrier - 392
+snow forts - 389
+plaza - 389
+stage - 391
+pizza parlour - 391
+forest - 393
+cove - 388
+villain hq - 390

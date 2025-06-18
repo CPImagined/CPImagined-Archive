@@ -1,0 +1,7 @@
+0 - login
+1 - login week 2
+2 - gary quests start
+3 - gary quests complete
+4 - gary scorn
+5 - gary week2 mid
+6 - gary week2 complete
