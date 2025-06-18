@@ -1,0 +1,21 @@
+messages
+0 - login
+1 - init snow forts
+2 - darwin start
+3 - darwin complete
+4 - barrel start
+5 - rockhopper
+6 - barrel complete
+7 - chip start
+8 - chip complete
+9 - soldering start
+10 - soldering complete
+
+qc messages
+0 - darwin found
+
+tasks
+0 - darwin found
+1 - barrel found
+2 - chip found
+3 - soldering complete

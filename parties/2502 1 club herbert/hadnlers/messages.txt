@@ -1,0 +1,35 @@
+messages
+0 - login
+1 - hq
+2 - skip start
+3 - gariwald lobby
+4 - skip end
+5 - protobot start
+6 - ph dock
+7 - protobot end
+8 - scorn start
+9 - scorn end
+10 - fortress start
+11 - dot captured
+12 - video
+
+qc messages
+0 - lobby ghost 0
+1 - lobby ghost 1
+2 - lobby ghost 2
+3 - spa ghost 0
+4 - spa ghost 1
+5 - spa ghost 2
+6 - roof ghost 0
+7 - roof ghost 1
+8 - roof ghost 2
+9 - scorn start
+
+tasks
+0 - dot shop
+1 - skip end
+2 - protobot end
+3 - scorn wave 1
+4 - scorn wave 2
+5 - scorn wave 3
+6 - scorn end

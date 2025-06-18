@@ -1,0 +1,22 @@
+messages
+0 - login
+1 - game launch
+
+tasks
+0 - puffle play zone entered
+1 - director met
+2 - hat get
+3 - credits watched (igloo)
+4 - sensei talked to
+5 - trekker played
+6 - rockhopper island visited
+7 - berg
+
+qc messages
+0 - puffle tf
+1 - maze entered
+2 - hq entered
+3 - coffee shop entered
+4 - dojo entered
+5 - lounge entered
+6 - migrator entered

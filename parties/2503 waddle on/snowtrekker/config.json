@@ -1,0 +1,36 @@
+{
+    "init": {
+        "speed": 8,
+        "speed_offset": 0,
+        "speed_obstacle": 2,
+        "speed_plow": 3,
+        "easing": false,
+        "easing_increment": 1,
+        "up_keys": [87, 38],
+        "down_keys": [83, 40],
+        "left_keys": [65, 37],
+        "right_keys": [68, 39],
+        "state_keys": [32],
+        "debug": false,
+        "log_filter": "",
+        "allowed_levels": [1],
+        "snow_health": 10,
+        "log_health": 15,
+        "win_bonus": 200,
+        "sounds": {
+            "engine": 25,
+            "coin": 50,
+            "roll": 50
+        }
+    },
+    "level1": {
+        "coins": 41,
+        "big_coins": 9,
+        "obstacles": {
+            "snow": 16,
+            "logs": 17,
+            "signs": [6, 6, 8, 2, 2, 1, 4, 7, 2, 4, 1]
+        },
+        "timer": 120
+    }
+}

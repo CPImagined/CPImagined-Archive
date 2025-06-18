@@ -1,0 +1,25 @@
+﻿//Created by Action Script Viewer - https://www.buraks.com/asv
+package com.clubpenguin.lib.friends.commands
+{
+    import org.robotlegs.mvcs.SignalCommand;
+    import com.clubpenguin.lib.services.IAVMBridgeService;
+    import com.clubpenguin.lib.vo.AVMBridgeMessage;
+
+    public class IgnoreLimitReachedCommand extends SignalCommand 
+    {
+
+        private static const IGNORE_LIMIT_REACHED:String = "ignoreLimitReached";
+
+        [Inject]
+        public var bridge:IAVMBridgeService;
+
+
+        override public function execute():void
+        {
+            var bridgeMessage:AVMBridgeMessage = new AVMBridgeMessage(IGNORE_LIMIT_REACHED);
+            this.bridge.send(bridgeMessage);
+        }
+
+
+    }
+}//package com.clubpenguin.lib.friends.commands

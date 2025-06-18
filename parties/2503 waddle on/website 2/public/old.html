@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/blog.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" href="/images/design/favicon.ico" type="image/vnd.microsoft.icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home | Club Penguin Imagined</title>
+
+    <!-- open graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:url" content="https://www.cpimagined.net/">
+    <meta property="og:title" content="Home | Club Penguin Imagined">
+    <meta property="og:description"
+        content="Welcome to Club Penguin Imagined! Waddle around and make new friends in a free, snowy world based on the original Club Penguin today!">
+    <meta property="og:image" content="https://www.cpimagined.net/images/promo/banner.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:site_name" content="Club Penguin Imagined">
+
+    <!-- twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@CPImagined_">
+    <meta name="twitter:creator" content="@CPImagined_">
+    <meta name="twitter:title" content="Home | Club Penguin Imagined">
+    <meta name="twitter:description"
+        content="Welcome to Club Penguin Imagined! Waddle around and make new friends in a free, snowy world based on the original Club Penguin today!">
+    <meta name="twitter:image" content="https://www.cpimagined.net/images/promo/banner.png">
+</head>
+
+<body>
+    <div class="headerSpacer"></div>
+    <object type="text/html" data="header.htm" width="100%"
+        style="position:fixed;left:0px;top:0px;right:0px;z-index:99;overflow:hidden;"></object>
+    <div class="main">
+        <div class="bgImg"
+            style="background-image:url(images/tiles/TileFoodPuffle.png);filter:brightness(0)saturate(100%);">
+        </div>
+        <div class="slideshow">
+            <!-- <button class="slideBtnLeft" onclick="plusDivs(-1)">❮ Prev</button> -->
+            <!-- <button class="slideBtnRight" onclick="plusDivs(1)">Next ❯</button> -->
+            <div class="slides"><img src="images/promo/banner.png" style="width:100%">
+                <div class="slidesButtonFlex">
+                    <a href="https://play.cpimagined.net/"><button class="blueButton">Play Now!</button></a>
+                </div>
+            </div>
+            <div class="slides"><img src="https://play.cpimagined.net/assets/banner.png" style="width:100%">
+                <div class="slidesButtonFlex">
+                    <a href="https://play.cpimagined.net/"><button class="blueButton">Check it out!</button></a>
+                </div>
+            </div>
+            <div class="slides"><img src="images/promo/Discord.png" style="width:100%">
+                <div class="slidesButtonFlex">
+                    <a href="https://discord.gg/g5k5jh3M8J"><button class="blueButton">Join</button></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="slidesButtonsContainer">
+            <div class="bgColour" style="opacity:35%;background-color:black;z-index:1;"></div>
+            <div class="slideButtons">
+                <button class="slideCircle active" onclick="currentDiv(1)"></button>
+                <button class="slideCircle" onclick="currentDiv(2)"></button>
+                <button class="slideCircle" onclick="currentDiv(3)"></button>
+            </div>
+        </div>
+
+        <!-- promo section -->
+        <div class="homePromoFlex">
+            <div class="homePromoCard homeCardOrange">
+                <div class="bgImg" style="border-radius:4.5vh;background-image:url(images/tiles/TileMap.png);"></div>
+                <div class="homePromoImg homePromoMask1"
+                    style="background-image:url(images/backgrounds/BackgroundLightSunset.png);background-size:cover;"></div>
+                <div class="homePromoImg homePromoImgShad1"></div>
+                <div class="homePromoCardText" style="position:absolute;right:5%;">
+                    <p>
+                        Celebrate every second of Club Penguin Imagined with the Waddle On Party!
+                    </p>
+                </div>
+            </div>
+            <div class="homePromoCard homePromoCard2 homeCardPurple">
+                <div class="bgImg" style="border-radius:4.5vh;background-image:url(images/tiles/TileStyle.png);"></div>
+                <div class="homePromoImg homePromoImg2 homePromoMask2"
+                    style="background-image:url(images/promo/PromoCatalog.png);"></div>
+                <div class="homePromoImg homePromoImg2 homePromoImgShad2"></div>
+                <div class="homePromoCardText homePromoCardText2" style="position:absolute;right:5%;">
+                    <p>
+                        Get EVERY ITEM in the last catalogues, available now!
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- feature cards -->
+        <div class="homeFlex">
+            <div class="homeCard">
+                <div class="bgImg" style="border-radius:4.5vh;"></div>
+                <div class="homeCardImage" style="background-image:url(images/design/HomeFeatureMinigames.png);"></div>
+                <div class="homeCardText">
+                    <h1>Play in all new ways!</h1>
+                    <p>
+                        Play minigames new and old from remastered classics to all new never before seen experiences.
+                    </p>
+                </div>
+            </div>
+            <div class="homeCard homeCardRed">
+                <div class="bgImg" style="border-radius:4.5vh;background-image:url(images/tiles/TileFoodPuffle.png)">
+                </div>
+                <div class="homeCardImage" style="background-image:url(images/design/HomeFeatureFeatures.png)"></div>
+                <div class="homeCardText">
+                    <h1>All new features!</h1>
+                    <p>
+                        Experience the magic of exclusive new content such as Sky Tours or earn daily rewards in Puffle Guides!
+                    </p>
+                </div>
+            </div>
+            <div class="homeCard homeCardOrange">
+                <div class="bgImg" style="border-radius:4.5vh;background-image:url(images/tiles/TileArrow.png)">
+                </div>
+                <div class="homeCardImage" style="background-image:url(images/design/HomeFeatureParties.png)"></div>
+                <div class="homeCardText">
+                    <h1>Party like no tomorrow!</h1>
+                    <p>
+                        Parties and events happen every single month so don't miss out on exclusive items and features!
+                    </p>
+                </div>
+            </div>
+            <div class="homeCard homeCardPurple">
+                <div class="bgImg" style="border-radius:4.5vh;background-image:url(images/tiles/TileStyle.png)">
+                </div>
+                <div class="homeCardImage" style="background-image:url(images/design/HomeFeatureStyle.png)"></div>
+                <div class="homeCardText">
+                    <h1>Your style, your way</h1>
+                    <p>
+                        Purchase from over 10 different catalogs with over 200+ clothing items available at any time with both new and old items!
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div
+            style="width:100%;background-image:url(images/tiles/CPITileGlobe.png);border-color:var(--blueborder);border-top-style:solid;">
+            <div class="homeNewsFlex">
+                <div class="homeNews" style="background-image:url(images/backgrounds/BackgroundPirate.png);background-size:cover;background-position:center;">
+                    <div class="bgColour" style="background-color:var(--darkblue);opacity:60%;border-radius:1.4vh;">
+                    </div>
+                    <h1 class="homeNewsHeader">
+                        EXCLUSIVE ITEMS!
+                    </h1>
+                    <div class="flexBreak" style="height:5%;"></div>
+                    <p class="homeNewsText">
+                        Redeem this special code:
+                    </p>
+                    <div class="homeNewsBar">
+                        <img class="homeNewsIcon" src="images/design/UnlockButton.png">
+                        ANIMALS4U
+                    </div>
+                    <p class="homeNewsText">
+                        for exclusive gifts!
+                    </p>
+                    <div class="homeNewsBar" style="background:none;">
+                        <a href="https://play.cpimagined.net/#/redeem">
+                            <button class="goldButton" style="transform:translate(0,-70%);scale: 0.5;">Redeem</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="homeNewsSplitter"></div>
+                {POST}
+                <!-- <a href="https://www.cpimagined.net/whats-new" class="post">
+                    <div class="postCategoryImg"></div>
+                    <div class="postCategoryText"></div>
+                    <h1 class="postTitle">A Much Longer Title To Announce More Updates 1</h1>
+                    <div class="postImg" style="background-image:url(whats-new/images/WelcomeWhatsNew.png);">
+                        <div class="postGrad"></div>
+                        <div class="postAuthFlex">
+                            <div class="postAuthImg"
+                                style="background-image:url(https://play.cpimagined.net/avatar/104/cp?size=120&photo=true);">
+                            </div>
+                            <div class="postAuth">AUTHOR</div>
+                            <div class="postDot"></div>
+                            <div class="postDate">MAY 19, 2024</div>
+                        </div>
+                    </div>
+                </a> -->
+            </div>
+        </div>
+    </div>
+    <object type="text/html" data="footer.htm" class="footerLoader"></object>
+
+    <!-- slide script -->
+    <script>
+        var slideIndex = 0;
+        autoChange();
+        fixPost();
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function currentDiv(n) {
+            showDivs(slideIndex = n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("slides");
+            var dots = document.getElementsByClassName("slideCircle");
+            if (n > x.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = x.length }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            x[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+
+        function autoChange() {
+            slideIndex++;
+            showDivs(slideIndex);
+            setTimeout(autoChange, 6000);
+        }
+        function fixPost() {
+            document.getElementsByClassName("post")[0].className += " homePost";
+            document.getElementsByClassName("homeNews")[0].className += " homePost";
+            return true;
+        }
+    </script>
+</body>
+
+</html>

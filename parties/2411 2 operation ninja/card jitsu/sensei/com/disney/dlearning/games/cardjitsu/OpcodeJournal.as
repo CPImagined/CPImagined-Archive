@@ -1,0 +1,19 @@
+﻿//Created by Action Script Viewer - https://www.buraks.com/asv
+    class com.disney.dlearning.games.cardjitsu.OpcodeJournal
+    {
+        function OpcodeJournal () {
+        }
+        static var EARN_YOUR_BELTS = "9351A4FB-7004-3403-B9DC-352392C97B39";
+        static var CHALLENGE_SENSEI = "91579765-1E2E-2A4B-56DD-2EFC593F7040";
+        static var INSTRUCTIONS = "B633E893-B74D-CF3F-08E6-EB9A461AE6F1";
+        static var PRACTICE_ON_MAT = "25CEC811-2838-0BF1-2EB3-9326F99E9D14";
+        static var WHITE_BELT_EARNED = "0849C557-598C-B8F2-A276-4F0C1F5AF3EC";
+        static var YELLOW_BELT_EARNED = "C63590CD-971F-D6E3-2073-CFC651A63E8C";
+        static var ORANGE_BELT_EARNED = "A46E140E-2A84-04A5-88F3-04B2140DB3D4";
+        static var GREEN_BELT_EARNED = "F18B6D98-00AC-3424-257B-74A1B59A90C4";
+        static var BLUE_BELT_EARNED = "A6BBADA7-849E-14F8-2CC5-E5555B44A35D";
+        static var RED_BELT_EARNED = "AD31ACD8-02F8-6681-385A-41BC5BE8A0B8";
+        static var PURPLE_BELT_EARNED = "47825C4F-CFEC-8292-29AA-DA603CC4D91A";
+        static var BROWN_BELT_EARNED = "ACF7444A-01EF-14F4-9B3E-169A63A6A9F2";
+        static var BLACK_BELT_EARNED = "94BF050A-DE81-2175-DCBC-DD9AB51E5E62";
+    }

@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+Disallow: /404
+Disallow: /images
+Disallow: /fonts
+Disallow: /css
+Disallow: /template
+Disallow: /.well-known
+
+Sitemap: https://www.cpimagined.net/sitemap.xml

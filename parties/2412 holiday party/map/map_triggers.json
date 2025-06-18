@@ -1,0 +1,1504 @@
+{
+	"categories": [
+		{
+			"catid": 0,
+			"name": "none"
+		},
+		{
+			"catid": 1,
+			"name": "games",
+			"items": [
+				{
+					"tid": 1,
+					"mapid": 1,
+					"roomid": 230,
+					"label": "sled_racing",
+					"trigger": "sled",
+					"spawn": {
+						"x": 380,
+						"y": 220
+					},
+					"arrow": {
+						"x": 163,
+						"y": 238,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 1,
+					"mapid": 1,
+					"roomid": 230,
+					"label": "sled_racing",
+					"trigger": "sled",
+					"spawn": {
+						"x": 380,
+						"y": 220
+					},
+					"arrow": {
+						"x": 317,
+						"y": 280,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 1,
+					"mapid": 1,
+					"roomid": 230,
+					"label": "sled_racing",
+					"trigger": "sled",
+					"spawn": {
+						"x": 380,
+						"y": 220
+					},
+					"arrow": {
+						"x": 440,
+						"y": 275,
+						"rotation": 180,
+						"isFlipped": false
+					}
+				},
+				{
+					"tid": 1,
+					"mapid": 1,
+					"roomid": 230,
+					"label": "sled_racing",
+					"trigger": "sled",
+					"spawn": {
+						"x": 380,
+						"y": 220
+					},
+					"arrow": {
+						"x": 550,
+						"y": 255,
+						"rotation": 180,
+						"isFlipped": false
+					}
+				},
+				{
+					"tid": 2,
+					"mapid": 2,
+					"roomid": 220,
+					"label": "ice_fishing",
+					"trigger": "fish",
+					"spawn": {
+						"x": 475,
+						"y": 270
+					},
+					"arrow": {
+						"x": 505,
+						"y": 50,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 3,
+					"mapid": 3,
+					"roomid": 411,
+					"label": "jet_pack_adventure",
+					"trigger": "jetpack",
+					"spawn": {
+						"x": 570,
+						"y": 325
+					},
+					"arrow": {
+						"x": 670,
+						"y": 220,
+						"rotation": 180,
+						"isFlipped": false
+					}
+				},
+				{
+					"tid": 4,
+					"mapid": 4,
+					"roomid": 800,
+					"label": "hydro_hopper",
+					"trigger": "hydro",
+					"spawn": {
+						"x": 350,
+						"y": 310
+					},
+					"arrow": {
+						"x": 110,
+						"y": 300,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 5,
+					"mapid": 5,
+					"roomid": 110,
+					"label": "bean_counters",
+					"trigger": "beans",
+					"spawn": {
+						"x": 480,
+						"y": 380
+					},
+					"arrow": {
+						"x": 690,
+						"y": 300,
+						"rotation": 180,
+						"isFlipped": false
+					}
+				},
+				{
+					"tid": 61,
+					"mapid": 6,
+					"roomid": 121,
+					"label": "arcade",
+					"trigger": "bitsandbolts",
+					"spawn": {
+						"x": 380,
+						"y": 290
+					},
+					"arrow": {
+						"x": 130,
+						"y": 130,
+						"rotation": 180,
+						"isFlipped": false
+					}
+				},
+				{
+					"tid": 62,
+					"mapid": 6,
+					"roomid": 121,
+					"label": "arcade",
+					"trigger": "thinice",
+					"spawn": {
+						"x": 380,
+						"y": 290
+					},
+					"arrow": {
+						"x": 590,
+						"y": 70,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 63,
+					"mapid": 6,
+					"roomid": 121,
+					"label": "arcade",
+					"trigger": "astro",
+					"spawn": {
+						"x": 380,
+						"y": 290
+					},
+					"arrow": {
+						"x": 635,
+						"y": 130,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 7,
+					"mapid": 7,
+					"roomid": 120,
+					"label": "dance_contest",
+					"trigger": "dancing",
+					"spawn": {
+						"x": 420,
+						"y": 300
+					},
+					"arrow": {
+						"x": 575,
+						"y": 165,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 8,
+					"mapid": 8,
+					"roomid": 120,
+					"label": "dj3k",
+					"trigger": "mixmaster",
+					"spawn": {
+						"x": 260,
+						"y": 235
+					},
+					"arrow": {
+						"x": 346,
+						"y": 160,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 9,
+					"mapid": 9,
+					"roomid": 434,
+					"label": "puffle_round_up",
+					"trigger": "roundup",
+					"spawn": {
+						"x": 615,
+						"y": 315
+					},
+					"arrow": {
+						"x": 700,
+						"y": 325,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 10,
+					"mapid": 10,
+					"roomid": 330,
+					"label": "pizzatron_3000",
+					"trigger": "pizzatron",
+					"spawn": {
+						"x": 250,
+						"y": 275
+					},
+					"arrow": {
+						"x": 165,
+						"y": 80,
+						"rotation": 180,
+						"isFlipped": false
+					}
+				},
+				{
+					"tid": 11,
+					"mapid": 11,
+					"roomid": 310,
+					"label": "puffle_launch",
+					"trigger": "cannon",
+					"spawn": {
+						"x": 460,
+						"y": 275
+					},
+					"arrow": {
+						"x": 630,
+						"y": 90,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 12,
+					"mapid": 12,
+					"roomid": 808,
+					"label": "cart_surfer",
+					"trigger": "cart",
+					"spawn": {
+						"x": 585,
+						"y": 280
+					},
+					"arrow": {
+						"x": 580,
+						"y": 150,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 13,
+					"mapid": 13,
+					"roomid": 808,
+					"label": "puffle_rescue",
+					"trigger": "rescue",
+					"spawn": {
+						"x": 300,
+						"y": 265
+					},
+					"arrow": {
+						"x": 250,
+						"y": 130,
+						"rotation": 180,
+						"isFlipped": false
+					}
+				},
+				{
+					"tid": 14,
+					"mapid": 14,
+					"roomid": 810,
+					"label": "catchin_waves",
+					"trigger": "waves",
+					"spawn": {
+						"x": 500,
+						"y": 280
+					},
+					"arrow": {
+						"x": 630,
+						"y": 270,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 15,
+					"mapid": 15,
+					"roomid": 805,
+					"label": "aqua_grabber",
+					"trigger": "aqua",
+					"spawn": {
+						"x": 5250,
+						"y": 245
+					},
+					"arrow": {
+						"x": 640,
+						"y": 90,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 16,
+					"mapid": 16,
+					"roomid": 320,
+					"label": "card_jitsu",
+					"trigger": "sensei",
+					"spawn": {
+						"x": 580,
+						"y": 345
+					},
+					"arrow": {
+						"x": 380,
+						"y": 220,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 161,
+					"mapid": 16,
+					"roomid": 320,
+					"label": "card_jitsu",
+					"trigger": "sensei",
+					"spawn": {
+						"x": 580,
+						"y": 345
+					},
+					"arrow": {
+						"x": 90,
+						"y": 160,
+						"rotation": 270,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 162,
+					"mapid": 16,
+					"roomid": 320,
+					"label": "card_jitsu",
+					"trigger": "sensei",
+					"spawn": {
+						"x": 580,
+						"y": 345
+					},
+					"arrow": {
+						"x": 380,
+						"y": 120,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 164,
+					"mapid": 16,
+					"roomid": 320,
+					"label": "card_jitsu",
+					"trigger": "sensei",
+					"spawn": {
+						"x": 580,
+						"y": 345
+					},
+					"arrow": {
+						"x": 670,
+						"y": 160,
+						"rotation": 90,
+						"isFlipped": false
+					}
+				},
+				{
+					"tid": 17,
+					"mapid": 17,
+					"roomid": 310,
+					"label": "pufflescape",
+					"trigger": "pufflescape",
+					"spawn": {
+						"x": 580,
+						"y": 345
+					},
+					"arrow": {
+						"x": 500,
+						"y": 70,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 18,
+					"mapid": 18,
+					"roomid": 110,
+					"label": "smoothie_smash",
+					"trigger": "smoothie",
+					"spawn": {
+						"x": 290,
+						"y": 330
+					},
+					"arrow": {
+						"x": 65,
+						"y": 290,
+						"rotation": 180,
+						"isFlipped": false
+					}
+				},
+				{
+					"tid": 2000,
+					"mapid": 2000,
+					"roomid": 814,
+					"label": "diving",
+					"trigger": "diving",
+					"spawn": {
+						"x": 120,
+						"y": 290
+					},
+					"arrow": {
+						"x": 480,
+						"y": 200,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 2001,
+					"mapid": 2001,
+					"roomid": 111,
+					"label": "paint_by_letters",
+					"trigger": "book",
+					"spawn": {
+						"x": 360,
+						"y": 275
+					},
+					"arrow": {
+						"x": 240,
+						"y": 170,
+						"rotation": 180,
+						"isFlipped": false
+					}
+				},
+				{
+					"tid": 2002,
+					"mapid": 2002,
+					"roomid": 111,
+					"label": "mancala",
+					"trigger": "table100",
+					"spawn": {
+						"x": 360,
+						"y": 275
+					},
+					"arrow": {
+						"x": 555,
+						"y": 280,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 2002,
+					"mapid": 2002,
+					"roomid": 111,
+					"label": "mancala",
+					"trigger": "table101",
+					"spawn": {
+						"x": 360,
+						"y": 275
+					},
+					"arrow": {
+						"x": 615,
+						"y": 245,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 2002,
+					"mapid": 2002,
+					"roomid": 111,
+					"label": "mancala",
+					"trigger": "table103",
+					"spawn": {
+						"x": 360,
+						"y": 275
+					},
+					"arrow": {
+						"x": 640,
+						"y": 300,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 2002,
+					"mapid": 2002,
+					"roomid": 111,
+					"label": "mancala",
+					"trigger": "table104",
+					"spawn": {
+						"x": 360,
+						"y": 275
+					},
+					"arrow": {
+						"x": 580,
+						"y": 360,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 2003,
+					"mapid": 2003,
+					"roomid": 221,
+					"label": "find_four",
+					"trigger": "table200",
+					"spawn": {
+						"x": 390,
+						"y": 225
+					},
+					"arrow": {
+						"x": 125,
+						"y": 250,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 2003,
+					"mapid": 2003,
+					"roomid": 221,
+					"label": "find_four",
+					"trigger": "table201",
+					"spawn": {
+						"x": 390,
+						"y": 225
+					},
+					"arrow": {
+						"x": 185,
+						"y": 290,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 2003,
+					"mapid": 2003,
+					"roomid": 221,
+					"label": "find_four",
+					"trigger": "table202",
+					"spawn": {
+						"x": 390,
+						"y": 225
+					},
+					"arrow": {
+						"x": 275,
+						"y": 290,
+						"rotation": 180,
+						"isFlipped": false
+					}
+				},
+				{
+					"tid": 2003,
+					"mapid": 2003,
+					"roomid": 221,
+					"label": "find_four",
+					"trigger": "table203",
+					"spawn": {
+						"x": 390,
+						"y": 225
+					},
+					"arrow": {
+						"x": 335,
+						"y": 260,
+						"rotation": 180,
+						"isFlipped": false
+					}
+				},
+				{
+					"tid": 3000,
+					"mapid": 3000,
+					"roomid": 422,
+					"label": "treasure_hunt",
+					"trigger": "table300",
+					"spawn": {
+						"x": 380,
+						"y": 200
+					},
+					"arrow": {
+						"x": 260,
+						"y": 275,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 3000,
+					"mapid": 3000,
+					"roomid": 422,
+					"label": "treasure_hunt",
+					"trigger": "table301",
+					"spawn": {
+						"x": 380,
+						"y": 200
+					},
+					"arrow": {
+						"x": 380,
+						"y": 285,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 3000,
+					"mapid": 3000,
+					"roomid": 422,
+					"label": "treasure_hunt",
+					"trigger": "table302",
+					"spawn": {
+						"x": 380,
+						"y": 200
+					},
+					"arrow": {
+						"x": 480,
+						"y": 275,
+						"rotation": 180,
+						"isFlipped": false
+					}
+				},
+				{
+					"tid": 3000,
+					"mapid": 3000,
+					"roomid": 422,
+					"label": "treasure_hunt",
+					"trigger": "table303",
+					"spawn": {
+						"x": 380,
+						"y": 200
+					},
+					"arrow": {
+						"x": 115,
+						"y": 340,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 3000,
+					"mapid": 3000,
+					"roomid": 422,
+					"label": "treasure_hunt",
+					"trigger": "table304",
+					"spawn": {
+						"x": 380,
+						"y": 200
+					},
+					"arrow": {
+						"x": 250,
+						"y": 355,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 3000,
+					"mapid": 3000,
+					"roomid": 422,
+					"label": "treasure_hunt",
+					"trigger": "table305",
+					"spawn": {
+						"x": 380,
+						"y": 200
+					},
+					"arrow": {
+						"x": 375,
+						"y": 365,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 3000,
+					"mapid": 3000,
+					"roomid": 422,
+					"label": "treasure_hunt",
+					"trigger": "table306",
+					"spawn": {
+						"x": 380,
+						"y": 200
+					},
+					"arrow": {
+						"x": 505,
+						"y": 360,
+						"rotation": 180,
+						"isFlipped": false
+					}
+				},
+				{
+					"tid": 3000,
+					"mapid": 3000,
+					"roomid": 422,
+					"label": "treasure_hunt",
+					"trigger": "table307",
+					"spawn": {
+						"x": 380,
+						"y": 200
+					},
+					"arrow": {
+						"x": 615,
+						"y": 320,
+						"rotation": 180,
+						"isFlipped": false
+					}
+				}
+			]
+		},
+		{
+			"catid": 2,
+			"name": "shopping",
+			"items": [
+				{
+					"tid": 1,
+					"mapid": 1,
+					"roomid": 130,
+					"label": "penguin_style",
+					"trigger": "clothing_catalogue",
+					"spawn": {
+						"x": 300,
+						"y": 300
+					},
+					"arrow": {
+						"x": 230,
+						"y": 120,
+						"rotation": 180,
+						"isFlipped": false
+					}
+				},
+				{
+					"tid": 2,
+					"mapid": 2,
+					"roomid": 341,
+					"label": "costume_trunk",
+					"trigger": "costume_catalogue",
+					"spawn": {
+						"x": 150,
+						"y": 330
+					},
+					"arrow": {
+						"x": 630,
+						"y": 235,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 2000,
+					"mapid": 2000,
+					"roomid": 340,
+					"label": "mall_catalogue",
+					"trigger": "mall_catalogue",
+					"spawn": {
+						"x": 150,
+						"y": 330
+					},
+					"arrow": {
+						"x": 120,
+						"y": 110,
+						"rotation": 180,
+						"isFlipped": false
+					}
+				},
+				{
+					"tid": 3,
+					"mapid": 3,
+					"roomid": 310,
+					"label": "pet_furniture",
+					"trigger": "pets_catalogue",
+					"spawn": {
+						"x": 220,
+						"y": 340
+					},
+					"arrow": {
+						"x": 715,
+						"y": 330,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 4,
+					"mapid": 4,
+					"roomid": 800,
+					"label": "tubing_upgrade",
+					"trigger": "dock_catalogue",
+					"spawn": {
+						"x": 480,
+						"y": 300
+					},
+					"arrow": {
+						"x": 377,
+						"y": 305,
+						"rotation": 180,
+						"isFlipped": false
+					}
+				},
+				{
+					"tid": 5,
+					"mapid": 5,
+					"roomid": 410,
+					"label": "music_catalogue",
+					"trigger": "light_catalogue",
+					"spawn": {
+						"x": 555,
+						"y": 380
+					},
+					"arrow": {
+						"x": 590,
+						"y": 245,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 7,
+					"mapid": 7,
+					"roomid": 220,
+					"label": "fishing_upgrade",
+					"trigger": "lodge_catalogue",
+					"spawn": {
+						"x": 390,
+						"y": 300
+					},
+					"arrow": {
+						"x": 715,
+						"y": 400,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 8,
+					"mapid": 8,
+					"roomid": 230,
+					"label": "sled_upgrade",
+					"trigger": "mtn_catalogue",
+					"spawn": {
+						"x": 285,
+						"y": 185
+					},
+					"arrow": {
+						"x": 240,
+						"y": 60,
+						"rotation": 180,
+						"isFlipped": false
+					}
+				},
+				{
+					"tid": 9,
+					"mapid": 9,
+					"roomid": 802,
+					"label": "snow_and_sports",
+					"trigger": "sport_catalogue",
+					"spawn": {
+						"x": 565,
+						"y": 140
+					},
+					"arrow": {
+						"x": 715,
+						"y": 400,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 10,
+					"mapid": 10,
+					"roomid": 810,
+					"label": "surf_upgrade",
+					"trigger": "cove_catalogue",
+					"spawn": {
+						"x": 450,
+						"y": 235
+					},
+					"arrow": {
+						"x": 505,
+						"y": 100,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 11,
+					"mapid": 11,
+					"roomid": 320,
+					"label": "martial_arts",
+					"trigger": "ninja_catalogue",
+					"spawn": {
+						"x": 380,
+						"y": 360
+					},
+					"arrow": {
+						"x": 715,
+						"y": 330,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 3000,
+					"mapid": 3000,
+					"roomid": 421,
+					"label": "rockhopper_catalogue",
+					"trigger": "pirate",
+					"spawn": {
+						"x": 380,
+						"y": 360
+					},
+					"arrow": {
+						"x": 715,
+						"y": 395,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 3000,
+					"mapid": 3000,
+					"roomid": 421,
+					"label": "rockhopper_catalogue",
+					"trigger": "pirate",
+					"spawn": {
+						"x": 380,
+						"y": 360
+					},
+					"arrow": {
+						"x": 100,
+						"y": 190,
+						"rotation": 180,
+						"isFlipped": false
+					}
+				}
+			]
+		},
+		{
+			"catid": 3,
+			"name": "pets",
+			"items": [
+				{
+					"tid": 1,
+					"mapid": 1,
+					"roomid": 411,
+					"label": "jet_pack_adventure",
+					"trigger": "jetpack",
+					"spawn": {
+						"x": 570,
+						"y": 325
+					},
+					"arrow": {
+						"x": 655,
+						"y": 215,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 3,
+					"mapid": 3,
+					"roomid": 121,
+					"label": "arcade",
+					"trigger": "thinice",
+					"spawn": {
+						"x": 380,
+						"y": 290
+					},
+					"arrow": {
+						"x": 590,
+						"y": 70,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 4,
+					"mapid": 4,
+					"roomid": 120,
+					"label": "dance_contest",
+					"trigger": "dancing",
+					"spawn": {
+						"x": 420,
+						"y": 300
+					},
+					"arrow": {
+						"x": 600,
+						"y": 72,
+						"rotation": 180,
+						"isFlipped": false
+					}
+				},
+				{
+					"tid": 5,
+					"mapid": 5,
+					"roomid": -1,
+					"label": "igloo",
+					"trigger": "igloo",
+					"spawn": {
+						"x": 240,
+						"y": 265
+					},
+					"arrow": {
+						"x": -10,
+						"y": -10,
+						"rotation": 180,
+						"isFlipped": false
+					}
+				},
+				{
+					"tid": 6,
+					"mapid": 6,
+					"roomid": 310,
+					"label": "puffle_launch",
+					"trigger": "cannon",
+					"spawn": {
+						"x": 460,
+						"y": 275
+					},
+					"arrow": {
+						"x": 630,
+						"y": 90,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 7,
+					"mapid": 7,
+					"roomid": 434,
+					"label": "puffle_round_up",
+					"trigger": "roundup",
+					"spawn": {
+						"x": 615,
+						"y": 315
+					},
+					"arrow": {
+						"x": 700,
+						"y": 325,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 8,
+					"mapid": 8,
+					"roomid": 310,
+					"label": "pufflescape",
+					"trigger": "pufflescape",
+					"spawn": {
+						"x": 580,
+						"y": 345
+					},
+					"arrow": {
+						"x": 500,
+						"y": 70,
+						"rotation": 180,
+						"isFlipped": false
+					}
+				},
+				{
+					"tid": 9,
+					"mapid": 9,
+					"roomid": 310,
+					"label": "puffle_adoption",
+					"trigger": "puffle_adoption",
+					"spawn": {
+						"x": 240,
+						"y": 265
+					},
+					"arrow": {
+						"x": 165,
+						"y": 135,
+						"rotation": 180,
+						"isFlipped": false
+					}
+				},
+				{
+					"tid": 10,
+					"mapid": 10,
+					"roomid": 310,
+					"label": "pet_furniture",
+					"trigger": "pets_catalogue",
+					"spawn": {
+						"x": 220,
+						"y": 340
+					},
+					"arrow": {
+						"x": 715,
+						"y": 330,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 11,
+					"mapid": 11,
+					"roomid": 808,
+					"label": "puffle_rescue",
+					"trigger": "rescue",
+					"spawn": {
+						"x": 300,
+						"y": 265
+					},
+					"arrow": {
+						"x": 250,
+						"y": 130,
+						"rotation": 180,
+						"isFlipped": false
+					}
+				},
+				{
+					"tid": 12,
+					"mapid": 12,
+					"roomid": 808,
+					"label": "cart_surfer",
+					"trigger": "cart",
+					"spawn": {
+						"x": 585,
+						"y": 280
+					},
+					"arrow": {
+						"x": 580,
+						"y": 150,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 13,
+					"mapid": 13,
+					"roomid": 810,
+					"label": "catchin_waves",
+					"trigger": "waves",
+					"spawn": {
+						"x": 500,
+						"y": 280
+					},
+					"arrow": {
+						"x": 630,
+						"y": 270,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 14,
+					"mapid": 14,
+					"roomid": 805,
+					"label": "aqua_grabber",
+					"trigger": "aqua",
+					"spawn": {
+						"x": 5250,
+						"y": 245
+					},
+					"arrow": {
+						"x": 640,
+						"y": 90,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 15,
+					"mapid": 15,
+					"roomid": 430,
+					"label": "hotel_lobby",
+					"trigger": "quest",
+					"spawn": {
+						"x": 387,
+						"y": 383
+					},
+					"arrow": {
+						"x": 392,
+						"y": 282,
+						"rotation": 180,
+						"isFlipped": false
+					}
+				},
+				{
+					"tid": 16,
+					"mapid": 16,
+					"roomid": 436,
+					"label": "puffle_wild",
+					"trigger": "",
+					"spawn": {
+						"x": 375,
+						"y": 300
+					},
+					"arrow": {
+						"x": 380,
+						"y": 100,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 2000,
+					"mapid": 2000,
+					"roomid": 800,
+					"label": "hydro_hopper",
+					"trigger": "hydro",
+					"spawn": {
+						"x": 350,
+						"y": 310
+					},
+					"arrow": {
+						"x": 110,
+						"y": 300,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 2001,
+					"mapid": 2001,
+					"roomid": 220,
+					"label": "puffle_guides",
+					"trigger": "guides",
+					"spawn": {
+						"x": 260,
+						"y": 210
+					},
+					"arrow": {
+						"x": 117,
+						"y": 46,
+						"rotation": 180,
+						"isFlipped": false
+					}
+				},
+				{
+					"tid": 2002,
+					"mapid": 2002,
+					"roomid": 326,
+					"label": "cj_snow",
+					"trigger": "game",
+					"spawn": {
+						"x": 387,
+						"y": 266
+					},
+					"arrow": {
+						"x": 447,
+						"y": 131,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				},
+				{
+					"tid": 2003,
+					"mapid": 2003,
+					"roomid": 814,
+					"label": "diving",
+					"trigger": "diving",
+					"spawn": {
+						"x": 120,
+						"y": 290
+					},
+					"arrow": {
+						"x": 480,
+						"y": 200,
+						"rotation": 180,
+						"isFlipped": true
+					}
+				}
+			]
+		},
+		{
+			"catid": 4,
+			"name": "places",
+			"items": [
+				{
+					"tid": 0,
+					"mapid": 1,
+					"roomid": 100,
+					"label": "town",
+					"trigger": "",
+					"x": 0,
+					"y": 0,
+					"rotation": 0
+				},
+				{
+					"tid": 0,
+					"mapid": 2,
+					"roomid": 300,
+					"label": "plaza",
+					"trigger": "",
+					"x": 0,
+					"y": 0,
+					"rotation": 0
+				},
+				{
+					"tid": 0,
+					"mapid": 3,
+					"roomid": 800,
+					"label": "dock",
+					"trigger": "",
+					"x": 0,
+					"y": 0,
+					"rotation": 0
+				},
+				{
+					"tid": 0,
+					"mapid": 4,
+					"roomid": 801,
+					"label": "forts",
+					"trigger": "",
+					"x": 0,
+					"y": 0,
+					"rotation": 0
+				},
+				{
+					"tid": 0,
+					"mapid": 5,
+					"roomid": 400,
+					"label": "beach",
+					"trigger": "",
+					"x": 0,
+					"y": 0,
+					"rotation": 0
+				},
+				{
+					"tid": 0,
+					"mapid": 6,
+					"roomid": 200,
+					"label": "ski_village",
+					"trigger": "",
+					"x": 0,
+					"y": 0,
+					"rotation": 0
+				},
+				{
+					"tid": 0,
+					"mapid": 7,
+					"roomid": 230,
+					"label": "ski_hill",
+					"trigger": "",
+					"x": 0,
+					"y": 0,
+					"rotation": 0
+				},
+				{
+					"tid": 0,
+					"mapid": 8,
+					"roomid": 802,
+					"label": "ice_rink",
+					"trigger": "",
+					"x": 0,
+					"y": 0,
+					"rotation": 0
+				},
+				{
+					"tid": 0,
+					"mapid": 9,
+					"roomid": 321,
+					"label": "dojo",
+					"trigger": "",
+					"x": 0,
+					"y": 0,
+					"rotation": 0
+				},
+				{
+					"tid": 0,
+					"mapid": 10,
+					"roomid": 807,
+					"label": "mine_shack",
+					"trigger": "",
+					"x": 0,
+					"y": 0,
+					"rotation": 0
+				},
+				{
+					"tid": 0,
+					"mapid": 11,
+					"roomid": 809,
+					"label": "forest",
+					"trigger": "",
+					"x": 0,
+					"y": 0,
+					"rotation": 0
+				},
+				{
+					"tid": 0,
+					"mapid": 12,
+					"roomid": 810,
+					"label": "cove",
+					"trigger": "",
+					"x": 0,
+					"y": 0,
+					"rotation": 0
+				},
+				{
+					"tid": 0,
+					"mapid": 13,
+					"roomid": 805,
+					"label": "iceberg",
+					"trigger": "",
+					"x": 0,
+					"y": 0,
+					"rotation": 0
+				},
+				{
+					"tid": 0,
+					"mapid": 14,
+					"roomid": 0,
+					"label": "igloos",
+					"trigger": "",
+					"x": 0,
+					"y": 0,
+					"rotation": 0
+				},
+				{
+					"tid": 0,
+					"mapid": 15,
+					"roomid": -1,
+					"label": "your_igloo",
+					"trigger": "",
+					"x": 0,
+					"y": 0,
+					"rotation": 0
+				},
+				{
+					"tid": 0,
+					"mapid": 16,
+					"roomid": 434,
+					"label": "puffle_park",
+					"trigger": "",
+					"x": 0,
+					"y": 0,
+					"rotation": 0
+				},
+				{
+					"tid": 0,
+					"mapid": 17,
+					"roomid": 435,
+					"label": "skate_park",
+					"trigger": "",
+					"x": 0,
+					"y": 0,
+					"rotation": 0
+				},
+				{
+					"tid": 0,
+					"mapid": 18,
+					"roomid": 436,
+					"label": "puffle_wild",
+					"trigger": "",
+					"x": 0,
+					"y": 0,
+					"rotation": 0
+				}
+			]
+		}
+	]
+}

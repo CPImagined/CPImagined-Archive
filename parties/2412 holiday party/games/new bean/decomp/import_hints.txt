@@ -1,0 +1,7 @@
+﻿Some graphic symbols may not be correctly imported by Flash and appear blank in library. Usually the reason for this is invalid fills ('bad fills') in symbols, which are ignored by Flash Player but not Flash. Replacing those symbols with 'fill swapped' versions often fixes the issue. 
+
+When this condition is detected during rebuild, you will be given the choice to continue or to stop the rebuild. If you choose to stop the rebuild, you can find the file names of the problematic symbols listed in output panel in Flash, and you can try the following:
+
+[1] Run the script 'import_test.jsfl' in 'jsfl\util' folder, which will test importing all graphic symbols and fills swapped versions. (Note: this script requires absolute paths, therefore will not work if you move/rename the rebuild folder). You can then make necessary changes as suggested by the script, displayed in output panel. After this, close Flash (without saving any documents), and restart the rebuild if there were any changes.
+
+[2] If none of the steps above was able to solve all the issues, for remaining issues, you can either try letting the rebuild continue with the blank symbols, or you can manually replace the problematic symbols with placeholder symbols (by overwriting their .SWF files). You will need to create these placeholder files manually yourself, for better results try to create replacement placeholder symbol SWF files as similar as possible (in dimensions etc.) to the original.

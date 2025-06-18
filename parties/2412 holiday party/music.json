@@ -1,0 +1,222 @@
+{
+	"text" :
+	{
+		"goToButtonText" :  { 
+			"fontSize" : 9,
+			"translation": {
+				"en": "Go to DJ3K!",
+				"es": "¡Ir a DJ3K!",
+				"fr": "Va à DJ3K !",
+				"pt": "Ir pro DJ3K!"			
+			}
+		},
+		"dialogDescription" : { 
+			"fontSize" : 12,
+			"translation": {
+				"en": "Record and save your own music mixes in DJ3K.",
+				"es": "Graba y guarda tus temas en DJ3K.",
+				"fr": "Enregistre tes propres mix dans DJ3K.",
+				"pt": "Grave e salve sua própria música no DJ3K."		
+			}
+		},
+		"dialogButtonText" : { 
+			"fontSize" : 9,
+			"translation": {
+				"en": "Go There!",
+				"es": "¡Ir allí!",
+				"fr": "Vas-y !",
+				"pt": "Ir pra lá!"		
+			}
+		},
+		"savedMixesText" : { 
+			"fontSize" : 18,
+			"translation": {
+				"en": "My Saved Mixes",
+				"es": "Mis temas mezclados",
+				"fr": "Mes Mix",
+				"pt": "Minhas Músicas"		
+			}
+		},
+		"musicListText" : { 
+			"fontSize" : 18,
+			"translation": {
+				"en": "Music List",
+				"es": "Lista musical",
+				"fr": "Liste de Musiques",
+				"pt": "Lista de Músicas"		
+			}
+		}
+	},
+	"songs" : 	
+	[
+
+			{
+			"id" : 2070,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Santa's Mix",
+				"es": "Llego tarde",
+				"fr": "En Retard",
+				"pt": "Chego Logo"
+			}
+		},		
+
+			{
+			"id" : 2071,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Holiday Medley",
+				"es": "Órgano orgánico",
+				"fr": "Compo-country",
+				"pt": "Orgão Orgânico"
+			}
+		},		
+
+			{
+			"id" : 2072,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Snowy Holiday",
+				"es": "Fair Winds",
+				"fr": "Fair Winds",
+				"pt": "Fair Winds"
+			}
+		},		
+
+			{
+			"id" : 2073,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Christmas Jammin'",
+				"es": "Mix Maestro",
+				"fr": "Mélodies du Maestro",
+				"pt": "Escala do Maestro"
+			}
+		},		
+
+			{
+			"id" : 2074,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Candy Cane March",
+				"es": "Ojo de buey",
+				"fr": "En Plein Dans le Mille",
+				"pt": "Na Mira"
+			}
+		},		
+
+			{
+			"id" : 2075,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "All Aboard for the Holidays!",
+				"es": "Operación Apagón",
+				"fr": "Opération Black-out",
+				"pt": "Operação Apagão"
+			}
+		},		
+
+			{
+			"id" : 2076,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Icy Serenade",
+				"es": "Carnavaleando",
+				"fr": "Forains en Fête",
+				"pt": "Festa Festiva"
+			}
+		},		
+
+			{
+			"id" : 2077,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Santa's Sleigh",
+				"es": "The Command Room",
+				"fr": "The Command Room",
+				"pt": "The Command Room"
+			}
+		},		
+
+			{
+			"id" : 2078,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Coins For Change",
+				"es": "Welcome to the Dojo",
+				"fr": "Welcome to the Dojo",
+				"pt": "Welcome to the Dojo"
+			}
+		},		
+
+			{
+			"id" : 2080,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Someone To Like Me",
+				"es": "Isla épica",
+				"fr": "L'Île Épique",
+				"pt": "Ilha Épica"
+			}
+		},		
+
+			{
+			"id" : 2081,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Gingerbread Manic",
+				"es": "Ocean Voyage",
+				"fr": "Ocean Voyage",
+				"pt": "Ocean Voyage"
+			}
+		},		
+
+			{
+			"id" : 2082,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "The Palace Of Ice Crystals",
+				"es": "The Stage",
+				"fr": "The Stage",
+				"pt": "The Stage"
+			}
+		},		
+
+			{
+			"id" : 2153,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Ring in the Cheer",
+				"es": "One Very Grumpy Polar Bear",
+				"fr": "One Very Grumpy Polar Bear",
+				"pt": "One Very Grumpy Polar Bear"
+			}
+		},		
+
+			{
+			"id" : 2023,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Voyage Into Imagination",
+				"es": "Voyage Into Imagination",
+				"fr": "Voyage Into Imagination",
+				"pt": "Voyage Into Imagination"
+			}
+		}			
+
+	]
+}
