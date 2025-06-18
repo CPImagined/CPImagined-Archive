@@ -1,0 +1,70 @@
+﻿<projectDescription>
+	<id>1238637846607</id>
+	<name>~logo_1</name>
+	<asVersion>0</asVersion>
+	<boundTemplate>file:///C|/Users/boo0z/AppData/Local/Adobe/Flash CS4/en/Configuration/Project/templates/boundClass_as3.as</boundTemplate>
+	<classTemplate>file:///C|/Users/boo0z/AppData/Local/Adobe/Flash CS4/en/Configuration/Project/templates/standardClass_as3.as</classTemplate>
+	<classPath>.</classPath>
+	<rootURI>C:\Users\boo0z\AppData\Local\Temp\141</rootURI>
+	<flexSDK/>
+	<sources editable="false"/>
+	<libraries editable="false"/>
+	<externalLibraries editable="false"/>
+	<compileList editable="false">
+		<uri label="~logo_1.fla">file:///C|/Users/boo0z/AppData/Local/Temp/141/~logo_1.fla</uri>
+	</compileList>
+	<defaultApp>file:///C|/Users/boo0z/AppData/Local/Temp/141/~logo_1.fla</defaultApp>
+	<recentFiles editable="false">
+		<uri label="IFontLibraryDependant.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/com/clubpenguin/tools/localtext/core/IFontLibraryDependant.as</uri>
+		<uri label="ILocalTextComponent.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/com/clubpenguin/tools/localtext/component/ILocalTextComponent.as</uri>
+		<uri label="IFocusManagerComponent.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/fl/managers/IFocusManagerComponent.as</uri>
+		<uri label="IFocusManager.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/fl/managers/IFocusManager.as</uri>
+		<uri label="InvalidationType.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/fl/core/InvalidationType.as</uri>
+		<uri label="CharCodeReplacementMap.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/com/clubpenguin/tools/localtext/core/CharCodeReplacementMap.as</uri>
+		<uri label="StyleManager.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/fl/managers/StyleManager.as</uri>
+		<uri label="LocalTextProxy.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/com/clubpenguin/tools/localtext/core/LocalTextProxy.as</uri>
+		<uri label="VAlignLTFContentCMD.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/com/clubpenguin/tools/localtext/core/commands/VAlignLTFContentCMD.as</uri>
+		<uri label="ApplyRawFiltersToTextFieldCMD.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/com/clubpenguin/tools/localtext/component/filters/controller/ApplyRawFiltersToTextFieldCMD.as</uri>
+		<uri label="FilterDefinition.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/com/clubpenguin/tools/localtext/component/filters/FilterDefinition.as</uri>
+		<uri label="IFocusManagerGroup.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/fl/managers/IFocusManagerGroup.as</uri>
+		<uri label="LocalTextAlign.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/com/clubpenguin/tools/localtext/core/LocalTextAlign.as</uri>
+		<uri label="BitmapFilterFactory.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/com/clubpenguin/tools/localtext/component/filters/controller/BitmapFilterFactory.as</uri>
+		<uri label="LTCFilterUtils.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/com/clubpenguin/tools/localtext/component/filters/LTCFilterUtils.as</uri>
+		<uri label="FilterType.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/com/clubpenguin/tools/localtext/component/filters/FilterType.as</uri>
+		<uri label="ILocalizedText.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/com/clubpenguin/tools/localtext/core/ILocalizedText.as</uri>
+		<uri label="LTCjsfl.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/com/clubpenguin/tools/localtext/component/controlpanel/LTCjsfl.as</uri>
+		<uri label="ButtonLabelPlacement.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/fl/controls/ButtonLabelPlacement.as</uri>
+		<uri label="ICellRenderer.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/fl/controls/listClasses/ICellRenderer.as</uri>
+		<uri label="SimpleCollectionItem.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/fl/data/SimpleCollectionItem.as</uri>
+		<uri label="ListData.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/fl/controls/listClasses/ListData.as</uri>
+		<uri label="DataChangeType.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/fl/events/DataChangeType.as</uri>
+		<uri label="ScrollPolicy.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/fl/controls/ScrollPolicy.as</uri>
+		<uri label="ScrollBarDirection.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/fl/controls/ScrollBarDirection.as</uri>
+		<uri label="cpBurbankSmall.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/cpBurbankSmall.as</uri>
+		<uri label="ILocalTextField.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/com/clubpenguin/tools/localtext/core/ILocalTextField.as</uri>
+		<uri label="ILocalText.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/com/clubpenguin/tools/localtext/core/ILocalText.as</uri>
+		<uri label="FontLibraryEvent.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/com/clubpenguin/tools/localtext/core/events/FontLibraryEvent.as</uri>
+		<uri label="ComponentEvent.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/fl/events/ComponentEvent.as</uri>
+		<uri label="DataChangeEvent.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/fl/events/DataChangeEvent.as</uri>
+		<uri label="ListEvent.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/fl/events/ListEvent.as</uri>
+		<uri label="ScrollEvent.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/fl/events/ScrollEvent.as</uri>
+		<uri label="FocusManager.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/fl/managers/FocusManager.as</uri>
+		<uri label="FontLibrary.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/com/clubpenguin/tools/localtext/core/FontLibrary.as</uri>
+		<uri label="DataProvider.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/fl/data/DataProvider.as</uri>
+		<uri label="UIComponent.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/fl/core/UIComponent.as</uri>
+		<uri label="TextBounds.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/com/clubpenguin/tools/localtext/core/TextBounds.as</uri>
+		<uri label="LocalTextComponent.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/com/clubpenguin/tools/localtext/component/LocalTextComponent.as</uri>
+		<uri label="BaseButton.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/fl/controls/BaseButton.as</uri>
+		<uri label="ComboBox.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/fl/controls/ComboBox.as</uri>
+		<uri label="TextInput.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/fl/controls/TextInput.as</uri>
+		<uri label="BaseScrollPane.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/fl/containers/BaseScrollPane.as</uri>
+		<uri label="ScrollBar.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/fl/controls/ScrollBar.as</uri>
+		<uri label="LocalTextField.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/com/clubpenguin/tools/localtext/core/LocalTextField.as</uri>
+		<uri label="LabelButton.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/fl/controls/LabelButton.as</uri>
+		<uri label="SelectableList.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/fl/controls/SelectableList.as</uri>
+		<uri label="Button.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/fl/controls/Button.as</uri>
+		<uri label="CellRenderer.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/fl/controls/listClasses/CellRenderer.as</uri>
+		<uri label="List.as">file:///C|/Users/boo0z/AppData/Local/Temp/141/fl/controls/List.as</uri>
+	</recentFiles>
+	<locations editable="false"/>
+</projectDescription>

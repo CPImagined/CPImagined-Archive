@@ -1,0 +1,8 @@
+1 - beacon
+2 - plaza
+3 - forest
+4 - party10
+5 - dock
+6 - forts
+7 - book
+8 - shack

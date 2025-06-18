@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<servers>
+   <environment name="live">
+      <login address="{{ .Env.GAME_ADDRESS }}" port="{{ .Env.GAME_LOGIN_PORT }}" />
+      <redemption address="{{ .Env.GAME_ADDRESS }}" port="9875" />
+      <language locale="en">
+         <server id="3100" name="Fog" safe="false" address="{{ .Env.GAME_ADDRESS }}" port="9875" />
+      </language>
+      <language locale="es">
+	<server id="3100" name="Blizzard (EN)" safe="false" address="{{ .Env.GAME_ADDRESS }}" port="9875" />
+         <server id="3101" name="Glaciar (ES)" safe="false" address="{{ .Env.GAME_ADDRESS }}" port="9876" />
+         <server id="3102" name="Avalanche (PT)" safe="false" address="{{ .Env.GAME_ADDRESS }}" port="9877" />
+         <server id="3103" name="Yeti (FR)" safe="false" address="{{ .Env.GAME_ADDRESS }}" port="9878" />
+      </language>
+      <language locale="pt">
+	<server id="3100" name="Blizzard (EN)" safe="false" address="{{ .Env.GAME_ADDRESS }}" port="9875" />
+         <server id="3101" name="Glaciar (ES)" safe="false" address="{{ .Env.GAME_ADDRESS }}" port="9876" />
+         <server id="3102" name="Avalanche (PT)" safe="false" address="{{ .Env.GAME_ADDRESS }}" port="9877" />
+         <server id="3103" name="Yeti (FR)" safe="false" address="{{ .Env.GAME_ADDRESS }}" port="9878" />
+      </language>
+      <language locale="fr">
+	<server id="3100" name="Blizzard (EN)" safe="false" address="{{ .Env.GAME_ADDRESS }}" port="9875" />
+         <server id="3101" name="Glaciar (ES)" safe="false" address="{{ .Env.GAME_ADDRESS }}" port="9876" />
+         <server id="3102" name="Avalanche (PT)" safe="false" address="{{ .Env.GAME_ADDRESS }}" port="9877" />
+         <server id="3103" name="Yeti (FR)" safe="false" address="{{ .Env.GAME_ADDRESS }}" port="9878" />
+      </language>
+   </environment>
+</servers>

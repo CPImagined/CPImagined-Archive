@@ -1,0 +1,222 @@
+{
+	"text" :
+	{
+		"goToButtonText" :  { 
+			"fontSize" : 9,
+			"translation": {
+				"en": "Go to DJ3K!",
+				"es": "¡Ir a DJ3K!",
+				"fr": "Va à DJ3K !",
+				"pt": "Ir pro DJ3K!"			
+			}
+		},
+		"dialogDescription" : { 
+			"fontSize" : 12,
+			"translation": {
+				"en": "Record and save your own music mixes in DJ3K.",
+				"es": "Graba y guarda tus temas en DJ3K.",
+				"fr": "Enregistre tes propres mix dans DJ3K.",
+				"pt": "Grave e salve sua própria música no DJ3K."		
+			}
+		},
+		"dialogButtonText" : { 
+			"fontSize" : 9,
+			"translation": {
+				"en": "Go There!",
+				"es": "¡Ir allí!",
+				"fr": "Vas-y !",
+				"pt": "Ir pra lá!"		
+			}
+		},
+		"savedMixesText" : { 
+			"fontSize" : 18,
+			"translation": {
+				"en": "My Saved Mixes",
+				"es": "Mis temas mezclados",
+				"fr": "Mes Mix",
+				"pt": "Minhas Músicas"		
+			}
+		},
+		"musicListText" : { 
+			"fontSize" : 18,
+			"translation": {
+				"en": "Music List",
+				"es": "Lista musical",
+				"fr": "Liste de Musiques",
+				"pt": "Lista de Músicas"		
+			}
+		}
+	},
+	"songs" : 	
+	[
+
+			{
+			"id" : 2063,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Tranquil Tarnation",
+				"es": "Tranquil Tarnation",
+				"fr": "Tranquil Tarnation",
+				"pt": "Tranquil Tarnation"
+			}
+		},		
+
+			{
+			"id" : 2064,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Shootin' Saloon",
+				"es": "Shootin' Saloon",
+				"fr": "Shootin' Saloon",
+				"pt": "Shootin' Saloon"
+			}
+		},		
+
+			{
+			"id" : 2058,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Go West",
+				"es": "Go West",
+				"fr": "Go West",
+				"pt": "Go West"
+			}
+		},		
+
+			{
+			"id" : 2059,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Go West Dance Remix",
+				"es": "Go West Dance Remix",
+				"fr": "Go West Dance Remix",
+				"pt": "Go West Dance Remix"
+			}
+		},		
+
+			{
+			"id" : 2060,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Southern Fried",
+				"es": "Southern Fried",
+				"fr": "Southern Fried",
+				"pt": "Southern Fried"
+			}
+		},		
+
+			{
+			"id" : 102,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Renewed",
+				"es": "Renewed",
+				"fr": "Renewed",
+				"pt": "Renewed"
+			}
+		},		
+
+			{
+			"id" : 18,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Banjo Bonanza",
+				"es": "Banjo Bonanza",
+				"fr": "Banjo Bonanza",
+				"pt": "Banjo Bonanza"
+			}
+		},		
+
+			{
+			"id" : 104,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Cave Runner",
+				"es": "Cave Runner",
+				"fr": "Cave Runner",
+				"pt": "Cave Runner"
+			}
+		},		
+
+			{
+			"id" : 2057,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "All The Way Home",
+				"es": "All The Way Home",
+				"fr": "All The Way Home",
+				"pt": "All The Way Home"
+			}
+		},		
+
+			{
+			"id" : 2062,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Underground Adventure",
+				"es": "Underground Adventure",
+				"fr": "Underground Adventure",
+				"pt": "Underground Adventure"
+			}
+		},		
+
+			{
+			"id" : 2056,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Vibe with the Golden Puffle",
+				"es": "Vibe with the Golden Puffle",
+				"fr": "Vibe with the Golden Puffle",
+				"pt": "Vibe with the Golden Puffle"
+			}
+		},		
+
+			{
+			"id" : 2066,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "This Ol' Shack",
+				"es": "This Ol' Shack",
+				"fr": "This Ol' Shack",
+				"pt": "This Ol' Shack"
+			}
+		},		
+
+			{
+			"id" : 2067,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Secrets of the Mine",
+				"es": "Secrets of the Mine",
+				"fr": "Secrets of the Mine",
+				"pt": "Secrets of the Mine"
+			}
+		},		
+
+			{
+			"id" : 2023,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Voyage Into Imagination",
+				"es": "Voyage Into Imagination",
+				"fr": "Voyage Into Imagination",
+				"pt": "Voyage Into Imagination"
+			}
+		}			
+
+	]
+}

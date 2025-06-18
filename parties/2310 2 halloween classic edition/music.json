@@ -1,0 +1,222 @@
+{
+	"text" :
+	{
+		"goToButtonText" :  { 
+			"fontSize" : 9,
+			"translation": {
+				"en": "Go to DJ3K!",
+				"es": "¡Ir a DJ3K!",
+				"fr": "Va à DJ3K !",
+				"pt": "Ir pro DJ3K!"			
+			}
+		},
+		"dialogDescription" : { 
+			"fontSize" : 12,
+			"translation": {
+				"en": "Record and save your own music mixes in DJ3K.",
+				"es": "Graba y guarda tus temas en DJ3K.",
+				"fr": "Enregistre tes propres mix dans DJ3K.",
+				"pt": "Grave e salve sua própria música no DJ3K."		
+			}
+		},
+		"dialogButtonText" : { 
+			"fontSize" : 9,
+			"translation": {
+				"en": "Go There!",
+				"es": "¡Ir allí!",
+				"fr": "Vas-y !",
+				"pt": "Ir pra lá!"		
+			}
+		},
+		"savedMixesText" : { 
+			"fontSize" : 18,
+			"translation": {
+				"en": "My Saved Mixes",
+				"es": "Mis temas mezclados",
+				"fr": "Mes Mix",
+				"pt": "Minhas Músicas"		
+			}
+		},
+		"musicListText" : { 
+			"fontSize" : 18,
+			"translation": {
+				"en": "Music List",
+				"es": "Lista musical",
+				"fr": "Liste de Musiques",
+				"pt": "Lista de Músicas"		
+			}
+		}
+	},
+	"songs" : 	
+	[
+
+			{
+			"id" : 2048,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Lurking In The Shadows",
+				"es": "Lurking In The Shadowse",
+				"fr": "Lurking In The Shadows",
+				"pt": "Lurking In The Shadows"
+			}
+		},		
+
+			{
+			"id" : 2049,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Dare To Enter The Mansion?",
+				"es": "Dare To Enter The Mansion?",
+				"fr": "Dare To Enter The Mansion?",
+				"pt": "Dare To Enter The Mansion?"
+			}
+		},		
+
+			{
+			"id" : 2050,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Discoween",
+				"es": "Discoween",
+				"fr": "Discoween",
+				"pt": "Discoween"
+			}
+		},		
+
+			{
+			"id" : 2051,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Haunted Disco",
+				"es": "Haunted Disco",
+				"fr": "Haunted Disco",
+				"pt": "Haunted Disco"
+			}
+		},		
+
+			{
+			"id" : 2052,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Cave Of Creeps",
+				"es": "Cave Of Creeps",
+				"fr": "Cave Of Creeps",
+				"pt": "Cave Of Creeps"
+			}
+		},		
+
+			{
+			"id" : 2053,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Haunted Mansion",
+				"es": "Haunted Mansion",
+				"fr": "Haunted Mansion",
+				"pt": "Haunted Mansion"
+			}
+		},		
+
+			{
+			"id" : 780,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Spooky Jazz",
+				"es": "Spooky Jazz",
+				"fr": "Spooky Jazz",
+				"pt": "Spooky Jazz"
+			}
+		},		
+
+			{
+			"id" : 772,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Spooky Jazz Piano",
+				"es": "Spooky Jazz Piano",
+				"fr": "Spooky Jazz Piano",
+				"pt": "Spooky Jazz Piano"
+			}
+		},		
+
+			{
+			"id" : 782,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Phantasmagoria",
+				"es": "Phantasmagoria",
+				"fr": "Phantasmagoria",
+				"pt": "Phantasmagoria"
+			}
+		},		
+
+			{
+			"id" : 28,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Epic Island",
+				"es": "Isla épica",
+				"fr": "L'Île Épique",
+				"pt": "Ilha Épica"
+			}
+		},		
+
+			{
+			"id" : 509,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Seek And Hide",
+				"es": "Seek And Hide",
+				"fr": "Seek And Hide",
+				"pt": "Seek And Hide"
+			}
+		},		
+
+			{
+			"id" : 2055,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Force For Good",
+				"es": "Force For Good",
+				"fr": "Force For Good",
+				"pt": "Force For Good"
+			}
+		},		
+
+			{
+			"id" : 13,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "One Very Grumpy Polar Bear",
+				"es": "One Very Grumpy Polar Bear",
+				"fr": "One Very Grumpy Polar Bear",
+				"pt": "One Very Grumpy Polar Bear"
+			}
+		},		
+
+			{
+			"id" : 2023,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Voyage Into Imagination",
+				"es": "Voyage Into Imagination",
+				"fr": "Voyage Into Imagination",
+				"pt": "Voyage Into Imagination"
+			}
+		}			
+
+	]
+}

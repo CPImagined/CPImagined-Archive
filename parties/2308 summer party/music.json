@@ -1,0 +1,222 @@
+{
+	"text" :
+	{
+		"goToButtonText" :  { 
+			"fontSize" : 9,
+			"translation": {
+				"en": "Go to DJ3K!",
+				"es": "¡Ir a DJ3K!",
+				"fr": "Va à DJ3K !",
+				"pt": "Ir pro DJ3K!"			
+			}
+		},
+		"dialogDescription" : { 
+			"fontSize" : 12,
+			"translation": {
+				"en": "Record and save your own music mixes in DJ3K.",
+				"es": "Graba y guarda tus temas en DJ3K.",
+				"fr": "Enregistre tes propres mix dans DJ3K.",
+				"pt": "Grave e salve sua própria música no DJ3K."		
+			}
+		},
+		"dialogButtonText" : { 
+			"fontSize" : 9,
+			"translation": {
+				"en": "Go There!",
+				"es": "¡Ir allí!",
+				"fr": "Vas-y !",
+				"pt": "Ir pra lá!"		
+			}
+		},
+		"savedMixesText" : { 
+			"fontSize" : 18,
+			"translation": {
+				"en": "My Saved Mixes",
+				"es": "Mis temas mezclados",
+				"fr": "Mes Mix",
+				"pt": "Minhas Músicas"		
+			}
+		},
+		"musicListText" : { 
+			"fontSize" : 18,
+			"translation": {
+				"en": "Music List",
+				"es": "Lista musical",
+				"fr": "Liste de Musiques",
+				"pt": "Lista de Músicas"		
+			}
+		}
+	},
+	"songs" : 	
+	[
+
+			{
+			"id" : 736,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "In Summer",
+				"es": "In Summer",
+				"fr": "In Summer",
+				"pt": "In Summer"
+			}
+		},		
+
+			{
+			"id" : 737,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Frozen Wonder",
+				"es": "Frozen Wonder",
+				"fr": "Frozen Wonder",
+				"pt": "Frozen Wonder"
+			}
+		},		
+
+			{
+			"id" : 461,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Surf's Up",
+				"es": "Surf's Up",
+				"fr": "Surf's Up",
+				"pt": "Surf's Up"
+			}
+		},		
+
+			{
+			"id" : 462,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Cruisin' for a Bruisin'",
+				"es": "Cruisin' for a Bruisin'",
+				"fr": "Cruisin' for a Bruisin'",
+				"pt": "Cruisin' for a Bruisin'"
+			}
+		},		
+
+			{
+			"id" : 463,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Forever Summer",
+				"es": "Forever Summer",
+				"fr": "Forever Summer",
+				"pt": "Forever Summer"
+			}
+		},		
+
+			{
+			"id" : 464,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Ride the Wave",
+				"es": "Ride the Wave",
+				"fr": "Ride the Wave",
+				"pt": "Ride the Wave"
+			}
+		},		
+
+			{
+			"id" : 465,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Rockin' the Beach",
+				"es": "Rockin' the Beach",
+				"fr": "Rockin' the Beach",
+				"pt": "Rockin' the Beach"
+			}
+		},		
+
+			{
+			"id" : 2025,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Aloha Malihini",
+				"es": "Aloha Malihini",
+				"fr": "Aloha Malihini",
+				"pt": "Aloha Malihini"
+			}
+		},		
+
+			{
+			"id" : 2035,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Pirates in Beach Chairs",
+				"es": "Pirates in Beach Chairs",
+				"fr": "Pirates in Beach Chairs",
+				"pt": "Pirates in Beach Chairs"
+			}
+		},		
+
+			{
+			"id" : 216,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Summer Song",
+				"es": "Summer Song",
+				"fr": "Summer Song",
+				"pt": "Summer Song"
+			}
+		},		
+
+			{
+			"id" : 511,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Ocean Voyage",
+				"es": "Ocean Voyage",
+				"fr": "Ocean Voyage",
+				"pt": "Ocean Voyage"
+			}
+		},		
+
+			{
+			"id" : 2036,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Slush Rush",
+				"es": "Slush Rush",
+				"fr": "Slush Rush",
+				"pt": "Slush Rush"
+			}
+		},		
+
+			{
+			"id" : 13,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "One Very Grumpy Polar Bear",
+				"es": "One Very Grumpy Polar Bear",
+				"fr": "One Very Grumpy Polar Bear",
+				"pt": "One Very Grumpy Polar Bear"
+			}
+		},		
+
+			{
+			"id" : 2023,
+			"enabled": true,
+			"fontSize" : 12,
+			"translation": {
+				"en": "Voyage Into Imagination",
+				"es": "Voyage Into Imagination",
+				"fr": "Voyage Into Imagination",
+				"pt": "Voyage Into Imagination"
+			}
+		}			
+
+	]
+}

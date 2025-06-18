@@ -1,0 +1,17 @@
+party6 - fancy plaza
+party10 - hunting spot
+party11 - ptero town
+party14 - rockys pizza
+party13 - salon
+party12 - scary ice
+party3 - stony town
+party1 - time trekker
+party2 - tree place
+party8 - tricera town
+party9 - tyranno town
+party15 - volcano entrance
+party16 - volcano
+party17 - volcano
+party5 - water place
+party7 - yuck swamp
+party4 - yum yum

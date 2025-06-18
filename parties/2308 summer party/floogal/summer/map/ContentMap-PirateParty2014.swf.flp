@@ -1,0 +1,9 @@
+<flash_project name="ContentMap-PirateParty2014.swf.flp" version="1">
+    <project_file path=".\ContentMap-PirateParty2014.swf_as\com\clubpenguin\map\vo\MapCategoryVO.as" filetype="as" />
+    <project_file path=".\ContentMap-PirateParty2014.swf_as\com\clubpenguin\map\vo\MapTriggerVO.as" filetype="as" />
+    <project_file path=".\ContentMap-PirateParty2014.swf_as\com\clubpenguin\hybrid\HybridMovieClipLoader.as" filetype="as" />
+    <project_file path=".\ContentMap-PirateParty2014.swf_as\com\clubpenguin\util\Delegate.as" filetype="as" />
+    <project_file path=".\ContentMap-PirateParty2014.swf_as\com\clubpenguin\util\TrackerAS2.as" filetype="as" />
+    <project_file path=".\ContentMap-PirateParty2014.swf_as\com\clubpenguin\map\vo\MapCategoriesVO.as" filetype="as" />
+    <project_file path="./ContentMap-PirateParty2014.swf.fla" filetype="fla" profile="" def_file="true" />
+</flash_project>

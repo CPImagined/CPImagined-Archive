@@ -1,0 +1,193 @@
+[
+    {
+        "note": "Quest for the Golden Puffle"
+    },
+    {
+        "name": "Yukon:",
+        "message": "We have to be careful in this pyramid, Alaska!"
+    },
+    {
+        "name": "Alaska:",
+        "message":"Can't find rare gems without a little danger..."
+    },
+    {
+        "name": "Alaska:",
+        "message": "Hey look, a switch! Wonder what it does..."
+    },
+    {
+        "name": "Yukon:",
+        "message":"Oh no! Run! It's a snowball trap!"
+    },
+    {
+        "name": "Alaska:",
+        "message":"What's an adventure without a few traps?"
+    },
+    {
+        "name": "Yukon:",
+        "message": "That was close! Told you we should be careful!"
+    },
+    {
+        "name": "Alaska:",
+        "message": "Careful is my middle name."
+    },
+    {
+        "name": "Yukon:",
+        "message":"Look! The Golden Puffle! Let's get it!"
+    },
+    {
+        "name": "Alaska:",
+        "message":"I've been waiting a long, long time for this..."
+    },
+    {
+        "note": "(Door opens and Boris appears)"
+    },
+    {
+        "name": "Boris:",
+        "message": "TUMMMMMMY!"
+    },
+    {
+        "name": "King Ra-Ra:",
+        "message": "Halt! Who dares to enter the great pyramid!"
+    },
+    {
+        "name": "Alaska:",
+        "message": "Quick, Yukon! Grab the Golden puffle!"
+    },
+    {
+        "name": "Yukon:",
+        "message":"Got it! Let's get out of here!"
+    },
+    {
+        "name": "Boris:",
+        "message": "TUMMMMMY!"
+    },
+    {
+        "name": "King Ra-Ra:",
+        "message":"Don't let them take it, Boris!"
+    },
+    {
+        "name": "Alaska:",
+        "message":"We've gotta get out of here... fast!"
+    },
+    {
+        "name": "Yukon:",
+        "message":"Oh no! We're trapped in the pyramid!"
+    },
+    {
+        "name": "Alaska:",
+        "message": "You can say that again."
+    },
+    {
+        "name": "Yukon:",
+        "message":"Oh no! We're trapped in the pyramid!"
+    },
+    {
+        "name": "Boris:",
+        "message": "TUMMMMMY!"
+    },
+    {
+        "name": "King Ra-Ra:",
+        "message":"You can't escape the great pyramid!"
+    },
+    {
+        "name": "King Ra-Ra:",
+        "message": "Now give us the Golden Puffle!"
+    },
+    {
+        "name": "Alaska:",
+        "message":"I don't give up my quests that easy, Ra-Ra!"
+    },
+    {
+        "name": "Boris:",
+        "message": "TUMMMMMY!"
+    },
+    {
+        "name": "Yukon:",
+        "message": "Wait! I think I know how to stop all of this!"
+    },
+    {
+        "note": "(Yukon gives Boris the Golden Puffle)"
+    },
+    {
+        "name": "Boris:",
+        "message": "TUM MEEEEE!"
+    },
+    {
+        "name": "Alaska:",
+        "message":"What are you doing Yukon?! That's my treasure!"
+    },
+    {
+        "note": "(Boris unwraps the Golden puffle)"
+    },
+    {
+        "name": "Yukon:",
+        "message":"It's a puffle-shaped chocolate in gold wrapper!"
+    },
+    {
+        "name": "King Ra-Ra:",
+        "message":"That's right! And Boris was really hungry!"
+    },
+    {
+        "name": "Boris:",
+        "message": "YUMMMMMMY!"
+    },
+    {
+        "name": "King Ra-Ra:",
+        "message":"That's why we had to get it back!"
+    },
+    {
+        "name": "Alaska:",
+        "message":"Sigh. Guess it's not the rare puffle I thought."
+    },
+    {
+        "name": "King Ra-Ra:",
+        "message": "Oh, but it israre!"
+    },
+    {
+        "name": "King Ra-Ra:",
+        "message":"It is made of the island's rarest dark chocolate!"
+    },
+    {
+        "name": "Yukon:",
+        "message":"This isn't the puffle we were looking for."
+    },
+    {
+        "name": "Alaska:",
+        "message": "Do not fear, Yukon! New adventuresawait!"
+    },
+    {
+        "name": "King Ra-Ra:",
+        "message": "Hmmm...where did I put that snowball of mine?"
+    },
+    {
+        "name": "Alaska:",
+        "message": "Onwards to victory and the rarest puffles!"
+    },
+    {
+        "name": "Boris:",
+        "message":"THAT'S A WRAP!"
+    },
+    {
+        "note": "THE END"
+    },
+    {
+        "name": "Director:",
+        "message": "Places everyone!"
+    },
+    {
+        "name": "Director:",
+        "message": "Take it again from the top!"
+    },
+    {
+        "name": "Director:",
+        "message": "Excellent work, team. Keep it up!"
+    },
+    {
+        "name": "Director:",
+        "message":"That's a wrap!"
+    },
+    {
+        "name": "Director:",
+        "message": "Take a bow everyone!"
+    }
+]

@@ -1,0 +1,81 @@
+{
+	
+	"boot": [
+		{
+			"id": "servers",
+			"title": "servers"
+		},
+		{
+			"id": "party",
+			"title": "Party"
+		},
+		{
+			"id": "airtower",
+			"title": "Communication"
+		},
+		{
+			"id": "sentry",
+			"title": "Communication"
+		}
+	],
+	
+	"login": [
+		{
+			"id": "login",
+			"title": "Login Screen"
+		}
+	],
+	
+	"join": [
+		{
+			"id": "engine",
+			"title": "Engine"
+		},
+		{
+			"id": "interface",
+			"title": "Interface"
+		},
+		{
+			"id": "gridview",
+			"title": "Gridview"
+		},
+		{
+			"id": "mail",
+			"title": "Mail"
+		},
+		{
+			"id": "book",
+			"title": "Mail"
+		},
+		{
+			"id": "stampbook",
+			"title": "StampBook"
+		},
+		{
+			"id": "glows",
+			"title": "Glows"
+		},
+		{
+			"id": "buddies",
+			"title": "StampBook"
+		},
+		{
+			"id": "rooms_common",
+			"title": "Rooms Common"
+		},
+		{
+			"id": "party_listener"
+			"title": "Floogal's Custom Party Listener"
+		}
+	],
+	
+	"merch": [
+		{
+			"id": "app",
+			"folder": "merch/",
+			"title": "Communication"
+		}
+	]
+	
+}
+

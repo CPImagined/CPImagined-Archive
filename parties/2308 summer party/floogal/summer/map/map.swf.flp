@@ -1,0 +1,8 @@
+<flash_project name="map.swf.flp" version="1">
+    <project_file path=".\map.swf_as\com\clubpenguin\map\vo\MapCategoryVO.as" filetype="as" />
+    <project_file path=".\map.swf_as\com\clubpenguin\map\vo\MapTriggerVO.as" filetype="as" />
+    <project_file path=".\map.swf_as\com\clubpenguin\hybrid\HybridMovieClipLoader.as" filetype="as" />
+    <project_file path=".\map.swf_as\com\clubpenguin\util\Delegate.as" filetype="as" />
+    <project_file path=".\map.swf_as\com\clubpenguin\map\vo\MapCategoriesVO.as" filetype="as" />
+    <project_file path="./map.swf.fla" filetype="fla" profile="" def_file="true" />
+</flash_project>

@@ -1,0 +1,6525 @@
+{
+    "lang": [
+        [
+            "w.pufflecare.manual.toc.title",
+            "Contents"
+        ],
+        [
+            "w.pufflecare.manual.toc.personalities",
+            "Puffle Species"
+        ],
+        [
+            "w.pufflecare.manual.toc.type.blue",
+            "Blue"
+        ],
+        [
+            "w.pufflecare.manual.toc.about",
+            "About Puffles"
+        ],
+        [
+            "w.pufflecare.manual.toc.card",
+            "Puffle Card"
+        ],
+        [
+            "w.pufflecare.manual.toc.fun",
+            "Puffle Fun"
+        ],
+        [
+            "w.pufflecare.manual.whatis.title",
+            "What Is A Puffle?"
+        ],
+        [
+            "w.pufflecare.manual.whatis.description1",
+            "Puffles are small, round, furry creatures. They make great pets! Most species are native to the wilds of Club Penguin, although some have been discovered elsewhere."
+        ],
+        [
+            "w.pufflecare.manual.description.label.personality",
+            "Personality"
+        ],
+        [
+            "w.pufflecare.manual.description.label.toys",
+            "Toys"
+        ],
+        [
+            "w.pufflecare.manual.description.label.observed",
+            "Observed in the Wild"
+        ],
+        [
+            "w.pufflecare.manual.description.label.favoritesnacks",
+            "Favorite Snacks"
+        ],
+        [
+            "w.pufflecare.manual.description.label.bestgame",
+            "Best Game"
+        ],
+        [
+            "w.pufflecare.manual.description.label.coolfact",
+            "Cool Fact"
+        ],
+        [
+            "w.pufflecare.care.purchase.prompt",
+            "Would you like to purchase a new puffle?"
+        ],
+        [
+            "w.puffleadoption.quiz.entry.title",
+            "Quiz"
+        ],
+        [
+            "w.puffleadoption.quiz.entry.subtext",
+            "Which puffle is the most like you?"
+        ],
+        [
+            "w.puffleadoption.selected.stats.title",
+            "Stats"
+        ],
+        [
+            "w.puffleadoption.selected.stats.name",
+            "Name"
+        ],
+        [
+            "w.puffleadoption.selected.stats.weight",
+            "Weight"
+        ],
+        [
+            "w.puffleadoption.selected.stats.attitude",
+            "Attitude"
+        ],
+        [
+            "w.puffleadoption.selected.stats.favoritetoy",
+            "Toy"
+        ],
+        [
+            "w.puffleadoption.selected.stats.favoritegame",
+            "Favorite Game"
+        ],
+        [
+            "w.puffleadoption.selected.stats.adoptbutton",
+            "Adopt"
+        ],
+        [
+            "w.puffleadoption.dialog.namepuffle.title",
+            "Please give your new puffle a name"
+        ],
+        [
+            "w.puffleadoption.dialog.namepuffle.subtext",
+            "Be sure you like this name. It can't be changed later."
+        ],
+        [
+            "w.puffleadoption.dialog.costincludes.title",
+            "Adopt"
+        ],
+        [
+            "w.puffleadoption.dialog.costincludes.feeding",
+            "Feeding"
+        ],
+        [
+            "w.puffleadoption.dialog.costincludes.bathing",
+            "Bathing"
+        ],
+        [
+            "w.puffleadoption.dialog.costincludes.grooming",
+            "Grooming"
+        ],
+        [
+            "w.puffleadoption.dialog.costincludes.manual",
+            "Manual"
+        ],
+        [
+            "w.puffleadoption.dialog.costincludes.agreement",
+            "I, %0% agree to adopt %1% for 800 coins."
+        ],
+        [
+            "w.puffleadoption.dialog.costincludes.coins",
+            "You currently have %0% coins."
+        ],
+        [
+            "w.puffleadoption.dialog.costincludes.yes",
+            "Yes"
+        ],
+        [
+            "w.puffleadoption.dialog.costincludes.no",
+            "No"
+        ],
+        [
+            "w.puffleadoption.dialog.completeaction.walk",
+            "Walk"
+        ],
+        [
+            "w.puffleadoption.dialog.completeaction.igloo",
+            "Igloo"
+        ],
+        [
+            "w.puffleadoption.quiz.exit.subtext",
+            "you'd make a great %0% puffle owner."
+        ],
+        [
+            "w.puffleadoption.dialog.maintitle",
+            "Adopt"
+        ],
+        [
+            "w.puffleadoption.dialog.costincludes.agree",
+            "I, %0% agree to adopt %1% for 800 coins."
+        ],
+        [
+            "w.puffleadoption.dialog.costincludes.prompt",
+            "Ready to adopt your new healthy, happy puffle?"
+        ],
+        [
+            "w.puffleadoption.buttontext",
+            "Adopt"
+        ],
+        [
+            "w.puffleadoption.selected.attitude.red",
+            "Adventerous, extreme"
+        ],
+        [
+            "w.puffleadoption.selected.attitude.pink",
+            "Sporty, cheery"
+        ],
+        [
+            "w.puffleadoption.selected.attitude.purple",
+            "Fabulous, particular"
+        ],
+        [
+            "w.puffleadoption.selected.attitude.black",
+            "Intense, strong"
+        ],
+        [
+            "w.puffleadoption.selected.attitude.green",
+            "Playful, funny"
+        ],
+        [
+            "w.puffleadoption.selected.attitude.white",
+            "Shy, powerful, gentle"
+        ],
+        [
+            "w.puffleadoption.selected.attitude.yellow",
+            "Creative, spontaneous"
+        ],
+        [
+            "w.puffleadoption.selected.attitude.orange",
+            "Curious, unpredictable, zany"
+        ],
+        [
+            "w.puffleadoption.selected.attitude.brown",
+            "Super smart, inventive"
+        ],
+        [
+            "w.puffleadoption.selected.attitude.blue",
+            "Loyal, content, team player"
+        ],
+        [
+            "w.pufflecare.manual.card.description.blue",
+            "TBD"
+        ],
+        [
+            "w.pufflecare.manual.card.description1",
+            "Your puffle will let you know when it is happy, sad, tired or hungry."
+        ],
+        [
+            "w.pufflecare.manual.card.description2",
+            "Click the Food tab to feed it, the Play tab to get its toys, or the Care tab to groom, walk, or ask your puffle to sleep."
+        ],
+        [
+            "w.pufflecare.manual.card.description3",
+            "If you want to look at the Handbook or read\/print your pet's Adoption Certificate, click \"Pet Papers\"."
+        ],
+        [
+            "w.pufflecare.manual.card.description4",
+            "If you care for your puffle, it'll be in your igloo. If it isn't happy and healthy, it will return to its natural habitat."
+        ],
+        [
+            "w.pufflecare.manual.card.label.care",
+            "Care"
+        ],
+        [
+            "w.pufflecare.manual.card.label.certificate",
+            "Certificate"
+        ],
+        [
+            "w.pufflecare.manual.card.label.feed",
+            "Feed"
+        ],
+        [
+            "w.pufflecare.manual.card.label.handbook",
+            "Handbook"
+        ],
+        [
+            "w.pufflecare.manual.card.label.play",
+            "Play"
+        ],
+        [
+            "w.pufflecare.manual.card.label.petPapers",
+            "Pet Papers"
+        ],
+        [
+            "w.pufflecare.manual.card.title",
+            "Caring for your Puffle"
+        ],
+        [
+            "w.pufflecare.manual.playing.title",
+            "Playing Games"
+        ],
+        [
+            "w.pufflecare.manual.playing.subtitle",
+            "Taking some puffles into games can help you earn more coins!"
+        ],
+        [
+            "w.pufflecare.manual.playing.game.catchinwaves",
+            "Catchin' Waves"
+        ],
+        [
+            "w.pufflecare.manual.playing.game.dancecontest",
+            "Dance Contest"
+        ],
+        [
+            "w.pufflecare.manual.playing.game.aquagrabber",
+            "Aqua Grabber"
+        ],
+        [
+            "w.pufflecare.manual.playing.game.dj3k",
+            "DJ3K"
+        ],
+        [
+            "w.pufflecare.manual.playing.game.cartsurfer",
+            "Cart Surfer"
+        ],
+        [
+            "w.pufflecare.manual.playing.game.jetpack",
+            "Jet Pack Adventure"
+        ],
+        [
+            "w.pufflecare.manual.health.walking.title",
+            "Walking"
+        ],
+        [
+            "w.pufflecare.manual.health.walking.description",
+            "Puffles love to walk with you (one at a time). It'll even dance when you do! When you're done walking, click your player card and then the puffle."
+        ],
+        [
+            "w.pufflecare.manual.health.playing.title",
+            "Playing"
+        ],
+        [
+            "w.pufflecare.manual.health.playing.description",
+            "Your puffles love playing. Try getting puffle furniture items for your igloo.\n\nAnd that's not all... there's lots to discover about your puffle. Enjoy your pet!"
+        ],
+        [
+            "w.pufflecare.manual.toc.type.red",
+            "Red"
+        ],
+        [
+            "w.pufflecare.manual.toc.type.pink",
+            "Pink"
+        ],
+        [
+            "w.pufflecare.manual.toc.type.purple",
+            "Purple"
+        ],
+        [
+            "w.pufflecare.manual.toc.type.black",
+            "Black"
+        ],
+        [
+            "w.pufflecare.manual.toc.type.green",
+            "Green"
+        ],
+        [
+            "w.pufflecare.manual.toc.type.white",
+            "White"
+        ],
+        [
+            "w.pufflecare.manual.toc.type.yellow",
+            "Yellow"
+        ],
+        [
+            "w.pufflecare.manual.toc.type.orange",
+            "Orange"
+        ],
+        [
+            "w.pufflecare.manual.toc.type.brown",
+            "Brown"
+        ],
+        [
+            "w.pufflecare.manual.toc.care",
+            "Care"
+        ],
+        [
+            "w.pufflecare.manual.toc.games",
+            "Games"
+        ],
+        [
+            "w.pufflecare.manual.toc.playing",
+            "Playing"
+        ],
+        [
+            "w.pufflecare.manual.toc.walking",
+            "Walking"
+        ],
+        [
+            "w.pufflecare.manual.handbook.description.blue",
+            "They're known for their awesome team work. Few realize that each week blue puffles eat their weight in cookies."
+        ],
+        [
+            "w.pufflecare.manual.handbook.description.red",
+            "From the wilds of Rockhopper Island, they love adventure. Puffle experts wonder what secrets they hold."
+        ],
+        [
+            "w.pufflecare.manual.handbook.description.pink",
+            "It is said that the pink puffle's fur can hold 30 times its weight in water."
+        ],
+        [
+            "w.pufflecare.manual.handbook.description.purple",
+            "The flash of a disco ball transforms this stylish puffle into a powerful dance force."
+        ],
+        [
+            "w.pufflecare.manual.handbook.description.black",
+            "Although mostly quiet, sudden fiery outbursts show there is more to these intense creatures than meets the eye."
+        ],
+        [
+            "w.pufflecare.manual.handbook.description.green",
+            "Are experts on unicycles. They are also known for their love of April Fool's parties."
+        ],
+        [
+            "w.pufflecare.manual.handbook.description.white",
+            "It may be smaller than all other puffles, but its power is unmeasurable"
+        ],
+        [
+            "w.pufflecare.manual.handbook.description.yellow",
+            "It is rumored that the yellow puffle creates artwork from food and furniture."
+        ],
+        [
+            "w.pufflecare.manual.handbook.description.orange",
+            "This species has teeth strong enough to demolish petrified Puffle O's. And everything else."
+        ],
+        [
+            "w.pufflecare.manual.handbook.description.brown",
+            "It is documented that the brown puffle blinks more than all other puffles. Its dreams have graph paper backgrounds."
+        ],
+        [
+            "w.pufflecare.manual.description.value.personality.blue",
+            "Loyal, content, team player"
+        ],
+        [
+            "w.pufflecare.manual.description.value.personality.red",
+            "Adventurous, extreme"
+        ],
+        [
+            "w.pufflecare.manual.description.value.personality.pink",
+            "Sporty, cheery"
+        ],
+        [
+            "w.pufflecare.manual.description.value.personality.purple",
+            "Fabulous, particular"
+        ],
+        [
+            "w.pufflecare.manual.description.value.personality.black",
+            "Intense, strong"
+        ],
+        [
+            "w.pufflecare.manual.description.value.personality.green",
+            "Playful, funny"
+        ],
+        [
+            "w.pufflecare.manual.description.value.personality.white",
+            "Shy, powerful, gentle "
+        ],
+        [
+            "w.pufflecare.manual.description.value.personality.yellow",
+            "Creative, spontaneous"
+        ],
+        [
+            "w.pufflecare.manual.description.value.personality.orange",
+            "Curious, zany"
+        ],
+        [
+            "w.pufflecare.manual.description.value.personality.brown",
+            "Super smart, inventive"
+        ],
+        [
+            "w.pufflecare.manual.description.value.toys.blue",
+            "Ball, snowballs"
+        ],
+        [
+            "w.pufflecare.manual.description.value.toys.red",
+            "Bowling pins, cannon"
+        ],
+        [
+            "w.pufflecare.manual.description.value.toys.pink",
+            "Skipping rope, snorkel, trampoline"
+        ],
+        [
+            "w.pufflecare.manual.description.value.toys.purple",
+            "Disco ball, bubble wand"
+        ],
+        [
+            "w.pufflecare.manual.description.value.toys.black",
+            "Skateboard"
+        ],
+        [
+            "w.pufflecare.manual.description.value.toys.green",
+            "Propeller Cap, unicycle"
+        ],
+        [
+            "w.pufflecare.manual.description.value.toys.white",
+            "Ice skates, snowflakes"
+        ],
+        [
+            "w.pufflecare.manual.description.value.toys.yellow",
+            "Paintbrush, easel"
+        ],
+        [
+            "w.pufflecare.manual.description.value.toys.orange",
+            "Box, wagon, truck"
+        ],
+        [
+            "w.pufflecare.manual.description.value.toys.brown",
+            "Beakers, rockets"
+        ],
+        [
+            "w.pufflecare.manual.description.value.observed.blue",
+            "Rallying teams together"
+        ],
+        [
+            "w.pufflecare.manual.description.value.observed.red",
+            "Hunting for buried treasure"
+        ],
+        [
+            "w.pufflecare.manual.description.value.observed.pink",
+            "Using bubblegum to float"
+        ],
+        [
+            "w.pufflecare.manual.description.value.observed.black",
+            "Bursting into flames after eating Puffle O's"
+        ],
+        [
+            "w.pufflecare.manual.description.value.observed.green",
+            "Vacuums up cookies with its mouth"
+        ],
+        [
+            "w.pufflecare.manual.description.value.observed.yellow",
+            "Makes music that gets everyone dancing"
+        ],
+        [
+            "w.pufflecare.manual.description.value.observed.purple",
+            "Choosing just the right outfit for just the right occasion"
+        ],
+        [
+            "w.pufflecare.manual.description.value.observed.white",
+            "Freezes liquid at will"
+        ],
+        [
+            "w.pufflecare.manual.description.value.observed.orange",
+            "Making quick decisions"
+        ],
+        [
+            "w.pufflecare.manual.description.value.observed.brown",
+            "Superior machine building skills"
+        ],
+        [
+            "w.pufflecare.manual.description.label.favoriteplace",
+            "Favorite Place"
+        ],
+        [
+            "w.pufflecare.manual.description.value.favoritesnacks.blue",
+            "Cookies and milk"
+        ],
+        [
+            "w.pufflecare.manual.description.value.favoritesnacks.red",
+            "Stinky cheese"
+        ],
+        [
+            "w.pufflecare.manual.description.value.favoritesnacks.pink",
+            "Veggies, fruits, Puffle-O's"
+        ],
+        [
+            "w.pufflecare.manual.description.value.favoritesnacks.black",
+            "Chips"
+        ],
+        [
+            "w.pufflecare.manual.description.value.favoritesnacks.green",
+            "Jelly beans"
+        ],
+        [
+            "w.pufflecare.manual.description.value.favoriteactivity.yellow",
+            "Performing and creating"
+        ],
+        [
+            "w.pufflecare.manual.description.value.favoritesnacks.purple",
+            "Very good chocolate"
+        ],
+        [
+            "w.pufflecare.manual.description.value.favoritesnacks.white",
+            "The Dojo"
+        ],
+        [
+            "w.pufflecare.manual.description.value.favoritesnacks.orange",
+            "Everything (eats puffle bowl)"
+        ],
+        [
+            "w.pufflecare.manual.description.value.favoritesnacks.brown",
+            "Astronaut food (dehydrated ice cream sandwiches)"
+        ],
+        [
+            "w.pufflecare.manual.description.value.coolfact.blue",
+            "Easy to care for"
+        ],
+        [
+            "w.pufflecare.manual.description.value.coolfact.red",
+            "Originally from Rockhopper Island"
+        ],
+        [
+            "w.pufflecare.manual.description.value.coolfact.pink",
+            "Loves to exercise and swim"
+        ],
+        [
+            "w.pufflecare.manual.description.value.coolfact.black",
+            "Always burps after eating cookies "
+        ],
+        [
+            "w.pufflecare.manual.description.value.coolfact.green",
+            "Laughs an average of 14.7 times a day"
+        ],
+        [
+            "w.pufflecare.manual.description.value.coolfact.yellow",
+            "It puts a beret on before it paints"
+        ],
+        [
+            "w.pufflecare.manual.description.value.coolfact.purple",
+            "Has a sleep mask"
+        ],
+        [
+            "w.pufflecare.manual.description.value.coolfact.white",
+            "Slightly smaller than other species"
+        ],
+        [
+            "w.pufflecare.manual.description.value.coolfact.orange",
+            "Sleeps very deeply and drools... and drools... "
+        ],
+        [
+            "w.pufflecare.manual.description.value.coolfact.brown",
+            "Afraid of balloons"
+        ],
+        [
+            "w.pufflecare.manual.description.value.bestgame.red",
+            "Catchin' Waves"
+        ],
+        [
+            "w.pufflecare.manual.description.value.bestgame.pink",
+            "Aqua Grabber"
+        ],
+        [
+            "w.pufflecare.manual.description.value.bestgame.black",
+            "Cart Surfer"
+        ],
+        [
+            "w.pufflecare.manual.description.value.bestgame.yellow",
+            "DJ3K"
+        ],
+        [
+            "w.pufflecare.manual.description.value.bestgame.purple",
+            "Dance Contest"
+        ],
+        [
+            "w.pufflecare.manual.description.value.favoriteplace.blue",
+            "Snow Forts"
+        ],
+        [
+            "w.pufflecare.care.return.prompt",
+            "Are you sure you want to return %0% to its natural habitat?"
+        ],
+        [
+            "w.pufflecare.care.return.success",
+            "Your puffle was returned successfully."
+        ],
+        [
+            "w.pufflecare.care.return.ok",
+            "Ok"
+        ],
+        [
+            "w.puffleadoption.dialog.yourcoins",
+            "Your coins: %0%"
+        ],
+        [
+            "w.pufflecare.certificate.thiscertifies",
+            "This certifies that"
+        ],
+        [
+            "w.pufflecare.certificate.belongsto",
+            "belongs to: %0%"
+        ],
+        [
+            "w.pufflecare.certificate.adoptedon",
+            "Adopted on: %0% %1%\/%2%"
+        ],
+        [
+            "w.puffleadoption.dialog.completeaction.prompt",
+            "Do you want to take %0% for a walk or back to your igloo?"
+        ],
+        [
+            "w.pufflecare.manual.description.value.favoriteplace.orange",
+            "Pizza Parlor"
+        ],
+        [
+            "w.pufflecare.manual.description.value.favoriteplace.white",
+            "The Dojo"
+        ],
+        [
+            "w.pufflecare.manual.description.value.bestgame.green",
+            "Jet Pack Adventure"
+        ],
+        [
+            "w.puffleadoption.oops.button.buymembership",
+            "Buy a membership"
+        ],
+        [
+            "w.puffleadoption.oops.button.print",
+            "Print"
+        ],
+        [
+            "w.puffleadoption.oops.message",
+            "To adopt and care for more than 2 puffles, you must \rbecome a member. \r\rWe'd love to have you join!"
+        ],
+        [
+            "w.puffleadoption.oops.title",
+            "OOPS!"
+        ],
+        [
+            "w.pufflecare.manual.description.value.favoritesnacks.yellow",
+            "Cheese and crackers"
+        ],
+        [
+            "w.app.dialog.error.button.ok",
+            "Ok"
+        ],
+        [
+            "w.app.dialog.error.button.learnmore",
+            "Learn More"
+        ],
+        [
+            "w.pufflecare.manual.whatis.description2",
+            "Each puffle is unique. Everyone can adopt 2 (red and blue). Members can adopt every color and up to 20."
+        ],
+        [
+            "w.app.error.message.timeout",
+            "Auto Disconnect, your penguin has been idle for more than 10 minutes"
+        ],
+        [
+            "w.app.error.message.notenoughcoins",
+            "You need more coins"
+        ],
+        [
+            "w.app.error.message.multiconnections",
+            "You can only have one Club Penguin window open at a time. Please close any other windows and tabs in your internet browser to connect."
+        ],
+        [
+            "w.app.error.message.connectionlost",
+            "Connection was lost.\nPlease click to learn more"
+        ],
+        [
+            "w.puffleadoption.dialog.findoutmore",
+            "Find out more"
+        ],
+        [
+            "w.puffleadoption.dialog.done",
+            "Done"
+        ],
+        [
+            "w.app.error.message.nameunavailable",
+            "Sorry, that name is unavailable!"
+        ],
+        [
+            "w.app.error.message.toomanypuffles",
+            "Sorry, you may only have a maximum of 20 puffles!"
+        ],
+        [
+            "aqua_find",
+            "%name% is playing Aqua Grabber"
+        ],
+        [
+            "astro_find",
+            "%name% is playing Astro Barrier"
+        ],
+        [
+            "beans_find",
+            "%name% is playing Bean Counters"
+        ],
+        [
+            "cart_find",
+            "%name% is Cart Surfing"
+        ],
+        [
+            "fish_find",
+            "%name% is Ice Fishing"
+        ],
+        [
+            "jetpack_find",
+            "%name% is flying a Jet Pack"
+        ],
+        [
+            "thinice_find",
+            "%name% is playing Thin Ice"
+        ],
+        [
+            "waves_find",
+            "%name% is Surfing"
+        ],
+        [
+            "hydro_find",
+            "%name% is playing Hydro Hopper"
+        ],
+        [
+            "pizzatron_find",
+            "%name% is making pizzas"
+        ],
+        [
+            "roundup_find",
+            "%name% is rounding up puffles"
+        ],
+        [
+            "mancala_find",
+            "%name% is playing Manacala"
+        ],
+        [
+            "four_find",
+            "%name% is playing Find Four"
+        ],
+        [
+            "sled_find",
+            "%name% is in a Sled Race"
+        ],
+        [
+            "book1_find",
+            "%name% is reading a Book"
+        ],
+        [
+            "book2_find",
+            "%name% is reading a Book"
+        ],
+        [
+            "book3_find",
+            "%name% is reading a Book"
+        ],
+        [
+            "mixmaster_find",
+            "%name% is Mixing Music"
+        ],
+        [
+            "treasurehunt_find",
+            "%name% is digging for treasure"
+        ],
+        [
+            "balloon_find",
+            "%name% is playing Balloon Pop"
+        ],
+        [
+            "bell_find",
+            "%name% is playing Ring The Bell"
+        ],
+        [
+            "feed_find",
+            "%name% is playing Feed-A-Puffle"
+        ],
+        [
+            "memory_find",
+            "%name% is playing Memory Card Game"
+        ],
+        [
+            "paddle_find",
+            "%name% is playing Puffle Paddle"
+        ],
+        [
+            "shuffle_find",
+            "%name% is playing Puffle Shuffle"
+        ],
+        [
+            "soaker_find",
+            "%name% is playing Puffle Soaker"
+        ],
+        [
+            "spin_find",
+            "%name% is playing Spin To Win"
+        ],
+        [
+            "card_find",
+            "%name% is playing Card-Jitsu"
+        ],
+        [
+            "fire_find",
+            "%name% is playing Card-Jitsu Fire"
+        ],
+        [
+            "water_find",
+            "%name% is playing Card-Jitsu Water"
+        ],
+        [
+            "sensei_find",
+            "%name% is challenging the Sensei"
+        ],
+        [
+            "firesensei_find",
+            "%name% is challenging the Sensei"
+        ],
+        [
+            "watersensei_find",
+            "%name% is challenging the Sensei"
+        ],
+        [
+            "dancing_find",
+            "%name% is in a Dance Contest!"
+        ],
+        [
+            "rescue_find",
+            "%name% is Rescuing Puffles"
+        ],
+        [
+            "systemdefend_find",
+            "%name% is playing System Defender"
+        ],
+        [
+            "bitsandbolts_find",
+            "%name% is playing Bits and Bolts"
+        ],
+        [
+            "mission1_find",
+            "%name% is on an Adventure"
+        ],
+        [
+            "mission2_find",
+            "%name% is on an Adventure"
+        ],
+        [
+            "mission3_find",
+            "%name% is on an Adventure"
+        ],
+        [
+            "mission4_find",
+            "%name% is on an Adventure"
+        ],
+        [
+            "mission5_find",
+            "%name% is on an Adventure"
+        ],
+        [
+            "mission6_find",
+            "%name% is on an Adventure"
+        ],
+        [
+            "mission7_find",
+            "%name% is on an Adventure"
+        ],
+        [
+            "mission8_find",
+            "%name% is on an Adventure"
+        ],
+        [
+            "mission9_find",
+            "%name% is on an Adventure"
+        ],
+        [
+            "mission10_find",
+            "%name% is on an Adventure"
+        ],
+        [
+            "mission11_find",
+            "%name% is on an Adventure"
+        ],
+        [
+            "town_find",
+            "%name% is in the Town"
+        ],
+        [
+            "coffee_find",
+            "%name% is in the Coffee Shop"
+        ],
+        [
+            "book_find",
+            "%name% is in the Book Room"
+        ],
+        [
+            "dance_find",
+            "%name% is in the Dance Club"
+        ],
+        [
+            "lounge_find",
+            "%name% is in the Dance Lounge"
+        ],
+        [
+            "shop_find",
+            "%name% is in the Clothes Shop"
+        ],
+        [
+            "village_find",
+            "%name% is in the Ski Village"
+        ],
+        [
+            "lodge_find",
+            "%name% is in the Ski Lodge"
+        ],
+        [
+            "attic_find",
+            "%name% is in the Lodge Attic"
+        ],
+        [
+            "mtn_find",
+            "%name% is on top of the Mountain"
+        ],
+        [
+            "sport_find",
+            "%name% is in the Sport Shop"
+        ],
+        [
+            "plaza_find",
+            "%name% is in the Plaza"
+        ],
+        [
+            "pet_find",
+            "%name% is in the Pet Shop"
+        ],
+        [
+            "dojo_find",
+            "%name% is in the Dojo"
+        ],
+        [
+            "dojoext_find",
+            "%name% is in the Dojo Courtyard"
+        ],
+        [
+            "dojohide_find",
+            "%name% is in Hiding"
+        ],
+        [
+            "dojofire_find",
+            "%name% is in the Fire Dojo"
+        ],
+        [
+            "dojowater_find",
+            "%name% is in the Water Dojo"
+        ],
+        [
+            "pizza_find",
+            "%name% is in the Pizza Parlor"
+        ],
+        [
+            "stage_find",
+            "%name% is at the Stage"
+        ],
+        [
+            "beach_find",
+            "%name% is at the Beach"
+        ],
+        [
+            "light_find",
+            "%name% is in the Lighthouse"
+        ],
+        [
+            "beacon_find",
+            "%name% is at the Lighthouse Beacon"
+        ],
+        [
+            "ship_find",
+            "%name% is on the Pirate Ship"
+        ],
+        [
+            "shiphold_find",
+            "%name% is in the Pirate Ship Hold"
+        ],
+        [
+            "shipquarters_find",
+            "%name% is in the Captain's Quarters"
+        ],
+        [
+            "shipnest_find",
+            "%name% is in the Crow's Nest"
+        ],
+        [
+            "dock_find",
+            "%name% is at the Dock"
+        ],
+        [
+            "forts_find",
+            "%name% is at the Snow Forts"
+        ],
+        [
+            "rink_find",
+            "%name% is at the Stadium"
+        ],
+        [
+            "agent_find",
+            "%name% is hiding"
+        ],
+        [
+            "agentcom_find",
+            "%name% is hiding"
+        ],
+        [
+            "agentlobbysolo_find",
+            "%name% is hiding"
+        ],
+        [
+            "agentlobbymulti_find",
+            "%name% is in the Everyday Phoning Facility"
+        ],
+        [
+            "agentvr_find",
+            "%name% is hiding"
+        ],
+        [
+            "boiler_find",
+            "%name% is in the Boiler Room"
+        ],
+        [
+            "berg_find",
+            "%name% is on the Iceberg (hidden on your map)"
+        ],
+        [
+            "cave_find",
+            "%name% is in the Cave (hidden underground)"
+        ],
+        [
+            "mine_find",
+            "%name% is in the Mine (hidden underground)"
+        ],
+        [
+            "shack_find",
+            "%name% is in the Mine Shack (hidden on your map)"
+        ],
+        [
+            "forest_find",
+            "%name% is in the Forest"
+        ],
+        [
+            "cove_find",
+            "%name% is at the Cove"
+        ],
+        [
+            "boxdimension_find",
+            "%name% is in the Box Dimension"
+        ],
+        [
+            "cavemine_find",
+            "%name% is at the Cave Mine"
+        ],
+        [
+            "lake_find",
+            "%name% is at the Hidden Lake"
+        ],
+        [
+            "underwater_find",
+            "%name% is in the Underwater Room"
+        ],
+        [
+            "eco_find",
+            "%name% is in the Recycling Plant"
+        ],
+        [
+            "party99_find",
+            "%name% is ???"
+        ],
+        [
+            "igloo_find",
+            "%name% is in an igloo"
+        ],
+        [
+            "igloo_theirs_find",
+            "%name% is in their igloo"
+        ],
+        [
+            "igloo_yours_find",
+            "%name% is in your igloo"
+        ],
+        [
+            "ignore_request_prompt",
+            "Would you like to add %name% to your ignore list?"
+        ],
+        [
+            "ignore_request_sent_prompt",
+            "Done"
+        ],
+        [
+            "ignore_remove_prompt",
+            "Would you like to remove %name% from your ignore list?"
+        ],
+        [
+            "remove_done_prompt",
+            "Done"
+        ],
+        [
+            "town",
+            "Town"
+        ],
+        [
+            "coffee",
+            "Coffee Shop"
+        ],
+        [
+            "book",
+            "Book Room"
+        ],
+        [
+            "dance",
+            "Dance Club"
+        ],
+        [
+            "lounge",
+            "Dance Lounge"
+        ],
+        [
+            "shop",
+            "Clothes Shop"
+        ],
+        [
+            "village",
+            "Ski Village"
+        ],
+        [
+            "lodge",
+            "Ski Lodge"
+        ],
+        [
+            "attic",
+            "Lodge Attic"
+        ],
+        [
+            "sport",
+            "Sport Shop"
+        ],
+        [
+            "mtn",
+            "Mountain"
+        ],
+        [
+            "plaza",
+            "Plaza"
+        ],
+        [
+            "pet",
+            "Pet Shop"
+        ],
+        [
+            "dojo",
+            "Dojo"
+        ],
+        [
+            "dojoext",
+            "Dojo Courtyard"
+        ],
+        [
+            "dojohide",
+            "Ninja Hideout"
+        ],
+        [
+            "dojofire",
+            "Fire Dojo"
+        ],
+        [
+            "dojowater",
+            "Water Dojo"
+        ],
+        [
+            "pizza",
+            "Pizza Parlor"
+        ],
+        [
+            "stage",
+            "Stage"
+        ],
+        [
+            "beach",
+            "Beach"
+        ],
+        [
+            "light",
+            "Lighthouse"
+        ],
+        [
+            "beacon",
+            "Beacon"
+        ],
+        [
+            "ship",
+            "Pirate Ship"
+        ],
+        [
+            "shiphold",
+            "Ship Hold"
+        ],
+        [
+            "shipquarters",
+            "Captain's Quarters"
+        ],
+        [
+            "shipnest",
+            "Crow's Nest"
+        ],
+        [
+            "dock",
+            "Dock"
+        ],
+        [
+            "forts",
+            "Snow Forts"
+        ],
+        [
+            "rink",
+            "Stadium"
+        ],
+        [
+            "agent",
+            "HQ"
+        ],
+        [
+            "agentcom",
+            "EPF Command Room"
+        ],
+        [
+            "agentlobbysolo",
+            "The Facility"
+        ],
+        [
+            "agentlobbymulti",
+            "Everyday Phoning Facility"
+        ],
+        [
+            "agentvr",
+            "VR Room"
+        ],
+        [
+            "boiler",
+            "Boiler Room"
+        ],
+        [
+            "berg",
+            "Iceberg"
+        ],
+        [
+            "cave",
+            "Cave"
+        ],
+        [
+            "mine",
+            "Mine"
+        ],
+        [
+            "shack",
+            "Mine Shack"
+        ],
+        [
+            "forest",
+            "Forest"
+        ],
+        [
+            "cove",
+            "Cove"
+        ],
+        [
+            "boxdimension",
+            "Box Dimension"
+        ],
+        [
+            "cavemine",
+            "Cave Mine"
+        ],
+        [
+            "lake",
+            "Hidden Lake"
+        ],
+        [
+            "underwater",
+            "Underwater Room"
+        ],
+        [
+            "eco",
+            "Recycling Plant"
+        ],
+        [
+            "party18",
+            "Treasure Room"
+        ],
+        [
+            "party99",
+            "???"
+        ],
+        [
+            "buddy_online",
+            "%name% is online"
+        ],
+        [
+            "buddy_request_prompt",
+            "Would you like to add %name% as your Friend?"
+        ],
+        [
+            "buddy_request_sent_prompt",
+            "Request Sent"
+        ],
+        [
+            "buddy_remove_prompt",
+            "Are you sure you want to remove this friend?"
+        ],
+        [
+            "buddy_question_prompt",
+            "%name% has asked to be your buddy. Do you accept?"
+        ],
+        [
+            "buddy_accepted_prompt",
+            "%name% is now your buddy!"
+        ],
+        [
+            "Loading Create Penguin",
+            "Loading Create Penguin"
+        ],
+        [
+            "Loading Engine",
+            "Loading Engine"
+        ],
+        [
+            "Loading Interface",
+            "Loading Interface"
+        ],
+        [
+            "Loading Gridview",
+            "Loading Gridview"
+        ],
+        [
+            "Loading Mail",
+            "Loading Mail"
+        ],
+        [
+            "Loading Clothing",
+            "Loading Clothing"
+        ],
+        [
+            "Loading Your Inventory",
+            "Loading Your Inventory"
+        ],
+        [
+            "Loading Local Language",
+            "Loading Local Language"
+        ],
+        [
+            "load_igloo",
+            "Loading the Igloo"
+        ],
+        [
+            "unlock_igloo_prompt",
+            "Would you like to open your igloo?\nThis will add your igloo to the map."
+        ],
+        [
+            "energy",
+            "Energy"
+        ],
+        [
+            "health",
+            "Health"
+        ],
+        [
+            "rest",
+            "Rest"
+        ],
+        [
+            "play_puffle_hint",
+            "Play with Pet"
+        ],
+        [
+            "feed_puffle_hint",
+            "Feed your Pet"
+        ],
+        [
+            "rest_puffle_hint",
+            "Sleep"
+        ],
+        [
+            "walk_puffle_hint",
+            "Walk your Pet"
+        ],
+        [
+            "Loading Your Furniture",
+            "Loading Your Furniture"
+        ],
+        [
+            "Stop Edit",
+            "Stop Edit"
+        ],
+        [
+            "Edit Igloo",
+            "Edit Igloo"
+        ],
+        [
+            "Loading Controls",
+            "Loading Controls"
+        ],
+        [
+            "Loading Furniture",
+            "Loading Furniture"
+        ],
+        [
+            "Loading Floor",
+            "Loading Floor"
+        ],
+        [
+            "Lock Igloo",
+            "Close Igloo"
+        ],
+        [
+            "Unlock Igloo",
+            "Open Igloo"
+        ],
+        [
+            "View Items",
+            "View Items"
+        ],
+        [
+            "Buy Items",
+            "Buy Items"
+        ],
+        [
+            "Upgrade Igloo",
+            "Upgrade Igloo"
+        ],
+        [
+            "Play Music",
+            "Play Music"
+        ],
+        [
+            "Save Igloo",
+            "Save Igloo"
+        ],
+        [
+            "All",
+            "All"
+        ],
+        [
+            "Enter Contest",
+            "Enter Contest"
+        ],
+        [
+            "View Stored Igloo",
+            "View Stored Igloo"
+        ],
+        [
+            "buddy_list",
+            "Your Friends"
+        ],
+        [
+            "online_list",
+            "Users in Room"
+        ],
+        [
+            "ignore_list",
+            "Ignore List"
+        ],
+        [
+            "archives_hint",
+            "Old news"
+        ],
+        [
+            "aqua_hint",
+            "Aqua Grabber"
+        ],
+        [
+            "astro_hint",
+            "Astro Barrier"
+        ],
+        [
+            "beans_hint",
+            "Play Beans"
+        ],
+        [
+            "cart_hint",
+            "Cart Surfer"
+        ],
+        [
+            "fish_hint",
+            "Go Fishing"
+        ],
+        [
+            "jetpack_hint",
+            "Play Jet Pack"
+        ],
+        [
+            "thinice_hint",
+            "Thin Ice"
+        ],
+        [
+            "waves_hint",
+            "Go Surfing"
+        ],
+        [
+            "hydro_hint",
+            "Hydro Hopper"
+        ],
+        [
+            "pizzatron_hint",
+            "Play Pizzatron"
+        ],
+        [
+            "roundup_hint",
+            "Puffle Roundup"
+        ],
+        [
+            "mancala_hint",
+            "Play Mancala"
+        ],
+        [
+            "four_hint",
+            "Play Find Four"
+        ],
+        [
+            "sled_hint",
+            "Join Sled Race"
+        ],
+        [
+            "mixmaster_hint",
+            "Mix Music"
+        ],
+        [
+            "treasurehunt_hint",
+            "Treasure Hunt"
+        ],
+        [
+            "balloon_hint",
+            "Balloon Pop"
+        ],
+        [
+            "bell_hint",
+            "Ring The Bell"
+        ],
+        [
+            "feed_hint",
+            "Feed-A-Puffle"
+        ],
+        [
+            "memory_hint",
+            "Memory Game"
+        ],
+        [
+            "paddle_hint",
+            "Puffle Paddle"
+        ],
+        [
+            "shuffle_hint",
+            "Puffle Shuffle"
+        ],
+        [
+            "soaker_hint",
+            "Puffle Soaker"
+        ],
+        [
+            "spin_hint",
+            "Spin To Win"
+        ],
+        [
+            "card_hint",
+            "Practice Card-Jitsu"
+        ],
+        [
+            "fire_hint",
+            "Practice Card-Jitsu Fire"
+        ],
+        [
+            "water_hint",
+            "Practice Card-Jitsu Water"
+        ],
+        [
+            "dancing_hint",
+            "Dance Contest"
+        ],
+        [
+            "rescue_hint",
+            "Puffle Rescue"
+        ],
+        [
+            "systemdefend_hint",
+            "System Defender"
+        ],
+        [
+            "bitsandbolts",
+            "Bits and Bolts"
+        ],
+        [
+            "profile_hint",
+            "Find Player"
+        ],
+        [
+            "send_mail_hint",
+            "Send Mail"
+        ],
+        [
+            "free_item_hint",
+            "Free Gift"
+        ],
+        [
+            "report_player_hint",
+            "Report Player"
+        ],
+        [
+            "add_ignore_hint",
+            "Ignore Player"
+        ],
+        [
+            "remove_ignore_hint",
+            "Remove Ignore"
+        ],
+        [
+            "add_buddy_hint",
+            "Add Friend"
+        ],
+        [
+            "remove_buddy_hint",
+            "Remove Friend"
+        ],
+        [
+            "visit_home_hint",
+            "Visit Igloo"
+        ],
+        [
+            "ban_player_hint",
+            "Ban Player"
+        ],
+        [
+            "mute_player_hint",
+            "Mute Player"
+        ],
+        [
+            "kick_player_hint",
+            "Kick Player"
+        ],
+        [
+            "remove_hint",
+            "Clear Penguin"
+        ],
+        [
+            "town_hint",
+            "Town"
+        ],
+        [
+            "coffee_hint",
+            "Coffee Shop"
+        ],
+        [
+            "book_hint",
+            "Book Room"
+        ],
+        [
+            "dance_hint",
+            "Dance Club"
+        ],
+        [
+            "lounge_hint",
+            "Lounge"
+        ],
+        [
+            "shop_hint",
+            "Clothes Shop"
+        ],
+        [
+            "village_hint",
+            "Ski Village"
+        ],
+        [
+            "sport_hint",
+            "Sport Shop"
+        ],
+        [
+            "lodge_hint",
+            "Ski Lodge"
+        ],
+        [
+            "attic_hint",
+            "Lodge Attic"
+        ],
+        [
+            "mtn_hint",
+            "Ski Hill"
+        ],
+        [
+            "plaza_hint",
+            "The Plaza"
+        ],
+        [
+            "pet_hint",
+            "Pet Shop"
+        ],
+        [
+            "dojo_hint",
+            "Dojo"
+        ],
+        [
+            "dojoext_hint",
+            "Dojo Courtyard"
+        ],
+        [
+            "dojowater_hint",
+            "Pizza Parlor"
+        ],
+        [
+            "stage_hint",
+            "Stage"
+        ],
+        [
+            "beach_hint",
+            "The Beach"
+        ],
+        [
+            "light_hint",
+            "Lighthouse"
+        ],
+        [
+            "beacon_hint",
+            "Beacon"
+        ],
+        [
+            "ship_hint",
+            "Pirate Ship"
+        ],
+        [
+            "shiphold_hint",
+            "Hold"
+        ],
+        [
+            "shipquarters_hint",
+            "Captain's Quarters"
+        ],
+        [
+            "shipnest_hint",
+            "Crow's Nest"
+        ],
+        [
+            "dock_hint",
+            "The Dock"
+        ],
+        [
+            "forts_hint",
+            "Snow Forts"
+        ],
+        [
+            "rink_hint",
+            "Stadium"
+        ],
+        [
+            "agentcom_hint",
+            "EPF Command Room"
+        ],
+        [
+            "agentlobbysolo_hint",
+            "Facility"
+        ],
+        [
+            "agentlobbymulti_hint",
+            "Everyday Phoning Facility"
+        ],
+        [
+            "agentvr_hint",
+            "VR Room"
+        ],
+        [
+            "boiler_hint",
+            "Boiler Room"
+        ],
+        [
+            "berg_hint",
+            "Iceberg"
+        ],
+        [
+            "cave_hint",
+            "Cave"
+        ],
+        [
+            "mine_hint",
+            "Mine"
+        ],
+        [
+            "shack_hint",
+            "Mine Shack"
+        ],
+        [
+            "forest_hint",
+            "Forest"
+        ],
+        [
+            "cove_hint",
+            "Cove"
+        ],
+        [
+            "boxdimension_hint",
+            "Box Dimension"
+        ],
+        [
+            "cavemine_hint",
+            "Cave Mine"
+        ],
+        [
+            "lake_hint",
+            "Hidden Lake"
+        ],
+        [
+            "underwater_hint",
+            "Underwater Room"
+        ],
+        [
+            "eco_hint",
+            "Recycling Plant"
+        ],
+        [
+            "party99_hint",
+            "???"
+        ],
+        [
+            "igloos_hint",
+            "Member Igloos"
+        ],
+        [
+            "all_items",
+            "All Items"
+        ],
+        [
+            "head_items",
+            "Head Items"
+        ],
+        [
+            "face_items",
+            "Face Items"
+        ],
+        [
+            "neck_items",
+            "Neck Items"
+        ],
+        [
+            "body_items",
+            "Body Items"
+        ],
+        [
+            "hand_items",
+            "Hand Items"
+        ],
+        [
+            "feet_items",
+            "Feet Items"
+        ],
+        [
+            "flag_items",
+            "Pins\/Flags"
+        ],
+        [
+            "other_items",
+            "Other Items"
+        ],
+        [
+            "photo_items",
+            "Backgrounds"
+        ],
+        [
+            "award_items",
+            "Awards"
+        ],
+        [
+            "colour_items",
+            "Colors"
+        ],
+        [
+            "teleport",
+            "Teleport"
+        ],
+        [
+            "visit_hq",
+            "Visit HQ"
+        ],
+        [
+            "emote_hint",
+            "Emotes"
+        ],
+        [
+            "action_hint",
+            "Actions"
+        ],
+        [
+            "throw_hint",
+            "Snowball"
+        ],
+        [
+            "buddy_hint",
+            "Friends"
+        ],
+        [
+            "online_hint",
+            "Show Online"
+        ],
+        [
+            "ignore_hint",
+            "Show Ignored"
+        ],
+        [
+            "player_hint",
+            "Edit Player"
+        ],
+        [
+            "home_hint",
+            "Your Igloo"
+        ],
+        [
+            "help_hint",
+            "Edit Account"
+        ],
+        [
+            "send_hint",
+            "Send"
+        ],
+        [
+            "safe_hint",
+            "Chat"
+        ],
+        [
+            "Incorrect Password",
+            "Incorrect Password"
+        ],
+        [
+            "Too many failed login attempts. Please try again later.",
+            "Too many failed login attempts. Please try again later."
+        ],
+        [
+            "Joining",
+            "Joining"
+        ],
+        [
+            "Logging in",
+            "Logging in"
+        ],
+        [
+            "Joining Players Igloo",
+            "Joining Player's Igloo"
+        ],
+        [
+            "Please Select a Server",
+            "PLEASE SELECT A SERVER"
+        ],
+        [
+            "Penguin Name:",
+            "Penguin Name:"
+        ],
+        [
+            "Password:",
+            "Password:"
+        ],
+        [
+            "Remember me on this computer",
+            "Remember me on this computer"
+        ],
+        [
+            "Remember my password",
+            "Remember my password"
+        ],
+        [
+            "Forgot your password?",
+            "Forgot your password?"
+        ],
+        [
+            "Forget my penguin",
+            "Forget my penguin"
+        ],
+        [
+            "Login as a different penguin",
+            "Login as a different penguin"
+        ],
+        [
+            "Your Suggested Servers",
+            "Your Suggested Servers"
+        ],
+        [
+            "Buddies online",
+            "Buddies online"
+        ],
+        [
+            "Amount of penguins online",
+            "Amount of penguins online"
+        ],
+        [
+            "Ultimate safe chat",
+            "Ultimate safe chat"
+        ],
+        [
+            "Parents",
+            "Parents"
+        ],
+        [
+            "Click Here",
+            "Click Here"
+        ],
+        [
+            "Don't have a penguin?",
+            "Don't have a penguin?"
+        ],
+        [
+            "Create a free account now",
+            "Create a free account now"
+        ],
+        [
+            "Play",
+            "Start"
+        ],
+        [
+            "Back",
+            "Back"
+        ],
+        [
+            "remove_all_mail_prompt",
+            "This will permanently remove all postcards from %nickname%. Do you want to do this?"
+        ],
+        [
+            "remove_single_mail_prompt",
+            "Are you sure you want to recycle this postcard from %nickname%?"
+        ],
+        [
+            "Are you sure you want to ignore %playername%?",
+            "Are you sure you want to ignore %playername%?"
+        ],
+        [
+            "This will remove all messages from %playername%. This is not undoable.",
+            "This will remove all messages from %playername%. This is not undoable."
+        ],
+        [
+            "You have %number% postcards!",
+            "You have %number% postcards!"
+        ],
+        [
+            "You have 1 postcard!",
+            "You have 1 postcard!"
+        ],
+        [
+            "You have no postcards!",
+            "You have no postcards!"
+        ],
+        [
+            "From:",
+            "From:"
+        ],
+        [
+            "New!",
+            "New!"
+        ],
+        [
+            "message",
+            "message"
+        ],
+        [
+            "Send this postcard to %0 for %1 coins?",
+            "Send this postcard to %0 for %1 coins?"
+        ],
+        [
+            "Buy and send postcards for",
+            "Buy and send\npostcards for"
+        ],
+        [
+            "Send to:",
+            "Send to:"
+        ],
+        [
+            "Failed to send Postcard. You need more coins.",
+            "Failed to send Postcard.\nYou need more coins."
+        ],
+        [
+            "This penguins mailbox is full. Your postcard could not be sent. Please try again later.",
+            "This penguin's mailbox is full. Your postcard could not be sent. Please try again later."
+        ],
+        [
+            "Postcard sent",
+            "Postcard sent"
+        ],
+        [
+            "Postcards",
+            "Postcards"
+        ],
+        [
+            "Preview Postcard",
+            "Preview Postcard"
+        ],
+        [
+            "Select a Postcard",
+            "Select a Postcard"
+        ],
+        [
+            "Send to",
+            "Send To"
+        ],
+        [
+            "Inbox",
+            "Inbox"
+        ],
+        [
+            "You have no postcards",
+            "You have no postcards"
+        ],
+        [
+            "aqua_prompt",
+            "Would you like to play\nAqua Grabber?"
+        ],
+        [
+            "astro_prompt",
+            "Would you like to play\nAstro Barrier?"
+        ],
+        [
+            "beans_prompt",
+            "Would you like to play\nBean Counters?"
+        ],
+        [
+            "jetpack_prompt",
+            "Would you like to go on a\nJet Pack Adventure?"
+        ],
+        [
+            "fish_prompt",
+            "Would you like to go\nIce Fishing?"
+        ],
+        [
+            "hydro_prompt",
+            "Would you like to play\nHydro Hopper?"
+        ],
+        [
+            "roundup_prompt",
+            "Would you like to play\nPuffle Roundup?"
+        ],
+        [
+            "mancala_prompt",
+            "Would you like to join this\nMancala game?"
+        ],
+        [
+            "four_prompt",
+            "Would you like to join this\nFind Four game?"
+        ],
+        [
+            "cart_prompt",
+            "Would you like to go\nCart Surfing?"
+        ],
+        [
+            "thinice_prompt",
+            "Would you like to play\nThin Ice?"
+        ],
+        [
+            "pizzatron_prompt",
+            "Would you like to play\nPizzatron 3000?"
+        ],
+        [
+            "waves_prompt",
+            "Would you like to\ncatch some waves?"
+        ],
+        [
+            "sled_prompt",
+            "Would you like to join this\nSled race?"
+        ],
+        [
+            "book1_prompt",
+            "Would you like to read\nMy Puffle?"
+        ],
+        [
+            "book2_prompt",
+            "Would you like to read\nBurnt Out Bulbs?"
+        ],
+        [
+            "book3_prompt",
+            "Would you like to read\nLime Green Dojo Clean?"
+        ],
+        [
+            "mixmaster_prompt",
+            "Would you like to play\nDJ3K?"
+        ],
+        [
+            "treasurehunt_prompt",
+            "Would you like to \ndig for treasure?"
+        ],
+        [
+            "balloon_prompt",
+            "Would you like to play\nBalloon Pop?"
+        ],
+        [
+            "bell_prompt",
+            "Would you like to play\nRing The Bell?"
+        ],
+        [
+            "feed_prompt",
+            "Would you like to play\nFeed-A-Puffle?"
+        ],
+        [
+            "memory_prompt",
+            "Would you like to play\nMemory Card Game?"
+        ],
+        [
+            "paddle_prompt",
+            "Would you like to play\nPuffle Paddle?"
+        ],
+        [
+            "shuffle_prompt",
+            "Would you like to play\nPuffle Shuffle?"
+        ],
+        [
+            "soaker_prompt",
+            "Would you like to play\nPuffle Soaker?"
+        ],
+        [
+            "spin_prompt",
+            "Would you like to play Spin To Win?"
+        ],
+        [
+            "card_prompt",
+            "Would you like to practice\nCard-Jitsu?"
+        ],
+        [
+            "fire_prompt",
+            "Would you like to practice\nCard-Jitsu Fire?"
+        ],
+        [
+            "water_prompt",
+            "Would you like to practice\nCard-Jitsu Water?"
+        ],
+        [
+            "sensei_prompt",
+            "Would you like to talk\nto the Sensei?"
+        ],
+        [
+            "firesensei_prompt",
+            "Would you like to talk\nto the Sensei?"
+        ],
+        [
+            "watersensei_prompt",
+            "Would you like to talk\nto the Sensei?"
+        ],
+        [
+            "starter_deck_prompt",
+            "You need a deck of Cards to play.\nPlease see the Sensei first."
+        ],
+        [
+            "fire_deck_prompt",
+            "You need a Fire Booster Deck to play.\nPlease see the Sensei first."
+        ],
+        [
+            "water_deck_prompt",
+            "You need a Water Booster Deck to play.\nPlease see the Sensei first."
+        ],
+        [
+            "dancing_prompt",
+            "Would you like to dance?"
+        ],
+        [
+            "rescue_prompt",
+            "Would you like to play Puffle Rescue?"
+        ],
+        [
+            "systemdefend_prompt",
+            "Would you like to play System Defender?"
+        ],
+        [
+            "bitsandbolts_prompt",
+            "Would you like to play Bits and Bolts?"
+        ],
+        [
+            "game_over0",
+            "You have earned 0 coins.\nYou now have %total% coins."
+        ],
+        [
+            "game_over1",
+            "You have earned 1 coin.\nYou now have %total% coins."
+        ],
+        [
+            "game_over2",
+            "You have earned %num% coins.\nYou now have %total% coins."
+        ],
+        [
+            "quit_game_prompt",
+            "Are you sure you want to quit this game?"
+        ],
+        [
+            "player_quit_prompt",
+            "%name% has quit the game."
+        ],
+        [
+            "tutorial_prompts",
+            "Loading Tutorial Prompt"
+        ],
+        [
+            "widget_coins",
+            "Your Coins: %total%"
+        ],
+        [
+            "coins",
+            "coins"
+        ],
+        [
+            "adopt_puffle",
+            "Would you like to adopt this puffle for 800 coins?"
+        ],
+        [
+            "name_puffle",
+            "Your puffle needs a name."
+        ],
+        [
+            "adopt_puffle_done",
+            "Your new puffle is now in your igloo. Enjoy!"
+        ],
+        [
+            "max_puffles_prompt",
+            "Sorry, you can only adopt a maximum of 20 puffles."
+        ],
+        [
+            "buy_inventory",
+            "Would you like to buy %name% for %cost% coins?"
+        ],
+        [
+            "buy_furniture",
+            "Would you like to buy %name% for %cost% coins?"
+        ],
+        [
+            "buy_igloo_upgrade",
+            "Would you like to buy %name% for %cost% coins?"
+        ],
+        [
+            "buy_igloo_floor",
+            "Would you like to buy %name% for %cost% coins?"
+        ],
+        [
+            "buy_puffle_food",
+            "Would you like to buy some Pet Food for 10 coins?"
+        ],
+        [
+            "buy_puffle_bath",
+            "Would you like to bathe your puffle for 5 coins?"
+        ],
+        [
+            "buy_puffle_gum",
+            "Would you like to buy some Gum for 5 coins?"
+        ],
+        [
+            "buy_puffle_cookie",
+            "Would you like to buy a Cookie for 5 coins?"
+        ],
+        [
+            "buy_inventory_done",
+            "%name%\nhas been added to your inventory."
+        ],
+        [
+            "buy_furniture_done",
+            "%name%\nhas been added to your inventory."
+        ],
+        [
+            "num_coins",
+            "You currently have %num% coins."
+        ],
+        [
+            "inventory_free",
+            "You have found a %name%.\nWould you like to pick it up?"
+        ],
+        [
+            "inventory_medal",
+            "Would you like to get your Medal of Excellence?"
+        ],
+        [
+            "inventory_gift",
+            "Would you like to get your gift?"
+        ],
+        [
+            "furniture_free",
+            "You have found a %name%.\nWould you like to pick it up?"
+        ],
+        [
+            "igloo_upgrade_free",
+            "You have found a %name%.\nWould you like to upgrade your igloo?"
+        ],
+        [
+            "item_in_inventory_warn",
+            "You already have this item."
+        ],
+        [
+            "tour_guide_hat_required",
+            "Sorry, you must wear the tour guide\nhat to use this feature"
+        ],
+        [
+            "igloo_activate_warn",
+            "Are you sure you want to change your igloo? Your flooring will be lost. Igloo items will be saved in your inventory."
+        ],
+        [
+            "low_coin_warn",
+            "You need more coins."
+        ],
+        [
+            "duplicate_igloo_warn",
+            "You already have this igloo."
+        ],
+        [
+            "duplicate_floor_warn",
+            "You already have this flooring."
+        ],
+        [
+            "White_belt",
+            "White"
+        ],
+        [
+            "Yellow_belt",
+            "Yellow"
+        ],
+        [
+            "Orange_belt",
+            "Orange"
+        ],
+        [
+            "Green_belt",
+            "Green"
+        ],
+        [
+            "Blue_belt",
+            "Blue"
+        ],
+        [
+            "Red_belt",
+            "Red"
+        ],
+        [
+            "Purple_belt",
+            "Purple"
+        ],
+        [
+            "Brown_belt",
+            "Brown"
+        ],
+        [
+            "Black_belt",
+            "Black"
+        ],
+        [
+            "Blue",
+            "Blue"
+        ],
+        [
+            "Pink",
+            "Pink"
+        ],
+        [
+            "Black",
+            "Black"
+        ],
+        [
+            "Green",
+            "Green"
+        ],
+        [
+            "Purple",
+            "Purple"
+        ],
+        [
+            "Red",
+            "Red"
+        ],
+        [
+            "Yellow",
+            "Yellow"
+        ],
+        [
+            "White",
+            "White"
+        ],
+        [
+            "Orange",
+            "Orange"
+        ],
+        [
+            "Brown",
+            "Brown"
+        ],
+        [
+            "Login to Unlock Your Items",
+            "Login to Unlock Your Items"
+        ],
+        [
+            "What word is on page %0, %1 %2 from the left on line %3?",
+            "What word is on page %0, %1 %2 from the left on line %3?"
+        ],
+        [
+            "word",
+            "word"
+        ],
+        [
+            "words",
+            "words"
+        ],
+        [
+            "items remaining",
+            "items remaining"
+        ],
+        [
+            "item remaining",
+            "item remaining"
+        ],
+        [
+            "You have unlocked %number% item(s)!",
+            "You have unlocked %number% item(s)!"
+        ],
+        [
+            "You still have items to unlock. Your code is only valid once, if you quit before you finish unlocking all your items your remaining choices will be lost. Are you sure you want to quit?",
+            "You still have items to unlock. Your code is only valid once, if you quit before you finish unlocking all your items your remaining choices will be lost.\nAre you sure you want to quit?"
+        ],
+        [
+            "Are you sure you want to redeem %itemName%?",
+            "Are you sure you want to redeem\n %itemName%?"
+        ],
+        [
+            "Hello",
+            "Hello"
+        ],
+        [
+            "Congratulations! Youre done! Click Yes to see what has been added to your inventory.",
+            "Congratulations! You're done! Click Yes to see what has been added to your inventory."
+        ],
+        [
+            "You",
+            "You'll need to enter %number% more Treasure Book code(s) to unlock this page."
+        ],
+        [
+            "Puffle",
+            "Puffle"
+        ],
+        [
+            "Blue_puffle",
+            "Blue"
+        ],
+        [
+            "Pink_puffle",
+            "Pink"
+        ],
+        [
+            "Black_puffle",
+            "Black"
+        ],
+        [
+            "Green_puffle",
+            "Green"
+        ],
+        [
+            "Purple_puffle",
+            "Purple"
+        ],
+        [
+            "Red_puffle",
+            "Red"
+        ],
+        [
+            "Yellow_puffle",
+            "Yellow"
+        ],
+        [
+            "White_puffle",
+            "White"
+        ],
+        [
+            "Orange_puffle",
+            "Orange"
+        ],
+        [
+            "Brown_puffle",
+            "Brown"
+        ],
+        [
+            "golden_code_elemental_reward_title",
+            "You now have the %item%!"
+        ],
+        [
+            "You",
+            "You'll need to enter %number% more code(s) to unlock this page."
+        ],
+        [
+            "You can choose %number% more Super Exclusive item(s).",
+            "You can choose %number% more Super Exclusive item(s)."
+        ],
+        [
+            "Yes",
+            "Yes"
+        ],
+        [
+            "No",
+            "No"
+        ],
+        [
+            "Ok",
+            "Ok"
+        ],
+        [
+            "Start",
+            "Start"
+        ],
+        [
+            "Okay",
+            "Okay"
+        ],
+        [
+            "Close",
+            "Close"
+        ],
+        [
+            "Learn More",
+            "Learn More"
+        ],
+        [
+            "Login",
+            "Login"
+        ],
+        [
+            "Sign In",
+            "Sign In"
+        ],
+        [
+            "Visit Community Section",
+            "Visit Community Section"
+        ],
+        [
+            "chat_restrict","a-z A-Z z-A 0-9 !-} ?!.,;:`�-_/\\(){}=&$�\"=?@\'*+-�������#?<>\n\t"
+        ],
+        [
+            "Loading Localized Files",
+            "Loading Localized Files"
+        ],
+        [
+            "Loading Global Files",
+            "Loading Global Files"
+        ],
+        [
+            "Loading Content",
+            "Loading Content"
+        ],
+        [
+            "Loading Communication",
+            "Loading Communication"
+        ],
+        [
+            "Loading Login Screen",
+            "Loading Login"
+        ],
+        [
+            "Loading Music",
+            "Loading Music"
+        ],
+        [
+            "Rockhopper",
+            "Rockhopper"
+        ],
+        [
+            "Aunt Arctic",
+            "Aunt Arctic"
+        ],
+        [
+            "Cadence",
+            "Cadence"
+        ],
+        [
+            "Gary",
+            "Gary"
+        ],
+        [
+            "Franky",
+            "Franky"
+        ],
+        [
+            "Petey K",
+            "Petey K"
+        ],
+        [
+            "G Billy",
+            "G Billy"
+        ],
+        [
+            "Stompin Bob",
+            "Stompin Bob"
+        ],
+        [
+            "Sensei",
+            "Sensei"
+        ],
+        [
+            "page",
+            "Page"
+        ],
+        [
+            "new",
+            "New"
+        ],
+        [
+            "empty",
+            "Empty"
+        ],
+        [
+            "Club Penguin",
+            "Club Penguin"
+        ],
+        [
+            "am",
+            "am"
+        ],
+        [
+            "pm",
+            "pm"
+        ],
+        [
+            "hour",
+            "hour"
+        ],
+        [
+            "hours",
+            "hours"
+        ],
+        [
+            "of",
+            "of"
+        ],
+        [
+            "Loading",
+            "Loading"
+        ],
+        [
+            "ninjaprogress",
+            "Loading Ninja Progress"
+        ],
+        [
+            "Cards Collected: %0\nPower Cards: %1 of %2",
+            "Cards Collected: %0\nPower Cards: %1 of %2"
+        ],
+        [
+            "Current Belt",
+            "Current Belt"
+        ],
+        [
+            "Next Belt",
+            "Next Belt"
+        ],
+        [
+            "Current Item",
+            "Current Item"
+        ],
+        [
+            "Next Item",
+            "Next Item"
+        ],
+        [
+            "sunday",
+            "Sunday"
+        ],
+        [
+            "monday",
+            "Monday"
+        ],
+        [
+            "tuesday",
+            "Tuesday"
+        ],
+        [
+            "wednesday",
+            "Wednesday"
+        ],
+        [
+            "thursday",
+            "Thursday"
+        ],
+        [
+            "friday",
+            "Friday"
+        ],
+        [
+            "saturday",
+            "Saturday"
+        ],
+        [
+            "binoculars",
+            "Loading Binoculars"
+        ],
+        [
+            "telescope",
+            "Loading Telescope"
+        ],
+        [
+            "map_note",
+            "Click where you want to go."
+        ],
+        [
+            "map",
+            "Loading Map"
+        ],
+        [
+            "igloo_map",
+            "Loading Igloo Map"
+        ],
+        [
+            "load_penguin",
+            "Loading Penguin"
+        ],
+        [
+            "archives",
+            "Loading Archives"
+        ],
+        [
+            "load_mancala",
+            "Loading Mancala"
+        ],
+        [
+            "load_four",
+            "Loading Find Four"
+        ],
+        [
+            "load_aqua",
+            "Loading Aqua Grabber"
+        ],
+        [
+            "load_astro",
+            "Loading Astro Barrier"
+        ],
+        [
+            "load_beans",
+            "Loading Beans"
+        ],
+        [
+            "load_cart",
+            "Loading Cart Surfer"
+        ],
+        [
+            "load_fish",
+            "Loading Gone Fishing"
+        ],
+        [
+            "load_jetpack",
+            "Loading Jet Pack Adventure"
+        ],
+        [
+            "load_thinice",
+            "Loading Thin Ice"
+        ],
+        [
+            "load_waves",
+            "Loading Catchin Waves"
+        ],
+        [
+            "load_hydro",
+            "Loading Hydro Hopper"
+        ],
+        [
+            "load_pizzatron",
+            "Loading Pizzatron 3000"
+        ],
+        [
+            "load_roundup",
+            "Loading Puffle Round-up"
+        ],
+        [
+            "load_sled",
+            "Loading Sled Racing"
+        ],
+        [
+            "load_book1",
+            "Loading Paint by Letters"
+        ],
+        [
+            "load_book2",
+            "Loading Paint by Letters"
+        ],
+        [
+            "load_book3",
+            "Loading Paint by Letters"
+        ],
+        [
+            "load_mixmaster",
+            "Loading DJ3K"
+        ],
+        [
+            "load_treasurehunt",
+            "Loading Treasure Hunt"
+        ],
+        [
+            "load_balloon",
+            "Loading Balloon Pop"
+        ],
+        [
+            "load_bell",
+            "Loading Ring The Bell"
+        ],
+        [
+            "load_feed",
+            "Loading Feed-A-Puffle"
+        ],
+        [
+            "load_memory",
+            "Loading Memory Card Game"
+        ],
+        [
+            "load_paddle",
+            "Loading Puffle Paddle"
+        ],
+        [
+            "load_shuffle",
+            "Loading Puffle Shuffle"
+        ],
+        [
+            "load_soaker",
+            "Loading Puffle Soaker"
+        ],
+        [
+            "load_spin",
+            "Loading Spin To Win"
+        ],
+        [
+            "load_card",
+            "Loading Card-Jitsu"
+        ],
+        [
+            "load_fire",
+            "Loading Card-Jitsu Fire"
+        ],
+        [
+            "load_water",
+            "Loading Card-Jitsu Water"
+        ],
+        [
+            "load_sensei",
+            "Loading the Sensei"
+        ],
+        [
+            "load_firesensei",
+            "Loading the Sensei"
+        ],
+        [
+            "load_watersensei",
+            "Loading the Sensei"
+        ],
+        [
+            "load_dancing",
+            "Clearing the dance floor..."
+        ],
+        [
+            "load_rescue",
+            "Loading Puffle Rescue"
+        ],
+        [
+            "load_systemdefend",
+            "Loading System Defender"
+        ],
+        [
+            "load_bitsandbolts",
+            "Loading Bits and Bolts"
+        ],
+        [
+            "mancala",
+            "Mancala"
+        ],
+        [
+            "four",
+            "Find Four"
+        ],
+        [
+            "sled",
+            "Sled Racing"
+        ],
+        [
+            "treasurehunt",
+            "Treasure Hunt"
+        ],
+        [
+            "card",
+            "Card-Jitsu"
+        ],
+        [
+            "fire",
+            "Card-Jitsu Fire"
+        ],
+        [
+            "water",
+            "Card-Jitsu Water"
+        ],
+        [
+            "dancing",
+            "Dance Contest"
+        ],
+        [
+            "Settings",
+            "Settings"
+        ],
+        [
+            "Youre on %servername%",
+            "You're on %servername%"
+        ],
+        [
+            "Your penguin is %0 %1 old",
+            "Your penguin is %0 %1 old"
+        ],
+        [
+            "Mute Music",
+            "Mute Music"
+        ],
+        [
+            "Manage Account",
+            "Manage Account"
+        ],
+        [
+            "Buddies",
+            "Friends"
+        ],
+        [
+            "igloo_contest",
+            "Igloo Contest"
+        ],
+        [
+            "igloo_contest_thanks",
+            "Igloo Contest"
+        ],
+        [
+            "igloo_background",
+            "Igloo Background"
+        ],
+        [
+            "igloo_storage",
+            "Igloo Storage"
+        ],
+        [
+            "load_mission1",
+            "Loading Mission"
+        ],
+        [
+            "load_mission2",
+            "Loading Mission"
+        ],
+        [
+            "load_mission3",
+            "Loading Mission"
+        ],
+        [
+            "load_mission4",
+            "Loading Mission"
+        ],
+        [
+            "load_mission5",
+            "Loading Mission"
+        ],
+        [
+            "load_mission6",
+            "Loading Mission"
+        ],
+        [
+            "load_mission7",
+            "Loading Mission"
+        ],
+        [
+            "load_mission8",
+            "Loading Mission"
+        ],
+        [
+            "load_mission9",
+            "Loading Mission"
+        ],
+        [
+            "load_mission10",
+            "Loading Mission"
+        ],
+        [
+            "load_mission11",
+            "Loading Mission"
+        ],
+        [
+            "load_town",
+            "Loading Town"
+        ],
+        [
+            "load_coffee",
+            "Loading Coffee Shop"
+        ],
+        [
+            "load_book",
+            "Loading Book Room"
+        ],
+        [
+            "load_dance",
+            "Loading Dance Club"
+        ],
+        [
+            "load_lounge",
+            "Loading Dance Lounge"
+        ],
+        [
+            "load_shop",
+            "Loading Clothes Shop"
+        ],
+        [
+            "load_village",
+            "Loading Ski Village"
+        ],
+        [
+            "load_lodge",
+            "Loading Ski Lodge"
+        ],
+        [
+            "load_attic",
+            "Loading Lodge Attic"
+        ],
+        [
+            "load_sport",
+            "Loading Sport Shop"
+        ],
+        [
+            "load_mtn",
+            "Loading Mountain"
+        ],
+        [
+            "load_plaza",
+            "Loading the Plaza"
+        ],
+        [
+            "load_pet",
+            "Loading the Pet Shop"
+        ],
+        [
+            "load_dojo",
+            "Loading the Dojo"
+        ],
+        [
+            "load_dojoext",
+            "Loading the Dojo Courtyard"
+        ],
+        [
+            "load_dojohide",
+            "Loading the Ninja Hideout"
+        ],
+        [
+            "load_dojofire",
+            "Loading the Fire Dojo"
+        ],
+        [
+            "load_dojowater",
+            "Loading Water Dojo"
+        ],
+        [
+            "load_pizza",
+            "Loading the Pizza Parlor"
+        ],
+        [
+            "load_stage",
+            "Loading the Stage"
+        ],
+        [
+            "load_beach",
+            "Loading Beach"
+        ],
+        [
+            "load_light",
+            "Loading Lighthouse"
+        ],
+        [
+            "load_beacon",
+            "Loading Beacon"
+        ],
+        [
+            "load_ship",
+            "Loading Pirate Ship"
+        ],
+        [
+            "load_shiphold",
+            "Loading Ship Hold"
+        ],
+        [
+            "load_shipquarters",
+            "Loading Captain's Quarters"
+        ],
+        [
+            "load_shipnest",
+            "Loading Crow's Nest"
+        ],
+        [
+            "load_dock",
+            "Loading the Dock"
+        ],
+        [
+            "load_forts",
+            "Loading Snow Forts"
+        ],
+        [
+            "load_rink",
+            "Loading Stadium"
+        ],
+        [
+            "load_agent",
+            "Loading HQ"
+        ],
+        [
+            "load_agentcom",
+            "Loading EPF Command Room"
+        ],
+        [
+            "load_agentlobbysolo",
+            "Loading the Facility"
+        ],
+        [
+            "load_agentlobbymulti",
+            "Loading the Phoning Facility"
+        ],
+        [
+            "load_agentvr",
+            "Loading the VR Room"
+        ],
+        [
+            "load_boiler",
+            "Loading Boiler Room"
+        ],
+        [
+            "load_berg",
+            "Loading the Iceberg"
+        ],
+        [
+            "load_cave",
+            "Loading Cave"
+        ],
+        [
+            "load_mine",
+            "Loading Mine"
+        ],
+        [
+            "load_shack",
+            "Loading Mine Shack"
+        ],
+        [
+            "load_forest",
+            "Loading Forest"
+        ],
+        [
+            "load_cove",
+            "Loading the Cove"
+        ],
+        [
+            "load_boxdimension",
+            "Loading Box Dimension"
+        ],
+        [
+            "load_cavemine",
+            "Loading Cave Mine"
+        ],
+        [
+            "load_lake",
+            "Loading the Hidden Lake"
+        ],
+        [
+            "load_underwater",
+            "Loading Underwater Room"
+        ],
+        [
+            "load_eco",
+            "Loading Recycling Plant"
+        ],
+        [
+            "load_party11",
+            "Loading"
+        ],
+        [
+            "load_party12",
+            "Loading"
+        ],
+        [
+            "load_party18",
+            "Loading"
+        ],
+        [
+            "load_party99",
+            "Loading ???"
+        ],
+        [
+            "pins_category_title",
+            "Pins"
+        ],
+        [
+            "pin_release_date",
+            "Released: %month% %day%\/%year%."
+        ],
+        [
+            "all_stamps_category_title",
+            "All Stamps"
+        ],
+        [
+            "colour",
+            "Color"
+        ],
+        [
+            "highlight",
+            "Highlight"
+        ],
+        [
+            "pattern",
+            "Pattern"
+        ],
+        [
+            "icon",
+            "Icon"
+        ],
+        [
+            "numerator_over_denominator",
+            "%0\/%1"
+        ],
+        [
+            "total_stamps_label",
+            "Total Stamps:"
+        ],
+        [
+            "page_number",
+            "Page\n%0 of %1"
+        ],
+        [
+            "users_pins_label",
+            "Your Pins:"
+        ],
+        [
+            "recently_earned_title",
+            "Your New Stamps"
+        ],
+        [
+            "recently_earned_description",
+            "These are your recently earned stamps:"
+        ],
+        [
+            "recently_earned_congrats_single_stamp",
+            "Congratulations on earning\n %0 stamp!"
+        ],
+        [
+            "recently_earned_congrats_multiple_stamp",
+            "Congratulations on earning\n %0 stamps!"
+        ],
+        [
+            "total_stamps",
+            "Total Stamps %0\/%1"
+        ],
+        [
+            "category_stamps_label",
+            "%name% Stamps:"
+        ],
+        [
+            "category_label",
+            "%name%:"
+        ],
+        [
+            "contents_category_title",
+            "Contents"
+        ],
+        [
+            "cover",
+            "Cover"
+        ],
+        [
+            "toc_legend_title",
+            "Stamp Book Guide"
+        ],
+        [
+            "toc_legend_easy",
+            "Easy"
+        ],
+        [
+            "toc_legend_medium",
+            "Medium"
+        ],
+        [
+            "toc_legend_hard",
+            "Hard"
+        ],
+        [
+            "toc_legend_extreme",
+            "Extreme"
+        ],
+        [
+            "toc_legend_member",
+            "Member Stamp"
+        ],
+        [
+            "toc_legend_new",
+            "New Stamp"
+        ],
+        [
+            "toc_legend_edit",
+            "Edit Stamp Book"
+        ],
+        [
+            "toc_legend_save",
+            "Save Stamp Book"
+        ],
+        [
+            "ping_release_date",
+            "Released: %month%\/%day%\/%year%."
+        ],
+        [
+            "load_stampbook",
+            "Loading Stampbook"
+        ],
+        [
+            "Loading StampBook",
+            "Loading Stampbook"
+        ],
+        [
+            "end_game_earned",
+            "You've earned:"
+        ],
+        [
+            "end_game_coins_earned",
+            "%num% coins"
+        ],
+        [
+            "end_game_coins_earned_double",
+            "%num% x 2 = %num_x2% coins"
+        ],
+        [
+            "end_game_one_coin_earned",
+            "1 coin"
+        ],
+        [
+            "end_game_total_coins",
+            "Your total coins: %num%"
+        ],
+        [
+            "end_game_stamps_earned",
+            "%num% of %total%"
+        ],
+        [
+            "end_game_first_congrats",
+            "Congratulations, all %game_name% stamps earned. Double coin bonus!"
+        ],
+        [
+            "end_game_congrats",
+            "Congratulations, double coin bonus!"
+        ],
+        [
+            "end_game_howto_title",
+            "Earn Stamps!"
+        ],
+        [
+            "end_game_howto_btn",
+            "How to earn stamps"
+        ],
+        [
+            "game_name_stamps",
+            "%game_name% Stamps"
+        ],
+        [
+            "stamp_earned",
+            "Stamp Earned!"
+        ],
+        [
+            "end_game_no_coins_congrats",
+            "Congratulations, all %game_name% stamps earned."
+        ],
+        [
+            "stamp_book_hint",
+            "Stamp Book"
+        ],
+        [
+            "widget_stamps",
+            "Your Stamps: %numerator%\/%denominator%"
+        ],
+        [
+            "801_award",
+            "Loading Award"
+        ],
+        [
+            "802_award",
+            "Loading Award"
+        ],
+        [
+            "803_award",
+            "Loading Award"
+        ],
+        [
+            "804_award",
+            "Loading Award"
+        ],
+        [
+            "805_award",
+            "Loading Award"
+        ],
+        [
+            "806_award",
+            "Loading Award"
+        ],
+        [
+            "807_award",
+            "Loading Forest Map"
+        ],
+        [
+            "808_award",
+            "Loading Award"
+        ],
+        [
+            "809_award",
+            "Loading Award"
+        ],
+        [
+            "810_award",
+            "Loading Award"
+        ],
+        [
+            "811_award",
+            "Loading Award"
+        ],
+        [
+            "812_award",
+            "Loading Thank You Card"
+        ],
+        [
+            "813_award",
+            "Loading Award"
+        ],
+        [
+            "814_award",
+            "Loading Award"
+        ],
+        [
+            "815_award",
+            "Loading Award"
+        ],
+        [
+            "816_award",
+            "Loading Award"
+        ],
+        [
+            "817_award",
+            "Loading Award"
+        ],
+        [
+            "818_award",
+            "Loading Award"
+        ],
+        [
+            "819_award",
+            "Loading Award"
+        ],
+        [
+            "820_award",
+            "Loading Award"
+        ],
+        [
+            "821_award",
+            "Loading Starter Deck"
+        ],
+        [
+            "822_award",
+            "Loading Award"
+        ],
+        [
+            "823_award",
+            "Loading Award"
+        ],
+        [
+            "8000_award",
+            "Loading Wood EPF Badge"
+        ],
+        [
+            "8001_award",
+            "Loading Ice EPF Badge"
+        ],
+        [
+            "8002_award",
+            "Loading Bronze EPF Badge"
+        ],
+        [
+            "8003_award",
+            "Loading Silver EPF Badge"
+        ],
+        [
+            "8004_award",
+            "Loading Gold EPF Badge"
+        ],
+        [
+            "8005_award",
+            "Loading EPF Certificate"
+        ],
+        [
+            "8006_award",
+            "Loading Fire Booster Deck"
+        ],
+        [
+            "8007_award",
+            "Loading Award"
+        ],
+        [
+            "8008_award",
+            "Loading Award"
+        ],
+        [
+            "8010_award",
+            "Loading Water Booster Deck"
+        ],
+        [
+            "stowaway_book",
+            "Loading Stowaway"
+        ],
+        [
+            "franky_book",
+            "Loading Franky"
+        ],
+        [
+            "spice_book",
+            "Loading Spice"
+        ],
+        [
+            "dare_book",
+            "Loading Dare"
+        ],
+        [
+            "journal_book",
+            "Loading Journal"
+        ],
+        [
+            "tales07_book",
+            "Loading Tales '07"
+        ],
+        [
+            "tales08_book",
+            "Loading Tales '08"
+        ],
+        [
+            "tales09_book",
+            "Loading Tales '09"
+        ],
+        [
+            "year0506_book",
+            "Loading Yearbook 05\/06"
+        ],
+        [
+            "year0607_book",
+            "Loading Yearbook 06\/07"
+        ],
+        [
+            "year0708_book",
+            "Loading Yearbook 07\/08"
+        ],
+        [
+            "year0809_book",
+            "Loading Yearbook 08\/09"
+        ],
+        [
+            "year0910_book",
+            "Loading Yearbook 09\/10"
+        ],
+        [
+            "xmas_book2",
+            "Loading Rockhopper Island"
+        ],
+        [
+            "xmas_book3",
+            "Loading Music Makes Magic"
+        ],
+        [
+            "fairyfables",
+            "Loading Fairy Fables"
+        ],
+        [
+            "give_tour",
+            "Give a Tour"
+        ],
+        [
+            "clothing_catalogue",
+            "Loading Clothing Catalog"
+        ],
+        [
+            "costume_catalogue",
+            "Loading Costume Catalog"
+        ],
+        [
+            "sport_catalogue",
+            "Loading Sport Catalog"
+        ],
+        [
+            "hair_catalogue",
+            "Loading Hair Catalog"
+        ],
+        [
+            "fish_catalogue",
+            "Loading FISH Catalog"
+        ],
+        [
+            "pets_catalogue",
+            "Loading Puffle Catalog"
+        ],
+        [
+            "adopt_catalogue",
+            "Loading Puffle Catalog"
+        ],
+        [
+            "pirate_catalogue",
+            "Loading Pirate Catalog"
+        ],
+        [
+            "igloo_catalogue",
+            "Loading Igloo Catalog"
+        ],
+        [
+            "furniture_catalogue",
+            "Loading Furniture Catalog"
+        ],
+        [
+            "music_catalogue",
+            "Loading Music Catalog"
+        ],
+        [
+            "merch_catalogue",
+            "Loading Merchandise Catalog"
+        ],
+        [
+            "merch_catalog",
+            "Loading Merchandise Catalog"
+        ],
+        [
+            "prizebooth",
+            "Loading Prize Booth"
+        ],
+        [
+            "prizeboothmember",
+            "Loading Member Prize Booth"
+        ],
+        [
+            "ninja_catalogue",
+            "Loading Ninja Catalog"
+        ],
+        [
+            "cove_catalogue",
+            "Loading Cove Catalog"
+        ],
+        [
+            "dock_catalogue",
+            "Loading Dock Catalog"
+        ],
+        [
+            "lodge_catalogue",
+            "Loading Lodge Catalog"
+        ],
+        [
+            "mtn_catalogue",
+            "Loading Ski Hill Catalog"
+        ],
+        [
+            "lake_catalogue",
+            "Loading Diving Catalog"
+        ],
+        [
+            "dance_catalogue",
+            "Loading Dance Catalog"
+        ],
+        [
+            "party_catalogue",
+            "Loading Catalog"
+        ],
+        [
+            "light_catalogue",
+            "Loading Lighthouse Catalog"
+        ],
+        [
+            "prizeBooth",
+            "Loading Member Prize Booth"
+        ],
+        [
+            "clock_help",
+            "Loading Clock Tower Plaque"
+        ],
+        [
+            "backstage",
+            "Loading Backstage Note"
+        ],
+        [
+            "rockhopper_note",
+            "Loading Rockhopper's Note"
+        ],
+        [
+            "labcoat",
+            "Loading Secret Lab Note"
+        ],
+        [
+            "ninjabelts",
+            "Loading Ninja Belts Legend"
+        ],
+        [
+            "sensei_note",
+            "Loading Sensei's Note"
+        ],
+        [
+            "colour_poster",
+            "Loading Color Poster"
+        ],
+        [
+            "corkboard",
+            "Loading Corkboard"
+        ],
+        [
+            "take_tour",
+            "Take a Tour"
+        ],
+        [
+            "halloween_poster",
+            "Haunted House Poster"
+        ],
+        [
+            "fire_path_note",
+            "Loading Sensei's Note"
+        ],
+        [
+            "water_path_note",
+            "Loading Sensei's Note"
+        ],
+        [
+            "fireclothing",
+            "Loading Fire Clothing Poster"
+        ],
+        [
+            "waterclothing",
+            "Loading Water Clothing Poster"
+        ],
+        [
+            "maze_map",
+            "Loading Maze Map"
+        ],
+        [
+            "ninja_fire_video",
+            "Loading Video"
+        ],
+        [
+            "ninja_water_video",
+            "Loading Video"
+        ],
+        [
+            "water_path_video_flv",
+            "Loading Christmas Poster"
+        ],
+        [
+            "splunkposter",
+            "Loading Dig Poster"
+        ],
+        [
+            "splunkposter2",
+            "Loading Dig Poster"
+        ],
+        [
+            "treasurepin1",
+            "Loading Treasure"
+        ],
+        [
+            "treasurepin2",
+            "Loading Treasure"
+        ],
+        [
+            "treasurepin3",
+            "Loading Treasure"
+        ],
+        [
+            "treasurepin4",
+            "Loading Treasure"
+        ],
+        [
+            "underwater_note",
+            "Loading Note"
+        ],
+        [
+            "goldenPuffleShort",
+            "Loading Video"
+        ],
+        [
+            "rubyShort",
+            "Loading Video"
+        ],
+        [
+            "fairyFablesShort",
+            "Loading Video"
+        ],
+        [
+            "penguinsTimeShort",
+            "Loading Video"
+        ],
+        [
+            "squidzoidShort",
+            "Loading Video"
+        ],
+        [
+            "underwaterShort",
+            "Loading Video"
+        ],
+        [
+            "poster",
+            "Loading Poster"
+        ],
+        [
+            "halloweenposter",
+            "Loading Recycle Poster"
+        ],
+        [
+            "recycle_note",
+            "Loading Recycle Note"
+        ],
+        [
+            "instructions_quest",
+            "Loading Quest Poster"
+        ],
+        [
+            "InstructionsScroll",
+            "Loading Ship Poster"
+        ],
+        [
+            "InstructionsScroll2",
+            "Loading Dragon Poster"
+        ],
+        [
+            "party_poster",
+            "Loading Poster"
+        ],
+        [
+            "party_poster3",
+            "Loading Poster"
+        ],
+        [
+            "rink_poster",
+            "Poster"
+        ],
+        [
+            "party_note01",
+            "Loading Note"
+        ],
+        [
+            "party_note02",
+            "Loading Note"
+        ],
+        [
+            "party_note03",
+            "Loading Note"
+        ],
+        [
+            "party_note04",
+            "Loading Note"
+        ],
+        [
+            "party_note05",
+            "Loading Note"
+        ],
+        [
+            "earth_day_video",
+            "Loading Video"
+        ],
+        [
+            "mod_help",
+            "Loading Moderator"
+        ],
+        [
+            "egg_timer",
+            "Loading Timer"
+        ],
+        [
+            "help",
+            "Loading Help"
+        ],
+        [
+            "coins_for_change",
+            "Loading Coins For Change"
+        ],
+        [
+            "igloo_music",
+            "Loading Music Menu"
+        ],
+        [
+            "missions",
+            "Loading Missions"
+        ],
+        [
+            "agent_form",
+            "Agent Form"
+        ],
+        [
+            "news_form",
+            "Newspaper Form"
+        ],
+        [
+            "tour_form",
+            "Tour Guide Form"
+        ],
+        [
+            "report_form",
+            "Report Form"
+        ],
+        [
+            "penguintales",
+            "Submission Form"
+        ],
+        [
+            "library",
+            "Loading Library"
+        ],
+        [
+            "voting_booth",
+            "Loading Voting Booth"
+        ],
+        [
+            "ugc_wall",
+            "Loading Art"
+        ],
+        [
+            "2009iceplaque_01",
+            "Loading Sculpture Plaque"
+        ],
+        [
+            "2009iceplaque_02",
+            "Loading Sculpture Plaque"
+        ],
+        [
+            "2009iceplaque_03",
+            "Loading Sculpture Plaque"
+        ],
+        [
+            "2009iceplaque_04",
+            "Loading Sculpture Plaque"
+        ],
+        [
+            "2009iceplaque_05",
+            "Loading Sculpture Plaque"
+        ],
+        [
+            "2009iceplaque_06",
+            "Loading Sculpture Plaque"
+        ],
+        [
+            "2009iceplaque_07",
+            "Loading Sculpture Plaque"
+        ],
+        [
+            "2009iceplaque_08",
+            "Loading Sculpture Plaque"
+        ],
+        [
+            "2009iceplaque_09",
+            "Loading Sculpture Plaque"
+        ],
+        [
+            "2009iceplaque_10",
+            "Loading Sculpture Plaque"
+        ],
+        [
+            "2009iceplaque_11",
+            "Loading Sculpture Plaque"
+        ],
+        [
+            "2009iceplaque_12",
+            "Loading Sculpture Plaque"
+        ],
+        [
+            "2009iceplaque_13",
+            "Loading Sculpture Plaque"
+        ],
+        [
+            "2009iceplaque_14",
+            "Loading Sculpture Plaque"
+        ],
+        [
+            "2009iceplaque_15",
+            "Loading Sculpture Plaque"
+        ],
+        [
+            "treasurehunt_help",
+            "Loading Treasure Hunt Instructions"
+        ],
+        [
+            "mancala_help",
+            "Loading Mancala Instructions"
+        ],
+        [
+            "instructions",
+            "Loading Card-Jitsu Instructions"
+        ],
+        [
+            "fireinstructions",
+            "Loading Card-Jitsu Fire Instructions"
+        ],
+        [
+            "waterinstructions",
+            "Loading Instructions"
+        ],
+        [
+            "oops_general",
+            "Loading Membership"
+        ],
+        [
+            "oops_inventory",
+            "Loading Membership"
+        ],
+        [
+            "oops_inventory_equip",
+            "Loading Membership"
+        ],
+        [
+            "oops_furniture",
+            "Loading Membership"
+        ],
+        [
+            "oops_igloo",
+            "Loading Membership"
+        ],
+        [
+            "oops_puffle",
+            "Loading Membership"
+        ],
+        [
+            "oops_game_dance",
+            "Loading Membership"
+        ],
+        [
+            "oops_game_dance_songs",
+            "Loading Membership"
+        ],
+        [
+            "oops_game_fire",
+            "Loading Membership"
+        ],
+        [
+            "oops_game_water",
+            "Loading Membership"
+        ],
+        [
+            "oops_party_room",
+            "Loading Membership"
+        ],
+        [
+            "oops_party2_room",
+            "Loading Membership"
+        ],
+        [
+            "oops_underwater_room",
+            "Loading Membership"
+        ],
+        [
+            "oops_game_rescue_level1",
+            "Loading Membership"
+        ],
+        [
+            "oops_game_rescue_level2",
+            "Loading Membership"
+        ],
+        [
+            "oops_party3_room",
+            "Loading Membership"
+        ],
+        [
+            "oops_party4_room",
+            "Loading Membership"
+        ],
+        [
+            "oops_party5_room",
+            "Loading Membership"
+        ],
+        [
+            "oops_party6_room",
+            "Loading Membership"
+        ],
+        [
+            "oops_party11_room",
+            "Loading Membership"
+        ],
+        [
+            "oops_party12_room",
+            "Loading Membership"
+        ],
+        [
+            "oops_party13_room",
+            "Loading Membership"
+        ],
+        [
+            "oops_party14_room",
+            "Loading Membership"
+        ],
+        [
+            "oops_puffle_whistle",
+            "Loading Membership"
+        ],
+        [
+            "oops_game_astrobarrier",
+            "Loading Membership"
+        ],
+        [
+            "oops_game_jetpack",
+            "Loading Membership"
+        ],
+        [
+            "oops_game_aquagrabber",
+            "Loading Membership"
+        ],
+        [
+            "oops_game_thinice",
+            "Loading Membership"
+        ],
+        [
+            "oops_game_waves_competition",
+            "Loading Membership"
+        ],
+        [
+            "oops_game_waves_survival",
+            "Loading Membership"
+        ],
+        [
+            "stampbook_cover_storage",
+            "Loading Membership"
+        ],
+        [
+            "oops_party11_catalog",
+            "Loading Membership"
+        ],
+        [
+            "oops_puffle_pink",
+            "Loading Membership"
+        ],
+        [
+            "oops_puffle_black",
+            "Loading Membership"
+        ],
+        [
+            "oops_puffle_green",
+            "Loading Membership"
+        ],
+        [
+            "oops_puffle_yellow",
+            "Loading Membership"
+        ],
+        [
+            "oops_puffle_purple",
+            "Loading Membership"
+        ],
+        [
+            "oops_puffle_white",
+            "Loading Membership"
+        ],
+        [
+            "oops_puffle_orange",
+            "Loading Membership"
+        ],
+        [
+            "oops_puffle_brown",
+            "Loading Membership"
+        ],
+        [
+            "oops_game_puffle_launch",
+            "Loading Membership"
+        ],
+        [
+            "login_membership_14",
+            "Loading Membership"
+        ],
+        [
+            "login_membership_7",
+            "Loading Membership"
+        ],
+        [
+            "login_membership_3",
+            "Loading Membership"
+        ],
+        [
+            "login_membership_2",
+            "Loading Membership"
+        ],
+        [
+            "login_membership_1",
+            "Loading Membership"
+        ],
+        [
+            "login_membership_expired",
+            "Loading Membership"
+        ],
+        [
+            "January",
+            "January"
+        ],
+        [
+            "February",
+            "February"
+        ],
+        [
+            "March",
+            "March"
+        ],
+        [
+            "April",
+            "April"
+        ],
+        [
+            "May",
+            "May"
+        ],
+        [
+            "June",
+            "June"
+        ],
+        [
+            "July",
+            "July"
+        ],
+        [
+            "August",
+            "August"
+        ],
+        [
+            "September",
+            "September"
+        ],
+        [
+            "October",
+            "October"
+        ],
+        [
+            "November",
+            "November"
+        ],
+        [
+            "December",
+            "December"
+        ],
+        [
+            "Day",
+            "day"
+        ],
+        [
+            "Days",
+            "days"
+        ],
+        [
+            "current_news",
+            "Loading Newspaper"
+        ],
+        [
+            "old_news0",
+            "Loading Last Week's Issue"
+        ],
+        [
+            "old_news1",
+            "Loading Old Issue"
+        ],
+        [
+            "old_news2",
+            "Loading Old Issue"
+        ],
+        [
+            "old_news3",
+            "Loading Old Issue"
+        ],
+        [
+            "old_news4",
+            "Loading Old Issue"
+        ],
+        [
+            "old_news5",
+            "Loading Old Issue"
+        ],
+        [
+            "extra_interface_icons",
+            "Loading Recycle Hunt"
+        ],
+        [
+            "easter_egg_hunt",
+            "Loading Recycle Hunt"
+        ],
+        [
+            "easter_hunt",
+            "Loading Recycle Hunt"
+        ],
+        [
+            "recycle_hunt",
+            "Loading Recycle Hunt"
+        ],
+        [
+            "scavenger_hunt",
+            "Loading Scavenger Hunt"
+        ],
+        [
+            "halloween_hunt",
+            "Loading"
+        ],
+        [
+            "title",
+            "SILLY SCAVENGER HUNT"
+        ],
+        [
+            "start_string",
+            "You have found"
+        ],
+        [
+            "scavenger_items_found",
+            "You have found %num% piece"
+        ],
+        [
+            "scavenger_items_found_plural",
+            "You have found %num% eggs"
+        ],
+        [
+            "claim_prize",
+            "Claim Prize"
+        ],
+        [
+            "continue",
+            "Continue"
+        ],
+        [
+            "agent_line1",
+            " "
+        ],
+        [
+            "agent_line2",
+            " "
+        ],
+        [
+            "agent_line3",
+            " "
+        ],
+        [
+            "agent_line4",
+            " "
+        ],
+        [
+            "agentStatus",
+            "Elite Gear"
+        ],
+        [
+            "field_ops",
+            "Field-Ops"
+        ],
+        [
+            "fieldOps",
+            "Field-Ops"
+        ],
+        [
+            "puffle",
+            "Elite Puffle"
+        ],
+        [
+            "recruit",
+            "Recruit"
+        ],
+        [
+            "Coming Soon",
+            "Coming Soon"
+        ],
+        [
+            "objectiveScreen",
+            "Objective"
+        ],
+        [
+            "epfmessage",
+            "EPF Message"
+        ],
+        [
+            "epfinitiated",
+            "Congratulations"
+        ],
+        [
+            "puffle_whistle",
+            "Puffle Whistle Message"
+        ],
+        [
+            "field_op_complete",
+            "Field Op Complete"
+        ],
+        [
+            "medal_earned",
+            "Medal Earned!"
+        ],
+        [
+            "communication",
+            "Messages"
+        ],
+        [
+            "public_computer_prompt_msg",
+            "WAIT!\nDo other people use this computer?"
+        ],
+        [
+            "save_password_warning_msg",
+            "If you save your password here, anyone who uses this computer could access your account."
+        ],
+        [
+            "save_password",
+            "Save Password"
+        ],
+        [
+            "dont_save_password",
+            "Don't Save Password"
+        ],
+        [
+            "learn_more",
+            "Learn More"
+        ],
+        [
+            "player_safety_lose_coins",
+            "They could spend your coins!"
+        ],
+        [
+            "player_safety_changed_igloo",
+            "They could change your igloo!"
+        ],
+        [
+            "player_safety_banned",
+            "They could get your penguin banned!"
+        ],
+        [
+            "max_puffle_care_item",
+            "You can't store more than 99 of these items."
+        ],
+        [
+            "percent",
+            "%percentage%%"
+        ],
+        [
+            "cannon_hint",
+            "Puffle Launch"
+        ],
+        [
+            "xmas_book1",
+            "Loading Christmas Carol"
+        ],
+        [
+            "cannon_find",
+            "%name% is playing Puffle Launch"
+        ],
+        [
+            "cannon_prompt",
+            "Would you like to play Puffle Launch?"
+        ],
+        [
+            "load_cannon",
+            "Loading Puffle Launch"
+        ],
+        [
+            "You'll need to enter %number% more Treasure Book code(s) to unlock this page.",
+            "You'll need to enter %number% more Treasure Book code(s) to unlock this page."
+        ],
+        [
+            "w.rooms.displayquality.low",
+            "Best Speed"
+        ],
+        [
+            "w.rooms.displayquality.medium",
+            "Normal"
+        ],
+        [
+            "w.rooms.displayquality.high",
+            "Best Graphics"
+        ],
+        [
+            "w.mobile.accountactivation.dialog.confirmemail.message",
+            "Please confirm your parent's email address. Club Penguin will send your parent an email with an activation code."
+        ],
+        [
+            "w.mobile.accountactivation.dialog.confirmemail.button.usethisemail",
+            "Use this email"
+        ],
+        [
+            "w.mobile.accountactivation.dialog.confirmemail.button.changeemail",
+            "Change this email"
+        ],
+        [
+            "w.mobile.accountactivation.dialog.emailchange.prompt.message",
+            "Please enter your parent's valid email address. Club Penguin will send your parent an email with an activation code."
+        ],
+        [
+            "w.app.error.message.emailaddressemptyinput",
+            "The email address is not entered correctly.  Please try again."
+        ],
+        [
+            "w.app.error.message.emailaddressmaxaccount",
+            "There are too many accounts assigned to this email address to add a new one."
+        ],
+        [
+            "w.app.error.message.emailaddressbanneddomain",
+            "The given domain name is part of our banned email list. Please contact Club Penguin support if you have questions."
+        ],
+        [
+            "w.app.error.message.emailaddresswrongformat",
+            "Email is not properly formatted. Please try again."
+        ],
+        [
+            "w.app.error.message.emailaddressplussign",
+            "An email address cannot contain a '+'. Please try again."
+        ],
+        [
+            "w.mobile.accountactivation.dialog.activationemailsent.message",
+            "Before you can login, your penguin account must be activated. Ask your parents to check their email.\n\n An email has been sent to %0% with the next steps to activate your penguin."
+        ],
+        [
+            "party_find",
+            "%name% is on Santa's Sled"
+        ],
+        [
+            "oops_game_dance_save",
+            "Loading Membership"
+        ],
+        [
+            "party2_catalogue",
+            "Loading Catalogue"
+        ],
+        [
+            "party3_catalogue",
+            "Loading Catalogue"
+        ],
+        [
+            "party2_catalogue",
+            "Loading Catalog"
+        ],
+        [
+            "party2_catalogu3",
+            "Loading Catalog"
+        ],
+        [
+            "welcomesolo",
+            "Club Penguin"
+        ],
+        [
+            "load_welcomesolo",
+            "Loading Club Penguin"
+        ],
+        [
+            "welcomesolo_find",
+            "%name% is in Club Penguin"
+        ],
+        [
+            "welcomesolo_hint",
+            "Club Penguin"
+        ],
+        [
+            "map_games_string",
+            "Games"
+        ],
+        [
+            "map_places_string",
+            "Places"
+        ],
+        [
+            "map_shop_string",
+            "Shops"
+        ],
+        [
+            "map_pets_string",
+            "Pets"
+        ],
+        [
+            "w.map.ice_fishing",
+            "Ice Fishing"
+        ],
+        [
+            "w.map.sled_racing",
+            "Sled Racing"
+        ],
+        [
+            "w.map.jet_pack_adventure",
+            "Jet Pack Adventure"
+        ],
+        [
+            "w.map.hydro_hopper",
+            "Hydro Hopper"
+        ],
+        [
+            "w.map.bean_counters",
+            "Bean Counters"
+        ],
+        [
+            "w.map.arcade",
+            "Arcade"
+        ],
+        [
+            "w.map.dance_contest",
+            "Dance Contest"
+        ],
+        [
+            "w.map.dj3k",
+            "DJ3K"
+        ],
+        [
+            "w.map.puffle_round_up",
+            "Puffle Roundup"
+        ],
+        [
+            "w.map.pizzatron_3000",
+            "Pizzatron 3000"
+        ],
+        [
+            "w.map.puffle_launch",
+            "Puffle Launch"
+        ],
+        [
+            "w.map.cart_surfer",
+            "Cart Surfer"
+        ],
+        [
+            "w.map.puffle_rescue",
+            "Puffle Rescue"
+        ],
+        [
+            "w.map.catchin_waves",
+            "Catchin' Waves"
+        ],
+        [
+            "w.map.aqua_grabber",
+            "Aqua Grabber"
+        ],
+        [
+            "w.map.card_jitsu",
+            "Card-Jitsu"
+        ],
+        [
+            "w.map.penguin_style",
+            "Penguin Style"
+        ],
+        [
+            "w.map.costume_trunk",
+            "Costume Trunk"
+        ],
+        [
+            "w.map.pet_furniture",
+            "Pet Furniture"
+        ],
+        [
+            "w.map.tubing_upgrade",
+            "Game Upgrade"
+        ],
+        [
+            "w.map.music_catalogue",
+            "Music Catalog"
+        ],
+        [
+            "w.map.dj3k_upgrade",
+            "Game Upgrade"
+        ],
+        [
+            "w.map.fishing_upgrade",
+            "Game Upgrade"
+        ],
+        [
+            "w.map.sled_upgrade",
+            "Game Upgrade"
+        ],
+        [
+            "w.map.snow_and_sports",
+            "Snow and Sports"
+        ],
+        [
+            "w.map.surf_upgrade",
+            "Game Upgrade"
+        ],
+        [
+            "w.map.puffle_adoption",
+            "Puffle Adoption"
+        ],
+        [
+            "w.map.town",
+            "Town"
+        ],
+        [
+            "w.map.plaza",
+            "The Plaza"
+        ],
+        [
+            "w.map.dock",
+            "The Dock"
+        ],
+        [
+            "w.map.forts",
+            "Snow Forts"
+        ],
+        [
+            "w.map.beach",
+            "The Beach"
+        ],
+        [
+            "w.map.ski_village",
+            "Ski Village"
+        ],
+        [
+            "w.map.ski_hill",
+            "Ski Hill"
+        ],
+        [
+            "w.map.ice_rink",
+            "Stadium"
+        ],
+        [
+            "w.map.dojo",
+            "Dojo Courtyard"
+        ],
+        [
+            "w.map.mine_shack",
+            "Mine"
+        ],
+        [
+            "w.map.forest",
+            "Forest"
+        ],
+        [
+            "w.map.cove",
+            "Cove"
+        ],
+        [
+            "w.map.iceberg",
+            "Iceberg"
+        ],
+        [
+            "w.map.igloos",
+            "Igloos"
+        ],
+        [
+            "w.map.open_igloos",
+            "Open Igloos"
+        ],
+        [
+            "w.app.error.message.emailaddressinvalidisp",
+            "%0% is not a valid email provider.  Please check the spelling and try again."
+        ],
+        [
+            "w.redemption.treasurebook.header.label ",
+            "Exclusive Bonus Items"
+        ],
+        [
+            "w.redemption.treasurebook.superexclusive.popup.congrats ",
+            "Congratulations!"
+        ],
+        [
+            "w.redemption.treasurebook.superexclusive.popup.message ",
+            "You've entered %0% codes and unlocked the Super Exclusives page, and %1% bonus items of your choice. "
+        ],
+        [
+            "w.redemption.funnel.redeem.button.havecode ",
+            "I've got a Code"
+        ],
+        [
+            "w.redemption.funnel.redeem.button.havebook",
+            "I've got a Book "
+        ],
+        [
+            "w.redemption.funnel.redeem.message ",
+            "Unlock your items. Choose an option. "
+        ],
+        [
+            "w.redemption.funnel.code.message",
+            "Enter your code! \nMake sure you enter it exactly as it appears. "
+        ],
+        [
+            "w.redemption.funnel.book.message",
+            "Choose your book from the list below "
+        ],
+        [
+            "w.redemption.funnel.book.hint ",
+            "Hint: First line starts with the title! "
+        ],
+        [
+            "w.redemption.treasurebook.header.button.code ",
+            "I've got a code "
+        ],
+        [
+            "w.redemption.treasurebook.header.button.toys ",
+            "View Toys "
+        ],
+        [
+            "w.redemption.treasurebook.name ",
+            "Exclusive Treasure Book "
+        ],
+        [
+            "w.redemption.treasurebook.header.title",
+            "Exclusive Bonus Items"
+        ],
+        [
+            "w.redemption.congratulations.message ",
+            "You've unlocked: "
+        ],
+        [
+            "w.redemption.congratulations.button.play",
+            "Play now! "
+        ],
+        [
+            "w.redemption.congratulations.button.another",
+            "Enter another code "
+        ],
+        [
+            "w.redemption.treasurebook.prompt.codelogout",
+            "To unlock your toy code, you will be logged out of the game.\nDo you want to continue? "
+        ],
+        [
+            "w.redemption.treasurebook.prompt.toyslogout",
+            "To look at toys, you will be logged out of the game.\nDo you want to continue? "
+        ],
+        [
+            "w.redemption.onetoone.item.congrats.title",
+            "Congratulations!"
+        ],
+        [
+            "w.redemption.onetoone.item.congrats.message",
+            "These items have been added to your inventory!"
+        ],
+        [
+            "w.redemption.onetoone.item.maxitem",
+            "Bonus item unlocked!\nBecause you already have [item name], you can now access a bonus Treasure Book item!"
+        ],
+        [
+            "w.redemption.onetoone.button.unlockbonusitems",
+            "Unlock Bonus Items"
+        ],
+        [
+            "w.redemption.onetoone.puffle.maxpuffles",
+            "%0% added to your inventory. You already have the max number of puffles, so you get a bonus item!"
+        ],
+        [
+            "w.redemption.onetoone.puffle.maxpufflehats",
+            "You already have the max number of hats, so you get a bonus item!"
+        ],
+        [
+            "w.redemption.onetoone.puffle.maxpufflesandhats",
+            "You already have the max number of puffles and hats, so you get 2 bonus items!"
+        ],
+        [
+            "w.redemption.onetoone.puffle.puffleadded.message",
+            "Your %0% and its exclusive %1% have been added to your igloo."
+        ],
+        [
+            "w.redemption.onetoone.puffle.namepuffle",
+            "Give your new puffle a name."
+        ],
+        [
+            "w.redemption.login.prompt.name",
+            "Enter Penguin Name"
+        ],
+        [
+            "w.redemption.login.prompt.password",
+            "Enter Password"
+        ],
+        [
+            "w.redemption.buttons.next",
+            "Next"
+        ],
+        [
+            "w.redemption.treasurebook.header.label",
+            "Exclusive Bonus Items"
+        ],
+        [
+            "w.redemption.treasurebook.superexclusive.popup.congrats",
+            "Congratulations!"
+        ],
+        [
+            "w.redemption.treasurebook.superexclusive.popup.message",
+            "You've entered %0% codes and unlocked the Super Exclusives page, and %1% bonus items of your choice."
+        ],
+        [
+            "w.redemption.funnel.redeem.button.havecode",
+            "I've got a Code"
+        ],
+        [
+            "w.redemption.funnel.redeem.button.havebook",
+            "I've got a Book"
+        ],
+        [
+            "w.redemption.funnel.redeem.message",
+            "Unlock your items. Choose an option."
+        ],
+        [
+            "w.redemption.funnel.code.message",
+            "Enter your code! \nMake sure you enter it exactly as it appears."
+        ],
+        [
+            "w.redemption.funnel.book.message",
+            "Choose your book from the list below"
+        ],
+        [
+            "w.redemption.funnel.book.hint",
+            "Hint: First line starts with the title!"
+        ],
+        [
+            "w.redemption.treasurebook.header.button.code",
+            "I've got a code"
+        ],
+        [
+            "w.redemption.treasurebook.header.button.toys",
+            "View Toys"
+        ],
+        [
+            "w.redemption.treasurebook.name",
+            "Exclusive Treasure Book"
+        ],
+        [
+            "max_puffle_hat_item",
+            "You can't store more than 20 of this item."
+        ],
+        [
+            "w.pufflecare.care.hat.return",
+            "Drag here to remove"
+        ],
+        [
+            "treasure_book",
+            "Loading Treasure Book"
+        ],
+        [
+            "shell.REDEMPTION_PUFFLE_NAME_EMPTY",
+            "Please name your puffle."
+        ],
+        [
+            "w.redemption.onetoone.puffle.jumbopuffle",
+            "Congratulations! Your %0% puffle has been added to your igloo."
+        ],
+        [
+            "w.redemption.onetoone.prompt.close",
+            "You still have items left to unlock.\nIf you quit now, you can use your code later, but you will need to choose your items again.\nAre you sure you want to quit?"
+        ],
+        [
+            "w.notification.puffle.lowstat.food",
+            "needs to eat."
+        ],
+        [
+            "w.notification.puffle.lowstat.rest",
+            "needs to sleep."
+        ],
+        [
+            "w.notification.puffle.lowstat.play",
+            "wants to play."
+        ],
+        [
+            "w.notification.puffle.lowstat.clean",
+            "needs a bath."
+        ],
+        [
+            "w.map.hide.games",
+            "Hide Games"
+        ],
+        [
+            "w.map.puffle.play.games",
+            "Different colored puffles play different games."
+        ],
+        [
+            "w.map.igloo",
+            "Puffle Care"
+        ],
+        [
+            "w.map.show.games",
+            "Show Games"
+        ],
+        [
+            "w.map.walk.puffle",
+            "Walk your puffle to its favorite game to play it."
+        ],
+        [
+            "w.pufflecare.care.food.extraInstructions",
+            "Buy more food from"
+        ],
+        [
+            "w.pufflecare.handler.next",
+            "next"
+        ],
+        [
+            "w.pufflecare.handler.speech.one",
+            "G'Day!"
+        ],
+        [
+            "w.pufflecare.handler.speech.two",
+            "I'm here to show you how to care for your puffles!"
+        ],
+        [
+            "w.pufflecare.handler.speech.three",
+            "Click these tabs to:"
+        ],
+        [
+            "w.pufflecare.handler.speech.four",
+            "feed"
+        ],
+        [
+            "w.pufflecare.handler.speech.five",
+            "play"
+        ],
+        [
+            "w.pufflecare.handler.speech.six",
+            "clean"
+        ],
+        [
+            "w.pufflecare.handler.speech.seven",
+            "rest"
+        ],
+        [
+            "w.pufflecare.handler.speech.eight",
+            "When you run out of food,\n"
+        ],
+        [
+            "w.pufflecare.handler.speech.nine",
+            "click this catalog to buy more. "
+        ],
+        [
+            "w.pufflecare.handler.speech.ten",
+            "Have fun,\n"
+        ],
+        [
+            "w.pufflecare.handler.speech.eleven",
+            "and good luck!"
+        ],
+        [
+            "w.pufflecare.handler.speech.twelve",
+            "and dress your puffle."
+        ],
+        [
+            "w.pufflecare.handler.finish",
+            "done"
+        ],
+        [
+            "w.map.walk.puffle",
+            "Walk your puffle to its favorite game to play it."
+        ],
+        [
+            "w.catalogs.pets.yourcoins",
+            "YOUR COINS"
+        ],
+        [
+            "w.pufflecare.manual.card.revamp.description1",
+            "Your puffle's stats tell you when it is happy, sad, hungry, tired or messy."
+        ],
+        [
+            "w.pufflecare.manual.card.revamp.description2",
+            "Each tab helps fill your puffle's stats. Click Feed for hunger, Play for walks and toys, Groom to clean, and Sleep to rest your puffle."
+        ],
+        [
+            "w.pufflecare.manual.card.revamp.description3",
+            "Go to Pet Papers to read the Puffle Handbook, or to view your Adoption Certificates."
+        ],
+        [
+            "w.pufflecare.manual.card.revamp.description4",
+            "Puffles needs lots of attention. If their stats get too low, they may return to their natural habitat."
+        ],
+        [
+            "w.pufflecare.manual.card.revamp.label.care",
+            "Care"
+        ],
+        [
+            "w.pufflecare.manual.card.revamp.label.certificate",
+            "Certificate"
+        ],
+        [
+            "w.pufflecare.manual.card.revamp.label.feed",
+            "Feed"
+        ],
+        [
+            "w.pufflecare.manual.card.revamp.label.handbook",
+            "Handbook"
+        ],
+        [
+            "w.pufflecare.manual.card.label.play",
+            "Play"
+        ],
+        [
+            "w.pufflecare.manual.card.revamp.label.petPapers",
+            "Pet Papers"
+        ],
+        [
+            "w.pufflecare.manual.card.revamp.title",
+            "Caring for your Puffle."
+        ],
+        [
+            "w.pufflecare.manual.card.revamp.label.groom",
+            "Groom"
+        ],
+        [
+            "w.pufflecare.manual.card.revamp.label.sleep",
+            "Sleep"
+        ],
+        [
+            "w.pufflecare.manual.card.revamp.label.accessories",
+            "Dress Up"
+        ],
+        [
+            "w.pufflecare.manual.card.revamp.label.stats",
+            "Pet Stats"
+        ],
+        [
+            "w.pufflecare.manual.card.revamp.label.play",
+            "Play"
+        ],
+        [
+            "w.notification.puffle.lowstat.food ",
+            "needs to eat."
+        ],
+        [
+            "w.notification.puffle.lowstat.rest",
+            "needs to sleep."
+        ],
+        [
+            "w.notification.puffle.lowstat.play",
+            "wants to play."
+        ],
+        [
+            "w.notification.puffle.lowstat.clean",
+            "needs a bath."
+        ],
+        [
+            "w.map.hide.games",
+            "Hide Games"
+        ],
+        [
+            "w.map.puffle.play.games",
+            "Different colored puffles play different games"
+        ],
+        [
+            "w.map.igloo",
+            "Puffle Care"
+        ],
+        [
+            "w.map.show.games",
+            "Show Games"
+        ],
+        [
+            "w.map.walk.puffle",
+            "Walk your puffle to its favorite game to play it."
+        ],
+        [
+            "w.pufflecare.care.food.extraInstructions",
+            "Buy more food from"
+        ],
+        [
+            "w.pufflecare.handler.next",
+            "next"
+        ],
+        [
+            "w.pufflecare.handler.speech.one",
+            "G'Day"
+        ],
+        [
+            "w.pufflecare.handler.speech.two",
+            "Im here to show you how to care for your puffles!"
+        ],
+        [
+            "w.pufflecare.handler.speech.three",
+            "Click these tabs to:"
+        ],
+        [
+            "w.pufflecare.handler.speech.four",
+            "feed"
+        ],
+        [
+            "w.pufflecare.handler.speech.five",
+            "play"
+        ],
+        [
+            "w.pufflecare.handler.speech.six",
+            "clean"
+        ],
+        [
+            "w.pufflecare.handler.speech.seven",
+            "rest"
+        ],
+        [
+            "w.pufflecare.handler.speech.eight",
+            "When you run out of food,"
+        ],
+        [
+            "w.pufflecare.handler.speech.nine",
+            "click this catalog to buy more. "
+        ],
+        [
+            "w.pufflecare.handler.speech.ten",
+            "Have fun,"
+        ],
+        [
+            "w.pufflecare.handler.speech.eleven",
+            "and good luck!"
+        ],
+        [
+            "year1011_book",
+            "Loading Yearbook 10\/11"
+        ],
+        [
+            "w.pufflecare.handler.speech.twelve",
+            "and dress your puffle."
+        ],
+        [
+            "w.pufflecare.handler.finish",
+            "done"
+        ],
+        [
+            "scavenger_title",
+            "Easter Egg Scavenger Hunt"
+        ],
+        [
+            "scavenger_claim_prize",
+            "Claim Prize"
+        ],
+        [
+            "scavenger_continue",
+            "Continue"
+        ],
+        [
+            "scavenger_items_found_plural",
+            "%num% ghosts caught"
+        ],
+        [
+            "scavenger_items_found",
+            "%num% eggs found"
+        ],
+        [
+            "scavenger_clue0",
+            "The first egg's hid near shining gold, Somewhere deep and dark and cold."
+        ],
+        [
+            "scavenger_clue1",
+            "The next egg's found near works of art, Plus lots of books to make you smart!"
+        ],
+        [
+            "scavenger_clue2",
+            "This next egg's near a snowy shore. It's hidden well. You must explore."
+        ],
+        [
+            "scavenger_clue3",
+            "Now head towards a wooden shack. You're doing well, you're right on track!"
+        ],
+        [
+            "scavenger_clue4",
+            "Search now near a tall white chair, For watching waves. The egg is there."
+        ],
+        [
+            "scavenger_clue5",
+            "The next one's sure to make you smile. Just like you, this egg's got style."
+        ],
+        [
+            "scavenger_clue6",
+            "The next egg's near a chair that lifts. You're getting close, you must be swift!"
+        ],
+        [
+            "scavenger_clue7",
+            "The last egg's near a big, bright light. You're almost done, the end's in sight."
+        ],
+        [
+            "ignore_prompt_help",
+            "Go to settings to remove players on your ignore list."
+        ],
+        [
+            "friend_request_prompt",
+            "Would you like to add %name%\nto your Friends list?"
+        ],
+        [
+            "friend_remove_prompt",
+            "Would you like to remove %name% from your Friends list?"
+        ],
+        [
+            "add_friend_hint",
+            "Add Friend"
+        ],
+        [
+            "remove_buddy_hint",
+            "Remove Friend"
+        ],
+        [
+            "friend_hint",
+            "Show Friends"
+        ],
+        [
+            "remove_friend_hint",
+            "Remove Friend"
+        ],
+        [
+            "load_pufflescape",
+            "Loading Pufflescape"
+        ],
+        [
+            "pufflescape_find",
+            "%name% is playing Pufflescape"
+        ],
+        [
+            "pufflescape_hint",
+            "Pufflescape"
+        ],
+        [
+            "pufflescape_prompt",
+            "Would you like to play Pufflescape?"
+        ],
+        [
+            "oops_game_pufflescape",
+            "Loading Membership"
+        ],
+        [
+            "w.furniture.buy.too.many.mats",
+            "Sorry, you may only have four Card-Jitsu Mat igloo items."
+        ],
+        [
+            "w.app.prompt.2011cjparty.memberitem",
+            "When the Card-Jitsu Party ends Dec.6, a membership will be required to continue to use this item."
+        ],
+        [
+            "w.app.prompt.2011cjparty.membergame",
+            "Card-Jitsu All Access ends Dec. 6. A membership will be required to play."
+        ],
+        [
+            "fire_prompt",
+            "Would you like to play\nCard-Jitsu Fire?"
+        ],
+        [
+            "water_prompt",
+            "Would you like to play\nCard-Jitsu Water?"
+        ],
+        [
+            "card_prompt",
+            "Would you like to play\nCard-Jitsu?"
+        ],
+        [
+            "w.app.hint.cjfire",
+            "Earn Your Fire Suit"
+        ],
+        [
+            "w.app.hint.cjwater",
+            "Earn Your Water Suit"
+        ],
+        [
+            "w.app.hint.cj",
+            "Earn Your Belts"
+        ],
+        [
+            "offline_find",
+            "%name% is now offline"
+        ],
+        [
+            "load_dojohidesolo",
+            "Loading the Ninja Hideout"
+        ],
+        [
+            "load_dojoextsolo",
+            "Loading the Dojo Courtyard"
+        ],
+        [
+            "app.fb.parent.portal.gift.coins.100",
+            "100 coins were added to your account"
+        ],
+        [
+            "app.fb.parent.portal.gift.coins.250",
+            "250 coins were added to your account"
+        ],
+        [
+            "app.fb.parent.portal.gift.coins.500",
+            "500 coins were added to your account"
+        ],
+        [
+            "app.fb.parent.portal.gift.sender.both",
+            "Mom and Dad"
+        ],
+        [
+            "app.fb.parent.portal.gift.sender.dad",
+            "Dad"
+        ],
+        [
+            "app.fb.parent.portal.gift.sender.mom",
+            "Mom"
+        ],
+        [
+            "w.map.pufflescape",
+            "Pufflescape"
+        ],
+        [
+            "w.mobile.accountactivation.dialog.changeemail.button.okay",
+            "Ok"
+        ],
+        [
+            "w.mobile.accountactivation.dialog.changeemail.button.cancel",
+            "Cancel"
+        ],
+        [
+            "w.mobile.accountactivation.dialog.changeemail.message",
+            "Please enter your parent's valid email address. Club Penguin will send your parent an email with an activation code."
+        ],
+        [
+            "party_poster2",
+            "Loading Poster"
+        ],
+        [
+            "w.login.prompt.rules",
+            "Club Penguin Rules"
+        ],
+        [
+            "w.cfc.infoposter.loading",
+            "Loading CFC Poster"
+        ],
+        [
+            "cfc_info_poster",
+            "CFC Poster"
+        ],
+        [
+            "advent_note_dec",
+            "Loading Advent Note"
+        ],
+        [
+            "advent_note_dec15",
+            "Loading Advent Note"
+        ],
+        [
+            "advent_note_dec16",
+            "Loading Advent Note"
+        ],
+        [
+            "advent_note_dec17",
+            "Loading Advent Note"
+        ],
+        [
+            "advent_note_dec18",
+            "Loading Advent Note"
+        ],
+        [
+            "advent_note_dec19",
+            "Loading Advent Note"
+        ],
+        [
+            "advent_note_dec20",
+            "Loading Advent Note"
+        ],
+        [
+            "advent_note_dec21",
+            "Loading Advent Note"
+        ],
+        [
+            "advent_note_dec22",
+            "Loading Advent Note"
+        ],
+        [
+            "advent_note_dec23",
+            "Loading Advent Note"
+        ],
+        [
+            "advent_note_dec24",
+            "Loading Advent Note"
+        ],
+        [
+            "advent_note_dec25",
+            "Loading Advent Note"
+        ],
+        [
+            "w.p.poster.loading",
+            "Loading Poster"
+        ],
+        [
+            "w.p.note.loading",
+            "Loading Note"
+        ],
+        [
+            "w.p.catalog.loading",
+            "Loading Catalog"
+        ],
+        [
+            "w.redemption.onetoone.puffle.maxpufflesjumbo",
+            "You already have the max number of puffles, so you get a bonus item!"
+        ],
+        [
+            "attempted_game_manipulation",
+            "Attempted Game Manipulation"
+        ],
+        [
+            "w.app.error.message.playtimeup",
+            "You've used up your time to play on Club Penguin for today. Your parent has set your play time to %0% %1%, %2% %3%."
+        ],
+        [
+            "w.app.error.message.playtimeending",
+            "You have %0% %1% left to play Club Penguin today. Your parent has set your play time to %2% %3%, %4% %5%."
+        ],
+        [
+            "w.app.minute",
+            "minute"
+        ],
+        [
+            "w.app.minutes",
+            "minutes"
+        ],
+        [
+            "w.app.hour",
+            "hour"
+        ],
+        [
+            "w.app.hours",
+            "hours"
+        ],
+        [
+            "w.p0312.puffle.note01.choose",
+            "Choose Your"
+        ],
+        [
+            "w.p0312.puffle.note01.puffle",
+            "Puffle"
+        ],
+        [
+            "PH",
+            "PH"
+        ],
+        [
+            "w.app.error.message.playhourupdate",
+            "Your parent has changed your play time on Club Penguin to  %0% , %1%."
+        ],
+        [
+            "shell.PLAYER_HAS_MAX_ITEMS",
+            "Sorry, you can only buy this item 99 times."
+        ],
+        [
+            "w.mobile.snowball.youveBeenHitSingle",
+            "You've Been Hit!"
+        ],
+        [
+            "w.mobile.snowball.hitBy",
+            "by %0% from the My Penguin App"
+        ],
+        [
+            "w.mobile.snowball.throwBackSingle",
+            "Would you like to throw one back?"
+        ],
+        [
+            "w.mobile.snowball.snowballThrownSingle",
+            "You've thrown a snowball back at %0%"
+        ],
+        [
+            "w.mobile.snowball.youveBeenHitMulti",
+            "You've Been Hit!"
+        ],
+        [
+            "w.mobile.snowball.throwBackMulti",
+            "Throw snowballs back?"
+        ],
+        [
+            "w.mobile.snowball.snowballThrownMulti",
+            "Snowballs thrown at %0%!"
+        ],
+        [
+            "w.app.error.message.playhourupdate",
+            "Your parent has changed your play time on Club Penguin to  %0% , %1%."
+        ],
+        [
+            "scornbattle_prompt",
+            "Are you prepared for battle?"
+        ],
+        [
+            "m.igloo.viewer.details.title",
+            "Your current igloo"
+        ],
+        [
+            "m.igloo.viewer.details.edit",
+            "Edit"
+        ],
+        [
+            "m.igloo.viewer.details.lockToggle.lable",
+            "Igloo Visitors"
+        ],
+        [
+            "m.igloo.viewer.details.lockToggle.friends",
+            "Friends"
+        ],
+        [
+            "m.igloo.viewer.details.lockToggle.everyone",
+            "Everyone"
+        ],
+        [
+            "m.igloo.viewer.deletePrompt.title",
+            "Are you sure that you want to delete this igloo?"
+        ],
+        [
+            "m.igloo.editor.sideBar.music",
+            "Music"
+        ],
+        [
+            "m.igloo.editor.sideBar.hide",
+            "Hide"
+        ],
+        [
+            "m.igloo.editor.sideBar.show",
+            "Show"
+        ],
+        [
+            "m.igloo.editor.musicMenu.titleSaved",
+            "My Saved Mixes"
+        ],
+        [
+            "m.igloo.editor.musicMenu.titleNormal",
+            "Igloo Music"
+        ],
+        [
+            "m.igloo.editor.musicMenu.gotoDJ3K",
+            "Go to DJ3K!"
+        ],
+        [
+            "m.igloo.editor.musicMenu.empySlot",
+            "Song Not Playing"
+        ],
+        [
+            "m.igloo.editor.musicMenu.noSaveDialog.goThere",
+            "Go There!"
+        ],
+        [
+            "m.igloo.editor.musicMenu.noSaveDialog.message",
+            "Record and save your\nown music mixes in DJ3K."
+        ],
+        [
+            "m.igloo.editor.arrowKeysHint",
+            "Use arrow keys to change this item."
+        ],
+        [
+            "m.igloo.editor.addIglooPrompt",
+            "Are you sure you want to add an igloo? Your flooring and igloo furniture will be saved in your inventory."
+        ],
+        [
+            "m.igloo.editor.changeLocationPrompt",
+            "Are you sure you want to move your igloo? Your flooring and igloo furniture will be saved in your inventory."
+        ],
+        [
+            "m.igloo.editor.removeIglooPrompt",
+            "Are you sure you want to remove your igloo? Your flooring and igloo furniture will be saved in your inventory."
+        ],
+        [
+            "w.igloo.map.tab.popular",
+            "Popular"
+        ],
+        [
+            "w.igloo.map.tab.friends",
+            "Friends"
+        ],
+        [
+            "w.igloo.map.tab.everyone",
+            "Everyone"
+        ],
+        [
+            "w.igloo.likes.label",
+            "Likes"
+        ],
+        [
+            "w.igloo.viewer.deletePromptLikes",
+            "You will lose all your LIKES for this igloo."
+        ],
+        [
+            "w.p0612.superhero.superhero.alert.buttontext",
+            "OK"
+        ],
+        [
+            "w.p0612.superhero.supervillan.alert.buttontext",
+            "OK"
+        ],
+        [
+            "w.p0612.superhero.citizen.alert.buttontext",
+            "OK"
+        ],
+        [
+            "w.p0612.superhero.superhero.alert1",
+            "Calling all heroes! Super Villains have been spotted at the Bank!"
+        ],
+        [
+            "w.p0612.superhero.superhero.alert2",
+            "Fires reported downtown! The city needs a hero!"
+        ],
+        [
+            "w.p0612.superhero.superhero.alert3",
+            "The police could use some back-up! Go to the Jail!"
+        ],
+        [
+            "w.p0612.superhero.superhero.alert4",
+            "Heroes - gather forces at the Super Hero HQ. For great justice!"
+        ],
+        [
+            "w.p0612.superhero.superhero.alert5",
+            "It's time to defeat evil once and for all! To the Super Villain Lair!"
+        ],
+        [
+            "w.p0612.superhero.superhero.alert6",
+            "Press Conference at the Coffee Shop. The city wants answers!"
+        ],
+        [
+            "w.p0612.superhero.superhero.alert7",
+            "Giant monsters spotted at the Iceberg! Move out!"
+        ],
+        [
+            "w.p0612.superhero.superhero.alert8",
+            "Defend the Club Penguin Times at any cost!"
+        ],
+        [
+            "w.p0612.superhero.supervillan.alert1",
+            "The Bank vault is defenseless! You know what to do..."
+        ],
+        [
+            "w.p0612.superhero.supervillan.alert2",
+            "Villains - join forces downtown. Nothing can stop us!"
+        ],
+        [
+            "w.p0612.superhero.supervillan.alert3",
+            "All Super Villains, go to the Jail! Cause trouble, but don't get caught!"
+        ],
+        [
+            "w.p0612.superhero.supervillan.alert4",
+            "The Super Heroes think their HQ is safe..."
+        ],
+        [
+            "w.p0612.superhero.supervillan.alert5",
+            "Attention Villains! Meet up at the Lair for an evil planning session!"
+        ],
+        [
+            "w.p0612.superhero.supervillan.alert6",
+            "No Super Villains allowed at the Coffee Shop. Wear a disguise. They'll never know it's you!"
+        ],
+        [
+            "w.p0612.superhero.supervillan.alert7",
+            "Giant monsters, your time has come... to the Iceberg!"
+        ],
+        [
+            "w.p0612.superhero.supervillan.alert8",
+            "Shut down the presses at the Club Penguin Times! First the newspaper... then the world!"
+        ],
+        [
+            "w.p0612.superhero.citizen.alert1",
+            "Super powered penguins spotted at the Bank! Also pizza!"
+        ],
+        [
+            "w.p0612.superhero.citizen.alert2",
+            "Fires reported downtown. Please expect traffic delays."
+        ],
+        [
+            "w.p0612.superhero.citizen.alert3",
+            "Watch out for villains escaping the Jail! They ALWAYS do that!"
+        ],
+        [
+            "w.p0612.superhero.citizen.alert4",
+            "Super Villains have been spotted heading to the Super Hero HQ!"
+        ],
+        [
+            "w.p0612.superhero.citizen.alert5",
+            "Super Heroes reported heading to the Super Villain Lair!"
+        ],
+        [
+            "w.p0612.superhero.citizen.alert6",
+            "Fresh coffee reported at the Coffee Shop! Also Super Heroes and Super Villains!"
+        ],
+        [
+            "w.p0612.superhero.citizen.alert7",
+            "Giant monsters spotted at the Iceberg! Run!"
+        ],
+        [
+            "w.p0612.superhero.citizen.alert8",
+            "Super Heroes and Villains spotted at the Club Penguin Times!"
+        ],
+        [
+            "w.p0612.superhero.citizen.alert",
+            "Non-member trying to enter fort"
+        ],
+        [
+            "w.igloo.viewer.totalLikes.label",
+            "Grand Total Likes:"
+        ],
+        [
+            "m.igloo.editor.buyMore.igloo_tab_wall",
+            "Buy more wall items from the Furniture Catalog"
+        ],
+        [
+            "m.igloo.editor.buyMore.igloo_tab_pets",
+            "Buy more pet furniture from the Puffle Catalog in the Pet Shop"
+        ],
+        [
+            "w.map.martial_arts",
+            "Martial Artworks"
+        ],
+        [
+            "m.igloo.editor.buyMore.igloo_tab_room",
+            "Buy more furniture from the Furniture Catalog"
+        ],
+        [
+            "m.igloo.editor.buyMore.igloo_tab_flooring",
+            "Buy more flooring from the Furniture Catalog"
+        ],
+        [
+            "m.igloo.editor.buyMore.igloo_tab_building",
+            "Buy more igloos from the Igloo Catalog"
+        ],
+        [
+            "february_abbr",
+            "Feb"
+        ],
+        [
+            "march_abbr",
+            "Mar"
+        ],
+        [
+            "april_abbr",
+            "Apr"
+        ],
+        [
+            "may_abbr",
+            "May"
+        ],
+        [
+            "june_abbr",
+            "Jun"
+        ],
+        [
+            "july_abbr",
+            "Jul"
+        ],
+        [
+            "august_abbr",
+            "Aug"
+        ],
+        [
+            "september_abbr",
+            "Sept"
+        ],
+        [
+            "october_abbr",
+            "Oct"
+        ],
+        [
+            "november_abbr",
+            "Nov"
+        ],
+        [
+            "december_abbr",
+            "Dec"
+        ],
+        [
+            "january_abbr",
+            "Jan"
+        ],
+        [
+            "w.p0612.superhero.superhero.alert.buttontext",
+            "OK!"
+        ],
+        [
+            "w.p0612.superhero.supervillan.alert.buttontext",
+            "OK!"
+        ],
+        [
+            "w.p0612.superhero.citizen.alert.buttontext",
+            "OK!"
+        ],
+        [
+            "w.p0612.superhero.superhero.alert1",
+            "Calling all heroes! Super Villains have been spotted at the Bank!"
+        ],
+        [
+            "w.p0612.superhero.superhero.alert2",
+            "Fires reported downtown! The city needs a hero!"
+        ],
+        [
+            "w.p0612.superhero.superhero.alert3",
+            "The police could use some back-up! Go to the Jail!"
+        ],
+        [
+            "w.p0612.superhero.superhero.alert4",
+            "Heroes - gather forces at the Super Hero HQ. For great justice!"
+        ],
+        [
+            "w.p0612.superhero.superhero.alert5",
+            "It's time to defeat evil once and for all! To the Super Villain Lair!"
+        ],
+        [
+            "w.p0612.superhero.superhero.alert6",
+            "Press Conference at the Coffee Shop. The city wants answers!"
+        ],
+        [
+            "w.p0612.superhero.superhero.alert7",
+            "Giant monsters spotted at the Iceberg! Move out!"
+        ],
+        [
+            "w.p0612.superhero.superhero.alert8",
+            "Defend the Club Penguin Times at any cost!"
+        ],
+        [
+            "w.p0612.superhero.supervillan.alert1",
+            "The Bank vault is defenseless! You know what to do..."
+        ],
+        [
+            "w.p0612.superhero.supervillan.alert2",
+            "Villains - join forces downtown. Nothing can stop us!"
+        ],
+        [
+            "w.p0612.superhero.supervillan.alert3",
+            "All Super Villains, go to the Jail! Cause trouble, but don't get caught!"
+        ],
+        [
+            "w.p0612.superhero.supervillan.alert4",
+            "The Super Heroes think their HQ is safe..."
+        ],
+        [
+            "w.p0612.superhero.supervillan.alert5",
+            "Attention Villains! Meet up at the Lair for an evil planning session!"
+        ],
+        [
+            "w.p0612.superhero.supervillan.alert6",
+            "No Super Villains allowed at the Coffee Shop. Wear a disguise. They'll never know it's you!"
+        ],
+        [
+            "w.p0612.superhero.supervillan.alert7",
+            "Giant monsters, your time has come... to the Iceberg!"
+        ],
+        [
+            "w.p0612.superhero.supervillan.alert8",
+            "Shut down the presses at the Club Penguin Times! First the newspaper... then the world!"
+        ],
+        [
+            "w.p0612.superhero.citizen.alert1",
+            "Super powered penguins spotted at the Bank! Also pizza!"
+        ],
+        [
+            "w.p0612.superhero.citizen.alert2",
+            "Fires reported downtown. Please expect traffic delays."
+        ],
+        [
+            "w.p0612.superhero.citizen.alert3",
+            "Watch out for villains escaping the Jail! They ALWAYS do that!"
+        ],
+        [
+            "w.p0612.superhero.citizen.alert4",
+            "Super Villains have been spotted heading to the Super Hero HQ!"
+        ],
+        [
+            "w.p0612.superhero.citizen.alert5",
+            "Super Heroes reported heading to the Super Villain Lair!"
+        ],
+        [
+            "w.p0612.superhero.citizen.alert6",
+            "Fresh coffee reported at the Coffee Shop! Also Super Heroes and Super Villains!"
+        ],
+        [
+            "w.p0612.superhero.citizen.alert7",
+            "Giant monsters spotted at the Iceberg! Run!"
+        ],
+        [
+            "w.p0612.superhero.citizen.alert8",
+            "Super Heroes and Villains spotted at the Club Penguin Times!"
+        ],
+        [
+            "duplicate_location_warn",
+            "You already have this location."
+        ],
+        [
+            "w.igloo.viewer.totalLikes.label",
+            "Grand Total Likes"
+        ],
+        [
+            "m.igloo.likes.deletedUser",
+            "Anonymous"
+        ],
+        [
+            "w.redemption.login.createPenguin",
+            "Create a Penguin"
+        ],
+        [
+            "w.redemption.login.learnMore",
+            "Learn more about Membership"
+        ],
+        [
+            "scornbattle",
+            "Scorn Battle"
+        ],
+        [
+            "scornbattle_find",
+            "%name% is in an epic battle!"
+        ],
+        [
+            "w.map.smoothie_smash",
+            "Smoothie Smash"
+        ],
+        [
+            "smoothie_prompt",
+            "Would you like to play Smoothie Smash?"
+        ],
+        [
+            "smoothie_find",
+            "%name% is making smoothies."
+        ],
+        [
+            "w.redemption.congratulations.innocent.noBonusItem",
+            "You've unlocked %0% items!\nWe've added them to your inventory.\nThere are %1% fruit items left to unlock."
+        ],
+        [
+            "w.redemption.congratulations.innocent.claimBonusItem",
+            "You've unlocked all the fruit items.\nUnlock your bonus item now!"
+        ],
+        [
+            "w.redemption.congratulations.innocent.bonusItemTitle",
+            "Pineapple Igloo Unlocked!"
+        ],
+        [
+            "w.redemption.congratulations.innocent.bonusItem",
+            "You've unlocked all %0% fruit items and earned the bonus Pineapple Igloo!"
+        ],
+        [
+            "w.redemption.congratulations.innocent.postBonusItem",
+            "You've unlocked %0% more items!\nWe've added them to your inventory."
+        ],
+        [
+            "w.redemption.congratulations.button.bonusItem",
+            "Unlock Bonus Item"
+        ],
+        [
+            "smoothie_hint",
+            "Make Smoothies"
+        ],
+        [
+            "icejam_prompt",
+            "Access Security Terminal?"
+        ],
+        [
+            "w.login.panel.login.title",
+            "Login to play!"
+        ],
+        [
+            "w.login.text.or",
+            "OR"
+        ],
+        [
+            "w.login.panel.create.button.create",
+            "Create"
+        ],
+        [
+            "party1_find",
+            "%name% is in the Time Trekker"
+        ],
+        [
+            "party1",
+            "Time Trekker"
+        ],
+        [
+            "party2_find",
+            "%name% at Tree Place"
+        ],
+        [
+            "party2",
+            "Tree Place"
+        ],
+        [
+            "party3_find",
+            "%name% at Stony Town"
+        ],
+        [
+            "party3",
+            "Stony Town"
+        ],
+        [
+            "party4_find",
+            "%name% at Yum Yum"
+        ],
+        [
+            "party4",
+            "Yum Yum"
+        ],
+        [
+            "party5_find",
+            "%name% at Water Place"
+        ],
+        [
+            "party5",
+            "Big Water Place"
+        ],
+        [
+            "party6_find",
+            "%name% at Dino Nests"
+        ],
+        [
+            "party6",
+            "Dino Nests"
+        ],
+        [
+            "party7_find",
+            "%name% at Yuck Swamp"
+        ],
+        [
+            "party7",
+            "Yuck Swamp"
+        ],
+        [
+            "party8_find",
+            "%name% at Tricera Town"
+        ],
+        [
+            "party8",
+            "Tricera Town"
+        ],
+        [
+            "party9_find",
+            "%name% at Tyranno Town"
+        ],
+        [
+            "party9",
+            "Tyranno Town"
+        ],
+        [
+            "party10_find",
+            "%name% at Hunting Spot"
+        ],
+        [
+            "party10",
+            "Hunting Spot"
+        ],
+        [
+            "party11_find",
+            "%name% at Ptero Town"
+        ],
+        [
+            "party11",
+            "Ptero Town"
+        ],
+        [
+            "party12_find",
+            "%name% at Scary Ice"
+        ],
+        [
+            "party12",
+            "Scary Ice"
+        ],
+        [
+            "dinodig_prompt",
+            "Would you like to play Dino Dig?"
+        ]
+    ],
+    "error_lang": [
+        [
+            "shell.KICK",
+            "A moderator has removed you from this server. Please be careful what you say and do online and remember to follow the Club Penguin rules."
+        ],
+        [
+            "shell.MODERATOR_BAN",
+            "A moderator has banned your account. Your ban will expire in: %number% hours"
+        ],
+        [
+            "shell.GAME_CHEAT",
+            "The system has automatically removed you from the server. Please be careful what you say and do online and remember to follow the Club Penguin rules."
+        ],
+        [
+            "shell.BAN_DURATION",
+            "<b>Banned:<\/b>\nYou are banned for the next %0 %1"
+        ],
+        [
+            "shell.BAN_FOREVER",
+            "<b>Banned:<\/b>\nYou are banned forever"
+        ],
+        [
+            "shell.BAN_AN_HOUR",
+            "<b>Banned:<\/b>\nYour ban will expire within the hour"
+        ],
+        [
+            "shell.HACKING_AUTO_BAN",
+            "<b>Banned:<\\b>\nThe server has automatically banned you.\nReason: \"%reason%\""
+        ],
+        [
+            "shell.BUDDY_LIMIT",
+            "Sorry, you may only have %number% buddies. Please remove some buddies to add more"
+        ],
+        [
+            "shell.TIME_WARNING",
+            "You have %number% minutes remaining on the Club Penguin Timer. Have fun!"
+        ],
+        [
+            "shell.NO_PLAY_TIME",
+            "Time's up. Thanks for playing! Check out the <b>%0Community%1<\/b> section of the website for fun ways to spend your time outside of Club Penguin."
+        ],
+        [
+            "shell.PLAY_TIME_OVER",
+            "Time's up. Thanks for playing! Check out the <b>%0Community%1<\/b> section of the website for fun ways to spend your time outside of Club Penguin."
+        ],
+        [
+            "shell.OUT_PLAY_TIME",
+            "You can only play between the hours of %0 and %1."
+        ],
+        [
+            "shell.GROUNDED",
+            "You cannot play because you're currently grounded."
+        ],
+        [
+            "shell.PLAYER_IN_ROOM",
+            "Please exit your game before leaving the room"
+        ],
+        [
+            "shell.DEFAULT_ERROR",
+            "There was an error"
+        ],
+        [
+            "shell.TIME_OUT",
+            "Auto Disconnect, your penguin has been idle for more than 10 minutes"
+        ],
+        [
+            "shell.CONNECTION_LOST",
+            "Connection was lost.\nPlease click to learn more"
+        ],
+        [
+            "shell.LOAD_ERROR",
+            "<b>Load Error<\/b>\nPlease clear your cache and try again"
+        ],
+        [
+            "shell.MULTI_CONNECTIONS",
+            "You can only have one Club Penguin window open at a time. Please close any other windows and tabs in your internet browser to connect."
+        ],
+        [
+            "shell.ACCOUNT_NOT_ACTIVATE",
+            "Your account has not been activated"
+        ],
+        [
+            "shell.NO_CONNECTION",
+            "Having trouble connecting? Please try again, or contact support if the problem continues."
+        ],
+        [
+            "shell.ITEM_NOT_EXIST",
+            "This item is not currently available."
+        ],
+        [
+            "shell.CONNECTION_TIMEOUT",
+            "Connection timeout. Please choose another server or try again later."
+        ],
+        [
+            "shell.MAX_IGLOO_FURNITURE_ERROR",
+            "Sorry, your igloo may only contain %number% items. Please remove an item to add this item."
+        ],
+        [
+            "shell.NOT_MEMBER",
+            "Oops! You need to purchase a membership to buy %type%. We would love to have you join. Click the button below to see more about membership"
+        ],
+        [
+            "shell.PASSWORD_REQUIRED",
+            "You must provide your password \nto enter Club Penguin"
+        ],
+        [
+            "shell.PASSWORD_SHORT",
+            "Your password is too short. \nPlease try again"
+        ],
+        [
+            "shell.PASSWORD_LONG",
+            "Your password is too long. \nPlease try again"
+        ],
+        [
+            "shell.PASSWORD_WRONG",
+            "Sorry! Incorrect penguin name or password. Passwords are CaSe SeNsiTIVE."
+        ],
+        [
+            "shell.PUFFLE_LIMIT_M",
+            "Sorry, you may only have a maximum of %number% puffles"
+        ],
+        [
+            "shell.PUFFLE_LIMIT_NM",
+            "Sorry, you must be a member to have more than %number% puffles"
+        ],
+        [
+            "shell.NAME_NOT_ALLOWED",
+            "Sorry, this name is not available. Please try again"
+        ],
+        [
+            "shell.REDEMPTION_CONNECTION_LOST",
+            "Sorry, you've lost connection. If you haven't closed the Treasure Book, you can reuse your code later."
+        ],
+        [
+            "shell.REDEMPTION_ALREADY_HAVE_ITEM",
+            "You already have this item."
+        ],
+        [
+            "shell.REDEMPTION_SERVER_FULL",
+            "The server is full. Please try again later."
+        ],
+        [
+            "shell.REDEMPTION_BOOK_ID_NOT_EXIST",
+            "That book does not exist."
+        ],
+        [
+            "shell.REDEMPTION_BOOK_ALREADY_REDEEMED",
+            "You have already unlocked this book."
+        ],
+        [
+            "shell.REDEMPTION_WRONG_BOOK_ANSWER",
+            "Oops! You've entered an incorrect answer. Please try again."
+        ],
+        [
+            "shell.REDEMPTION_BOOK_TOO_MANY_ATTEMPTS",
+            "Oops! An incorrect answer has been entered 5 times. Please try again in 45 minutes."
+        ],
+        [
+            "shell.REDEMPTION_CODE_NOT_FOUND",
+            "Oops! The code you've entered is incorrect. Please try again."
+        ],
+        [
+            "shell.REDEMPTION_CODE_ALREADY_REDEEMED",
+            "Oops! That code has already been used."
+        ],
+        [
+            "shell.REDEMPTION_TOO_MANY_ATTEMPTS",
+            "An incorrect code has been entered 5 times. Please try again in\n45 minutes."
+        ],
+        [
+            "shell.REDEMPTION_CATALOG_NOT_AVAILABLE",
+            "Sorry, the catalog you're looking for is not available yet. Please try again at a later date."
+        ],
+        [
+            "shell.REDEMPTION_PUFFLES_MAX",
+            "You already have the maximum number of puffles."
+        ],
+        [
+            "shell.REDEMPTION_PUFFLE_INVALID",
+            "Please choose a different puffle name."
+        ],
+        [
+            "shell.REDEMPTION_PUFFLE_CODE_MAX",
+            "You can only redeem one puffle per code."
+        ],
+        [
+            "shell.REDEMPTION_CODE_TOO_SHORT",
+            "Oops! The code is too short. It must be at least 9 characters."
+        ],
+        [
+            "shell.REDEMPTION_CODE_TOO_LONG",
+            "Oops! The code is too long. It must be 16 characters or shorter."
+        ],
+        [
+            "shell.REDEMPTION_NO_EXCLUSIVE_REDEEMS",
+            "You've chosen all of your Super Exclusive bonus items."
+        ],
+        [
+            "shell.REDEMPTION_CODE_GROUP_REDEEMED",
+            "Only one code containing 2500 coins can be redeemed per account."
+        ],
+        [
+            "shell.REDEMPTION_CODE_EXPIRED",
+            "The code you have entered has expired"
+        ],
+        [
+            "shell.GOLDEN_CODE_NOT_READY",
+            "You'll be able to redeem this code July 21. Please come back then..."
+        ],
+        [
+            "shell.ITEM_IN_HOUSE",
+            "You already have this item"
+        ],
+        [
+            "shell.NOT_ENOUGH_COINS",
+            "You need more coins"
+        ],
+        [
+            "shell.NOT_ENOUGH_MEDALS",
+            "You don't have enough medals to obtain this item."
+        ],
+        [
+            "shell.NAME_REQUIRED",
+            "You must provide your Penguin Name to enter Club Penguin"
+        ],
+        [
+            "shell.NAME_SHORT",
+            "Your Penguin Name is too short. Please try again"
+        ],
+        [
+            "shell.NAME_LONG",
+            "Your Penguin Name is too long. Please try again"
+        ],
+        [
+            "shell.NAME_NOT_FOUND",
+            "Penguin not found. Try Again?"
+        ],
+        [
+            "shell.LOGIN_FAILED",
+            "Login Failed, please try at a later time"
+        ],
+        [
+            "shell.LOGIN_FLOODING_DAILY",
+            "Maximum login attempts exceeded. Please try again in an hour"
+        ],
+        [
+            "shell.LOGIN_FLOODING",
+            "Maximum login attempts exceeded. Please try again in an hour"
+        ],
+        [
+            "shell.PASSWORD_SAVE_PROMPT",
+            "Do not use this feature if\nyou are using a school, library,\nor public computer.\n\nAnyone that uses this computer will have access to your penguin."
+        ],
+        [
+            "shell.SERVER_FULL",
+            "Sorry this server is full. Please select another server."
+        ],
+        [
+            "shell.ROOM_FULL",
+            "Sorry this room is currently full"
+        ],
+        [
+            "shell.GAME_FULL",
+            "Sorry, this game is full. Check back in a little while. Thank you for your patience!"
+        ],
+        [
+            "shell.MAX_STAMPBOOK_COVER_ITEMS",
+            "Only %number% items can be stuck on the cover at once."
+        ],
+        [
+            "shell.PLAYER_HAS_MAX_ITEMS",
+            "Sorry, you can only buy this item 99 times."
+        ],
+        [
+            "shell.AUTO_BAN",
+            "<b>Banned:<\/b>The server has automatically banned you for saying a bad word."
+        ]
+    ]
+}
