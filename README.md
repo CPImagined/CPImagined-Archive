@@ -27,10 +27,10 @@ If you wish to recover your old account, head to [this website](https://toolbox.
 
 ## IMPORTANT: Use of these files
 You are free to download and mess around with these files to your heart's content. You may use them freely on a locally-hosted server, however I **expressly forbid the use of any of these files or parts thereof on any public server\***. I will know.
-<small>*Public server is defined as any CPPS that can be accessed by more than one household.</small>
+*Public server is defined as any CPPS that can be accessed by more than one household.
 
 If you wish to use anything you find in this archive publicly, you **must contact me\* and receive my permission *before* doing so**. You must also credit CPI, which I define as "if anyone asks, don't say you made it." That's all.
-<small>*Me as in Jeff The Rock. No other Club Penguin Imagined staff will give you permission.</small>
+*Me as in Jeff The Rock. No other Club Penguin Imagined staff will give you permission.
 
 My Discord username is `jefftherock`. Please feel free to reach out at any time for this reason.
 ## Most of all...
