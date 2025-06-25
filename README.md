@@ -1,5 +1,6 @@
 # Club Penguin Imagined Archive
 This is an archive of every\* custom file Club Penguin Imagined ever used.
+
 *Some files have been removed as they are not mine to share. Our modifications to snowflake are also being kept at this time.
 
 ## Database backups
@@ -23,13 +24,16 @@ If you wish to use these files and set up your own local version of Club Penguin
 * Finally, choose your version of the database, explained above.
 
 If you wish to recover your old account, head to [this website](https://toolbox.solero.me/houdini-hash-gen/) and type in your new password. Then, open up the database, find your username, and paste the hash it spits out into the password column.
+
 **In keeping with the above section, this is the extent of instruction you will receive. Do not pester any staff for further assistance.**
 
 ## IMPORTANT: Use of these files
 You are free to download and mess around with these files to your heart's content. You may use them freely on a locally-hosted server, however I **expressly forbid the use of any of these files or parts thereof on any public server\***. I will know.
+
 *Public server is defined as any CPPS that can be accessed by more than one household.
 
 If you wish to use anything you find in this archive publicly, you **must contact me\* and receive my permission *before* doing so**. You must also credit CPI, which I define as "if anyone asks, don't say you made it." That's all.
+
 *Me as in Jeff The Rock. No other Club Penguin Imagined staff will give you permission.
 
 My Discord username is `jefftherock`. Please feel free to reach out at any time for this reason.
