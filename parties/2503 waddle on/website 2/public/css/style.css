@@ -294,6 +294,12 @@ video {
     transition: var(--transition);
 }
 
+.trailerButton {
+    position: absolute;
+    left: 12%;
+    bottom: 3%;
+}
+
 .homeCardText {
     flex-basis: 50%;
     /* align-self: center; */
@@ -316,6 +322,12 @@ video {
 }
 
 .homeCardText>h1 {
+    font-size: 20pt;
+    line-height: 20pt;
+    margin-top: 5%;
+}
+
+.homeCardText2>h1 {
     font-size: 20pt;
     line-height: 20pt;
     margin-top: 5%;
@@ -1144,6 +1156,12 @@ video {
     .main {
         width: 80%;
     }
+
+    .trailerButton {
+        position: absolute;
+        left: 4%;
+        bottom: 3%;
+    }
 }
 
 @media only screen and (max-width: 991.8px) {
@@ -1172,16 +1190,21 @@ video {
     /* feature cards */ 
 
     .homeFlex {
-        height: 150vh;
-        row-gap: 4%;
+        height: 450vh;
+        row-gap: 1%;
     }
 
     .homeCard {
-        flex-basis: 46%;
-        height: 40%;
+        flex-basis: 100%;
+        height: 30%;
+    }
+    
+    .homeCard2 {
+        flex-basis: 100%;
+        height: 30%;
     }
 
-    .homeCard:hover>.homeCardImage {
+    /*.homeCard:hover>.homeCardImage {
         flex-basis: 100%;
         height: 51%;
     }
@@ -1189,7 +1212,7 @@ video {
     .homeCard:hover>.homeCardText {
         flex-basis: 100%;
         height: 47%;
-    }
+    }*/
 
     .homeCardImage {
         height: 48%;
@@ -1202,7 +1225,32 @@ video {
         border-bottom-style: solid;
     }
 
+    .homeCardImage2 {
+        height: 50.5%;
+        width: 100%;
+        flex-basis: 100%;
+        border-bottom-left-radius: 4.5vh;
+        border-bottom-right-radius: 4.5vh;
+        border-top-right-radius: 0;
+        border-left-style: none;
+        border-top-style: solid;
+    }
+
+    .trailerButton {
+        position: absolute;
+        left: 20%;
+        bottom: 3%;
+    }
+
     .homeCardText {
+        height: 49%;
+        flex-basis: 100%;
+        align-self: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .homeCardText2 {
         height: 49%;
         flex-basis: 100%;
         align-self: center;
@@ -1214,6 +1262,22 @@ video {
         transform: translate(0, 0);
         font-size: 12pt;
         margin: auto;
+    }
+
+    .homeCardText2>p {
+        transform: translate(0, 0);
+        font-size: 12pt;
+        margin: auto;
+    }
+
+    .homeCardText>h1 {
+        line-height: 20pt;
+        margin-top: 0;
+    }
+
+    .homeCardText2>h1 {
+        line-height: 20pt;
+        margin-top: 10%;
     }
 
     /* promo section */
@@ -1380,6 +1444,7 @@ video {
     /* 404 */
 
     .FOFImg {
+        transform: translate(0, 25%);
         max-width: 50%;
     }
 }
@@ -1389,6 +1454,9 @@ video {
         font-size: 10pt;
     }
     .homeCardText>p {
+        font-size: 10pt;
+    }
+    .homeCardText2>p {
         font-size: 10pt;
     }
 }
